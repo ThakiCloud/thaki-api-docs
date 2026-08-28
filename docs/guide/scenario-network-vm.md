@@ -64,7 +64,7 @@ curl -s -X POST "$B/network/security-groups/<securityGroupId>/rules/batch" "${H[
 
 ## 5. VM 생성
 
-앞서 만든 네트워크·서브넷·보안 그룹을 `networkInfo`에 지정합니다(생성 요청 전체 필드는 [컴퓨트 레퍼런스](/api/compute) 참조).
+앞서 만든 네트워크·서브넷·보안 그룹을 `networkInfo`에 지정합니다(생성 요청 전체 필드는 [컴퓨트 레퍼런스](/api/compute/) 참조).
 
 ```bash
 curl -s -X POST "$B/compute/instances" "${H[@]}" -H 'Content-Type: application/json' -d '{
@@ -133,4 +133,4 @@ VM 삭제는 204이며, 볼륨 동반 삭제 여부는 삭제 시점이 아니�
 - 컨테이너 서비스가 생성한 보안 그룹은 수정과 규칙 삭제가 403으로 막힙니다. 해당 리소스는 컨테이너 쪽 관리 절차를 따르십시오.
 :::
 
-전체 API 목록과 파라미터 상세는 [네트워크 레퍼런스](/api/network)와 [컴퓨트 레퍼런스](/api/compute)를 참조하십시오.
+전체 API 목록과 파라미터 상세는 [네트워크 레퍼런스](/api/network/)와 [컴퓨트 레퍼런스](/api/compute/)를 참조하십시오.

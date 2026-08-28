@@ -1,0 +1,36 @@
+# 정책 버전 비교
+
+두 버전 간의 차이를 JSON Patch 형식으로 반환합니다.
+
+## HTTP 요청
+
+```http
+GET https://<your-console-host>/api/v1/iam/authz/policies/{policy_id}/diff
+```
+
+## URI 매개변수
+
+| 이름 | 위치 | 필수 | 형식 | 설명 |
+|---|---|---|---|---|
+| policy_id | path | 필수 | string |  |
+
+## 쿼리 매개변수
+
+| 이름 | 필수 | 형식 | 설명 |
+|---|---|---|---|
+| from | 필수 | string | 기준 버전. 기준 버전 |
+| to | 필수 | string | 비교 버전. 비교 버전 |
+
+## 요청 헤더
+
+인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+
+## 응답
+
+| 상태 코드 | 설명 |
+|---|---|
+| 200 OK | Successful Response |
+| 422 Unprocessable Entity | Validation Error |
+
+그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+

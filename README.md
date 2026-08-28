@@ -9,10 +9,11 @@ Thaki Cloud Aegis 연동 개발자용 API 문서. VitePress 사이트 + 서비�
 | 경로 | 내용 |
 |---|---|
 | `docs/guide/` | 손으로 쓰는 가이드 — 인증 준비, 공통 규약, 오류, 시나리오 |
-| `docs/api/` | 서비스별 레퍼런스 페이지. 스펙을 Scalar 뷰어로 렌더한다 |
+| `docs/api/` | 오퍼레이션별 레퍼런스 페이지. 스펙에서 생성한다(직접 고치지 않는다) |
 | `docs/public/*.openapi.json` | 필터를 거친 공개용 스펙. 빌드 산출물이므로 직접 고치지 않는다 |
 | `spec/sources.json` | 각 스펙을 어느 리포·브랜치·커밋에서 뽑았는지 기록 |
 | `scripts/filter-openapi.mjs` | 원본 → 공개용 변환. admin·internal 제거, 게이트웨이 접두 부착, 미사용 스키마 정리 |
+| `scripts/gen-reference.mjs` | 스펙 → MSDN 형식 레퍼런스 페이지·사이드바 생성 |
 | `scripts/verify-specs.mjs` | 공개된 스펙이 공개 조건을 지키는지 검증(CI 게이트) |
 | `scripts/check-secrets.mjs` | 공개 리포 게이트 — 실 호스트·자격증명·내부 주소 검출 |
 
@@ -53,7 +54,12 @@ APP_ENV=dev <필수 환경변수들> uv run python -c \
 npm run spec:filter          # 전 서비스
 npm run spec:filter compute  # 한 서비스만
 npm run spec:verify          # 결과물이 공개 조건을 지키는지
+npm run spec:pages           # 레퍼런스 페이지·사이드바 재생성
 ```
+
+레퍼런스는 오퍼레이션마다 페이지 하나다(701개). 페이지 구조는 Microsoft Learn REST 레퍼런스와
+같은 순서를 따른다 — HTTP 요청 → URI 매개변수 → 쿼리 매개변수 → 요청 헤더 → 요청 본문 → 응답.
+IAM 은 인증·인가 두 서비스로 구현돼 있지만 문서에서는 하나로 묶어 낸다.
 
 필터는 게이트를 겸한다. 오퍼레이션 수가 `scripts/filter-openapi.mjs` 의 `expect` 와 다르면 실패한다.
 API 가 실제로 늘거나 줄었으면 무엇이 바뀌었는지 확인한 뒤 `expect` 를 고친다.
@@ -70,5 +76,5 @@ npm run check:secrets # 시크릿·실호스트 검사
 
 ## 배포
 
-`main` 에 푸시하면 GitHub Actions 가 게이트 3개(공개 스펙 검증 · 시크릿 검사 · 링크 검사)를 통과한 뒤
+`main` 에 푸시하면 GitHub Actions 가 게이트 4개(공개 스펙 검증 · 레퍼런스 최신성 · 시크릿 검사 · 링크 검사)를 통과한 뒤
 GitHub Pages 로 배포한다.

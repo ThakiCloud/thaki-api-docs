@@ -1,10 +1,17 @@
 import { defineConfig } from 'vitepress'
+import { readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 
-// 리포 이름으로 배포되므로 base 를 맞춘다. 커스텀 도메인을 붙이면 '/' 로 바꾼다.
+// 레퍼런스 사이드바는 스펙에서 생성한다(scripts/gen-reference.mjs).
+// 오퍼레이션이 701개라 손으로 유지할 수 없다.
+const generatedSidebar = JSON.parse(
+  readFileSync(fileURLToPath(new URL('./sidebar.generated.json', import.meta.url)), 'utf8'),
+)
+
 export default defineConfig({
   lang: 'ko-KR',
   title: 'Thaki Cloud Aegis API',
-  description: '연동 개발자용 API 문서 — 인증, 컴퓨트, 네트워크, 컨테이너',
+  description: '연동 개발자용 API 문서 — IAM, 컴퓨트, 네트워크, 컨테이너',
   base: '/thaki-api-docs/',
   lastUpdated: true,
   cleanUrls: true,
@@ -17,7 +24,16 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '시작하기', link: '/guide/' },
-      { text: 'API 레퍼런스', link: '/api/' },
+      {
+        text: 'API 레퍼런스',
+        items: [
+          { text: '전체 목록', link: '/api/' },
+          { text: 'IAM', link: '/api/iam/' },
+          { text: '컴퓨트', link: '/api/compute/' },
+          { text: '네트워크', link: '/api/network/' },
+          { text: '컨테이너', link: '/api/container/' },
+        ],
+      },
     ],
 
     sidebar: {
@@ -41,16 +57,16 @@ export default defineConfig({
           ],
         },
       ],
+      ...generatedSidebar,
       '/api/': [
         {
           text: 'API 레퍼런스',
           items: [
-            { text: '개요', link: '/api/' },
-            { text: 'IAM 인증 (AuthN)', link: '/api/iam-authn' },
-            { text: 'IAM 인가 (AuthZ)', link: '/api/iam-authz' },
-            { text: '컴퓨트', link: '/api/compute' },
-            { text: '네트워크', link: '/api/network' },
-            { text: '컨테이너', link: '/api/container' },
+            { text: '전체 목록', link: '/api/' },
+            { text: 'IAM', link: '/api/iam/' },
+            { text: '컴퓨트', link: '/api/compute/' },
+            { text: '네트워크', link: '/api/network/' },
+            { text: '컨테이너', link: '/api/container/' },
           ],
         },
       ],

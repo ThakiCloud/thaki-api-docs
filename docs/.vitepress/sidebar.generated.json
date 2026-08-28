@@ -1,0 +1,3474 @@
+{
+  "/api/iam/": [
+    {
+      "text": "IAM",
+      "items": [
+        {
+          "text": "개요",
+          "link": "/api/iam/"
+        }
+      ]
+    },
+    {
+      "text": "API Keys",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "API Key 목록 조회",
+          "link": "/api/iam/get-authn-api-keys"
+        },
+        {
+          "text": "API Key 발급",
+          "link": "/api/iam/post-authn-api-keys"
+        },
+        {
+          "text": "API Key 상세 조회",
+          "link": "/api/iam/get-authn-api-keys-key-id"
+        },
+        {
+          "text": "API Key 삭제",
+          "link": "/api/iam/delete-authn-api-keys-key-id"
+        },
+        {
+          "text": "API Key 이름/상태 수정",
+          "link": "/api/iam/patch-authn-api-keys-key-id"
+        },
+        {
+          "text": "API Key 비활성화",
+          "link": "/api/iam/post-authn-api-keys-key-id-deactivate"
+        },
+        {
+          "text": "API Key 활성화",
+          "link": "/api/iam/post-authn-api-keys-key-id-activate"
+        },
+        {
+          "text": "API Key 시크릿 재발급",
+          "link": "/api/iam/post-authn-api-keys-key-id-reset"
+        },
+        {
+          "text": "API Key 검증 (User / SA 통합)",
+          "link": "/api/iam/post-authn-api-keys-validate"
+        },
+        {
+          "text": "API Key로 내부 토큰 발급",
+          "link": "/api/iam/post-authn-api-keys-exchange"
+        }
+      ]
+    },
+    {
+      "text": "Account Lockout Management",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "계정 잠금 상태 조회",
+          "link": "/api/iam/get-authn-account-lockout-status"
+        },
+        {
+          "text": "계정 수동 잠금",
+          "link": "/api/iam/post-authn-account-lockout-lock"
+        },
+        {
+          "text": "계정 잠금 수동 해제",
+          "link": "/api/iam/post-authn-account-lockout-unlock"
+        },
+        {
+          "text": "계정 잠금 리셋 (Path Parameter)",
+          "link": "/api/iam/delete-authn-account-lockout-reset-username"
+        },
+        {
+          "text": "계정 잠금 이력 조회",
+          "link": "/api/iam/get-authn-account-lockout-history"
+        }
+      ]
+    },
+    {
+      "text": "Action Catalog",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "묶음(Group) Action 생성 (Admin)",
+          "link": "/api/iam/post-authz-action-catalog-actions-groups"
+        },
+        {
+          "text": "OpenAPI 스펙으로부터 Action 일괄 생성 (Admin)",
+          "link": "/api/iam/post-authz-action-catalog-actions-import-openapi"
+        },
+        {
+          "text": "Action 생성 (Admin)",
+          "link": "/api/iam/post-authz-action-catalog-actions"
+        },
+        {
+          "text": "Action 목록 조회",
+          "link": "/api/iam/get-authz-action-catalog-actions"
+        },
+        {
+          "text": "Action 수정 (Admin)",
+          "link": "/api/iam/put-authz-action-catalog-actions-action-id"
+        },
+        {
+          "text": "Action 삭제 (Admin)",
+          "link": "/api/iam/delete-authz-action-catalog-actions-action-id"
+        },
+        {
+          "text": "Action 상세 조회",
+          "link": "/api/iam/get-authz-action-catalog-actions-action-id"
+        },
+        {
+          "text": "Action Class 집계 조회 (IAM05 아코디언)",
+          "link": "/api/iam/get-authz-action-catalog-actions-classes"
+        },
+        {
+          "text": "App 목록 조회 (DISTINCT)",
+          "link": "/api/iam/get-authz-action-catalog-actions-apps"
+        },
+        {
+          "text": "Category 목록 조회 (DISTINCT)",
+          "link": "/api/iam/get-authz-action-catalog-actions-apps-app-categories"
+        },
+        {
+          "text": "Resource Type 목록 조회 (DISTINCT)",
+          "link": "/api/iam/get-authz-action-catalog-actions-apps-app-resource-types"
+        },
+        {
+          "text": "Action 검색",
+          "link": "/api/iam/get-authz-action-catalog-actions-search"
+        }
+      ]
+    },
+    {
+      "text": "Audit Logs",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "감사 로그 목록 조회",
+          "link": "/api/iam/get-authn-audit-logs"
+        },
+        {
+          "text": "Get Audit Log",
+          "link": "/api/iam/get-authn-audit-logs-event-id"
+        },
+        {
+          "text": "PDP 평가 감사 로그 조회",
+          "link": "/api/iam/get-authz-audit-logs-evaluations"
+        }
+      ]
+    },
+    {
+      "text": "Dashboard",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "대시보드 데이터 조회",
+          "link": "/api/iam/get-authn-dashboard-orgid"
+        }
+      ]
+    },
+    {
+      "text": "My Access Keys",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Access Key 발급",
+          "link": "/api/iam/post-authn-me-access-keys"
+        },
+        {
+          "text": "Access Key 목록 조회",
+          "link": "/api/iam/get-authn-me-access-keys"
+        },
+        {
+          "text": "Access Key 상세 조회",
+          "link": "/api/iam/get-authn-me-access-keys-key-id"
+        },
+        {
+          "text": "Access Key 폐기",
+          "link": "/api/iam/delete-authn-me-access-keys-key-id"
+        },
+        {
+          "text": "Access Key 이름(Description)/상태 수정",
+          "link": "/api/iam/patch-authn-me-access-keys-key-id"
+        },
+        {
+          "text": "Access Key 비활성화",
+          "link": "/api/iam/post-authn-me-access-keys-key-id-deactivate"
+        },
+        {
+          "text": "Access Key 활성화",
+          "link": "/api/iam/post-authn-me-access-keys-key-id-activate"
+        },
+        {
+          "text": "Access Key 시크릿 재발급 (Rotate)",
+          "link": "/api/iam/post-authn-me-access-keys-key-id-rotate"
+        }
+      ]
+    },
+    {
+      "text": "My Password",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "본인 비밀번호 변경",
+          "link": "/api/iam/put-authn-me-password"
+        },
+        {
+          "text": "본인 비밀번호 사전검증",
+          "link": "/api/iam/post-authn-me-password-validate"
+        }
+      ]
+    },
+    {
+      "text": "My Security Info",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "본인 보안 정보 조회",
+          "link": "/api/iam/get-authn-me-security-info"
+        }
+      ]
+    },
+    {
+      "text": "My Sessions",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "본인 전체 세션 종료",
+          "link": "/api/iam/delete-authn-me-sessions"
+        },
+        {
+          "text": "본인 세션 목록 조회",
+          "link": "/api/iam/get-authn-me-sessions"
+        },
+        {
+          "text": "본인 세션 단건 종료",
+          "link": "/api/iam/delete-authn-me-sessions-session-id"
+        }
+      ]
+    },
+    {
+      "text": "Policies",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "정책 생성",
+          "link": "/api/iam/post-authz-policies"
+        },
+        {
+          "text": "정책 목록 조회",
+          "link": "/api/iam/get-authz-policies"
+        },
+        {
+          "text": "정책 삭제",
+          "link": "/api/iam/delete-authz-policies"
+        },
+        {
+          "text": "내 연결 정책 목록 조회 (IAM1701)",
+          "link": "/api/iam/get-authz-policies-me-policies"
+        },
+        {
+          "text": "정책 목록 CSV export",
+          "link": "/api/iam/get-authz-policies-export-csv"
+        },
+        {
+          "text": "정책 동기화 요약(outdated 개수/ID)",
+          "link": "/api/iam/get-authz-policies-sync-summary"
+        },
+        {
+          "text": "정책 조회",
+          "link": "/api/iam/get-authz-policies-policy-id"
+        },
+        {
+          "text": "정책 업데이트",
+          "link": "/api/iam/put-authz-policies-policy-id"
+        },
+        {
+          "text": "정책 권한 목록 조회",
+          "link": "/api/iam/get-authz-policies-policy-id-permissions"
+        },
+        {
+          "text": "정책 활성화",
+          "link": "/api/iam/post-authz-policies-policy-id-activate"
+        },
+        {
+          "text": "정책 비활성화",
+          "link": "/api/iam/post-authz-policies-policy-id-deactivate"
+        },
+        {
+          "text": "정책 버전 목록 조회",
+          "link": "/api/iam/get-authz-policies-policy-id-versions"
+        },
+        {
+          "text": "특정 버전 조회",
+          "link": "/api/iam/get-authz-policies-policy-id-versions-version"
+        },
+        {
+          "text": "정책 버전 삭제",
+          "link": "/api/iam/delete-authz-policies-policy-id-versions-version"
+        },
+        {
+          "text": "정책 롤백",
+          "link": "/api/iam/post-authz-policies-policy-id-versions-version-rollback"
+        },
+        {
+          "text": "정책 버전 활성화",
+          "link": "/api/iam/post-authz-policies-policy-id-versions-version-activate"
+        },
+        {
+          "text": "정책 복제",
+          "link": "/api/iam/post-authz-policies-policy-id-duplicate"
+        },
+        {
+          "text": "정책 버전 비교",
+          "link": "/api/iam/get-authz-policies-policy-id-diff"
+        },
+        {
+          "text": "정책 sync-diff (템플릿 대비 Field diff)",
+          "link": "/api/iam/get-authz-policies-policy-id-sync-diff"
+        },
+        {
+          "text": "정책 일괄 동기화 (템플릿 기준 document 교체)",
+          "link": "/api/iam/post-authz-policies-bulk-sync-update"
+        },
+        {
+          "text": "Validate Policy Dry Run",
+          "link": "/api/iam/post-authz-policies-validate"
+        },
+        {
+          "text": "Revalidate Policies Sync",
+          "link": "/api/iam/post-authz-policies-revalidate"
+        },
+        {
+          "text": "정책 평가",
+          "link": "/api/iam/post-authz-policies-evaluate"
+        },
+        {
+          "text": "정책에 대한 role 바인딩 동기화",
+          "link": "/api/iam/put-authz-policies-policy-id-bindings-sync"
+        },
+        {
+          "text": "시뮬레이션 대상 주체 검색",
+          "link": "/api/iam/get-authz-policies-simulate-accessible-principals"
+        },
+        {
+          "text": "정책 시뮬레이션 (Batch)",
+          "link": "/api/iam/post-authz-policies-simulate"
+        }
+      ]
+    },
+    {
+      "text": "Policy Attached Entities",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "정책이 적용되는 사용자 목록 조회",
+          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-users"
+        },
+        {
+          "text": "정책이 연결된 사용자 그룹 목록 조회",
+          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-user-groups"
+        },
+        {
+          "text": "정책이 바인딩된 Role 목록 조회",
+          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-roles"
+        },
+        {
+          "text": "정책이 연결된 서비스 어카운트 목록 조회",
+          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-service-accounts"
+        }
+      ]
+    },
+    {
+      "text": "Policy Bindings",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "바인딩 생성",
+          "link": "/api/iam/post-authz-bindings"
+        },
+        {
+          "text": "전체 Policy Binding 목록 조회",
+          "link": "/api/iam/get-authz-bindings"
+        },
+        {
+          "text": "정책별 바인딩 목록 조회",
+          "link": "/api/iam/get-authz-bindings-by-policy-policy-id"
+        },
+        {
+          "text": "본인 바인딩 목록 조회",
+          "link": "/api/iam/get-authz-bindings-me"
+        },
+        {
+          "text": "대상별 바인딩 목록 조회",
+          "link": "/api/iam/get-authz-bindings-by-target"
+        },
+        {
+          "text": "대상(TPN 등)으로 바인딩 삭제",
+          "link": "/api/iam/delete-authz-bindings-by-target"
+        },
+        {
+          "text": "TPN의 모든 Policy Binding 삭제",
+          "link": "/api/iam/delete-authz-bindings-by-tpn"
+        },
+        {
+          "text": "바인딩 단건 조회",
+          "link": "/api/iam/get-authz-bindings-binding-id"
+        },
+        {
+          "text": "바인딩 삭제",
+          "link": "/api/iam/delete-authz-bindings-binding-id"
+        },
+        {
+          "text": "바인딩 감사 로그 조회",
+          "link": "/api/iam/get-authz-bindings-audit"
+        },
+        {
+          "text": "바인딩 동기화",
+          "link": "/api/iam/put-authz-bindings-sync"
+        },
+        {
+          "text": "Role에 매핑된 정책 목록 조회",
+          "link": "/api/iam/get-authz-bindings-roles-role-id-policies"
+        },
+        {
+          "text": "TPN(서비스 계정 등)에 직접 연결된 정책 목록 조회 (IAM14 정방향)",
+          "link": "/api/iam/get-authz-bindings-tpns-tpn-policies"
+        },
+        {
+          "text": "정책에 바인딩된 Role 목록 조회",
+          "link": "/api/iam/get-authz-bindings-policies-policy-id-roles"
+        }
+      ]
+    },
+    {
+      "text": "Profile",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "내 프로필 조회",
+          "link": "/api/iam/get-authn-profile"
+        },
+        {
+          "text": "내 프로필 수정",
+          "link": "/api/iam/patch-authn-profile"
+        },
+        {
+          "text": "로그인 이력 조회",
+          "link": "/api/iam/get-authn-profile-activity"
+        },
+        {
+          "text": "접근 가능한 조직 목록 조회",
+          "link": "/api/iam/get-authn-profile-organizations"
+        },
+        {
+          "text": "내 소속 파티션 목록 조회",
+          "link": "/api/iam/get-authn-profile-partitions"
+        },
+        {
+          "text": "TOTP 설정 시작",
+          "link": "/api/iam/post-authn-profile-mfa-totp-setup"
+        },
+        {
+          "text": "TOTP 설정 검증",
+          "link": "/api/iam/post-authn-profile-mfa-totp-verify-setup"
+        }
+      ]
+    },
+    {
+      "text": "Project",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "조직 내 프로젝트 생성",
+          "link": "/api/iam/post-authn-organizations-org-id-projects"
+        },
+        {
+          "text": "조직별 프로젝트 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-projects"
+        },
+        {
+          "text": "프로젝트 상세 조회",
+          "link": "/api/iam/get-authn-projects-project-id"
+        },
+        {
+          "text": "프로젝트 업데이트",
+          "link": "/api/iam/put-authn-projects-project-id"
+        },
+        {
+          "text": "프로젝트 삭제 (Soft Delete)",
+          "link": "/api/iam/delete-authn-projects-project-id"
+        }
+      ]
+    },
+    {
+      "text": "Role Assignments",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Role에 TPN 할당",
+          "link": "/api/iam/post-authz-roles-role-id-assignments"
+        },
+        {
+          "text": "Role에 할당된 TPN 목록 조회",
+          "link": "/api/iam/get-authz-roles-role-id-assignments"
+        },
+        {
+          "text": "TPN으로 RoleAssignment 삭제",
+          "link": "/api/iam/delete-authz-roles-role-id-assignments"
+        },
+        {
+          "text": "RoleAssignment 조회",
+          "link": "/api/iam/get-authz-roles-role-id-assignments-assignment-id"
+        },
+        {
+          "text": "RoleAssignment 삭제",
+          "link": "/api/iam/delete-authz-roles-role-id-assignments-assignment-id"
+        },
+        {
+          "text": "TPN이 가진 Role 목록 조회",
+          "link": "/api/iam/get-authz-tpns-assignments"
+        },
+        {
+          "text": "TPN의 모든 Role Assignment 삭제",
+          "link": "/api/iam/delete-authz-tpns-assignments"
+        },
+        {
+          "text": "본인 Role 목록 조회",
+          "link": "/api/iam/get-authz-role-assignments-me"
+        },
+        {
+          "text": "TPN에 할당 가능한 Role 목록 조회",
+          "link": "/api/iam/get-authz-roles-assignments-available"
+        },
+        {
+          "text": "전체 Role Assignment 목록 조회",
+          "link": "/api/iam/get-authz-assignments"
+        },
+        {
+          "text": "TPN에 Role 동기화",
+          "link": "/api/iam/put-authz-roles-assignments-sync"
+        }
+      ]
+    },
+    {
+      "text": "Role Metadata",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Role Metadata 설정",
+          "link": "/api/iam/put-authz-roles-roleid-metadata-namespace-key"
+        },
+        {
+          "text": "Role Metadata 단건 조회",
+          "link": "/api/iam/get-authz-roles-roleid-metadata-namespace-key"
+        },
+        {
+          "text": "Role Metadata 삭제",
+          "link": "/api/iam/delete-authz-roles-roleid-metadata-namespace-key"
+        },
+        {
+          "text": "Role Metadata 목록 조회",
+          "link": "/api/iam/get-authz-roles-roleid-metadata"
+        },
+        {
+          "text": "Namespace별 Role Metadata 조회",
+          "link": "/api/iam/get-authz-roles-roleid-metadata-namespace"
+        }
+      ]
+    },
+    {
+      "text": "Roles",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Role 생성",
+          "link": "/api/iam/post-authz-roles"
+        },
+        {
+          "text": "Role 목록 조회",
+          "link": "/api/iam/get-authz-roles"
+        },
+        {
+          "text": "Role 조회",
+          "link": "/api/iam/get-authz-roles-role-id"
+        },
+        {
+          "text": "Role 수정",
+          "link": "/api/iam/patch-authz-roles-role-id"
+        },
+        {
+          "text": "Role 삭제",
+          "link": "/api/iam/delete-authz-roles-role-id"
+        },
+        {
+          "text": "Trust Policy 설정",
+          "link": "/api/iam/put-authz-roles-role-id-trust-policy"
+        }
+      ]
+    },
+    {
+      "text": "Session Policies",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "세션 정책 조회",
+          "link": "/api/iam/get-authn-session-policies-org-id"
+        },
+        {
+          "text": "세션 정책 생성/수정 (Upsert)",
+          "link": "/api/iam/put-authn-session-policies-org-id"
+        },
+        {
+          "text": "세션 정책 초기화",
+          "link": "/api/iam/post-authn-session-policies-org-id-reset"
+        }
+      ]
+    },
+    {
+      "text": "Temporary Role Grants",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "임시 역할 부여 생성",
+          "link": "/api/iam/post-authz-temporary-grants"
+        },
+        {
+          "text": "임시 역할 부여 목록 조회",
+          "link": "/api/iam/get-authz-temporary-grants"
+        },
+        {
+          "text": "본인 임시 역할 부여 목록 조회",
+          "link": "/api/iam/get-authz-temporary-grants-me"
+        },
+        {
+          "text": "임시 역할 부여 단건 조회",
+          "link": "/api/iam/get-authz-temporary-grants-grant-id"
+        },
+        {
+          "text": "임시 역할 부여 연장",
+          "link": "/api/iam/post-authz-temporary-grants-grant-id-extend"
+        },
+        {
+          "text": "임시 역할 부여 회수",
+          "link": "/api/iam/post-authz-temporary-grants-grant-id-revoke"
+        },
+        {
+          "text": "활성 임시 grant 조회 (STS/평가용)",
+          "link": "/api/iam/get-authz-tpns-tpn-active-grants"
+        }
+      ]
+    },
+    {
+      "text": "Token Policies",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "토큰 정책 조회",
+          "link": "/api/iam/get-authn-token-policies-org-id"
+        },
+        {
+          "text": "토큰 정책 생성/수정 (Upsert)",
+          "link": "/api/iam/put-authn-token-policies-org-id"
+        },
+        {
+          "text": "토큰 정책 초기화",
+          "link": "/api/iam/post-authn-token-policies-org-id-reset"
+        }
+      ]
+    },
+    {
+      "text": "Token Revocation",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "세션 기반 토큰 무효화 (관리자용)",
+          "link": "/api/iam/post-authn-revoke-session"
+        },
+        {
+          "text": "토큰 ID(jti) 기반 무효화",
+          "link": "/api/iam/post-authn-revoke-token"
+        },
+        {
+          "text": "사용자 전체 세션 무효화 (관리자용)",
+          "link": "/api/iam/post-authn-revoke-user"
+        },
+        {
+          "text": "Denylist 목록 조회",
+          "link": "/api/iam/get-authn-revoke-denylist"
+        },
+        {
+          "text": "토큰/세션 무효화 상태 조회",
+          "link": "/api/iam/post-authn-revoke-token-status"
+        }
+      ]
+    },
+    {
+      "text": "auth",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Post Login",
+          "link": "/api/iam/post-authn-login"
+        },
+        {
+          "text": "Post Refresh",
+          "link": "/api/iam/post-authn-token-refresh"
+        },
+        {
+          "text": "Post Logout",
+          "link": "/api/iam/post-authn-logout"
+        },
+        {
+          "text": "Get Me",
+          "link": "/api/iam/get-authn-me"
+        },
+        {
+          "text": "List Active Sessions",
+          "link": "/api/iam/get-authn-sessions"
+        },
+        {
+          "text": "Get Session",
+          "link": "/api/iam/get-authn-sessions-session-id"
+        },
+        {
+          "text": "세션 강제 종료 (사용자 자신의 세션)",
+          "link": "/api/iam/post-authn-sessions-revoke"
+        },
+        {
+          "text": "모든 세션 강제 종료 (사용자 자신)",
+          "link": "/api/iam/post-authn-sessions-revoke-all"
+        },
+        {
+          "text": "관리자: 특정 사용자의 모든 세션 강제 종료",
+          "link": "/api/iam/post-authn-sessions-users-user-tpn-revoke-all"
+        }
+      ]
+    },
+    {
+      "text": "group-policies",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "그룹에 정책 연결",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-policies"
+        },
+        {
+          "text": "그룹의 정책 바인딩 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-groups-group-id-policies"
+        },
+        {
+          "text": "그룹에서 정책 연결 해제",
+          "link": "/api/iam/delete-authn-organizations-org-id-groups-group-id-policies-policy-id"
+        }
+      ]
+    },
+    {
+      "text": "group-sync",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "단일 그룹 템플릿 동기화",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-sync"
+        },
+        {
+          "text": "일괄 그룹 템플릿 동기화",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-sync"
+        }
+      ]
+    },
+    {
+      "text": "group-templates",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "그룹 템플릿 생성",
+          "link": "/api/iam/post-authn-group-templates"
+        },
+        {
+          "text": "그룹 템플릿 목록 조회",
+          "link": "/api/iam/get-authn-group-templates"
+        },
+        {
+          "text": "그룹 템플릿 상세 조회",
+          "link": "/api/iam/get-authn-group-templates-template-id"
+        },
+        {
+          "text": "그룹 템플릿 수정",
+          "link": "/api/iam/put-authn-group-templates-template-id"
+        },
+        {
+          "text": "그룹 템플릿 삭제 (soft-delete)",
+          "link": "/api/iam/delete-authn-group-templates-template-id"
+        },
+        {
+          "text": "템플릿 파생 그룹 목록",
+          "link": "/api/iam/get-authn-group-templates-template-id-derived"
+        }
+      ]
+    },
+    {
+      "text": "groups",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "그룹 생성",
+          "link": "/api/iam/post-authn-organizations-org-id-groups"
+        },
+        {
+          "text": "그룹 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-groups"
+        },
+        {
+          "text": "그룹 복제",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-duplicate"
+        },
+        {
+          "text": "그룹 상세 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-groups-group-id"
+        },
+        {
+          "text": "그룹 수정",
+          "link": "/api/iam/put-authn-organizations-org-id-groups-group-id"
+        },
+        {
+          "text": "그룹 삭제",
+          "link": "/api/iam/delete-authn-organizations-org-id-groups-group-id"
+        },
+        {
+          "text": "그룹 멤버 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-groups-group-id-members"
+        },
+        {
+          "text": "멤버 동기화",
+          "link": "/api/iam/put-authn-organizations-org-id-groups-group-id-members"
+        },
+        {
+          "text": "멤버 일괄 추가",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-members-batch-add"
+        },
+        {
+          "text": "멤버 일괄 제거",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-members-batch-remove"
+        }
+      ]
+    },
+    {
+      "text": "jwks",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Thaki Token JWKS",
+          "link": "/api/iam/get-authn-jwks"
+        }
+      ]
+    },
+    {
+      "text": "mfa-auth-flow",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Request Mfa Code",
+          "link": "/api/iam/post-authn-mfa-code-request"
+        },
+        {
+          "text": "Verify Mfa Code",
+          "link": "/api/iam/post-authn-mfa-code-verify"
+        }
+      ]
+    },
+    {
+      "text": "organizations",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "비밀번호 정책 기본값 조회",
+          "link": "/api/iam/get-authn-organizations-password-policy-default"
+        },
+        {
+          "text": "비밀번호 정책 생성",
+          "link": "/api/iam/post-authn-organizations-org-id-password-policy"
+        },
+        {
+          "text": "비밀번호 정책 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-password-policy"
+        },
+        {
+          "text": "비밀번호 정책 수정",
+          "link": "/api/iam/put-authn-organizations-org-id-password-policy"
+        },
+        {
+          "text": "비밀번호 정책 초기화",
+          "link": "/api/iam/post-authn-organizations-org-id-password-policy-reset"
+        },
+        {
+          "text": "OTP 정책 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-otp-policy"
+        },
+        {
+          "text": "OTP 정책 생성/수정",
+          "link": "/api/iam/put-authn-organizations-org-id-otp-policy"
+        },
+        {
+          "text": "OTP 정책 초기화",
+          "link": "/api/iam/post-authn-organizations-org-id-otp-policy-reset"
+        },
+        {
+          "text": "Email MFA 정책 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-email-mfa-policy"
+        },
+        {
+          "text": "Email MFA 정책 생성/수정",
+          "link": "/api/iam/put-authn-organizations-org-id-email-mfa-policy"
+        },
+        {
+          "text": "Email MFA 정책 초기화",
+          "link": "/api/iam/post-authn-organizations-org-id-email-mfa-policy-reset"
+        },
+        {
+          "text": "계정 잠금 정책 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-account-lockout-policy"
+        },
+        {
+          "text": "계정 잠금 정책 생성/수정",
+          "link": "/api/iam/put-authn-organizations-org-id-account-lockout-policy"
+        },
+        {
+          "text": "계정 잠금 정책 초기화",
+          "link": "/api/iam/post-authn-organizations-org-id-account-lockout-policy-reset"
+        },
+        {
+          "text": "조직 MFA 정책 설정",
+          "link": "/api/iam/put-authn-organizations-org-id-mfa-policy"
+        },
+        {
+          "text": "조직 MFA 정책 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-mfa-policy"
+        }
+      ]
+    },
+    {
+      "text": "password-reset",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "비밀번호 초기화 요청 (본인)",
+          "link": "/api/iam/post-authn-password-forgot"
+        },
+        {
+          "text": "비밀번호 초기화 토큰 검증",
+          "link": "/api/iam/post-authn-password-reset-verify"
+        },
+        {
+          "text": "비밀번호 재설정 완료",
+          "link": "/api/iam/put-authn-password-reset"
+        }
+      ]
+    },
+    {
+      "text": "pre-auth",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "비밀번호 정책 조회 (Pre-Auth)",
+          "link": "/api/iam/get-authn-pre-auth-password-policy"
+        },
+        {
+          "text": "TOTP 설정 (Pre-Auth)",
+          "link": "/api/iam/post-authn-pre-auth-mfa-totp-setup"
+        },
+        {
+          "text": "TOTP 설정 검증 (Pre-Auth)",
+          "link": "/api/iam/post-authn-pre-auth-mfa-totp-verify-setup"
+        },
+        {
+          "text": "이메일 코드 요청 (Pre-Auth)",
+          "link": "/api/iam/post-authn-pre-auth-mfa-email-request-code"
+        },
+        {
+          "text": "MFA 검증 (Pre-Auth)",
+          "link": "/api/iam/post-authn-pre-auth-mfa-verify"
+        },
+        {
+          "text": "비밀번호 변경 (Pre-Auth)",
+          "link": "/api/iam/put-authn-pre-auth-password-change"
+        }
+      ]
+    },
+    {
+      "text": "service-accounts",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Service Accounts",
+          "link": "/api/iam/get-authn-service-accounts"
+        },
+        {
+          "text": "Create Service Account",
+          "link": "/api/iam/post-authn-service-accounts"
+        },
+        {
+          "text": "서비스 계정 일괄 삭제",
+          "link": "/api/iam/delete-authn-service-accounts"
+        },
+        {
+          "text": "서비스 계정 목록 Export (CSV)",
+          "link": "/api/iam/get-authn-service-accounts-export"
+        },
+        {
+          "text": "Get Service Account",
+          "link": "/api/iam/get-authn-service-accounts-sa-id"
+        },
+        {
+          "text": "Delete Service Account",
+          "link": "/api/iam/delete-authn-service-accounts-sa-id"
+        },
+        {
+          "text": "Update Service Account",
+          "link": "/api/iam/put-authn-service-accounts-sa-id"
+        },
+        {
+          "text": "Issue Api Key",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-keys"
+        },
+        {
+          "text": "Disable Api Key",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-keys-key-id-disable"
+        },
+        {
+          "text": "Enable Api Key",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-keys-key-id-enable"
+        },
+        {
+          "text": "Delete Api Key",
+          "link": "/api/iam/delete-authn-service-accounts-sa-id-keys-key-id"
+        },
+        {
+          "text": "Update Api Key",
+          "link": "/api/iam/patch-authn-service-accounts-sa-id-keys-key-id"
+        },
+        {
+          "text": "Disable Service Account",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-disable"
+        },
+        {
+          "text": "Enable Service Account",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-enable"
+        },
+        {
+          "text": "Regenerate Client Secret",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-regenerate-secret"
+        },
+        {
+          "text": "Reset Api Key Secret",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-keys-key-id-reset"
+        }
+      ]
+    },
+    {
+      "text": "user-invitation",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create Invitation",
+          "link": "/api/iam/post-authn-organizations-org-id-invitations"
+        },
+        {
+          "text": "List Invitations",
+          "link": "/api/iam/get-authn-organizations-org-id-invitations"
+        },
+        {
+          "text": "Get Invitation",
+          "link": "/api/iam/get-authn-invitations-invitation-id"
+        },
+        {
+          "text": "Resend Invitation",
+          "link": "/api/iam/post-authn-invitations-invitation-id-resend"
+        },
+        {
+          "text": "Cancel Invitation",
+          "link": "/api/iam/post-authn-invitations-invitation-id-cancel"
+        },
+        {
+          "text": "Resend Invitation By User",
+          "link": "/api/iam/post-authn-users-user-tpn-resend-invitation"
+        }
+      ]
+    },
+    {
+      "text": "user-invitation-public",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Accept Invitation",
+          "link": "/api/iam/post-authn-invitations-accept"
+        }
+      ]
+    },
+    {
+      "text": "user-mfa",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Mfa Status",
+          "link": "/api/iam/get-authn-users-me-mfa-status"
+        },
+        {
+          "text": "Enable Email Mfa",
+          "link": "/api/iam/post-authn-users-me-mfa-email-enable"
+        },
+        {
+          "text": "Disable Email Mfa",
+          "link": "/api/iam/post-authn-users-me-mfa-email-disable"
+        },
+        {
+          "text": "Setup Totp",
+          "link": "/api/iam/post-authn-users-me-mfa-totp-setup"
+        },
+        {
+          "text": "Verify Totp Setup",
+          "link": "/api/iam/post-authn-users-me-mfa-totp-verify-setup"
+        },
+        {
+          "text": "Disable Totp Mfa",
+          "link": "/api/iam/post-authn-users-me-mfa-totp-disable"
+        },
+        {
+          "text": "이메일 코드 요청 (Deprecated)",
+          "link": "/api/iam/post-authn-users-me-mfa-email-request-code"
+        }
+      ]
+    },
+    {
+      "text": "user-password",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Patch User Password",
+          "link": "/api/iam/put-authn-users-user-tpn-password"
+        },
+        {
+          "text": "Validate User Password",
+          "link": "/api/iam/post-authn-users-user-tpn-password-validate"
+        },
+        {
+          "text": "관리자 비밀번호 초기화",
+          "link": "/api/iam/post-authn-users-user-tpn-password-reset"
+        }
+      ]
+    },
+    {
+      "text": "users",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "사용자 생성 (레거시)",
+          "link": "/api/iam/post-authn-users"
+        },
+        {
+          "text": "Update User",
+          "link": "/api/iam/put-authn-users-tpn"
+        },
+        {
+          "text": "Delete User",
+          "link": "/api/iam/delete-authn-users-tpn"
+        },
+        {
+          "text": "사용자 상세 조회",
+          "link": "/api/iam/get-authn-users-tpn"
+        },
+        {
+          "text": "조직 내 새 사용자 생성",
+          "link": "/api/iam/post-authn-organizations-org-id-users"
+        },
+        {
+          "text": "조직별 사용자 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-users"
+        },
+        {
+          "text": "사용자 보안 정보 조회",
+          "link": "/api/iam/get-authn-users-tpn-security-info"
+        },
+        {
+          "text": "사용자 TOTP MFA 비활성화 (관리자용)",
+          "link": "/api/iam/post-authn-users-tpn-mfa-totp-disable"
+        },
+        {
+          "text": "사용자를 여러 그룹에 일괄 추가",
+          "link": "/api/iam/post-authn-users-tpn-groups-batch-add"
+        },
+        {
+          "text": "사용자가 속한 그룹 동기화",
+          "link": "/api/iam/post-authn-users-tpn-groups-sync"
+        }
+      ]
+    },
+    {
+      "text": "기타",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Root",
+          "link": "/api/iam/get-authn"
+        },
+        {
+          "text": "Root",
+          "link": "/api/iam/get-authz"
+        }
+      ]
+    }
+  ],
+  "/api/compute/": [
+    {
+      "text": "컴퓨트",
+      "items": [
+        {
+          "text": "개요",
+          "link": "/api/compute/"
+        }
+      ]
+    },
+    {
+      "text": "application-credentials",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create Application Credential",
+          "link": "/api/compute/post-application-credentials"
+        },
+        {
+          "text": "Delete Application Credential",
+          "link": "/api/compute/delete-application-credentials-credentialid"
+        }
+      ]
+    },
+    {
+      "text": "compute-meta",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Quota",
+          "link": "/api/compute/get-meta-quota"
+        }
+      ]
+    },
+    {
+      "text": "flavors",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Flavors",
+          "link": "/api/compute/get-flavors"
+        },
+        {
+          "text": "Get Flavor",
+          "link": "/api/compute/get-flavors-flavorid"
+        }
+      ]
+    },
+    {
+      "text": "host-aggregates",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Availability Zones",
+          "link": "/api/compute/get-host-aggregates-availability-zones"
+        }
+      ]
+    },
+    {
+      "text": "images",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create Image",
+          "link": "/api/compute/post-images"
+        },
+        {
+          "text": "List Images",
+          "link": "/api/compute/get-images"
+        },
+        {
+          "text": "Delete Images",
+          "link": "/api/compute/delete-images"
+        },
+        {
+          "text": "Check Image Name Availability",
+          "link": "/api/compute/get-images-name-availability"
+        },
+        {
+          "text": "Get Image",
+          "link": "/api/compute/get-images-imageid"
+        },
+        {
+          "text": "Update Image",
+          "link": "/api/compute/patch-images-imageid"
+        },
+        {
+          "text": "Delete Image",
+          "link": "/api/compute/delete-images-imageid"
+        }
+      ]
+    },
+    {
+      "text": "instance-snapshots",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create Snapshot",
+          "link": "/api/compute/post-instance-snapshots"
+        },
+        {
+          "text": "List Snapshots",
+          "link": "/api/compute/get-instance-snapshots"
+        },
+        {
+          "text": "Delete Snapshots",
+          "link": "/api/compute/delete-instance-snapshots"
+        },
+        {
+          "text": "Get Snapshot",
+          "link": "/api/compute/get-instance-snapshots-instancesnapshotid"
+        },
+        {
+          "text": "Update Snapshot",
+          "link": "/api/compute/patch-instance-snapshots-instancesnapshotid"
+        },
+        {
+          "text": "Delete Snapshot",
+          "link": "/api/compute/delete-instance-snapshots-instancesnapshotid"
+        }
+      ]
+    },
+    {
+      "text": "instance-templates",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create Instance Template",
+          "link": "/api/compute/post-instance-templates"
+        },
+        {
+          "text": "List Instance Templates",
+          "link": "/api/compute/get-instance-templates"
+        },
+        {
+          "text": "Delete Instance Templates",
+          "link": "/api/compute/delete-instance-templates"
+        },
+        {
+          "text": "Get Instance Template",
+          "link": "/api/compute/get-instance-templates-templateid"
+        },
+        {
+          "text": "Update Instance Template",
+          "link": "/api/compute/patch-instance-templates-templateid"
+        },
+        {
+          "text": "Delete Instance Template",
+          "link": "/api/compute/delete-instance-templates-templateid"
+        }
+      ]
+    },
+    {
+      "text": "instances",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create Instance",
+          "link": "/api/compute/post-instances"
+        },
+        {
+          "text": "List Instances",
+          "link": "/api/compute/get-instances"
+        },
+        {
+          "text": "Delete Instances",
+          "link": "/api/compute/delete-instances"
+        },
+        {
+          "text": "Create Instances Bulk",
+          "link": "/api/compute/post-instances-bulk"
+        },
+        {
+          "text": "Batch Instance Actions",
+          "link": "/api/compute/post-instances-actions"
+        },
+        {
+          "text": "Get Instance Summary",
+          "link": "/api/compute/get-instances-summary"
+        },
+        {
+          "text": "List Project Instance Action Logs",
+          "link": "/api/compute/get-instances-action-logs"
+        },
+        {
+          "text": "Get Instance",
+          "link": "/api/compute/get-instances-instanceid"
+        },
+        {
+          "text": "Update Instance",
+          "link": "/api/compute/patch-instances-instanceid"
+        },
+        {
+          "text": "Delete Instance",
+          "link": "/api/compute/delete-instances-instanceid"
+        },
+        {
+          "text": "Update Instance Tags",
+          "link": "/api/compute/put-instances-instanceid-tags"
+        },
+        {
+          "text": "List Instance Action Logs",
+          "link": "/api/compute/get-instances-instanceid-action-logs"
+        },
+        {
+          "text": "Get Instance Action Log Detail",
+          "link": "/api/compute/get-instances-instanceid-action-logs-requestid"
+        },
+        {
+          "text": "Get Instance Console Logs",
+          "link": "/api/compute/get-instances-instanceid-console-logs"
+        },
+        {
+          "text": "Create Instance Remote Console",
+          "link": "/api/compute/post-instances-instanceid-remote-console"
+        },
+        {
+          "text": "Instance Action",
+          "link": "/api/compute/post-instances-instanceid-actions"
+        },
+        {
+          "text": "Get Instance Cpu Utilization",
+          "link": "/api/compute/get-instances-instanceid-metrics-cpu-utilization"
+        },
+        {
+          "text": "Get Instance Network Traffic",
+          "link": "/api/compute/get-instances-instanceid-metrics-network-traffic"
+        },
+        {
+          "text": "Get Instance Network Packets",
+          "link": "/api/compute/get-instances-instanceid-metrics-network-packets"
+        },
+        {
+          "text": "Get Instance Disk Usage",
+          "link": "/api/compute/get-instances-instanceid-metrics-disk-usage"
+        },
+        {
+          "text": "Get Instance Disk Iops",
+          "link": "/api/compute/get-instances-instanceid-metrics-disk-iops"
+        }
+      ]
+    },
+    {
+      "text": "key-pairs",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Keypair Quota",
+          "link": "/api/compute/get-key-pairs-quota"
+        },
+        {
+          "text": "Create Keypair",
+          "link": "/api/compute/post-key-pairs"
+        },
+        {
+          "text": "List Keypairs",
+          "link": "/api/compute/get-key-pairs"
+        },
+        {
+          "text": "Delete Keypairs",
+          "link": "/api/compute/delete-key-pairs"
+        },
+        {
+          "text": "Get Keypair",
+          "link": "/api/compute/get-key-pairs-keypairname"
+        },
+        {
+          "text": "Delete Keypair",
+          "link": "/api/compute/delete-key-pairs-keypairname"
+        }
+      ]
+    },
+    {
+      "text": "primary-tenant",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Set Primary Tenant",
+          "link": "/api/compute/put-primary-tenant"
+        }
+      ]
+    },
+    {
+      "text": "projects",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Projects",
+          "link": "/api/compute/get-projects"
+        }
+      ]
+    },
+    {
+      "text": "server-groups",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create Server Group",
+          "link": "/api/compute/post-server-groups"
+        },
+        {
+          "text": "List Server Groups",
+          "link": "/api/compute/get-server-groups"
+        },
+        {
+          "text": "Delete Server Groups",
+          "link": "/api/compute/delete-server-groups"
+        },
+        {
+          "text": "Delete Server Group",
+          "link": "/api/compute/delete-server-groups-servergroupid"
+        }
+      ]
+    },
+    {
+      "text": "storage-meta",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Quota",
+          "link": "/api/compute/get-storage-meta-quota"
+        },
+        {
+          "text": "List Availability Zones",
+          "link": "/api/compute/get-storage-meta-availability-zones"
+        }
+      ]
+    },
+    {
+      "text": "table-settings",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Table Settings",
+          "link": "/api/compute/get-table-settings"
+        },
+        {
+          "text": "Update Table Settings",
+          "link": "/api/compute/put-table-settings"
+        }
+      ]
+    },
+    {
+      "text": "volume-backups",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create Volume Backup",
+          "link": "/api/compute/post-storage-volume-backups"
+        },
+        {
+          "text": "List Volume Backups",
+          "link": "/api/compute/get-storage-volume-backups"
+        },
+        {
+          "text": "Delete Volume Backups",
+          "link": "/api/compute/delete-storage-volume-backups"
+        },
+        {
+          "text": "Get Volume Backup",
+          "link": "/api/compute/get-storage-volume-backups-volumebackupid"
+        },
+        {
+          "text": "Update Volume Backup",
+          "link": "/api/compute/patch-storage-volume-backups-volumebackupid"
+        },
+        {
+          "text": "Delete Volume Backup",
+          "link": "/api/compute/delete-storage-volume-backups-volumebackupid"
+        },
+        {
+          "text": "Volume Backup Action",
+          "link": "/api/compute/post-storage-volume-backups-volumebackupid-actions"
+        }
+      ]
+    },
+    {
+      "text": "volume-snapshots",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create Volume Snapshot",
+          "link": "/api/compute/post-storage-volume-snapshots"
+        },
+        {
+          "text": "List Volume Snapshots",
+          "link": "/api/compute/get-storage-volume-snapshots"
+        },
+        {
+          "text": "Delete Volume Snapshots",
+          "link": "/api/compute/delete-storage-volume-snapshots"
+        },
+        {
+          "text": "Get Volume Snapshot",
+          "link": "/api/compute/get-storage-volume-snapshots-volumesnapshotid"
+        },
+        {
+          "text": "Delete Volume Snapshot",
+          "link": "/api/compute/delete-storage-volume-snapshots-volumesnapshotid"
+        },
+        {
+          "text": "Update Volume Snapshot",
+          "link": "/api/compute/patch-storage-volume-snapshots-volumesnapshotid"
+        }
+      ]
+    },
+    {
+      "text": "volumes",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Volumes",
+          "link": "/api/compute/get-storage-volumes"
+        },
+        {
+          "text": "Create Volume",
+          "link": "/api/compute/post-storage-volumes"
+        },
+        {
+          "text": "Delete Volumes",
+          "link": "/api/compute/delete-storage-volumes"
+        },
+        {
+          "text": "List Volume Types",
+          "link": "/api/compute/get-storage-volumes-types"
+        },
+        {
+          "text": "Get Volume",
+          "link": "/api/compute/get-storage-volumes-volumeid"
+        },
+        {
+          "text": "Delete Volume",
+          "link": "/api/compute/delete-storage-volumes-volumeid"
+        },
+        {
+          "text": "Update Volume",
+          "link": "/api/compute/patch-storage-volumes-volumeid"
+        },
+        {
+          "text": "Volume Action",
+          "link": "/api/compute/post-storage-volumes-volumeid-actions"
+        },
+        {
+          "text": "Create Transfer",
+          "link": "/api/compute/post-storage-volumes-volumeid-transfers"
+        },
+        {
+          "text": "Delete Transfer",
+          "link": "/api/compute/delete-storage-volumes-volumeid-transfers"
+        },
+        {
+          "text": "Accept Transfer",
+          "link": "/api/compute/post-storage-volumes-transfers-transferid-accept"
+        }
+      ]
+    },
+    {
+      "text": "기타",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Root",
+          "link": "/api/compute/get"
+        }
+      ]
+    }
+  ],
+  "/api/network/": [
+    {
+      "text": "네트워크",
+      "items": [
+        {
+          "text": "개요",
+          "link": "/api/network/"
+        }
+      ]
+    },
+    {
+      "text": "availability-zones",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Availability Zones",
+          "link": "/api/network/get-availability-zones"
+        }
+      ]
+    },
+    {
+      "text": "certificates",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Download Server Certificates",
+          "link": "/api/network/get-certificates-server-export-csv"
+        },
+        {
+          "text": "List Server Certificate Listeners",
+          "link": "/api/network/get-certificates-server-certificateid-listeners"
+        },
+        {
+          "text": "List Server Certificates",
+          "link": "/api/network/get-certificates-server"
+        },
+        {
+          "text": "Create Server Certificate",
+          "link": "/api/network/post-certificates-server"
+        },
+        {
+          "text": "List Selectable Server Certificates",
+          "link": "/api/network/get-certificates-server-selectable"
+        },
+        {
+          "text": "Get Server Certificate",
+          "link": "/api/network/get-certificates-server-certificateid"
+        },
+        {
+          "text": "Delete Server Certificate",
+          "link": "/api/network/delete-certificates-server-certificateid"
+        },
+        {
+          "text": "Download Server Certificate",
+          "link": "/api/network/get-certificates-server-certificateid-download"
+        },
+        {
+          "text": "List Ca Certificates",
+          "link": "/api/network/get-certificates-ca"
+        },
+        {
+          "text": "Create Ca Certificate",
+          "link": "/api/network/post-certificates-ca"
+        },
+        {
+          "text": "List Selectable Ca Certificates",
+          "link": "/api/network/get-certificates-ca-selectable"
+        },
+        {
+          "text": "List Ca Certificate Listeners",
+          "link": "/api/network/get-certificates-ca-certificateid-listeners"
+        },
+        {
+          "text": "Get Ca Certificate",
+          "link": "/api/network/get-certificates-ca-certificateid"
+        },
+        {
+          "text": "Delete Ca Certificate",
+          "link": "/api/network/delete-certificates-ca-certificateid"
+        },
+        {
+          "text": "Download Ca Certificate",
+          "link": "/api/network/get-certificates-ca-certificateid-download"
+        }
+      ]
+    },
+    {
+      "text": "columns-config",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "테이블 컬럼 설정 조회",
+          "link": "/api/network/get-columns-config-domain-resource"
+        },
+        {
+          "text": "테이블 컬럼 설정 업데이트",
+          "link": "/api/network/put-columns-config-domain-resource"
+        },
+        {
+          "text": "테이블 컬럼 설정 기본값 초기화",
+          "link": "/api/network/post-columns-config-domain-resource-reset"
+        }
+      ]
+    },
+    {
+      "text": "external-firewall-rules",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Firewall Rules",
+          "link": "/api/network/get-external-firewalls-firewallid-rules"
+        },
+        {
+          "text": "Create Firewall Rule",
+          "link": "/api/network/post-external-firewalls-firewallid-rules"
+        },
+        {
+          "text": "Get Firewall Rule",
+          "link": "/api/network/get-external-firewalls-firewallid-rules-ruleid"
+        },
+        {
+          "text": "Delete Firewall Rule",
+          "link": "/api/network/delete-external-firewalls-firewallid-rules-ruleid"
+        }
+      ]
+    },
+    {
+      "text": "external-firewalls",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Firewalls",
+          "link": "/api/network/get-external-firewalls"
+        },
+        {
+          "text": "Create Firewall",
+          "link": "/api/network/post-external-firewalls"
+        },
+        {
+          "text": "List External Networks",
+          "link": "/api/network/get-external-firewalls-networks"
+        },
+        {
+          "text": "Get Firewall",
+          "link": "/api/network/get-external-firewalls-firewallid"
+        },
+        {
+          "text": "Update Firewall",
+          "link": "/api/network/put-external-firewalls-firewallid"
+        },
+        {
+          "text": "Delete Firewall",
+          "link": "/api/network/delete-external-firewalls-firewallid"
+        }
+      ]
+    },
+    {
+      "text": "floating-ips",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Download Floating Ips",
+          "link": "/api/network/get-floating-ips-export-csv"
+        },
+        {
+          "text": "List Floating Ips",
+          "link": "/api/network/get-floating-ips"
+        },
+        {
+          "text": "Create Floating Ip",
+          "link": "/api/network/post-floating-ips"
+        },
+        {
+          "text": "List Floating Ip Connectable Instances",
+          "link": "/api/network/get-floating-ips-floatingipid-instances-connectable"
+        },
+        {
+          "text": "List Floating Ip Connectable Load Balancers",
+          "link": "/api/network/get-floating-ips-floatingipid-load-balancers-connectable"
+        },
+        {
+          "text": "List Floating Ip Connectable Ports",
+          "link": "/api/network/get-floating-ips-floatingipid-ports-connectable"
+        },
+        {
+          "text": "Get Floating Ip",
+          "link": "/api/network/get-floating-ips-floatingipid"
+        },
+        {
+          "text": "Update Floating Ip",
+          "link": "/api/network/put-floating-ips-floatingipid"
+        },
+        {
+          "text": "Delete Floating Ip",
+          "link": "/api/network/delete-floating-ips-floatingipid"
+        }
+      ]
+    },
+    {
+      "text": "health-monitors",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Health Monitor 생성",
+          "link": "/api/network/post-health-monitors"
+        },
+        {
+          "text": "Health Monitor 조회",
+          "link": "/api/network/get-health-monitors-healthmonitorid"
+        },
+        {
+          "text": "Health Monitor 수정",
+          "link": "/api/network/put-health-monitors-healthmonitorid"
+        },
+        {
+          "text": "Health Monitor 삭제",
+          "link": "/api/network/delete-health-monitors-healthmonitorid"
+        }
+      ]
+    },
+    {
+      "text": "l7-policies",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "L7 Policy 생성",
+          "link": "/api/network/post-l7-policies"
+        },
+        {
+          "text": "L7 Policy 목록 조회",
+          "link": "/api/network/get-l7-policies"
+        },
+        {
+          "text": "L7 Policy 단건 조회",
+          "link": "/api/network/get-l7-policies-policyid"
+        },
+        {
+          "text": "L7 Policy 수정",
+          "link": "/api/network/put-l7-policies-policyid"
+        },
+        {
+          "text": "L7 Policy 삭제",
+          "link": "/api/network/delete-l7-policies-policyid"
+        },
+        {
+          "text": "L7 Rule 생성",
+          "link": "/api/network/post-l7-policies-policyid-rules"
+        },
+        {
+          "text": "L7 Rule 목록 조회",
+          "link": "/api/network/get-l7-policies-policyid-rules"
+        },
+        {
+          "text": "L7 Rule 수정",
+          "link": "/api/network/put-l7-policies-policyid-rules-ruleid"
+        },
+        {
+          "text": "L7 Rule 삭제",
+          "link": "/api/network/delete-l7-policies-policyid-rules-ruleid"
+        }
+      ]
+    },
+    {
+      "text": "listeners",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Listener 생성",
+          "link": "/api/network/post-listeners"
+        },
+        {
+          "text": "Listener 목록 조회",
+          "link": "/api/network/get-listeners"
+        },
+        {
+          "text": "Listener 단건 조회",
+          "link": "/api/network/get-listeners-listenerid"
+        },
+        {
+          "text": "Listener 수정",
+          "link": "/api/network/put-listeners-listenerid"
+        },
+        {
+          "text": "Delete Listener",
+          "link": "/api/network/delete-listeners-listenerid"
+        },
+        {
+          "text": "Listener 인증서 목록 조회",
+          "link": "/api/network/get-listeners-listenerid-certificates"
+        }
+      ]
+    },
+    {
+      "text": "load-balancers",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "LoadBalancer 생성",
+          "link": "/api/network/post-load-balancers"
+        },
+        {
+          "text": "LoadBalancer 목록 조회",
+          "link": "/api/network/get-load-balancers"
+        },
+        {
+          "text": "Download Load Balancers",
+          "link": "/api/network/get-load-balancers-export-csv"
+        },
+        {
+          "text": "LoadBalancer 단건 조회",
+          "link": "/api/network/get-load-balancers-loadbalancerid"
+        },
+        {
+          "text": "LoadBalancer 수정",
+          "link": "/api/network/put-load-balancers-loadbalancerid"
+        },
+        {
+          "text": "LoadBalancer 삭제",
+          "link": "/api/network/delete-load-balancers-loadbalancerid"
+        }
+      ]
+    },
+    {
+      "text": "members",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Member 일괄 생성",
+          "link": "/api/network/put-pools-poolid-members"
+        },
+        {
+          "text": "Member 목록 조회",
+          "link": "/api/network/get-pools-poolid-members"
+        },
+        {
+          "text": "Member 수정",
+          "link": "/api/network/put-pools-poolid-members-memberid"
+        },
+        {
+          "text": "Delete Member",
+          "link": "/api/network/delete-pools-poolid-members-memberid"
+        }
+      ]
+    },
+    {
+      "text": "networks",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Download Networks",
+          "link": "/api/network/get-networks-export-csv"
+        },
+        {
+          "text": "List Networks",
+          "link": "/api/network/get-networks"
+        },
+        {
+          "text": "Create Network",
+          "link": "/api/network/post-networks"
+        },
+        {
+          "text": "List Connectable Networks",
+          "link": "/api/network/get-networks-subnet-connectability"
+        },
+        {
+          "text": "List External Gateway Connectability Networks",
+          "link": "/api/network/get-networks-external-gateway-connectability"
+        },
+        {
+          "text": "Get Network",
+          "link": "/api/network/get-networks-networkid"
+        },
+        {
+          "text": "Update Network",
+          "link": "/api/network/put-networks-networkid"
+        },
+        {
+          "text": "Delete Network",
+          "link": "/api/network/delete-networks-networkid"
+        }
+      ]
+    },
+    {
+      "text": "pools",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Pool 생성",
+          "link": "/api/network/post-pools"
+        },
+        {
+          "text": "Pool 목록 조회",
+          "link": "/api/network/get-pools"
+        },
+        {
+          "text": "Pool 단건 조회",
+          "link": "/api/network/get-pools-poolid"
+        },
+        {
+          "text": "Pool 수정",
+          "link": "/api/network/put-pools-poolid"
+        },
+        {
+          "text": "Pool 삭제",
+          "link": "/api/network/delete-pools-poolid"
+        },
+        {
+          "text": "Member 추가 후보 인스턴스 목록 조회",
+          "link": "/api/network/get-pools-poolid-instances-connectable"
+        }
+      ]
+    },
+    {
+      "text": "ports",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Download Ports",
+          "link": "/api/network/get-ports-export-csv"
+        },
+        {
+          "text": "List Ports",
+          "link": "/api/network/get-ports"
+        },
+        {
+          "text": "Create Port",
+          "link": "/api/network/post-ports"
+        },
+        {
+          "text": "List Connectable Ports",
+          "link": "/api/network/get-ports-connectable"
+        },
+        {
+          "text": "List Instance Sg Candidates Ports",
+          "link": "/api/network/get-ports-instance-sg-candidates"
+        },
+        {
+          "text": "List Instance Fixed Ips",
+          "link": "/api/network/get-ports-instance-fixed-ips-instanceid"
+        },
+        {
+          "text": "List Instance Interfaces",
+          "link": "/api/network/get-ports-instance-interfaces-instanceid"
+        },
+        {
+          "text": "Get Port",
+          "link": "/api/network/get-ports-portid"
+        },
+        {
+          "text": "Update Port",
+          "link": "/api/network/put-ports-portid"
+        },
+        {
+          "text": "Delete Port",
+          "link": "/api/network/delete-ports-portid"
+        },
+        {
+          "text": "List Port Fixed Ips",
+          "link": "/api/network/get-ports-portid-fixed-ips"
+        },
+        {
+          "text": "List Port Security Groups",
+          "link": "/api/network/get-ports-portid-security-groups"
+        },
+        {
+          "text": "List Port Allowed Address Pairs",
+          "link": "/api/network/get-ports-portid-allowed-address-pairs"
+        }
+      ]
+    },
+    {
+      "text": "quotas",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "네트워크 리소스 할당량 조회",
+          "link": "/api/network/get-quotas"
+        }
+      ]
+    },
+    {
+      "text": "routers",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Download Routers",
+          "link": "/api/network/get-routers-export-csv"
+        },
+        {
+          "text": "List Routers",
+          "link": "/api/network/get-routers"
+        },
+        {
+          "text": "Create Router",
+          "link": "/api/network/post-routers"
+        },
+        {
+          "text": "Get Router",
+          "link": "/api/network/get-routers-routerid"
+        },
+        {
+          "text": "Update Router",
+          "link": "/api/network/put-routers-routerid"
+        },
+        {
+          "text": "Delete Router",
+          "link": "/api/network/delete-routers-routerid"
+        },
+        {
+          "text": "List Router Interfaces",
+          "link": "/api/network/get-routers-routerid-interfaces"
+        },
+        {
+          "text": "Add Router Interface",
+          "link": "/api/network/post-routers-routerid-interfaces"
+        },
+        {
+          "text": "Remove Router Interface",
+          "link": "/api/network/delete-routers-routerid-interfaces-subnetid"
+        },
+        {
+          "text": "Add Router Route",
+          "link": "/api/network/post-routers-routerid-routes"
+        },
+        {
+          "text": "Remove Router Route",
+          "link": "/api/network/delete-routers-routerid-routes"
+        },
+        {
+          "text": "List Router Routes",
+          "link": "/api/network/get-routers-routerid-routes"
+        }
+      ]
+    },
+    {
+      "text": "security-groups",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create Security Group",
+          "link": "/api/network/post-security-groups"
+        },
+        {
+          "text": "List Security Groups",
+          "link": "/api/network/get-security-groups"
+        },
+        {
+          "text": "Download Security Groups",
+          "link": "/api/network/get-security-groups-export-csv"
+        },
+        {
+          "text": "Get Security Group",
+          "link": "/api/network/get-security-groups-securitygroupid"
+        },
+        {
+          "text": "Update Security Group",
+          "link": "/api/network/put-security-groups-securitygroupid"
+        },
+        {
+          "text": "Delete Security Group",
+          "link": "/api/network/delete-security-groups-securitygroupid"
+        },
+        {
+          "text": "List Security Group Rules",
+          "link": "/api/network/get-security-groups-securitygroupid-rules"
+        },
+        {
+          "text": "Create Security Group Rule",
+          "link": "/api/network/post-security-groups-securitygroupid-rules"
+        },
+        {
+          "text": "Create Security Group Rules Batch",
+          "link": "/api/network/post-security-groups-securitygroupid-rules-batch"
+        },
+        {
+          "text": "Delete Security Group Rule",
+          "link": "/api/network/delete-security-groups-securitygroupid-rules-ruleid"
+        }
+      ]
+    },
+    {
+      "text": "subnets",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Subnets",
+          "link": "/api/network/get-subnets"
+        },
+        {
+          "text": "Create Subnet",
+          "link": "/api/network/post-subnets"
+        },
+        {
+          "text": "Get Subnet",
+          "link": "/api/network/get-subnets-subnetid"
+        },
+        {
+          "text": "Update Subnet",
+          "link": "/api/network/put-subnets-subnetid"
+        },
+        {
+          "text": "Delete Subnet",
+          "link": "/api/network/delete-subnets-subnetid"
+        }
+      ]
+    },
+    {
+      "text": "기타",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Root",
+          "link": "/api/network/get"
+        },
+        {
+          "text": "Liveness Check",
+          "link": "/api/network/get-livez"
+        },
+        {
+          "text": "Readiness Check",
+          "link": "/api/network/get-readyz"
+        }
+      ]
+    }
+  ],
+  "/api/container/": [
+    {
+      "text": "컨테이너",
+      "items": [
+        {
+          "text": "개요",
+          "link": "/api/container/"
+        }
+      ]
+    },
+    {
+      "text": "App Catalog - Apps",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Catalog Apps",
+          "link": "/api/container/get-app-catalog-apps"
+        },
+        {
+          "text": "App Catalog values.schema.json 조회",
+          "link": "/api/container/get-app-catalog-apps-app-name-values-schema"
+        },
+        {
+          "text": "App Catalog 설치 의존성 확인",
+          "link": "/api/container/get-app-catalog-apps-app-name-install-check"
+        },
+        {
+          "text": "App Catalog config 입력 schema 조회",
+          "link": "/api/container/get-app-catalog-apps-app-name-config-schema"
+        },
+        {
+          "text": "App Catalog values.yaml 생성",
+          "link": "/api/container/post-app-catalog-apps-app-name-values-yaml"
+        },
+        {
+          "text": "App Catalog YAML template mode 목록 조회",
+          "link": "/api/container/get-app-catalog-apps-app-name-yaml-templates"
+        },
+        {
+          "text": "App Catalog YAML template 상세 조회",
+          "link": "/api/container/get-app-catalog-apps-app-name-yaml-templates-mode"
+        }
+      ]
+    },
+    {
+      "text": "App Catalog - Deployments",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Create App Catalog Deployment",
+          "link": "/api/container/post-app-catalog-deployments"
+        },
+        {
+          "text": "List App Catalog Deployments",
+          "link": "/api/container/get-app-catalog-deployments"
+        },
+        {
+          "text": "App Catalog user-app 이름 중복 확인",
+          "link": "/api/container/get-app-catalog-deployments-name-check"
+        },
+        {
+          "text": "ArgoCD Application name으로 App Catalog 배포 상세 조회",
+          "link": "/api/container/get-app-catalog-deployments-detail"
+        },
+        {
+          "text": "ArgoCD Application name으로 App Catalog 배포 삭제",
+          "link": "/api/container/delete-app-catalog-deployments-detail"
+        },
+        {
+          "text": "ArgoCD Application name으로 App Catalog credential 조회",
+          "link": "/api/container/post-app-catalog-deployments-detail-credentials-credential-id-reveal"
+        },
+        {
+          "text": "Operator에 연결된 App Catalog application 배포 목록",
+          "link": "/api/container/get-app-catalog-deployments-deployment-id-bound-apps"
+        },
+        {
+          "text": "Get App Catalog Deployment Detail",
+          "link": "/api/container/get-app-catalog-deployments-deployment-id"
+        },
+        {
+          "text": "Update App Catalog Deployment",
+          "link": "/api/container/patch-app-catalog-deployments-deployment-id"
+        },
+        {
+          "text": "Delete App Catalog Deployment",
+          "link": "/api/container/delete-app-catalog-deployments-deployment-id"
+        },
+        {
+          "text": "Reveal App Catalog Deployment Credential",
+          "link": "/api/container/post-app-catalog-deployments-deployment-id-credentials-credential-id-reveal"
+        },
+        {
+          "text": "Redeploy App Catalog Deployment",
+          "link": "/api/container/post-app-catalog-deployments-deployment-id-redeploy"
+        }
+      ]
+    },
+    {
+      "text": "App Catalog - Values YAML",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "App Catalog 배포 values.yaml 다운로드",
+          "link": "/api/container/get-app-catalog-deployments-app-name-values-yaml"
+        }
+      ]
+    },
+    {
+      "text": "Cluster - Clusters",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Clusters",
+          "link": "/api/container/get-cluster-clusters"
+        },
+        {
+          "text": "Register Existing Cluster",
+          "link": "/api/container/post-cluster-clusters-register"
+        },
+        {
+          "text": "Get Cluster Detail",
+          "link": "/api/container/get-cluster-clusters-cluster-id"
+        },
+        {
+          "text": "클러스터 삭제 요청 (비동기)",
+          "link": "/api/container/delete-cluster-clusters-cluster-id"
+        },
+        {
+          "text": "Update Cluster Appearance",
+          "link": "/api/container/patch-cluster-clusters-cluster-id-appearance"
+        },
+        {
+          "text": "Get Kubeconfig",
+          "link": "/api/container/get-cluster-clusters-cluster-id-kubeconfig"
+        },
+        {
+          "text": "Kubectl Shell 연결 URL 생성",
+          "link": "/api/container/post-cluster-clusters-cluster-id-shell"
+        },
+        {
+          "text": "Get Cluster Dashboard",
+          "link": "/api/container/get-cluster-clusters-cluster-id-dashboard"
+        }
+      ]
+    },
+    {
+      "text": "Cluster - Events",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Events",
+          "link": "/api/container/get-cluster-events"
+        },
+        {
+          "text": "Get Existing Event Yaml",
+          "link": "/api/container/get-cluster-events-event-name-manifest"
+        }
+      ]
+    },
+    {
+      "text": "Cluster - Nodes",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Nodes",
+          "link": "/api/container/get-cluster-nodes"
+        },
+        {
+          "text": "Get Node Detail",
+          "link": "/api/container/get-cluster-nodes-node-name"
+        },
+        {
+          "text": "List Node Images",
+          "link": "/api/container/get-cluster-nodes-node-name-images"
+        },
+        {
+          "text": "List Node Pods",
+          "link": "/api/container/get-cluster-nodes-node-name-pods"
+        },
+        {
+          "text": "List Node Conditions",
+          "link": "/api/container/get-cluster-nodes-node-name-conditions"
+        },
+        {
+          "text": "List Node Events",
+          "link": "/api/container/get-cluster-nodes-node-name-events"
+        },
+        {
+          "text": "Get Existing Node Yaml",
+          "link": "/api/container/get-cluster-nodes-node-name-manifest"
+        },
+        {
+          "text": "Get Node Manifest Preset",
+          "link": "/api/container/get-cluster-nodes-node-name-manifest-preset"
+        },
+        {
+          "text": "Update Node Manifest Preset",
+          "link": "/api/container/put-cluster-nodes-node-name-manifest-preset"
+        }
+      ]
+    },
+    {
+      "text": "Cluster - Provisioning",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List K8S Versions",
+          "link": "/api/container/get-cluster-cluster-provisioning-k8s-versions"
+        },
+        {
+          "text": "Create Cluster",
+          "link": "/api/container/post-cluster-cluster-provisioning"
+        }
+      ]
+    },
+    {
+      "text": "Cluster - ServiceAccount Token",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Access Token",
+          "link": "/api/container/get-cluster-token-clusterid-access-token"
+        },
+        {
+          "text": "Create Access Token",
+          "link": "/api/container/post-cluster-token-clusterid-access-token"
+        },
+        {
+          "text": "Delete Access Token",
+          "link": "/api/container/delete-cluster-token-clusterid-access-token"
+        },
+        {
+          "text": "Get Kubeconfig",
+          "link": "/api/container/get-cluster-token-clusterid-kubeconfig"
+        }
+      ]
+    },
+    {
+      "text": "Policy - LimitRange",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Limit Ranges",
+          "link": "/api/container/get-policy-limit-range"
+        },
+        {
+          "text": "Create Limit Range",
+          "link": "/api/container/post-policy-limit-range"
+        },
+        {
+          "text": "Get Limit Range Template",
+          "link": "/api/container/get-policy-limit-range-template-yaml"
+        },
+        {
+          "text": "Get Bulk Manifest",
+          "link": "/api/container/post-policy-limit-range-manifest-bulk"
+        },
+        {
+          "text": "Get Existing Limit Range Yaml",
+          "link": "/api/container/get-policy-limit-range-limit-range-name-manifest"
+        },
+        {
+          "text": "Update Limit Range",
+          "link": "/api/container/put-policy-limit-range-limit-range-name"
+        },
+        {
+          "text": "Delete Limit Range",
+          "link": "/api/container/delete-policy-limit-range-limit-range-name"
+        }
+      ]
+    },
+    {
+      "text": "Policy - NetworkPolicy",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Network Policies",
+          "link": "/api/container/get-policy-network-policy"
+        },
+        {
+          "text": "Create Network Policy",
+          "link": "/api/container/post-policy-network-policy"
+        },
+        {
+          "text": "Get Network Policy Template",
+          "link": "/api/container/get-policy-network-policy-template-yaml"
+        },
+        {
+          "text": "Get Bulk Manifest",
+          "link": "/api/container/post-policy-network-policy-manifest-bulk"
+        },
+        {
+          "text": "Get Network Policy Detail",
+          "link": "/api/container/get-policy-network-policy-network-policy-name"
+        },
+        {
+          "text": "Delete Network Policy",
+          "link": "/api/container/delete-policy-network-policy-network-policy-name"
+        },
+        {
+          "text": "Update Network Policy",
+          "link": "/api/container/put-policy-network-policy-network-policy-name"
+        },
+        {
+          "text": "Get Existing Network Policy Yaml",
+          "link": "/api/container/get-policy-network-policy-network-policy-name-manifest"
+        },
+        {
+          "text": "Match Pods",
+          "link": "/api/container/post-policy-network-policy-match-pods"
+        }
+      ]
+    },
+    {
+      "text": "Policy - PodDisruptionBudget",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Pdbs",
+          "link": "/api/container/get-policy-pod-disruption-budget"
+        },
+        {
+          "text": "Create Pdb",
+          "link": "/api/container/post-policy-pod-disruption-budget"
+        },
+        {
+          "text": "Get Pdb Template",
+          "link": "/api/container/get-policy-pod-disruption-budget-template-yaml"
+        },
+        {
+          "text": "Get Bulk Manifest",
+          "link": "/api/container/post-policy-pod-disruption-budget-manifest-bulk"
+        },
+        {
+          "text": "Get Pdb Detail",
+          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name"
+        },
+        {
+          "text": "Update Pdb",
+          "link": "/api/container/put-policy-pod-disruption-budget-pdb-name"
+        },
+        {
+          "text": "Delete Pdb",
+          "link": "/api/container/delete-policy-pod-disruption-budget-pdb-name"
+        },
+        {
+          "text": "Get Existing Pdb Yaml",
+          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name-manifest"
+        },
+        {
+          "text": "List Pdb Conditions",
+          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name-conditions"
+        },
+        {
+          "text": "List Pdb Events",
+          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name-events"
+        },
+        {
+          "text": "Match Pods",
+          "link": "/api/container/post-policy-pod-disruption-budget-match-pods"
+        }
+      ]
+    },
+    {
+      "text": "Policy - ResourceQuota",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Resource Quota Template",
+          "link": "/api/container/get-policy-resource-quota-template-yaml"
+        },
+        {
+          "text": "List Resource Quotas",
+          "link": "/api/container/get-policy-resource-quota"
+        },
+        {
+          "text": "Create Resource Quota",
+          "link": "/api/container/post-policy-resource-quota"
+        },
+        {
+          "text": "Get Bulk Manifest",
+          "link": "/api/container/post-policy-resource-quota-manifest-bulk"
+        },
+        {
+          "text": "Get Existing Resource Quota Yaml",
+          "link": "/api/container/get-policy-resource-quota-resource-quota-name-manifest"
+        },
+        {
+          "text": "Update Resource Quota",
+          "link": "/api/container/put-policy-resource-quota-resource-quota-name"
+        },
+        {
+          "text": "Delete Resource Quota",
+          "link": "/api/container/delete-policy-resource-quota-resource-quota-name"
+        }
+      ]
+    },
+    {
+      "text": "Search - Resource Types",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Resource Type Counts",
+          "link": "/api/container/get-search-resource-types"
+        }
+      ]
+    },
+    {
+      "text": "Service - hpa",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Hpas",
+          "link": "/api/container/get-service-routing-hpa"
+        },
+        {
+          "text": "Create Hpa",
+          "link": "/api/container/post-service-routing-hpa"
+        },
+        {
+          "text": "Get Hpa Template",
+          "link": "/api/container/get-service-routing-hpa-template-yaml"
+        },
+        {
+          "text": "Get Existing Hpa Yaml",
+          "link": "/api/container/get-service-routing-hpa-hpa-name-manifest"
+        },
+        {
+          "text": "Get Bulk Manifest",
+          "link": "/api/container/post-service-routing-hpa-manifest-bulk"
+        },
+        {
+          "text": "Get Hpa Detail",
+          "link": "/api/container/get-service-routing-hpa-hpa-name"
+        },
+        {
+          "text": "Update Hpa",
+          "link": "/api/container/put-service-routing-hpa-hpa-name"
+        },
+        {
+          "text": "Delete Hpa",
+          "link": "/api/container/delete-service-routing-hpa-hpa-name"
+        },
+        {
+          "text": "List Hpa Conditions",
+          "link": "/api/container/get-service-routing-hpa-hpa-name-conditions"
+        }
+      ]
+    },
+    {
+      "text": "Service - ingress",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List All Ingress",
+          "link": "/api/container/get-service-routing-ingress"
+        },
+        {
+          "text": "Create Ingress",
+          "link": "/api/container/post-service-routing-ingress"
+        },
+        {
+          "text": "List Ingress Class Options",
+          "link": "/api/container/get-service-routing-ingress-classes-options"
+        },
+        {
+          "text": "Ingress 생성 YAML template 조회",
+          "link": "/api/container/get-service-routing-ingress-template-yaml"
+        },
+        {
+          "text": "Get Existing Ingress Yaml",
+          "link": "/api/container/get-service-routing-ingress-ingress-name-manifest"
+        },
+        {
+          "text": "List Ingress Rules",
+          "link": "/api/container/get-service-routing-ingress-ingress-name-rules"
+        },
+        {
+          "text": "Get Bulk Manifest",
+          "link": "/api/container/post-service-routing-ingress-manifest-bulk"
+        },
+        {
+          "text": "Update Ingress",
+          "link": "/api/container/put-service-routing-ingress-ingress-name"
+        },
+        {
+          "text": "Get Ingress Detail",
+          "link": "/api/container/get-service-routing-ingress-ingress-name"
+        },
+        {
+          "text": "Delete Ingress",
+          "link": "/api/container/delete-service-routing-ingress-ingress-name"
+        }
+      ]
+    },
+    {
+      "text": "Service - service",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Services",
+          "link": "/api/container/get-service-routing-service"
+        },
+        {
+          "text": "Create Service",
+          "link": "/api/container/post-service-routing-service"
+        },
+        {
+          "text": "Get Service Template",
+          "link": "/api/container/get-service-routing-service-template-yaml"
+        },
+        {
+          "text": "List Pods By Selector Preview",
+          "link": "/api/container/post-service-routing-service-pods-preview"
+        },
+        {
+          "text": "Get Bulk Manifest",
+          "link": "/api/container/post-service-routing-service-manifest-bulk"
+        },
+        {
+          "text": "Get Existing Service Yaml",
+          "link": "/api/container/get-service-routing-service-service-name-manifest"
+        },
+        {
+          "text": "List Service Pods",
+          "link": "/api/container/get-service-routing-service-service-name-pods"
+        },
+        {
+          "text": "List Service Ports",
+          "link": "/api/container/get-service-routing-service-service-name-ports"
+        },
+        {
+          "text": "List Service Conditions",
+          "link": "/api/container/get-service-routing-service-service-name-conditions"
+        },
+        {
+          "text": "Get Service Detail",
+          "link": "/api/container/get-service-routing-service-service-name"
+        },
+        {
+          "text": "Delete Service",
+          "link": "/api/container/delete-service-routing-service-service-name"
+        },
+        {
+          "text": "Update Service",
+          "link": "/api/container/put-service-routing-service-service-name"
+        }
+      ]
+    },
+    {
+      "text": "Storage - ConfigMaps",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Configmaps",
+          "link": "/api/container/get-storage-configmaps"
+        },
+        {
+          "text": "Create Configmap",
+          "link": "/api/container/post-storage-configmaps"
+        },
+        {
+          "text": "Get Configmap Template",
+          "link": "/api/container/get-storage-configmaps-template-yaml"
+        },
+        {
+          "text": "Get Configmap Detail",
+          "link": "/api/container/get-storage-configmaps-configmap-name"
+        },
+        {
+          "text": "Update Configmap",
+          "link": "/api/container/put-storage-configmaps-configmap-name"
+        },
+        {
+          "text": "Delete Configmap",
+          "link": "/api/container/delete-storage-configmaps-configmap-name"
+        },
+        {
+          "text": "Get Existing Configmap Yaml",
+          "link": "/api/container/get-storage-configmaps-configmap-name-manifest"
+        }
+      ]
+    },
+    {
+      "text": "Storage - PersistentVolumeClaims",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Pvcs",
+          "link": "/api/container/get-storage-pvc"
+        },
+        {
+          "text": "Create Pvc",
+          "link": "/api/container/post-storage-pvc"
+        },
+        {
+          "text": "Get Pvc Template",
+          "link": "/api/container/get-storage-pvc-template-yaml"
+        },
+        {
+          "text": "Get Pvc Detail",
+          "link": "/api/container/get-storage-pvc-pvc-name"
+        },
+        {
+          "text": "Update Pvc",
+          "link": "/api/container/put-storage-pvc-pvc-name"
+        },
+        {
+          "text": "Delete Pvc",
+          "link": "/api/container/delete-storage-pvc-pvc-name"
+        },
+        {
+          "text": "List Pvc Conditions",
+          "link": "/api/container/get-storage-pvc-pvc-name-conditions"
+        },
+        {
+          "text": "List Pvc Events",
+          "link": "/api/container/get-storage-pvc-pvc-name-events"
+        },
+        {
+          "text": "Get Existing Pvc Yaml",
+          "link": "/api/container/get-storage-pvc-pvc-name-manifest"
+        }
+      ]
+    },
+    {
+      "text": "Storage - PersistentVolumes",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Pvs",
+          "link": "/api/container/get-storage-pv"
+        },
+        {
+          "text": "Create Pv",
+          "link": "/api/container/post-storage-pv"
+        },
+        {
+          "text": "Get Pv Template",
+          "link": "/api/container/get-storage-pv-template-yaml"
+        },
+        {
+          "text": "Get Pv Detail",
+          "link": "/api/container/get-storage-pv-pv-name"
+        },
+        {
+          "text": "Delete Pv",
+          "link": "/api/container/delete-storage-pv-pv-name"
+        },
+        {
+          "text": "Update Pv",
+          "link": "/api/container/put-storage-pv-pv-name"
+        },
+        {
+          "text": "Get Existing Pv Yaml",
+          "link": "/api/container/get-storage-pv-pv-name-manifest"
+        }
+      ]
+    },
+    {
+      "text": "Storage - Secrets",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Secrets",
+          "link": "/api/container/get-storage-secrets"
+        },
+        {
+          "text": "Create Secret",
+          "link": "/api/container/post-storage-secrets"
+        },
+        {
+          "text": "Get Secret Template",
+          "link": "/api/container/get-storage-secrets-template-yaml"
+        },
+        {
+          "text": "Get Secret Detail",
+          "link": "/api/container/get-storage-secrets-secret-name"
+        },
+        {
+          "text": "Update Secret",
+          "link": "/api/container/put-storage-secrets-secret-name"
+        },
+        {
+          "text": "Delete Secret",
+          "link": "/api/container/delete-storage-secrets-secret-name"
+        },
+        {
+          "text": "Get Existing Secret Yaml",
+          "link": "/api/container/get-storage-secrets-secret-name-manifest"
+        },
+        {
+          "text": "Get Existing Secret Yaml Decoded",
+          "link": "/api/container/get-storage-secrets-secret-name-manifest-decode"
+        }
+      ]
+    },
+    {
+      "text": "Storage - StorageClasses",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Storage Classes",
+          "link": "/api/container/get-storage-storage-classes"
+        },
+        {
+          "text": "Create Storage Class",
+          "link": "/api/container/post-storage-storage-classes"
+        },
+        {
+          "text": "Get Storage Class Template",
+          "link": "/api/container/get-storage-storage-classes-template-yaml"
+        },
+        {
+          "text": "Get Existing Storage Class Yaml",
+          "link": "/api/container/get-storage-storage-classes-storage-class-name-manifest"
+        },
+        {
+          "text": "Get Storage Class Detail",
+          "link": "/api/container/get-storage-storage-classes-storage-class-name"
+        },
+        {
+          "text": "Update Storage Class",
+          "link": "/api/container/put-storage-storage-classes-storage-class-name"
+        },
+        {
+          "text": "Delete Storage Class",
+          "link": "/api/container/delete-storage-storage-classes-storage-class-name"
+        },
+        {
+          "text": "Set Storage Class As Default",
+          "link": "/api/container/patch-storage-storage-classes-storage-class-name-default"
+        }
+      ]
+    },
+    {
+      "text": "Workload - CronJobs",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Cronjobs",
+          "link": "/api/container/get-workload-cronjobs"
+        },
+        {
+          "text": "Create Cronjob",
+          "link": "/api/container/post-workload-cronjobs"
+        },
+        {
+          "text": "Get Cronjob Template",
+          "link": "/api/container/get-workload-cronjobs-template-yaml"
+        },
+        {
+          "text": "Get Cronjob Detail",
+          "link": "/api/container/get-workload-cronjobs-cronjob-name"
+        },
+        {
+          "text": "Update Cronjob",
+          "link": "/api/container/put-workload-cronjobs-cronjob-name"
+        },
+        {
+          "text": "Delete Cronjob",
+          "link": "/api/container/delete-workload-cronjobs-cronjob-name"
+        },
+        {
+          "text": "List Cronjob Events",
+          "link": "/api/container/get-workload-cronjobs-cronjob-name-events"
+        },
+        {
+          "text": "List Cronjob Jobs",
+          "link": "/api/container/get-workload-cronjobs-cronjob-name-jobs"
+        },
+        {
+          "text": "Get Existing Cronjob Yaml",
+          "link": "/api/container/get-workload-cronjobs-cronjob-name-manifest"
+        },
+        {
+          "text": "Run Cronjob",
+          "link": "/api/container/post-workload-cronjobs-cronjob-name-run"
+        },
+        {
+          "text": "Suspend Cronjob",
+          "link": "/api/container/post-workload-cronjobs-cronjob-name-suspend"
+        },
+        {
+          "text": "Resume Cronjob",
+          "link": "/api/container/post-workload-cronjobs-cronjob-name-resume"
+        }
+      ]
+    },
+    {
+      "text": "Workload - DaemonSets",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Daemonset Template",
+          "link": "/api/container/get-workload-daemonsets-template-yaml"
+        },
+        {
+          "text": "Create Daemonset",
+          "link": "/api/container/post-workload-daemonsets"
+        },
+        {
+          "text": "List Daemonsets",
+          "link": "/api/container/get-workload-daemonsets"
+        },
+        {
+          "text": "Get Daemonset Detail",
+          "link": "/api/container/get-workload-daemonsets-daemonset-name"
+        },
+        {
+          "text": "Update Daemonset",
+          "link": "/api/container/put-workload-daemonsets-daemonset-name"
+        },
+        {
+          "text": "Delete Daemonset",
+          "link": "/api/container/delete-workload-daemonsets-daemonset-name"
+        },
+        {
+          "text": "Get Existing Daemonset Yaml",
+          "link": "/api/container/get-workload-daemonsets-daemonset-name-manifest"
+        },
+        {
+          "text": "List Daemonset Services",
+          "link": "/api/container/get-workload-daemonsets-daemonset-name-services"
+        },
+        {
+          "text": "List Daemonset Events",
+          "link": "/api/container/get-workload-daemonsets-daemonset-name-events"
+        },
+        {
+          "text": "List Daemonset Conditions",
+          "link": "/api/container/get-workload-daemonsets-daemonset-name-conditions"
+        },
+        {
+          "text": "List Daemonset Pods",
+          "link": "/api/container/get-workload-daemonsets-daemonset-name-pods"
+        },
+        {
+          "text": "Redeploy Daemonset",
+          "link": "/api/container/post-workload-daemonsets-daemonset-name-redeploy"
+        },
+        {
+          "text": "List Daemonset Revision History",
+          "link": "/api/container/get-workload-daemonsets-daemonset-name-revision-history"
+        },
+        {
+          "text": "Rollback Daemonset",
+          "link": "/api/container/post-workload-daemonsets-daemonset-name-rollback"
+        },
+        {
+          "text": "DaemonSet Shell 연결 정보 조회",
+          "link": "/api/container/get-workload-daemonsets-daemonset-name-shell-info"
+        }
+      ]
+    },
+    {
+      "text": "Workload - Deployments",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Deployment Template",
+          "link": "/api/container/get-workload-deployments-template-yaml"
+        },
+        {
+          "text": "List Deployments",
+          "link": "/api/container/get-workload-deployments"
+        },
+        {
+          "text": "Create Deployment",
+          "link": "/api/container/post-workload-deployments"
+        },
+        {
+          "text": "List Deployment Pods",
+          "link": "/api/container/get-workload-deployments-deployment-name-pods"
+        },
+        {
+          "text": "List Deployment Services",
+          "link": "/api/container/get-workload-deployments-deployment-name-services"
+        },
+        {
+          "text": "Get Existing Deployment Yaml",
+          "link": "/api/container/get-workload-deployments-deployment-name-manifest"
+        },
+        {
+          "text": "Get Deployment Detail",
+          "link": "/api/container/get-workload-deployments-deployment-name"
+        },
+        {
+          "text": "Update Deployment",
+          "link": "/api/container/put-workload-deployments-deployment-name"
+        },
+        {
+          "text": "Delete Deployment",
+          "link": "/api/container/delete-workload-deployments-deployment-name"
+        },
+        {
+          "text": "List Deployment Conditions",
+          "link": "/api/container/get-workload-deployments-deployment-name-conditions"
+        },
+        {
+          "text": "List Deployment Events",
+          "link": "/api/container/get-workload-deployments-deployment-name-events"
+        },
+        {
+          "text": "Pause Deployment",
+          "link": "/api/container/post-workload-deployments-deployment-name-pause"
+        },
+        {
+          "text": "Resume Deployment",
+          "link": "/api/container/post-workload-deployments-deployment-name-resume"
+        },
+        {
+          "text": "List Deployment Revision History",
+          "link": "/api/container/get-workload-deployments-deployment-name-revision-history"
+        },
+        {
+          "text": "Rollback Deployment",
+          "link": "/api/container/post-workload-deployments-deployment-name-rollback"
+        },
+        {
+          "text": "Redeploy Deployment",
+          "link": "/api/container/post-workload-deployments-deployment-name-redeploy"
+        },
+        {
+          "text": "Scale Deployment",
+          "link": "/api/container/post-workload-deployments-deployment-name-scale"
+        },
+        {
+          "text": "Deployment Shell 연결 정보 조회",
+          "link": "/api/container/get-workload-deployments-deployment-name-shell-info"
+        }
+      ]
+    },
+    {
+      "text": "Workload - Jobs",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Jobs",
+          "link": "/api/container/get-workload-jobs"
+        },
+        {
+          "text": "Create Job",
+          "link": "/api/container/post-workload-jobs"
+        },
+        {
+          "text": "Get Job Template",
+          "link": "/api/container/get-workload-jobs-template-yaml"
+        },
+        {
+          "text": "Get Job Detail",
+          "link": "/api/container/get-workload-jobs-job-name"
+        },
+        {
+          "text": "Update Job",
+          "link": "/api/container/put-workload-jobs-job-name"
+        },
+        {
+          "text": "Delete Job",
+          "link": "/api/container/delete-workload-jobs-job-name"
+        },
+        {
+          "text": "List Job Pods",
+          "link": "/api/container/get-workload-jobs-job-name-pods"
+        },
+        {
+          "text": "List Job Events",
+          "link": "/api/container/get-workload-jobs-job-name-events"
+        },
+        {
+          "text": "List Job Conditions",
+          "link": "/api/container/get-workload-jobs-job-name-conditions"
+        },
+        {
+          "text": "Get Existing Job Yaml",
+          "link": "/api/container/get-workload-jobs-job-name-manifest"
+        }
+      ]
+    },
+    {
+      "text": "Workload - Namespaces",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Namespaces",
+          "link": "/api/container/get-cluster-namespaces"
+        },
+        {
+          "text": "Create Namespace",
+          "link": "/api/container/post-cluster-namespaces"
+        },
+        {
+          "text": "Get Namespace Template",
+          "link": "/api/container/get-cluster-namespaces-template-yaml"
+        },
+        {
+          "text": "Get Existing Namespace Yaml",
+          "link": "/api/container/get-cluster-namespaces-namespace-name-manifest"
+        },
+        {
+          "text": "Update Namespace",
+          "link": "/api/container/put-cluster-namespaces-namespace-name"
+        },
+        {
+          "text": "Get Namespace Detail",
+          "link": "/api/container/get-cluster-namespaces-namespace-name"
+        },
+        {
+          "text": "Delete Namespace",
+          "link": "/api/container/delete-cluster-namespaces-namespace-name"
+        },
+        {
+          "text": "Get Namespace Workload Stats",
+          "link": "/api/container/get-cluster-namespaces-namespace-name-stats"
+        },
+        {
+          "text": "List Namespace Workloads",
+          "link": "/api/container/get-cluster-namespaces-namespace-name-workloads"
+        }
+      ]
+    },
+    {
+      "text": "Workload - Pods",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "List Pods",
+          "link": "/api/container/get-workload-pods"
+        },
+        {
+          "text": "Create Pod",
+          "link": "/api/container/post-workload-pods"
+        },
+        {
+          "text": "Get Pod Template",
+          "link": "/api/container/get-workload-pods-template-yaml"
+        },
+        {
+          "text": "Get Pod Template Json",
+          "link": "/api/container/get-workload-pods-template-json"
+        },
+        {
+          "text": "Get Pod Detail",
+          "link": "/api/container/get-workload-pods-pod-name"
+        },
+        {
+          "text": "Update Pod",
+          "link": "/api/container/put-workload-pods-pod-name"
+        },
+        {
+          "text": "Delete Pod",
+          "link": "/api/container/delete-workload-pods-pod-name"
+        },
+        {
+          "text": "Get Existing Pod Yaml",
+          "link": "/api/container/get-workload-pods-pod-name-manifest"
+        },
+        {
+          "text": "List Pod Containers",
+          "link": "/api/container/get-workload-pods-pod-name-containers"
+        },
+        {
+          "text": "List Pod Conditions",
+          "link": "/api/container/get-workload-pods-pod-name-conditions"
+        },
+        {
+          "text": "List Pod Events",
+          "link": "/api/container/get-workload-pods-pod-name-events"
+        },
+        {
+          "text": "Get Pod Logs",
+          "link": "/api/container/get-workload-pods-pod-name-logs"
+        },
+        {
+          "text": "Get Pod Container Logs",
+          "link": "/api/container/get-workload-pods-pod-name-containers-container-name-logs"
+        },
+        {
+          "text": "Pod Shell 연결 정보 조회",
+          "link": "/api/container/get-workload-pods-pod-name-shell-info"
+        },
+        {
+          "text": "[WebSocket 문서] Pod 컨테이너 Shell 연결 API 문서",
+          "link": "/api/container/get-workload-pods-pod-name-containers-container-name-shell-docs"
+        }
+      ]
+    },
+    {
+      "text": "Workload - StatefulSets",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Get Statefulset Template",
+          "link": "/api/container/get-workload-statefulsets-template-yaml"
+        },
+        {
+          "text": "Create Statefulset",
+          "link": "/api/container/post-workload-statefulsets"
+        },
+        {
+          "text": "List Statefulsets",
+          "link": "/api/container/get-workload-statefulsets"
+        },
+        {
+          "text": "List Statefulset Conditions",
+          "link": "/api/container/get-workload-statefulsets-statefulset-name-conditions"
+        },
+        {
+          "text": "List Statefulset Events",
+          "link": "/api/container/get-workload-statefulsets-statefulset-name-events"
+        },
+        {
+          "text": "List Statefulset Services",
+          "link": "/api/container/get-workload-statefulsets-statefulset-name-services"
+        },
+        {
+          "text": "List Statefulset Pods",
+          "link": "/api/container/get-workload-statefulsets-statefulset-name-pods"
+        },
+        {
+          "text": "Get Statefulset Detail",
+          "link": "/api/container/get-workload-statefulsets-statefulset-name"
+        },
+        {
+          "text": "Update Statefulset",
+          "link": "/api/container/put-workload-statefulsets-statefulset-name"
+        },
+        {
+          "text": "Delete Statefulset",
+          "link": "/api/container/delete-workload-statefulsets-statefulset-name"
+        },
+        {
+          "text": "Get Existing Statefulset Yaml",
+          "link": "/api/container/get-workload-statefulsets-statefulset-name-manifest"
+        },
+        {
+          "text": "List Statefulset Revision History",
+          "link": "/api/container/get-workload-statefulsets-statefulset-name-revision-history"
+        },
+        {
+          "text": "Rollback Statefulset",
+          "link": "/api/container/post-workload-statefulsets-statefulset-name-rollback"
+        },
+        {
+          "text": "Redeploy Statefulset",
+          "link": "/api/container/post-workload-statefulsets-statefulset-name-redeploy"
+        },
+        {
+          "text": "StatefulSet Shell 연결 정보 조회",
+          "link": "/api/container/get-workload-statefulsets-statefulset-name-shell-info"
+        }
+      ]
+    },
+    {
+      "text": "기타",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Root",
+          "link": "/api/container/get"
+        }
+      ]
+    }
+  ]
+}

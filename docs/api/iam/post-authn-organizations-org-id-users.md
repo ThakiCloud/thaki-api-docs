@@ -1,0 +1,79 @@
+# 조직 내 새 사용자 생성
+
+지정된 조직 내에 새로운 사용자를 생성합니다. 조직이 존재해야 하며, 사용자명과 이메일은 조직 내에서 고유해야 합니다.
+
+## HTTP 요청
+
+```http
+POST https://<your-console-host>/api/v1/iam/authn/organizations/{org_id}/users
+```
+
+## URI 매개변수
+
+| 이름 | 위치 | 필수 | 형식 | 설명 |
+|---|---|---|---|---|
+| org_id | path | 필수 | string | 조직 ID. 조직 ID. 길이 1~64 |
+
+## 요청 헤더
+
+인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+
+## 요청 본문
+
+| 이름 | 필수 | 형식 | 설명 |
+|---|---|---|---|
+| username | 필수 | string | 길이 3~64 |
+| email | 필수 | string |  |
+| password | 선택 | string 또는 null | 초기 비밀번호 (선택). 미입력 시 정책에 따라 임시 비밀번호 자동 생성. 길이 1~ |
+| displayName | 선택 | string 또는 null | 길이 0~128 |
+| forcePasswordChange | 선택 | boolean | 다음 로그인 시 비밀번호 변경 강제 여부 (기본: True). 기본값 true |
+| tags | 선택 | object 또는 null |  |
+| status | 선택 | string | 사용자 상태 (기본: active). 기본값 "active" |
+| groups | 선택 | array (string) | 생성 후 매핑할 그룹 ID 목록 (최대 100개) |
+
+## 응답
+
+| 상태 코드 | 설명 |
+|---|---|
+| 201 Created | Successful Response |
+| 422 Unprocessable Entity | Validation Error |
+
+그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+
+### 응답 본문 — 201
+
+| 이름 | 필수 | 형식 | 설명 |
+|---|---|---|---|
+| message | 선택 | string 또는 null | 응답 메시지 |
+| timestamp | 선택 | string | 응답 생성 시간 |
+| requestId | 필수 | string | 요청 식별자 |
+| result | 필수 | object | 결과 데이터 |
+| result.tpn | 필수 | string |  |
+| result.orgId | 선택 | string 또는 null |  |
+| result.username | 필수 | string |  |
+| result.displayName | 선택 | string 또는 null |  |
+| result.email | 선택 | string 또는 null |  |
+| result.status | 필수 | string |  |
+| result.lastSignIn | 선택 | string 또는 null |  |
+| result.presence | 선택 | string | 값: online, offline. 기본값 "offline" |
+| result.groups | 선택 | array (object) |  |
+| result.groups[].groupId | 필수 | string | 그룹 ID |
+| result.groups[].groupTpn | 선택 | string 또는 null | 그룹 TPN |
+| result.groups[].displayName | 선택 | string 또는 null | 그룹 이름 |
+| result.roles | 선택 | array (object) |  |
+| result.roles[].roleId | 필수 | string | 역할 ID |
+| result.roles[].roleName | 선택 | string 또는 null | 역할 이름 |
+| result.roles[].assignedAt | 선택 | string 또는 null | 할당 시각 (ISO8601) |
+| result.failedLoginCount | 선택 | integer | 현재 로그인 실패 횟수 (max 도달 시 status=disabled로 변경). 기본값 0 |
+| result.mfaEnabled | 선택 | boolean | 기본값 false |
+| result.mfaEmailEnabled | 선택 | boolean | 기본값 false |
+| result.mfaTotpEnabled | 선택 | boolean | 기본값 false |
+| result.region | 선택 | string 또는 null |  |
+| result.tags | 선택 | object 또는 null |  |
+| result.idpKind | 선택 | string 또는 null |  |
+| result.idpRealm | 선택 | string 또는 null |  |
+| result.forcePasswordChange | 선택 | boolean | 기본값 false |
+| result.defaultOrgId | 선택 | string 또는 null |  |
+| result.createdAt | 선택 | string 또는 null |  |
+| result.updatedAt | 선택 | string 또는 null |  |
+

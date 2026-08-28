@@ -4,11 +4,11 @@
 
 | 영역 | 내용 | 레퍼런스 |
 |---|---|---|
-| 서비스 계정(SA)과 API 키 | 인증 준비, 권한 부여, 공통 규약 | [IAM 인증](/api/iam-authn) · [IAM 인가](/api/iam-authz) |
-| 인스턴스(VM) | 조회·생성·상태 변경·삭제와 참조 리소스 | [컴퓨트](/api/compute) |
-| Kubernetes 클러스터 | 조회·생성·삭제 | [컨테이너](/api/container) |
-| 워크로드 | Pod·Deployment 등과 Namespace·Service·Ingress | [컨테이너](/api/container) |
-| 네트워크 | 네트워크·서브넷·라우터·Floating IP·보안 그룹 | [네트워크](/api/network) |
+| 서비스 계정(SA)과 API 키 | 인증 준비, 권한 부여, 공통 규약 | [IAM 인증](/api/iam/) · [IAM 인가](/api/iam/) |
+| 인스턴스(VM) | 조회·생성·상태 변경·삭제와 참조 리소스 | [컴퓨트](/api/compute/) |
+| Kubernetes 클러스터 | 조회·생성·삭제 | [컨테이너](/api/container/) |
+| 워크로드 | Pod·Deployment 등과 Namespace·Service·Ingress | [컨테이너](/api/container/) |
+| 네트워크 | 네트워크·서브넷·라우터·Floating IP·보안 그룹 | [네트워크](/api/network/) |
 
 처음 연동한다면 [인증 준비](/guide/authentication)부터 순서대로 진행하십시오. 이후 시나리오 문서들은 인증 준비에서 다루는 공통 규약(경로·인증 헤더·응답 형식)을 전제로 합니다.
 

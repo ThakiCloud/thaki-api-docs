@@ -1,0 +1,50 @@
+# Request Mfa Code
+
+MFA 코드 요청 (method 지정 필요)
+
+- email: 이메일로 MFA 코드 발송
+- authenticator/totp: 코드 요청 불필요 (에러 반환)
+
+로그인 플로우(session_id_pending 있음) 또는 일반 플로우(auth_context 있음) 모두 지원
+
+## HTTP 요청
+
+```http
+POST https://<your-console-host>/api/v1/iam/authn/mfa/code/request
+```
+
+## URI 매개변수
+
+없습니다.
+
+## 요청 헤더
+
+인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+
+## 요청 본문
+
+| 이름 | 필수 | 형식 | 설명 |
+|---|---|---|---|
+| method | 선택 | string | MFA method for code request. 기본값 "email" |
+| sessionIdPending | 선택 | string 또는 null | MFA pending session ID (login flow) |
+
+## 응답
+
+| 상태 코드 | 설명 |
+|---|---|
+| 200 OK | Successful Response |
+| 422 Unprocessable Entity | Validation Error |
+
+그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+
+### 응답 본문 — 200
+
+| 이름 | 필수 | 형식 | 설명 |
+|---|---|---|---|
+| message | 선택 | string 또는 null | 응답 메시지 |
+| timestamp | 선택 | string | 응답 생성 시간 |
+| requestId | 필수 | string | 요청 식별자 |
+| result | 필수 | object | 결과 데이터 |
+| result.sent | 필수 | boolean | 발송 성공 여부 |
+| result.cooldownRemaining | 선택 | integer | 쿨다운 남은 시간 (초). 기본값 0 |
+

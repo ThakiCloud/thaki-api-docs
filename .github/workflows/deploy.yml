@@ -37,11 +37,19 @@ jobs:
       - name: Gate — public spec check
         run: npm run spec:verify
 
-      # 게이트 2 — 공개 리포에 들어가면 안 되는 것(실 호스트·토큰·사설 IP).
+      # 게이트 2 — 레퍼런스 페이지가 스펙과 어긋나지 않는지.
+      # 페이지는 생성물이라 커밋된 것과 지금 스펙으로 만든 것이 같아야 한다.
+      - name: Gate — reference pages up to date
+        run: |
+          npm run spec:pages
+          git diff --exit-code --stat docs/api docs/.vitepress/sidebar.generated.json \
+            || { echo "레퍼런스 페이지가 스펙과 다릅니다. npm run spec:pages 후 커밋하세요."; exit 1; }
+
+      # 게이트 3 — 공개 리포에 들어가면 안 되는 것(실 호스트·토큰·사설 IP).
       - name: Gate — secrets and real hosts
         run: npm run check:secrets
 
-      # 게이트 3 — 죽은 링크가 있으면 vitepress 가 빌드를 실패시킨다.
+      # 게이트 4 — 죽은 링크가 있으면 vitepress 가 빌드를 실패시킨다.
       - name: Build
         run: npm run docs:build
 

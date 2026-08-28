@@ -1,0 +1,34 @@
+# 본인 임시 역할 부여 목록 조회
+
+호출자(본인)에게 부여된 임시 역할 목록을 조회합니다. 대상은 인증 컨텍스트(JWT)에서 확정되며 타인 부여 내역은 조회할 수 없습니다. 응답 스키마는 GET /temporary-grants(전체 목록)와 동일합니다.
+
+## HTTP 요청
+
+```http
+GET https://<your-console-host>/api/v1/iam/authz/temporary-grants/me
+```
+
+## URI 매개변수
+
+없습니다.
+
+## 쿼리 매개변수
+
+| 이름 | 필수 | 형식 | 설명 |
+|---|---|---|---|
+| page | 선택 | integer | 페이지 번호. 페이지 번호. 기본값 1. 범위 1~ |
+| page_size | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 10. 범위 1~100 |
+
+## 요청 헤더
+
+인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+
+## 응답
+
+| 상태 코드 | 설명 |
+|---|---|
+| 200 OK | Successful Response |
+| 422 Unprocessable Entity | Validation Error |
+
+그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+

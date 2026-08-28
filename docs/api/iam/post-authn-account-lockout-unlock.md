@@ -1,0 +1,46 @@
+# 계정 잠금 수동 해제
+
+관리자가 로그인 실패로 잠긴 계정을 수동으로 해제합니다 (임시/영구 모두).
+
+## HTTP 요청
+
+```http
+POST https://<your-console-host>/api/v1/iam/authn/account-lockout/unlock
+```
+
+## URI 매개변수
+
+없습니다.
+
+## 요청 헤더
+
+인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+
+## 요청 본문
+
+| 이름 | 필수 | 형식 | 설명 |
+|---|---|---|---|
+| userTpn | 필수 | string | 사용자 TPN (예: tpn:kr:orgId::user/username). 길이 10~255 |
+| reason | 선택 | string 또는 null | 해제 사유. 길이 0~512 |
+
+## 응답
+
+| 상태 코드 | 설명 |
+|---|---|
+| 200 OK | Successful Response |
+| 422 Unprocessable Entity | Validation Error |
+
+그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+
+### 응답 본문 — 200
+
+| 이름 | 필수 | 형식 | 설명 |
+|---|---|---|---|
+| message | 선택 | string 또는 null | 응답 메시지 |
+| timestamp | 선택 | string | 응답 생성 시간 |
+| requestId | 필수 | string | 요청 식별자 |
+| result | 필수 | object | 결과 데이터 |
+| result.success | 필수 | boolean | 해제 성공 여부 |
+| result.message | 필수 | string | 응답 메시지 |
+| result.userTpn | 필수 | string | 사용자 TPN |
+

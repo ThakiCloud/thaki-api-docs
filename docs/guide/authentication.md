@@ -128,7 +128,7 @@ Statement 예:
 
 ## 관련 API
 
-서비스 계정·API 키·정책·바인딩의 전체 목록과 상세 파라미터는 [IAM 인증 (AuthN)](/api/iam-authn)과 [IAM 인가 (AuthZ)](/api/iam-authz) 레퍼런스를 참조하십시오. 대표적으로 다음 API를 사용합니다.
+서비스 계정·API 키·정책·바인딩의 전체 목록과 상세 파라미터는 [IAM 인증 (AuthN)](/api/iam/)과 [IAM 인가 (AuthZ)](/api/iam/) 레퍼런스를 참조하십시오. 대표적으로 다음 API를 사용합니다.
 
 | 목적 | 메서드 | 경로 |
 |---|---|---|
