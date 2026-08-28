@@ -1,0 +1,68 @@
+name: Deploy docs to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # 게이트 1 — 공개된 스펙이 공개 조건을 지키는지.
+      # 원본 스펙(spec/raw/)에는 운영자·내부 API 가 들어 있어 이 리포에 두지 않는다.
+      # 그래서 필터를 다시 돌리는 대신 커밋된 결과물을 검증한다.
+      - name: Gate — public spec check
+        run: npm run spec:verify
+
+      # 게이트 2 — 공개 리포에 들어가면 안 되는 것(실 호스트·토큰·사설 IP).
+      - name: Gate — secrets and real hosts
+        run: npm run check:secrets
+
+      # 게이트 3 — 죽은 링크가 있으면 vitepress 가 빌드를 실패시킨다.
+      - name: Build
+        run: npm run docs:build
+
+      # enablement: true — 리포 공개/비공개 전환 시 Pages 설정이 초기화되므로 워크플로가 스스로 켠다.
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

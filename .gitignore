@@ -1,0 +1,11 @@
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+.DS_Store
+*.log
+.env
+.omc/
+spec/raw/.omc/
+
+# 원본 스펙에는 운영자 전용·내부 호출용 API 가 들어 있다. 공개 리포에 두지 않는다.
+spec/raw/

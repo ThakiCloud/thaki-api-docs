@@ -1,0 +1,11 @@
+{
+  "_comment": "각 스펙을 어느 리포·브랜치·커밋에서 뽑았는지 기록한다. 스펙을 다시 뽑으면 여기도 갱신한다.",
+  "generatedAt": "2026-08-28",
+  "services": {
+    "iam-authn": { "repo": "thaki-iam-authn", "branch": "develop", "commit": "98485bd8", "appVersion": "0.7.0-334" },
+    "iam-authz": { "repo": "thaki-iam-policy", "branch": "develop", "commit": "4499d1f", "appVersion": "0.5.9" },
+    "compute": { "repo": "thaki-suite-compute", "branch": "develop", "commit": "1f069a50", "appVersion": null },
+    "network": { "repo": "thaki-suite-network", "branch": "main", "commit": "90d49675", "appVersion": null },
+    "container": { "repo": "thaki-suite-container", "branch": "develop", "commit": "64e4b146", "appVersion": "0.7.0" }
+  }
+}

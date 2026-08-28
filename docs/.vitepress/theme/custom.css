@@ -1,0 +1,47 @@
+/*
+ * API 레퍼런스 페이지 레이아웃.
+ *
+ * Scalar 뷰어는 자기 사이드바(태그·오퍼레이션 목록)를 왼쪽에 고정으로 그린다.
+ * VitePress 사이드바를 같이 켜 두면 둘이 같은 자리를 두고 겹쳐 본문이 잘린다.
+ * 엔드포인트가 수백 개라 뷰어 쪽 목록이 실제 탐색 수단이므로, 이 페이지에서는
+ * VitePress 사이드바를 접고 화면 전체를 뷰어에 준다. 서비스 간 이동은 상단 내비게이션과
+ * /api/ 개요 페이지가 담당한다.
+ */
+.api-reference-page .VPSidebar {
+  display: none !important;
+}
+
+.api-reference-page .VPContent {
+  padding-left: 0 !important;
+  /* 상단 내비게이션 높이만큼은 비워 둔다. 0 으로 밀면 뷰어 검색창이 사이트 제목과 겹친다. */
+  padding-top: var(--vp-nav-height) !important;
+}
+
+.api-reference-page .VPPage,
+.api-reference-page .VPDoc {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.api-reference-page .VPDoc .container,
+.api-reference-page .VPDoc .content,
+.api-reference-page .VPDoc .content-container {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.api-reference-page .VPDoc .aside,
+.api-reference-page .VPDocFooter,
+.api-reference-page .VPLocalNav {
+  display: none !important;
+}
+
+/* 뷰어가 화면 높이를 채우게 한다. 상단 내비게이션(64px)만 비켜 준다. */
+.api-reference-page .scalar-host {
+  min-height: calc(100vh - var(--vp-nav-height));
+}
+
+.api-reference-page .scalar-host .scalar-api-reference {
+  --scalar-custom-header-height: 0px;
+}
