@@ -48,10 +48,6 @@
         {
           "text": "API Key 검증 (User / SA 통합)",
           "link": "/api/iam/post-authn-api-keys-validate"
-        },
-        {
-          "text": "API Key로 내부 토큰 발급",
-          "link": "/api/iam/post-authn-api-keys-exchange"
         }
       ]
     },
@@ -144,22 +140,12 @@
           "link": "/api/iam/get-authn-audit-logs"
         },
         {
-          "text": "Get Audit Log",
+          "text": "감사 로그 상세 조회 (org admin / 시스템 어드민 전용)",
           "link": "/api/iam/get-authn-audit-logs-event-id"
         },
         {
           "text": "PDP 평가 감사 로그 조회",
           "link": "/api/iam/get-authz-audit-logs-evaluations"
-        }
-      ]
-    },
-    {
-      "text": "Dashboard",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "대시보드 데이터 조회",
-          "link": "/api/iam/get-authn-dashboard-orgid"
         }
       ]
     },
@@ -264,10 +250,6 @@
           "link": "/api/iam/get-authz-policies-me-policies"
         },
         {
-          "text": "정책 목록 CSV export",
-          "link": "/api/iam/get-authz-policies-export-csv"
-        },
-        {
           "text": "정책 동기화 요약(outdated 개수/ID)",
           "link": "/api/iam/get-authz-policies-sync-summary"
         },
@@ -324,32 +306,8 @@
           "link": "/api/iam/get-authz-policies-policy-id-sync-diff"
         },
         {
-          "text": "정책 일괄 동기화 (템플릿 기준 document 교체)",
-          "link": "/api/iam/post-authz-policies-bulk-sync-update"
-        },
-        {
-          "text": "Validate Policy Dry Run",
-          "link": "/api/iam/post-authz-policies-validate"
-        },
-        {
-          "text": "Revalidate Policies Sync",
-          "link": "/api/iam/post-authz-policies-revalidate"
-        },
-        {
-          "text": "정책 평가",
-          "link": "/api/iam/post-authz-policies-evaluate"
-        },
-        {
-          "text": "정책에 대한 role 바인딩 동기화",
-          "link": "/api/iam/put-authz-policies-policy-id-bindings-sync"
-        },
-        {
           "text": "시뮬레이션 대상 주체 검색",
           "link": "/api/iam/get-authz-policies-simulate-accessible-principals"
-        },
-        {
-          "text": "정책 시뮬레이션 (Batch)",
-          "link": "/api/iam/post-authz-policies-simulate"
         }
       ]
     },
@@ -418,10 +376,6 @@
         {
           "text": "바인딩 감사 로그 조회",
           "link": "/api/iam/get-authz-bindings-audit"
-        },
-        {
-          "text": "바인딩 동기화",
-          "link": "/api/iam/put-authz-bindings-sync"
         },
         {
           "text": "Role에 매핑된 정책 목록 조회",
@@ -678,16 +632,8 @@
       "collapsed": true,
       "items": [
         {
-          "text": "세션 기반 토큰 무효화 (관리자용)",
-          "link": "/api/iam/post-authn-revoke-session"
-        },
-        {
           "text": "토큰 ID(jti) 기반 무효화",
           "link": "/api/iam/post-authn-revoke-token"
-        },
-        {
-          "text": "사용자 전체 세션 무효화 (관리자용)",
-          "link": "/api/iam/post-authn-revoke-user"
         },
         {
           "text": "Denylist 목록 조회",
@@ -704,19 +650,19 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Post Login",
+          "text": "사용자 로그인",
           "link": "/api/iam/post-authn-login"
         },
         {
-          "text": "Post Refresh",
+          "text": "Access Token 갱신 — 쿠키 우선, body 폴백",
           "link": "/api/iam/post-authn-token-refresh"
         },
         {
-          "text": "Post Logout",
+          "text": "로그아웃 및 세션 무효화 — 쿠키 우선 → body 폴백",
           "link": "/api/iam/post-authn-logout"
         },
         {
-          "text": "Get Me",
+          "text": "현재 인증된 사용자 정보 조회",
           "link": "/api/iam/get-authn-me"
         },
         {
@@ -724,7 +670,7 @@
           "link": "/api/iam/get-authn-sessions"
         },
         {
-          "text": "Get Session",
+          "text": "특정 세션 ID로 세션 상세 정보 조회",
           "link": "/api/iam/get-authn-sessions-session-id"
         },
         {
@@ -770,36 +716,6 @@
         {
           "text": "일괄 그룹 템플릿 동기화",
           "link": "/api/iam/post-authn-organizations-org-id-groups-sync"
-        }
-      ]
-    },
-    {
-      "text": "group-templates",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "그룹 템플릿 생성",
-          "link": "/api/iam/post-authn-group-templates"
-        },
-        {
-          "text": "그룹 템플릿 목록 조회",
-          "link": "/api/iam/get-authn-group-templates"
-        },
-        {
-          "text": "그룹 템플릿 상세 조회",
-          "link": "/api/iam/get-authn-group-templates-template-id"
-        },
-        {
-          "text": "그룹 템플릿 수정",
-          "link": "/api/iam/put-authn-group-templates-template-id"
-        },
-        {
-          "text": "그룹 템플릿 삭제 (soft-delete)",
-          "link": "/api/iam/delete-authn-group-templates-template-id"
-        },
-        {
-          "text": "템플릿 파생 그룹 목록",
-          "link": "/api/iam/get-authn-group-templates-template-id-derived"
         }
       ]
     },
@@ -1012,11 +928,11 @@
           "link": "/api/iam/get-authn-service-accounts-export"
         },
         {
-          "text": "Get Service Account",
+          "text": "서비스 어카운트 상세 조회",
           "link": "/api/iam/get-authn-service-accounts-sa-id"
         },
         {
-          "text": "Delete Service Account",
+          "text": "서비스 어카운트 삭제 (논리적 삭제)",
           "link": "/api/iam/delete-authn-service-accounts-sa-id"
         },
         {
@@ -1036,7 +952,7 @@
           "link": "/api/iam/post-authn-service-accounts-sa-id-keys-key-id-enable"
         },
         {
-          "text": "Delete Api Key",
+          "text": "API Key 삭제",
           "link": "/api/iam/delete-authn-service-accounts-sa-id-keys-key-id"
         },
         {
@@ -1074,7 +990,7 @@
           "link": "/api/iam/get-authn-organizations-org-id-invitations"
         },
         {
-          "text": "Get Invitation",
+          "text": "단일 초대 조회",
           "link": "/api/iam/get-authn-invitations-invitation-id"
         },
         {
@@ -1106,7 +1022,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Get Mfa Status",
+          "text": "사용자 MFA 상태 조회",
           "link": "/api/iam/get-authn-users-me-mfa-status"
         },
         {
@@ -1140,7 +1056,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Patch User Password",
+          "text": "사용자 비밀번호 변경",
           "link": "/api/iam/put-authn-users-user-tpn-password"
         },
         {
@@ -1198,20 +1114,6 @@
           "link": "/api/iam/post-authn-users-tpn-groups-sync"
         }
       ]
-    },
-    {
-      "text": "기타",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "Root",
-          "link": "/api/iam/get-authn"
-        },
-        {
-          "text": "Root",
-          "link": "/api/iam/get-authz"
-        }
-      ]
     }
   ],
   "/api/compute/": [
@@ -1233,7 +1135,7 @@
           "link": "/api/compute/post-application-credentials"
         },
         {
-          "text": "Delete Application Credential",
+          "text": "Application Credential을 삭제합니다",
           "link": "/api/compute/delete-application-credentials-credentialid"
         }
       ]
@@ -1243,7 +1145,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Get Quota",
+          "text": "Compute Quota 정보를 조회합니다",
           "link": "/api/compute/get-meta-quota"
         }
       ]
@@ -1257,7 +1159,7 @@
           "link": "/api/compute/get-flavors"
         },
         {
-          "text": "Get Flavor",
+          "text": "Flavor 상세 정보를 조회합니다",
           "link": "/api/compute/get-flavors-flavorid"
         }
       ]
@@ -1285,7 +1187,7 @@
           "link": "/api/compute/get-images"
         },
         {
-          "text": "Delete Images",
+          "text": "이미지를 다중 삭제합니다",
           "link": "/api/compute/delete-images"
         },
         {
@@ -1293,7 +1195,7 @@
           "link": "/api/compute/get-images-name-availability"
         },
         {
-          "text": "Get Image",
+          "text": "이미지 상세 정보를 조회합니다",
           "link": "/api/compute/get-images-imageid"
         },
         {
@@ -1301,7 +1203,7 @@
           "link": "/api/compute/patch-images-imageid"
         },
         {
-          "text": "Delete Image",
+          "text": "이미지를 삭제합니다",
           "link": "/api/compute/delete-images-imageid"
         }
       ]
@@ -1319,11 +1221,11 @@
           "link": "/api/compute/get-instance-snapshots"
         },
         {
-          "text": "Delete Snapshots",
+          "text": "인스턴스 스냅샷을 다중 삭제합니다",
           "link": "/api/compute/delete-instance-snapshots"
         },
         {
-          "text": "Get Snapshot",
+          "text": "인스턴스 스냅샷 상세 정보를 조회합니다",
           "link": "/api/compute/get-instance-snapshots-instancesnapshotid"
         },
         {
@@ -1331,7 +1233,7 @@
           "link": "/api/compute/patch-instance-snapshots-instancesnapshotid"
         },
         {
-          "text": "Delete Snapshot",
+          "text": "인스턴스 스냅샷을 삭제합니다",
           "link": "/api/compute/delete-instance-snapshots-instancesnapshotid"
         }
       ]
@@ -1349,11 +1251,11 @@
           "link": "/api/compute/get-instance-templates"
         },
         {
-          "text": "Delete Instance Templates",
+          "text": "인스턴스 템플릿을 다중 삭제합니다",
           "link": "/api/compute/delete-instance-templates"
         },
         {
-          "text": "Get Instance Template",
+          "text": "인스턴스 템플릿 상세 정보를 조회합니다",
           "link": "/api/compute/get-instance-templates-templateid"
         },
         {
@@ -1361,7 +1263,7 @@
           "link": "/api/compute/patch-instance-templates-templateid"
         },
         {
-          "text": "Delete Instance Template",
+          "text": "인스턴스 템플릿을 삭제합니다",
           "link": "/api/compute/delete-instance-templates-templateid"
         }
       ]
@@ -1379,7 +1281,7 @@
           "link": "/api/compute/get-instances"
         },
         {
-          "text": "Delete Instances",
+          "text": "인스턴스를 다중 삭제합니다",
           "link": "/api/compute/delete-instances"
         },
         {
@@ -1391,7 +1293,7 @@
           "link": "/api/compute/post-instances-actions"
         },
         {
-          "text": "Get Instance Summary",
+          "text": "인스턴스 상태 요약을 조회합니다",
           "link": "/api/compute/get-instances-summary"
         },
         {
@@ -1461,7 +1363,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Get Keypair Quota",
+          "text": "KeyPair Quota 정보를 조회합니다",
           "link": "/api/compute/get-key-pairs-quota"
         },
         {
@@ -1473,15 +1375,15 @@
           "link": "/api/compute/get-key-pairs"
         },
         {
-          "text": "Delete Keypairs",
+          "text": "KeyPair를 다중 삭제합니다",
           "link": "/api/compute/delete-key-pairs"
         },
         {
-          "text": "Get Keypair",
+          "text": "KeyPair 상세 정보를 조회합니다",
           "link": "/api/compute/get-key-pairs-keypairname"
         },
         {
-          "text": "Delete Keypair",
+          "text": "KeyPair를 삭제합니다",
           "link": "/api/compute/delete-key-pairs-keypairname"
         }
       ]
@@ -1519,11 +1421,11 @@
           "link": "/api/compute/get-server-groups"
         },
         {
-          "text": "Delete Server Groups",
+          "text": "ServerGroup을 다중 삭제합니다",
           "link": "/api/compute/delete-server-groups"
         },
         {
-          "text": "Delete Server Group",
+          "text": "ServerGroup을 삭제합니다",
           "link": "/api/compute/delete-server-groups-servergroupid"
         }
       ]
@@ -1533,7 +1435,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Get Quota",
+          "text": "Storage Quota 정보를 조회합니다",
           "link": "/api/compute/get-storage-meta-quota"
         },
         {
@@ -1569,7 +1471,7 @@
           "link": "/api/compute/get-storage-volume-backups"
         },
         {
-          "text": "Delete Volume Backups",
+          "text": "볼륨 백업을 다중 삭제합니다",
           "link": "/api/compute/delete-storage-volume-backups"
         },
         {
@@ -1581,7 +1483,7 @@
           "link": "/api/compute/patch-storage-volume-backups-volumebackupid"
         },
         {
-          "text": "Delete Volume Backup",
+          "text": "볼륨 백업을 삭제합니다",
           "link": "/api/compute/delete-storage-volume-backups-volumebackupid"
         },
         {
@@ -1603,7 +1505,7 @@
           "link": "/api/compute/get-storage-volume-snapshots"
         },
         {
-          "text": "Delete Volume Snapshots",
+          "text": "볼륨 스냅샷을 다중 삭제합니다",
           "link": "/api/compute/delete-storage-volume-snapshots"
         },
         {
@@ -1611,7 +1513,7 @@
           "link": "/api/compute/get-storage-volume-snapshots-volumesnapshotid"
         },
         {
-          "text": "Delete Volume Snapshot",
+          "text": "볼륨 스냅샷을 삭제합니다",
           "link": "/api/compute/delete-storage-volume-snapshots-volumesnapshotid"
         },
         {
@@ -1633,7 +1535,7 @@
           "link": "/api/compute/post-storage-volumes"
         },
         {
-          "text": "Delete Volumes",
+          "text": "볼륨을 다중 삭제합니다 (부분 성공/실패 허용, 결과를 result로 반환)",
           "link": "/api/compute/delete-storage-volumes"
         },
         {
@@ -1645,7 +1547,7 @@
           "link": "/api/compute/get-storage-volumes-volumeid"
         },
         {
-          "text": "Delete Volume",
+          "text": "볼륨을 삭제합니다",
           "link": "/api/compute/delete-storage-volumes-volumeid"
         },
         {
@@ -1661,22 +1563,12 @@
           "link": "/api/compute/post-storage-volumes-volumeid-transfers"
         },
         {
-          "text": "Delete Transfer",
+          "text": "볼륨 Transfer를 취소/삭제합니다",
           "link": "/api/compute/delete-storage-volumes-volumeid-transfers"
         },
         {
           "text": "Accept Transfer",
           "link": "/api/compute/post-storage-volumes-transfers-transferid-accept"
-        }
-      ]
-    },
-    {
-      "text": "기타",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "Root",
-          "link": "/api/compute/get"
         }
       ]
     }
@@ -1706,10 +1598,6 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Download Server Certificates",
-          "link": "/api/network/get-certificates-server-export-csv"
-        },
-        {
           "text": "List Server Certificate Listeners",
           "link": "/api/network/get-certificates-server-certificateid-listeners"
         },
@@ -1726,11 +1614,11 @@
           "link": "/api/network/get-certificates-server-selectable"
         },
         {
-          "text": "Get Server Certificate",
+          "text": "SERVER 인증서 단건을 조회합니다",
           "link": "/api/network/get-certificates-server-certificateid"
         },
         {
-          "text": "Delete Server Certificate",
+          "text": "SERVER 인증서를 삭제합니다",
           "link": "/api/network/delete-certificates-server-certificateid"
         },
         {
@@ -1754,11 +1642,11 @@
           "link": "/api/network/get-certificates-ca-certificateid-listeners"
         },
         {
-          "text": "Get Ca Certificate",
+          "text": "CA 인증서 단건을 조회합니다",
           "link": "/api/network/get-certificates-ca-certificateid"
         },
         {
-          "text": "Delete Ca Certificate",
+          "text": "CA 인증서를 삭제합니다",
           "link": "/api/network/delete-certificates-ca-certificateid"
         },
         {
@@ -1798,11 +1686,11 @@
           "link": "/api/network/post-external-firewalls-firewallid-rules"
         },
         {
-          "text": "Get Firewall Rule",
+          "text": "허용 규칙 단건을 조회합니다",
           "link": "/api/network/get-external-firewalls-firewallid-rules-ruleid"
         },
         {
-          "text": "Delete Firewall Rule",
+          "text": "허용 규칙 1개 삭제 요청을 접수합니다",
           "link": "/api/network/delete-external-firewalls-firewallid-rules-ruleid"
         }
       ]
@@ -1824,7 +1712,7 @@
           "link": "/api/network/get-external-firewalls-networks"
         },
         {
-          "text": "Get Firewall",
+          "text": "방화벽 단건을 DB에서 조회합니다",
           "link": "/api/network/get-external-firewalls-firewallid"
         },
         {
@@ -1832,7 +1720,7 @@
           "link": "/api/network/put-external-firewalls-firewallid"
         },
         {
-          "text": "Delete Firewall",
+          "text": "방화벽 전체(drop + allow) 삭제 요청을 접수합니다",
           "link": "/api/network/delete-external-firewalls-firewallid"
         }
       ]
@@ -1841,10 +1729,6 @@
       "text": "floating-ips",
       "collapsed": true,
       "items": [
-        {
-          "text": "Download Floating Ips",
-          "link": "/api/network/get-floating-ips-export-csv"
-        },
         {
           "text": "List Floating Ips",
           "link": "/api/network/get-floating-ips"
@@ -1866,7 +1750,7 @@
           "link": "/api/network/get-floating-ips-floatingipid-ports-connectable"
         },
         {
-          "text": "Get Floating Ip",
+          "text": "Floating IP 단건을 조회합니다",
           "link": "/api/network/get-floating-ips-floatingipid"
         },
         {
@@ -1874,7 +1758,7 @@
           "link": "/api/network/put-floating-ips-floatingipid"
         },
         {
-          "text": "Delete Floating Ip",
+          "text": "Floating IP를 삭제합니다",
           "link": "/api/network/delete-floating-ips-floatingipid"
         }
       ]
@@ -1986,10 +1870,6 @@
           "link": "/api/network/get-load-balancers"
         },
         {
-          "text": "Download Load Balancers",
-          "link": "/api/network/get-load-balancers-export-csv"
-        },
-        {
           "text": "LoadBalancer 단건 조회",
           "link": "/api/network/get-load-balancers-loadbalancerid"
         },
@@ -2020,7 +1900,7 @@
           "link": "/api/network/put-pools-poolid-members-memberid"
         },
         {
-          "text": "Delete Member",
+          "text": "Pool Member를 삭제합니다",
           "link": "/api/network/delete-pools-poolid-members-memberid"
         }
       ]
@@ -2029,10 +1909,6 @@
       "text": "networks",
       "collapsed": true,
       "items": [
-        {
-          "text": "Download Networks",
-          "link": "/api/network/get-networks-export-csv"
-        },
         {
           "text": "List Networks",
           "link": "/api/network/get-networks"
@@ -2050,7 +1926,7 @@
           "link": "/api/network/get-networks-external-gateway-connectability"
         },
         {
-          "text": "Get Network",
+          "text": "네트워크 단건을 조회합니다",
           "link": "/api/network/get-networks-networkid"
         },
         {
@@ -2058,7 +1934,7 @@
           "link": "/api/network/put-networks-networkid"
         },
         {
-          "text": "Delete Network",
+          "text": "네트워크를 삭제합니다",
           "link": "/api/network/delete-networks-networkid"
         }
       ]
@@ -2098,10 +1974,6 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Download Ports",
-          "link": "/api/network/get-ports-export-csv"
-        },
-        {
           "text": "List Ports",
           "link": "/api/network/get-ports"
         },
@@ -2126,7 +1998,7 @@
           "link": "/api/network/get-ports-instance-interfaces-instanceid"
         },
         {
-          "text": "Get Port",
+          "text": "포트 단건을 조회합니다",
           "link": "/api/network/get-ports-portid"
         },
         {
@@ -2134,7 +2006,7 @@
           "link": "/api/network/put-ports-portid"
         },
         {
-          "text": "Delete Port",
+          "text": "포트를 삭제합니다",
           "link": "/api/network/delete-ports-portid"
         },
         {
@@ -2166,10 +2038,6 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Download Routers",
-          "link": "/api/network/get-routers-export-csv"
-        },
-        {
           "text": "List Routers",
           "link": "/api/network/get-routers"
         },
@@ -2178,7 +2046,7 @@
           "link": "/api/network/post-routers"
         },
         {
-          "text": "Get Router",
+          "text": "라우터 단건을 조회합니다",
           "link": "/api/network/get-routers-routerid"
         },
         {
@@ -2186,7 +2054,7 @@
           "link": "/api/network/put-routers-routerid"
         },
         {
-          "text": "Delete Router",
+          "text": "라우터를 삭제합니다",
           "link": "/api/network/delete-routers-routerid"
         },
         {
@@ -2228,11 +2096,7 @@
           "link": "/api/network/get-security-groups"
         },
         {
-          "text": "Download Security Groups",
-          "link": "/api/network/get-security-groups-export-csv"
-        },
-        {
-          "text": "Get Security Group",
+          "text": "Security Group을 조회합니다",
           "link": "/api/network/get-security-groups-securitygroupid"
         },
         {
@@ -2240,7 +2104,7 @@
           "link": "/api/network/put-security-groups-securitygroupid"
         },
         {
-          "text": "Delete Security Group",
+          "text": "Security Group을 삭제합니다",
           "link": "/api/network/delete-security-groups-securitygroupid"
         },
         {
@@ -2256,7 +2120,7 @@
           "link": "/api/network/post-security-groups-securitygroupid-rules-batch"
         },
         {
-          "text": "Delete Security Group Rule",
+          "text": "Security Group Rule을 삭제합니다",
           "link": "/api/network/delete-security-groups-securitygroupid-rules-ruleid"
         }
       ]
@@ -2274,7 +2138,7 @@
           "link": "/api/network/post-subnets"
         },
         {
-          "text": "Get Subnet",
+          "text": "서브넷 단건을 조회합니다",
           "link": "/api/network/get-subnets-subnetid"
         },
         {
@@ -2282,7 +2146,7 @@
           "link": "/api/network/put-subnets-subnetid"
         },
         {
-          "text": "Delete Subnet",
+          "text": "서브넷을 삭제합니다",
           "link": "/api/network/delete-subnets-subnetid"
         }
       ]
@@ -2291,10 +2155,6 @@
       "text": "기타",
       "collapsed": true,
       "items": [
-        {
-          "text": "Root",
-          "link": "/api/network/get"
-        },
         {
           "text": "Liveness Check",
           "link": "/api/network/get-livez"
@@ -2383,7 +2243,7 @@
           "link": "/api/container/get-app-catalog-deployments-deployment-id-bound-apps"
         },
         {
-          "text": "Get App Catalog Deployment Detail",
+          "text": "App Catalog 배포 상세와 values.yaml 텍스트를 조회합니다",
           "link": "/api/container/get-app-catalog-deployments-deployment-id"
         },
         {
@@ -2391,7 +2251,7 @@
           "link": "/api/container/patch-app-catalog-deployments-deployment-id"
         },
         {
-          "text": "Delete App Catalog Deployment",
+          "text": "App Catalog 배포를 삭제합니다",
           "link": "/api/container/delete-app-catalog-deployments-deployment-id"
         },
         {
@@ -2427,7 +2287,7 @@
           "link": "/api/container/post-cluster-clusters-register"
         },
         {
-          "text": "Get Cluster Detail",
+          "text": "특정 클러스터의 상세 정보를 조회합니다",
           "link": "/api/container/get-cluster-clusters-cluster-id"
         },
         {
@@ -2439,7 +2299,7 @@
           "link": "/api/container/patch-cluster-clusters-cluster-id-appearance"
         },
         {
-          "text": "Get Kubeconfig",
+          "text": "특정 클러스터의 kubeConfig를 조회합니다",
           "link": "/api/container/get-cluster-clusters-cluster-id-kubeconfig"
         },
         {
@@ -2447,8 +2307,8 @@
           "link": "/api/container/post-cluster-clusters-cluster-id-shell"
         },
         {
-          "text": "Get Cluster Dashboard",
-          "link": "/api/container/get-cluster-clusters-cluster-id-dashboard"
+          "text": "Get Control Plane Health",
+          "link": "/api/container/get-cluster-clusters-cluster-id-control-plane-health"
         }
       ]
     },
@@ -2461,7 +2321,7 @@
           "link": "/api/container/get-cluster-events"
         },
         {
-          "text": "Get Existing Event Yaml",
+          "text": "기존 Event YAML 조회",
           "link": "/api/container/get-cluster-events-event-name-manifest"
         }
       ]
@@ -2475,7 +2335,7 @@
           "link": "/api/container/get-cluster-nodes"
         },
         {
-          "text": "Get Node Detail",
+          "text": "Node 상세 조회",
           "link": "/api/container/get-cluster-nodes-node-name"
         },
         {
@@ -2495,11 +2355,11 @@
           "link": "/api/container/get-cluster-nodes-node-name-events"
         },
         {
-          "text": "Get Existing Node Yaml",
+          "text": "기존 Node YAML 조회",
           "link": "/api/container/get-cluster-nodes-node-name-manifest"
         },
         {
-          "text": "Get Node Manifest Preset",
+          "text": "기존 Node manifest 기반 preset 조회",
           "link": "/api/container/get-cluster-nodes-node-name-manifest-preset"
         },
         {
@@ -2527,7 +2387,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Get Access Token",
+          "text": "현재 사용자 최신 ServiceAccount token metadata를 조회합니다",
           "link": "/api/container/get-cluster-token-clusterid-access-token"
         },
         {
@@ -2535,11 +2395,11 @@
           "link": "/api/container/post-cluster-token-clusterid-access-token"
         },
         {
-          "text": "Delete Access Token",
+          "text": "현재 사용자 유효 ServiceAccount token을 폐기합니다",
           "link": "/api/container/delete-cluster-token-clusterid-access-token"
         },
         {
-          "text": "Get Kubeconfig",
+          "text": "현재 사용자 ServiceAccount 기반 kubeconfig를 생성합니다",
           "link": "/api/container/get-cluster-token-clusterid-kubeconfig"
         }
       ]
@@ -2557,15 +2417,15 @@
           "link": "/api/container/post-policy-limit-range"
         },
         {
-          "text": "Get Limit Range Template",
+          "text": "LimitRange 템플릿 YAML 조회",
           "link": "/api/container/get-policy-limit-range-template-yaml"
         },
         {
-          "text": "Get Bulk Manifest",
+          "text": "LimitRange Bulk Manifest 조회",
           "link": "/api/container/post-policy-limit-range-manifest-bulk"
         },
         {
-          "text": "Get Existing Limit Range Yaml",
+          "text": "기존 LimitRange YAML 조회",
           "link": "/api/container/get-policy-limit-range-limit-range-name-manifest"
         },
         {
@@ -2573,7 +2433,7 @@
           "link": "/api/container/put-policy-limit-range-limit-range-name"
         },
         {
-          "text": "Delete Limit Range",
+          "text": "LimitRange 삭제",
           "link": "/api/container/delete-policy-limit-range-limit-range-name"
         }
       ]
@@ -2591,19 +2451,19 @@
           "link": "/api/container/post-policy-network-policy"
         },
         {
-          "text": "Get Network Policy Template",
+          "text": "NetworkPolicy 템플릿 YAML 조회",
           "link": "/api/container/get-policy-network-policy-template-yaml"
         },
         {
-          "text": "Get Bulk Manifest",
+          "text": "NetworkPolicy Bulk Manifest 조회",
           "link": "/api/container/post-policy-network-policy-manifest-bulk"
         },
         {
-          "text": "Get Network Policy Detail",
+          "text": "NetworkPolicy 상세 정보 조회",
           "link": "/api/container/get-policy-network-policy-network-policy-name"
         },
         {
-          "text": "Delete Network Policy",
+          "text": "NetworkPolicy 삭제",
           "link": "/api/container/delete-policy-network-policy-network-policy-name"
         },
         {
@@ -2611,7 +2471,7 @@
           "link": "/api/container/put-policy-network-policy-network-policy-name"
         },
         {
-          "text": "Get Existing Network Policy Yaml",
+          "text": "기존 NetworkPolicy YAML 조회",
           "link": "/api/container/get-policy-network-policy-network-policy-name-manifest"
         },
         {
@@ -2633,15 +2493,15 @@
           "link": "/api/container/post-policy-pod-disruption-budget"
         },
         {
-          "text": "Get Pdb Template",
+          "text": "PodDisruptionBudget 템플릿 YAML 조회",
           "link": "/api/container/get-policy-pod-disruption-budget-template-yaml"
         },
         {
-          "text": "Get Bulk Manifest",
+          "text": "PodDisruptionBudget Bulk Manifest 조회",
           "link": "/api/container/post-policy-pod-disruption-budget-manifest-bulk"
         },
         {
-          "text": "Get Pdb Detail",
+          "text": "PodDisruptionBudget 상세 정보 조회",
           "link": "/api/container/get-policy-pod-disruption-budget-pdb-name"
         },
         {
@@ -2649,11 +2509,11 @@
           "link": "/api/container/put-policy-pod-disruption-budget-pdb-name"
         },
         {
-          "text": "Delete Pdb",
+          "text": "PodDisruptionBudget 삭제",
           "link": "/api/container/delete-policy-pod-disruption-budget-pdb-name"
         },
         {
-          "text": "Get Existing Pdb Yaml",
+          "text": "기존 PodDisruptionBudget YAML 조회",
           "link": "/api/container/get-policy-pod-disruption-budget-pdb-name-manifest"
         },
         {
@@ -2675,7 +2535,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Get Resource Quota Template",
+          "text": "ResourceQuota 템플릿 YAML 조회",
           "link": "/api/container/get-policy-resource-quota-template-yaml"
         },
         {
@@ -2687,11 +2547,11 @@
           "link": "/api/container/post-policy-resource-quota"
         },
         {
-          "text": "Get Bulk Manifest",
+          "text": "ResourceQuota Bulk Manifest 조회",
           "link": "/api/container/post-policy-resource-quota-manifest-bulk"
         },
         {
-          "text": "Get Existing Resource Quota Yaml",
+          "text": "기존 ResourceQuota YAML 조회",
           "link": "/api/container/get-policy-resource-quota-resource-quota-name-manifest"
         },
         {
@@ -2699,7 +2559,7 @@
           "link": "/api/container/put-policy-resource-quota-resource-quota-name"
         },
         {
-          "text": "Delete Resource Quota",
+          "text": "ResourceQuota 삭제",
           "link": "/api/container/delete-policy-resource-quota-resource-quota-name"
         }
       ]
@@ -2709,7 +2569,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Get Resource Type Counts",
+          "text": "Resource Type Search 모달에서 사용할 리소스별 전체 개수 조회",
           "link": "/api/container/get-search-resource-types"
         }
       ]
@@ -2727,19 +2587,19 @@
           "link": "/api/container/post-service-routing-hpa"
         },
         {
-          "text": "Get Hpa Template",
+          "text": "HPA 템플릿 YAML 조회",
           "link": "/api/container/get-service-routing-hpa-template-yaml"
         },
         {
-          "text": "Get Existing Hpa Yaml",
+          "text": "기존 HPA YAML 조회",
           "link": "/api/container/get-service-routing-hpa-hpa-name-manifest"
         },
         {
-          "text": "Get Bulk Manifest",
+          "text": "HPA Bulk Manifest 조회",
           "link": "/api/container/post-service-routing-hpa-manifest-bulk"
         },
         {
-          "text": "Get Hpa Detail",
+          "text": "HPA 상세 조회",
           "link": "/api/container/get-service-routing-hpa-hpa-name"
         },
         {
@@ -2747,7 +2607,7 @@
           "link": "/api/container/put-service-routing-hpa-hpa-name"
         },
         {
-          "text": "Delete Hpa",
+          "text": "HPA 삭제",
           "link": "/api/container/delete-service-routing-hpa-hpa-name"
         },
         {
@@ -2785,7 +2645,7 @@
           "link": "/api/container/get-service-routing-ingress-ingress-name-rules"
         },
         {
-          "text": "Get Bulk Manifest",
+          "text": "Ingress Bulk Manifest 조회",
           "link": "/api/container/post-service-routing-ingress-manifest-bulk"
         },
         {
@@ -2815,7 +2675,7 @@
           "link": "/api/container/post-service-routing-service"
         },
         {
-          "text": "Get Service Template",
+          "text": "Service 템플릿 YAML 조회",
           "link": "/api/container/get-service-routing-service-template-yaml"
         },
         {
@@ -2823,11 +2683,11 @@
           "link": "/api/container/post-service-routing-service-pods-preview"
         },
         {
-          "text": "Get Bulk Manifest",
+          "text": "Service Bulk Manifest 조회",
           "link": "/api/container/post-service-routing-service-manifest-bulk"
         },
         {
-          "text": "Get Existing Service Yaml",
+          "text": "기존 Service YAML 조회",
           "link": "/api/container/get-service-routing-service-service-name-manifest"
         },
         {
@@ -2843,11 +2703,11 @@
           "link": "/api/container/get-service-routing-service-service-name-conditions"
         },
         {
-          "text": "Get Service Detail",
+          "text": "Service 상세 정보 조회",
           "link": "/api/container/get-service-routing-service-service-name"
         },
         {
-          "text": "Delete Service",
+          "text": "Service 삭제",
           "link": "/api/container/delete-service-routing-service-service-name"
         },
         {
@@ -2869,11 +2729,11 @@
           "link": "/api/container/post-storage-configmaps"
         },
         {
-          "text": "Get Configmap Template",
+          "text": "ConfigMap 템플릿 YAML 조회",
           "link": "/api/container/get-storage-configmaps-template-yaml"
         },
         {
-          "text": "Get Configmap Detail",
+          "text": "ConfigMap 상세 조회",
           "link": "/api/container/get-storage-configmaps-configmap-name"
         },
         {
@@ -2881,11 +2741,11 @@
           "link": "/api/container/put-storage-configmaps-configmap-name"
         },
         {
-          "text": "Delete Configmap",
+          "text": "ConfigMap 삭제",
           "link": "/api/container/delete-storage-configmaps-configmap-name"
         },
         {
-          "text": "Get Existing Configmap Yaml",
+          "text": "기존 ConfigMap YAML 조회",
           "link": "/api/container/get-storage-configmaps-configmap-name-manifest"
         }
       ]
@@ -2903,11 +2763,11 @@
           "link": "/api/container/post-storage-pvc"
         },
         {
-          "text": "Get Pvc Template",
+          "text": "PVC 템플릿 YAML 조회",
           "link": "/api/container/get-storage-pvc-template-yaml"
         },
         {
-          "text": "Get Pvc Detail",
+          "text": "PVC 상세 조회",
           "link": "/api/container/get-storage-pvc-pvc-name"
         },
         {
@@ -2915,7 +2775,7 @@
           "link": "/api/container/put-storage-pvc-pvc-name"
         },
         {
-          "text": "Delete Pvc",
+          "text": "PVC 삭제",
           "link": "/api/container/delete-storage-pvc-pvc-name"
         },
         {
@@ -2927,7 +2787,7 @@
           "link": "/api/container/get-storage-pvc-pvc-name-events"
         },
         {
-          "text": "Get Existing Pvc Yaml",
+          "text": "기존 PVC YAML 조회",
           "link": "/api/container/get-storage-pvc-pvc-name-manifest"
         }
       ]
@@ -2945,15 +2805,15 @@
           "link": "/api/container/post-storage-pv"
         },
         {
-          "text": "Get Pv Template",
+          "text": "PV 템플릿 YAML 조회",
           "link": "/api/container/get-storage-pv-template-yaml"
         },
         {
-          "text": "Get Pv Detail",
+          "text": "PV 상세 조회",
           "link": "/api/container/get-storage-pv-pv-name"
         },
         {
-          "text": "Delete Pv",
+          "text": "PV 삭제",
           "link": "/api/container/delete-storage-pv-pv-name"
         },
         {
@@ -2961,7 +2821,7 @@
           "link": "/api/container/put-storage-pv-pv-name"
         },
         {
-          "text": "Get Existing Pv Yaml",
+          "text": "기존 PV YAML 조회",
           "link": "/api/container/get-storage-pv-pv-name-manifest"
         }
       ]
@@ -2979,11 +2839,11 @@
           "link": "/api/container/post-storage-secrets"
         },
         {
-          "text": "Get Secret Template",
+          "text": "Secret 템플릿 YAML 조회",
           "link": "/api/container/get-storage-secrets-template-yaml"
         },
         {
-          "text": "Get Secret Detail",
+          "text": "Secret 상세 조회",
           "link": "/api/container/get-storage-secrets-secret-name"
         },
         {
@@ -2991,15 +2851,15 @@
           "link": "/api/container/put-storage-secrets-secret-name"
         },
         {
-          "text": "Delete Secret",
+          "text": "Secret 삭제",
           "link": "/api/container/delete-storage-secrets-secret-name"
         },
         {
-          "text": "Get Existing Secret Yaml",
+          "text": "기존 Secret YAML 조회",
           "link": "/api/container/get-storage-secrets-secret-name-manifest"
         },
         {
-          "text": "Get Existing Secret Yaml Decoded",
+          "text": "기존 Secret YAML 조회 (디코딩)",
           "link": "/api/container/get-storage-secrets-secret-name-manifest-decode"
         }
       ]
@@ -3017,15 +2877,15 @@
           "link": "/api/container/post-storage-storage-classes"
         },
         {
-          "text": "Get Storage Class Template",
+          "text": "StorageClass 템플릿 YAML 조회",
           "link": "/api/container/get-storage-storage-classes-template-yaml"
         },
         {
-          "text": "Get Existing Storage Class Yaml",
+          "text": "기존 StorageClass YAML 조회",
           "link": "/api/container/get-storage-storage-classes-storage-class-name-manifest"
         },
         {
-          "text": "Get Storage Class Detail",
+          "text": "StorageClass 상세 조회",
           "link": "/api/container/get-storage-storage-classes-storage-class-name"
         },
         {
@@ -3033,7 +2893,7 @@
           "link": "/api/container/put-storage-storage-classes-storage-class-name"
         },
         {
-          "text": "Delete Storage Class",
+          "text": "StorageClass 삭제",
           "link": "/api/container/delete-storage-storage-classes-storage-class-name"
         },
         {
@@ -3055,11 +2915,11 @@
           "link": "/api/container/post-workload-cronjobs"
         },
         {
-          "text": "Get Cronjob Template",
+          "text": "CronJob 템플릿 YAML 조회",
           "link": "/api/container/get-workload-cronjobs-template-yaml"
         },
         {
-          "text": "Get Cronjob Detail",
+          "text": "CronJob 상세 정보 조회",
           "link": "/api/container/get-workload-cronjobs-cronjob-name"
         },
         {
@@ -3067,7 +2927,7 @@
           "link": "/api/container/put-workload-cronjobs-cronjob-name"
         },
         {
-          "text": "Delete Cronjob",
+          "text": "CronJob 삭제",
           "link": "/api/container/delete-workload-cronjobs-cronjob-name"
         },
         {
@@ -3079,7 +2939,7 @@
           "link": "/api/container/get-workload-cronjobs-cronjob-name-jobs"
         },
         {
-          "text": "Get Existing Cronjob Yaml",
+          "text": "기존 CronJob YAML 조회",
           "link": "/api/container/get-workload-cronjobs-cronjob-name-manifest"
         },
         {
@@ -3101,7 +2961,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Get Daemonset Template",
+          "text": "DaemonSet 템플릿 YAML 조회",
           "link": "/api/container/get-workload-daemonsets-template-yaml"
         },
         {
@@ -3113,7 +2973,7 @@
           "link": "/api/container/get-workload-daemonsets"
         },
         {
-          "text": "Get Daemonset Detail",
+          "text": "DaemonSet 상세 정보 조회",
           "link": "/api/container/get-workload-daemonsets-daemonset-name"
         },
         {
@@ -3121,11 +2981,11 @@
           "link": "/api/container/put-workload-daemonsets-daemonset-name"
         },
         {
-          "text": "Delete Daemonset",
+          "text": "DaemonSet 삭제",
           "link": "/api/container/delete-workload-daemonsets-daemonset-name"
         },
         {
-          "text": "Get Existing Daemonset Yaml",
+          "text": "기존 DaemonSet YAML 조회",
           "link": "/api/container/get-workload-daemonsets-daemonset-name-manifest"
         },
         {
@@ -3167,7 +3027,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Get Deployment Template",
+          "text": "Deployment 템플릿 YAML 조회",
           "link": "/api/container/get-workload-deployments-template-yaml"
         },
         {
@@ -3187,11 +3047,11 @@
           "link": "/api/container/get-workload-deployments-deployment-name-services"
         },
         {
-          "text": "Get Existing Deployment Yaml",
+          "text": "기존 Deployment YAML 조회",
           "link": "/api/container/get-workload-deployments-deployment-name-manifest"
         },
         {
-          "text": "Get Deployment Detail",
+          "text": "Deployment 상세 정보 조회",
           "link": "/api/container/get-workload-deployments-deployment-name"
         },
         {
@@ -3199,7 +3059,7 @@
           "link": "/api/container/put-workload-deployments-deployment-name"
         },
         {
-          "text": "Delete Deployment",
+          "text": "Deployment 삭제",
           "link": "/api/container/delete-workload-deployments-deployment-name"
         },
         {
@@ -3253,11 +3113,11 @@
           "link": "/api/container/post-workload-jobs"
         },
         {
-          "text": "Get Job Template",
+          "text": "Job 템플릿 YAML 조회",
           "link": "/api/container/get-workload-jobs-template-yaml"
         },
         {
-          "text": "Get Job Detail",
+          "text": "Job 상세 정보 조회",
           "link": "/api/container/get-workload-jobs-job-name"
         },
         {
@@ -3265,7 +3125,7 @@
           "link": "/api/container/put-workload-jobs-job-name"
         },
         {
-          "text": "Delete Job",
+          "text": "Job 삭제",
           "link": "/api/container/delete-workload-jobs-job-name"
         },
         {
@@ -3281,7 +3141,7 @@
           "link": "/api/container/get-workload-jobs-job-name-conditions"
         },
         {
-          "text": "Get Existing Job Yaml",
+          "text": "기존 Job YAML 조회",
           "link": "/api/container/get-workload-jobs-job-name-manifest"
         }
       ]
@@ -3299,11 +3159,11 @@
           "link": "/api/container/post-cluster-namespaces"
         },
         {
-          "text": "Get Namespace Template",
+          "text": "Namespace 템플릿 YAML 조회",
           "link": "/api/container/get-cluster-namespaces-template-yaml"
         },
         {
-          "text": "Get Existing Namespace Yaml",
+          "text": "기존 Namespace YAML 조회",
           "link": "/api/container/get-cluster-namespaces-namespace-name-manifest"
         },
         {
@@ -3311,15 +3171,15 @@
           "link": "/api/container/put-cluster-namespaces-namespace-name"
         },
         {
-          "text": "Get Namespace Detail",
+          "text": "Namespace 상세 조회",
           "link": "/api/container/get-cluster-namespaces-namespace-name"
         },
         {
-          "text": "Delete Namespace",
+          "text": "Namespace 삭제",
           "link": "/api/container/delete-cluster-namespaces-namespace-name"
         },
         {
-          "text": "Get Namespace Workload Stats",
+          "text": "Namespace 내 Workload 리소스 상태 통계 조회 (삭제 예정)",
           "link": "/api/container/get-cluster-namespaces-namespace-name-stats"
         },
         {
@@ -3341,15 +3201,15 @@
           "link": "/api/container/post-workload-pods"
         },
         {
-          "text": "Get Pod Template",
+          "text": "Pod 템플릿 YAML 조회",
           "link": "/api/container/get-workload-pods-template-yaml"
         },
         {
-          "text": "Get Pod Template Json",
+          "text": "Pod 템플릿 JSON 조회",
           "link": "/api/container/get-workload-pods-template-json"
         },
         {
-          "text": "Get Pod Detail",
+          "text": "Pod 상세 정보 조회",
           "link": "/api/container/get-workload-pods-pod-name"
         },
         {
@@ -3357,11 +3217,11 @@
           "link": "/api/container/put-workload-pods-pod-name"
         },
         {
-          "text": "Delete Pod",
+          "text": "Pod 삭제",
           "link": "/api/container/delete-workload-pods-pod-name"
         },
         {
-          "text": "Get Existing Pod Yaml",
+          "text": "기존 Pod YAML 조회",
           "link": "/api/container/get-workload-pods-pod-name-manifest"
         },
         {
@@ -3377,20 +3237,16 @@
           "link": "/api/container/get-workload-pods-pod-name-events"
         },
         {
-          "text": "Get Pod Logs",
+          "text": "Pod 로그 조회 (모든 컨테이너)",
           "link": "/api/container/get-workload-pods-pod-name-logs"
         },
         {
-          "text": "Get Pod Container Logs",
+          "text": "Pod 특정 컨테이너 로그 조회",
           "link": "/api/container/get-workload-pods-pod-name-containers-container-name-logs"
         },
         {
           "text": "Pod Shell 연결 정보 조회",
           "link": "/api/container/get-workload-pods-pod-name-shell-info"
-        },
-        {
-          "text": "[WebSocket 문서] Pod 컨테이너 Shell 연결 API 문서",
-          "link": "/api/container/get-workload-pods-pod-name-containers-container-name-shell-docs"
         }
       ]
     },
@@ -3399,7 +3255,7 @@
       "collapsed": true,
       "items": [
         {
-          "text": "Get Statefulset Template",
+          "text": "StatefulSet 템플릿 YAML 조회",
           "link": "/api/container/get-workload-statefulsets-template-yaml"
         },
         {
@@ -3427,7 +3283,7 @@
           "link": "/api/container/get-workload-statefulsets-statefulset-name-pods"
         },
         {
-          "text": "Get Statefulset Detail",
+          "text": "StatefulSet 상세 정보 조회",
           "link": "/api/container/get-workload-statefulsets-statefulset-name"
         },
         {
@@ -3435,11 +3291,11 @@
           "link": "/api/container/put-workload-statefulsets-statefulset-name"
         },
         {
-          "text": "Delete Statefulset",
+          "text": "StatefulSet 삭제",
           "link": "/api/container/delete-workload-statefulsets-statefulset-name"
         },
         {
-          "text": "Get Existing Statefulset Yaml",
+          "text": "기존 StatefulSet YAML 조회",
           "link": "/api/container/get-workload-statefulsets-statefulset-name-manifest"
         },
         {
@@ -3457,16 +3313,6 @@
         {
           "text": "StatefulSet Shell 연결 정보 조회",
           "link": "/api/container/get-workload-statefulsets-statefulset-name-shell-info"
-        }
-      ]
-    },
-    {
-      "text": "기타",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "Root",
-          "link": "/api/container/get"
         }
       ]
     }

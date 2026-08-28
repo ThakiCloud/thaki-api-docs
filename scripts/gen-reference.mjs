@@ -17,7 +17,7 @@ import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, readdirSync
 import { join } from 'node:path'
 
 const ROOT = process.cwd()
-const SPEC_DIR = join(ROOT, 'docs/public')
+const SPEC_DIR = join(ROOT, 'spec/public')
 const OUT_DIR = join(ROOT, 'docs/api')
 
 /**
@@ -82,6 +82,18 @@ const cell = (v) =>
  *  - `<cronjob-name>` 같은 꺾쇠가 HTML 태그로 파싱돼 빌드가 깨진다.
  *  - Args:/Returns:/Raises: 블록은 함수 인자 설명이라 API 독자와 무관하다.
  */
+/**
+ * 내부 구성요소 이름이 들어간 괄호를 걷어낸다.
+ *
+ * "사용자 로그인 (Keycloak OIDC 인증)" 처럼 docstring 에는 무엇으로 구현했는지가 적혀 있다.
+ * 고객은 그 이름으로 아무것도 할 수 없고, 구현이 바뀌면 문서가 거짓이 된다.
+ */
+const INTERNAL_NAMES = /Keycloak|OpenStack|Neutron|Nova|Glance|Cinder|Octavia|Ceph|AWX|VictoriaMetrics/
+const stripInternal = (t) =>
+  String(t ?? '')
+    .replace(new RegExp(`\\s*\\((?:[^()]*(?:${INTERNAL_NAMES.source})[^()]*)\\)`, 'g'), '')
+    .trim()
+
 const prose = (text) => {
   if (!text) return ''
   const lines = String(text).split(/\r?\n/)
@@ -89,8 +101,7 @@ const prose = (text) => {
     /^\s*(Args|Arguments|Returns|Raises|Yields|Note|Notes|Example|Examples|Attributes)\s*:\s*$/.test(l),
   )
   const kept = cut === -1 ? lines : lines.slice(0, cut)
-  return kept
-    .join('\n')
+  return stripInternal(kept.join('\n'))
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/\n{3,}/g, '\n\n')
@@ -177,7 +188,7 @@ function describe(schema, deref) {
   const parts = []
   // 필드에 붙은 설명이 참조 대상의 일반 설명보다 구체적이다. 그쪽을 먼저 쓴다.
   const desc = schema.description ?? s.description
-  if (desc) parts.push(desc)
+  if (desc) parts.push(String(desc).trim().replace(/\.+$/, ''))
   if (s.enum) parts.push(`값: ${s.enum.filter((v) => v !== null).join(', ')}`)
   if (s.default !== undefined) parts.push(`기본값 ${JSON.stringify(s.default)}`)
   if (s.minimum !== undefined || s.maximum !== undefined) {
@@ -225,7 +236,187 @@ function flatten(schema, deref, prefix = '', depth = 0, out = []) {
   return out
 }
 
+// ── 서비스별 규칙 ─────────────────────────────────────────────────────────
+// 아래 값은 구현 코드를 대조해 확인한 것이다(리뷰 결과). 스펙만으로는 알 수 없다 —
+// 도메인 헤더는 ASGI 미들웨어가 강제해 OpenAPI 에 잡히지 않고, 오류 코드는
+// FastAPI 가 responses= 를 선언하지 않아 스펙에 없다.
+
+/** 공통 규약 페이지가 단일 출처인 헤더. 페이지마다 다시 선언하지 않는다. */
+const COMMON_HEADERS = new Set([
+  'Authorization',
+  'Content-Type',
+  'X-Partition-Id',
+  'X-Project-Id',
+  'X-Domain-Id',
+  'X-Domain-Name',
+  'X-Request-Id',
+  'X-Request-ID',
+])
+
+const RULES = {
+  compute: {
+    // 도메인 헤더는 미들웨어가 전 경로에서 강제한다. 누락 시 422.
+    header: '인증 헤더와 조직·파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.',
+    partitionDefaultNote: '',
+    // 파티션을 고르기 전에도 호출하는 API. require_token_without_project 를 쓴다.
+    partitionExempt: new Set([
+      '/api/v1/compute/projects',
+      '/api/v1/compute/table-settings',
+      '/api/v1/compute/primary-tenant',
+    ]),
+    // 예외 페이지에서는 첫 문장도 바꿔야 한다. "파티션 헤더는 모든 API 가 같습니다" 라고 해 놓고
+    // 바로 아래에서 "쓰지 않습니다" 라고 하면 서로 어긋난다.
+    exemptHeader: '인증 헤더와 조직 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.',
+    partitionExemptNote:
+      '이 API 는 파티션 헤더(X-Partition-Id)를 사용하지 않습니다. 파티션을 선택하기 전에도 호출할 수 있습니다.',
+    read: ['401(인증 실패)', '403(권한 없음)', '404(리소스 없음)', '502(인프라 오류)'],
+    write: [
+      '401(인증 실패)',
+      '403(권한 없음)',
+      '404(리소스 없음)',
+      '409(잠금·상태 전이 불가)',
+      '413(쿼터 초과)',
+      '502(인프라 오류)',
+    ],
+  },
+
+  iam: {
+    // IAM 은 파티션·도메인 헤더를 요청 파라미터로 받지 않는다. 조직·파티션은 경로
+    // 파라미터({org_id})와 토큰의 주체 식별자로 정해진다.
+    header: '인증 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.',
+    partitionDefaultNote: '',
+    // 인증 없이 호출하는 API. 게이트웨이가 /public 라우트에만 인증 플러그인을 붙이지 않으므로
+    // 반드시 /public 접두를 써야 한다. 접두 없이 부르면 게이트웨이가 401 로 끊는다.
+    noAuthNote:
+      '이 API 는 인증 없이 호출합니다. 위 경로의 /public 접두를 그대로 사용하십시오. /public 없이 호출하면 게이트웨이가 자격증명을 요구해 401 을 반환합니다.',
+    read: ['401(인증 실패)', '403(권한 없음)', '404(리소스 없음)', '502(인프라 오류)'],
+    write: [
+      '401(인증 실패)',
+      '403(권한 없음)',
+      '404(리소스 없음)',
+      '409(중복·상태 충돌)',
+      '502(인프라 오류)',
+    ],
+    // 로그인·MFA 경로는 시도 제한이 걸려 있다.
+    rateLimited: [/\/login$/, /\/pre-auth\//, /\/password\/(forgot|reset)/],
+  },
+
+  network: {
+    header: '인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.',
+    partitionDefaultNote: '',
+    // 파티션 헤더를 읽지 않는 계열. 요청 컨텍스트 의존성이 다르다.
+    partitionExemptPrefix: ['/api/v1/network/external-firewalls', '/api/v1/network/columns-config'],
+    exemptHeader: '인증 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.',
+    partitionExemptNote: '이 API 는 파티션 헤더(X-Partition-Id)를 사용하지 않습니다.',
+    read: ['401(인증 실패)', '403(권한 없음)', '404(리소스 없음)', '502(인프라 오류)'],
+    write: [
+      '401(인증 실패)',
+      '403(권한 없음)',
+      '404(리소스 없음)',
+      '409(리소스 충돌·사용 중)',
+      '413(쿼터 초과)',
+      '502(인프라 오류)',
+    ],
+  },
+
+  container: {
+    // 조직 헤더는 라우터 공통 의존성이 강제한다. 파티션 헤더를 읽는 것은 클러스터 생성뿐이다.
+    header: '인증 헤더와 조직 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.',
+    // 대부분의 컨테이너 API 는 파티션 헤더를 읽지 않는다. 예외는 클러스터 생성뿐이다.
+    partitionDefaultNote:
+      '이 API 는 파티션 헤더(X-Partition-Id)를 사용하지 않습니다. 보내도 무시됩니다.',
+    partitionRequired: new Set(['/api/v1/container/cluster/cluster-provisioning']),
+    partitionRequiredNote:
+      '이 API 는 파티션 헤더가 필요합니다. X-Partition-Id 를 보내십시오(과도기 동안 X-Project-Id 로도 받습니다). 두 헤더가 모두 없으면 422 를 반환합니다.',
+    partitionExempt: new Set(),
+    read: ['401(인증 실패)', '403(권한 없음)', '404(리소스 없음)', '502(인프라 오류)'],
+    write: [
+      '401(인증 실패)',
+      '403(권한 없음)',
+      '404(리소스 없음)',
+      '409(리소스 충돌)',
+      '502(인프라 오류)',
+    ],
+  },
+}
+
+/** 아직 코드 대조가 끝나지 않은 서비스의 기본값. 확인된 것만 말한다. */
+const DEFAULT_RULE = {
+  header: '인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.',
+  partitionExempt: new Set(),
+  read: ['401(인증 실패)', '403(권한 없음)', '404(리소스 없음)', '502(인프라 오류)'],
+  write: [
+    '401(인증 실패)',
+    '403(권한 없음)',
+    '404(리소스 없음)',
+    '409(리소스 충돌)',
+    '502(인프라 오류)',
+  ],
+}
+
+const ruleFor = (svc) => RULES[svc.id] ?? DEFAULT_RULE
+
+/**
+ * 인증이 필요 없는 오퍼레이션인가.
+ *
+ * 스펙에 security 가 없다는 것은 앱이 인증을 요구하지 않는다는 뜻이다. authn 은
+ * 게이트웨이가 이런 경로를 /public 라우트로만 열어 둔다.
+ */
+const isPublicOp = (svc, specRef, op) =>
+  svc.id === 'iam' && specRef.mark === 'authn' && !('security' in op)
+
+/** 문서에 표기할 호출 경로. 비인증 authn API 는 /public 접두를 붙여야 실제로 닿는다. */
+function displayPath(svc, specRef, op, path) {
+  if (!isPublicOp(svc, specRef, op)) return path
+  const tail = path.slice(specRef.prefix.length)
+  return `${specRef.prefix}/public${tail}`
+}
+
+function headerNote({ svc, path, specRef, op }) {
+  const rule = ruleFor(svc)
+  if (isPublicOp(svc, specRef, op)) return rule.noAuthNote
+  const isExempt =
+    rule.partitionExempt?.has(path) ||
+    (rule.partitionExemptPrefix ?? []).some((pre) => path.startsWith(pre))
+  const base = isExempt && rule.exemptHeader ? rule.exemptHeader : rule.header
+  const extra = rule.partitionRequired?.has(path)
+    ? rule.partitionRequiredNote
+    : isExempt
+      ? rule.partitionExemptNote
+      : rule.partitionDefaultNote
+  return [base, extra].filter(Boolean).join('\n\n')
+}
+
+function errorNote(svc, method, path) {
+  const rule = ruleFor(svc)
+  const codes = [...(method === 'get' ? rule.read : rule.write)]
+  if ((rule.rateLimited ?? []).some((re) => re.test(path))) {
+    codes.push('429(시도 제한 초과)')
+  }
+  return (
+    '위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 ' +
+    codes.join(' · ') +
+    '를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.'
+  )
+}
+
 // ── 페이지 생성 ───────────────────────────────────────────────────────────
+
+/**
+ * 설명 두 조각을 잇는다.
+ *
+ * parameter.description 과 schema.description 이 같은 문장인 경우가 많다. 그대로 이으면
+ * 같은 말이 두 번 나오고, 앞 문장이 마침표로 끝나 있으면 ".." 가 된다.
+ */
+function joinDesc(a, b) {
+  const x = (a ?? '').trim()
+  const y = (b ?? '').trim()
+  if (!x) return y
+  if (!y) return x
+  if (y === x || y.startsWith(x)) return y
+  if (x.startsWith(y)) return x
+  return `${x.replace(/\.+$/, '')}. ${y}`
+}
 
 function paramTable(params, deref, withIn) {
   const head = withIn
@@ -233,7 +424,7 @@ function paramTable(params, deref, withIn) {
     : '| 이름 | 필수 | 형식 | 설명 |\n|---|---|---|---|'
   const rows = params.map((p) => {
     const t = typeName(p.schema, deref)
-    const d = [p.description, describe(p.schema, deref)].filter(Boolean).join('. ')
+    const d = joinDesc(p.description, describe(p.schema, deref))
     const req = p.required ? '필수' : '선택'
     return withIn
       ? `| ${cell(p.name)} | ${cell(p.in)} | ${req} | ${cell(t)} | ${cell(d)} |`
@@ -250,20 +441,39 @@ function fieldTable(rows) {
   return [head, ...body].join('\n')
 }
 
+/**
+ * 페이지 제목.
+ *
+ * FastAPI 는 summary 를 함수 이름에서 만든다(post_login → "Post Login"). 그건 제목이
+ * 아니라 함수명이라 읽는 사람에게 아무 정보가 없다. 설명 첫 줄이 한국어면 그쪽이 제목이다.
+ */
 function operationTitle(op, path, method) {
-  if (op.summary) return op.summary.trim()
+  const firstLine = String(op.description ?? '')
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .find(Boolean)
+  // FastAPI 가 함수 이름에서 만든 summary 는 HTTP 메서드로 시작한다(post_login → "Post Login").
+  // "Create Security Group Rule" 처럼 사람이 쓴 요약은 그대로 제목으로 쓴다.
+  const summaryLooksGenerated =
+    op.summary && /^(Get|Post|Put|Patch|Delete)\b/.test(op.summary.trim()) &&
+    /^[A-Z][A-Za-z0-9]*( [A-Z][A-Za-z0-9]*)*$/.test(op.summary.trim())
+  if (summaryLooksGenerated && firstLine && /[가-힣]/.test(firstLine) && firstLine.length <= 60) {
+    return stripInternal(firstLine).replace(/[.\s]+$/, '')
+  }
+  if (op.summary) return stripInternal(op.summary)
   const tail = path.split('/').filter((s) => s && !s.startsWith('{')).pop() ?? path
   return `${method.toUpperCase()} ${tail}`
 }
 
-function buildPage({ svc, path, method, op, deref, serverUrl }) {
+function buildPage({ svc, specRef, path, method, op, deref, serverUrl }) {
   const lines = []
   const title = operationTitle(op, path, method)
 
   lines.push(`# ${title}`)
   lines.push('')
   const intro = prose(op.description)
-  if (intro && intro !== op.summary) {
+  const introFirst = intro.split('\n')[0].replace(/[.\s]+$/, '')
+  if (intro && intro !== op.summary && introFirst !== title) {
     lines.push(intro)
     lines.push('')
   }
@@ -271,7 +481,7 @@ function buildPage({ svc, path, method, op, deref, serverUrl }) {
   lines.push('## HTTP 요청')
   lines.push('')
   lines.push('```http')
-  lines.push(`${method.toUpperCase()} ${serverUrl}${path}`)
+  lines.push(`${method.toUpperCase()} ${serverUrl}${displayPath(svc, specRef, op, path)}`)
   lines.push('```')
   lines.push('')
 
@@ -294,12 +504,15 @@ function buildPage({ svc, path, method, op, deref, serverUrl }) {
 
   lines.push('## 요청 헤더')
   lines.push('')
-  lines.push('인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.')
-  if (headerParams.length) {
+  lines.push(headerNote({ svc, path, method, op, specRef }))
+  // 공통 헤더는 공통 규약이 단일 출처다. 페이지마다 다시 선언하면 표기가 어긋난다
+  // (스펙은 either-or 헤더를 각각 optional 로 뽑아 "선택" 으로 잘못 보이게 만든다).
+  const extraHeaders = headerParams.filter((p) => !COMMON_HEADERS.has(p.name))
+  if (extraHeaders.length) {
     lines.push('')
     lines.push('이 API 는 다음 헤더를 추가로 받습니다.')
     lines.push('')
-    lines.push(paramTable(headerParams, deref, false))
+    lines.push(paramTable(extraHeaders, deref, false))
   }
   lines.push('')
 
@@ -324,7 +537,9 @@ function buildPage({ svc, path, method, op, deref, serverUrl }) {
   }
   lines.push(statusRows.join('\n'))
   lines.push('')
-  lines.push('그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.')
+  // 스펙의 responses 에는 2xx 와 422 밖에 없다(FastAPI 가 responses= 를 선언하지 않아서).
+  // 실제로 서비스가 던지는 코드를 안내하지 않으면 오류 처리를 못 한다.
+  lines.push(errorNote(svc, method, path))
   lines.push('')
 
   const okCode = codes.find((c) => c.startsWith('2') && c !== '204')
@@ -349,6 +564,7 @@ function buildPage({ svc, path, method, op, deref, serverUrl }) {
 const sidebar = {}
 const serviceCounts = []
 let totalPages = 0
+let skipped = 0
 
 // 서비스 구성이 바뀌면(예: authn·authz 를 iam 으로 합침) 예전 디렉토리가 남아
 // 사이드바에 없는 유령 페이지가 배포된다. 아는 서비스가 아닌 디렉토리는 지운다.
@@ -378,6 +594,12 @@ for (const svc of SERVICES) {
     for (const [path, item] of Object.entries(spec.paths ?? {})) {
       for (const [method, op] of Object.entries(item)) {
         if (!METHODS.includes(method)) continue
+        // 서비스 루트(GET /)는 배너를 돌려주는 인프라 엔드포인트다. 인증도 필요 없고
+        // 고객이 호출할 대상이 아니라 문서에서 뺀다.
+        if (path === `${specRef.prefix}/` || path === specRef.prefix) {
+          skipped++
+          continue
+        }
 
         const tag = (op.tags ?? ['기타'])[0]
         // 서비스 접두를 정확히 걷어낸다. 정규식으로 뭉뚱그리면 경로 중간까지 잘려
@@ -390,7 +612,7 @@ for (const svc of SERVICES) {
         while (usedSlugs.has(name)) name = `${base}-${n++}`
         usedSlugs.add(name)
 
-        const md = buildPage({ svc, path, method, op, deref, serverUrl })
+        const md = buildPage({ svc, specRef, path, method, op, deref, serverUrl })
         writeFileSync(join(dir, `${name}.md`), md + '\n')
         totalPages++
         opCount++
@@ -408,10 +630,7 @@ for (const svc of SERVICES) {
 
   // 서비스 개요 페이지 — 태그별 오퍼레이션 목록
   const overview = [`# ${svc.title}`, '']
-  const downloads = svc.specs
-    .map((sp) => `[${sp.id}.openapi.json](/${sp.id}.openapi.json)`)
-    .join(' · ')
-  overview.push(`오퍼레이션 ${opCount}개. OpenAPI 스펙 내려받기 — ${downloads}`)
+  overview.push(`API ${opCount}개.`)
   overview.push('')
   for (const [tag, ops] of [...byTag.entries()].sort()) {
     overview.push(`## ${tag}`)
@@ -445,8 +664,7 @@ const total = serviceCounts.reduce((a, s) => a + s.opCount, 0)
 const indexLines = [
   '# API 레퍼런스',
   '',
-  '서비스별 전체 API 목록입니다. 각 페이지는 서비스 코드에서 생성한 OpenAPI 스펙으로 만들어,',
-  '파라미터 이름·타입·필수 여부가 실제 구현과 어긋나지 않습니다.',
+  '서비스별 전체 API 목록입니다. 파라미터 이름·타입·필수 여부는 실제 구현에서 가져옵니다.',
   '',
   '| 서비스 | 범위 | API 수 |',
   '|---|---|---|',
@@ -474,4 +692,4 @@ writeFileSync(
   JSON.stringify(sidebar, null, 2) + '\n',
 )
 
-console.log(`\n총 ${totalPages}개 페이지 생성`)
+console.log(`\n총 ${totalPages}개 페이지 생성 (제외 ${skipped}건 — 서비스 루트 배너)`)

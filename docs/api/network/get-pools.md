@@ -16,19 +16,19 @@ GET https://<your-console-host>/api/v1/network/pools
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| status | 선택 | array (string) | Pool 상태 필터 (복수 선택 시 OR). Pool 상태 필터 (복수 선택 시 OR) |
-| name | 선택 | array (string) | Pool 이름 필터. Pool 이름 필터 |
-| protocol | 선택 | array (string) | Pool 프로토콜 필터. Pool 프로토콜 필터 |
-| algorithm | 선택 | array (string) | Load balancing algorithm 필터. Load balancing algorithm 필터 |
-| listener | 선택 | array (string) | 연결된 Listener 이름/ID 필터. 연결된 Listener 이름/ID 필터 |
-| members | 선택 | array (string) | 연결된 Member 이름/ID/IP 필터. 연결된 Member 이름/ID/IP 필터 |
-| adminStateUp | 선택 | array (boolean) | 관리자 상태 필터. 관리자 상태 필터 |
-| page | 선택 | integer | 조회 페이지 번호 (0=전체). 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 20. 범위 1~100 |
-| sort | 선택 | string | 정렬 대상 컬럼. 정렬 대상 컬럼. 값: name, protocol, algorithm, listener, members |
-| order | 선택 | string | 정렬 방향 (asc/desc). 정렬 방향 (asc/desc). 값: asc, desc |
-| listenerId | 선택 | string 또는 null | 특정 Listener의 Pool만 필터링 (선택). 특정 Listener의 Pool만 필터링 (선택) |
-| loadBalancerId | 선택 | string 또는 null | 특정 Load Balancer의 Pool만 필터링 (선택). 특정 Load Balancer의 Pool만 필터링 (선택) |
+| status | 선택 | array (string) | Pool 상태 필터 (복수 선택 시 OR) |
+| name | 선택 | array (string) | Pool 이름 필터 |
+| protocol | 선택 | array (string) | Pool 프로토콜 필터 |
+| algorithm | 선택 | array (string) | Load balancing algorithm 필터 |
+| listener | 선택 | array (string) | 연결된 Listener 이름/ID 필터 |
+| members | 선택 | array (string) | 연결된 Member 이름/ID/IP 필터 |
+| adminStateUp | 선택 | array (boolean) | 관리자 상태 필터 |
+| page | 선택 | integer | 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 20. 범위 1~100 |
+| sort | 선택 | string | 정렬 대상 컬럼. 값: name, protocol, algorithm, listener, members |
+| order | 선택 | string | 정렬 방향 (asc/desc). 값: asc, desc |
+| listenerId | 선택 | string 또는 null | 특정 Listener의 Pool만 필터링 (선택) |
+| loadBalancerId | 선택 | string 또는 null | 특정 Load Balancer의 Pool만 필터링 (선택) |
 
 ## 요청 헤더
 
@@ -41,7 +41,7 @@ GET https://<your-console-host>/api/v1/network/pools
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -60,8 +60,8 @@ GET https://<your-console-host>/api/v1/network/pools
 | result.data[].loadBalancerId | 필수 | string 또는 null |  |
 | result.data[].projectId | 필수 | string 또는 null |  |
 | result.data[].description | 필수 | string 또는 null |  |
-| result.data[].sessionPersistence | 필수 | object 또는 null | 세션 지속성 응답 DTO. |
-| result.data[].sessionPersistence.type | 필수 | string | Octavia 세션 지속성 타입.. 값: SOURCE_IP, HTTP_COOKIE, APP_COOKIE |
+| result.data[].sessionPersistence | 필수 | object 또는 null | 세션 지속성 응답 DTO |
+| result.data[].sessionPersistence.type | 필수 | string | Octavia 세션 지속성 타입. 값: SOURCE_IP, HTTP_COOKIE, APP_COOKIE |
 | result.data[].sessionPersistence.cookieName | 선택 | string 또는 null |  |
 | result.data[].sessionPersistence.persistenceTimeout | 선택 | integer 또는 null |  |
 | result.data[].sessionPersistence.persistenceGranularity | 선택 | string 또는 null |  |
@@ -69,7 +69,7 @@ GET https://<your-console-host>/api/v1/network/pools
 | result.data[].tlsCiphers | 필수 | string 또는 null |  |
 | result.data[].members | 필수 | array (object) |  |
 | result.data[].healthMonitorId | 필수 | string 또는 null |  |
-| result.data[].status | 선택 | string 또는 null | Octavia 리소스 상태. OpenStack Octavia의 operating_status와 provisioning_status를 비즈니스 관점의 단일 상태로 통합한 Enum.. 값: ONLINE, DEGRADED, OFFLINE, NO_MONITOR, OPERATING_ERROR, DRAINING, PROVISIONING_ERROR, CREATING, UPDATING, DELETING, UNKNOWN |
+| result.data[].status | 선택 | string 또는 null | Octavia 리소스 상태. OpenStack Octavia의 operating_status와 provisioning_status를 비즈니스 관점의 단일 상태로 통합한 Enum. 값: ONLINE, DEGRADED, OFFLINE, NO_MONITOR, OPERATING_ERROR, DRAINING, PROVISIONING_ERROR, CREATING, UPDATING, DELETING, UNKNOWN |
 | result.data[].createdAt | 필수 | string (date-time) |  |
 | result.data[].updatedAt | 필수 | string (date-time) |  |
 | result.data[].listeners | 필수 | array (object) |  |

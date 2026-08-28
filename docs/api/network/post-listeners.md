@@ -81,7 +81,7 @@ POST https://<your-console-host>/api/v1/network/listeners
 | 202 Accepted | Listener 생성 요청 접수 (하위 리소스 포함, 백그라운드 처리 중) |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 409(리소스 충돌·사용 중) · 413(쿼터 초과) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 201
 
@@ -100,7 +100,7 @@ POST https://<your-console-host>/api/v1/network/listeners
 | result.defaultPoolId | 필수 | string 또는 null |  |
 | result.connectionLimit | 필수 | integer 또는 null |  |
 | result.description | 필수 | string 또는 null |  |
-| result.status | 선택 | string 또는 null | Octavia 리소스 상태. OpenStack Octavia의 operating_status와 provisioning_status를 비즈니스 관점의 단일 상태로 통합한 Enum.. 값: ONLINE, DEGRADED, OFFLINE, NO_MONITOR, OPERATING_ERROR, DRAINING, PROVISIONING_ERROR, CREATING, UPDATING, DELETING, UNKNOWN |
+| result.status | 선택 | string 또는 null | Octavia 리소스 상태. OpenStack Octavia의 operating_status와 provisioning_status를 비즈니스 관점의 단일 상태로 통합한 Enum. 값: ONLINE, DEGRADED, OFFLINE, NO_MONITOR, OPERATING_ERROR, DRAINING, PROVISIONING_ERROR, CREATING, UPDATING, DELETING, UNKNOWN |
 | result.defaultTlsContainerRef | 필수 | string 또는 null |  |
 | result.createdAt | 필수 | string (date-time) |  |
 | result.updatedAt | 필수 | string (date-time) |  |

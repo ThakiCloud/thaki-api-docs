@@ -18,18 +18,18 @@ GET https://<your-console-host>/api/v1/iam/authz/policies/{policy_id}/attached-e
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| page | 선택 | integer | 페이지 번호 (0: 전체). 페이지 번호 (0: 전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 10. 범위 1~100 |
-| name | 선택 | string 또는 null | 그룹명 부분 일치 필터. 그룹명 부분 일치 필터 |
-| id | 선택 | string 또는 null | 그룹 ID 부분 일치 필터. 그룹 ID 부분 일치 필터 |
-| memberCountGte | 선택 | integer 또는 null | 멤버 수 최소값 (포함). 멤버 수 최소값 (포함) |
-| memberCountLte | 선택 | integer 또는 null | 멤버 수 최대값 (포함). 멤버 수 최대값 (포함) |
-| createdAtGte | 선택 | string 또는 null | 생성일 시작 (ISO8601, 포함). 생성일 시작 (ISO8601, 포함) |
-| createdAtLte | 선택 | string 또는 null | 생성일 종료 (ISO8601, 포함). 생성일 종료 (ISO8601, 포함) |
+| page | 선택 | integer | 페이지 번호 (0: 전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 10. 범위 1~100 |
+| name | 선택 | string 또는 null | 그룹명 부분 일치 필터 |
+| id | 선택 | string 또는 null | 그룹 ID 부분 일치 필터 |
+| memberCountGte | 선택 | integer 또는 null | 멤버 수 최소값 (포함) |
+| memberCountLte | 선택 | integer 또는 null | 멤버 수 최대값 (포함) |
+| createdAtGte | 선택 | string 또는 null | 생성일 시작 (ISO8601, 포함) |
+| createdAtLte | 선택 | string 또는 null | 생성일 종료 (ISO8601, 포함) |
 
 ## 요청 헤더
 
-인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+인증 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
 
 ## 응답
 
@@ -38,7 +38,7 @@ GET https://<your-console-host>/api/v1/iam/authz/policies/{policy_id}/attached-e
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 

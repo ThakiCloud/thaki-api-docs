@@ -29,23 +29,18 @@ GET https://<your-console-host>/api/v1/container/cluster/clusters
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| page | 선택 | integer | 페이지 번호 (0이면 전체 반환, 1부터 시작). 페이지 번호 (0이면 전체 반환, 1부터 시작). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기 (최소 1, 최대 100). 페이지 크기 (최소 1, 최대 100). 기본값 10. 범위 1~100 |
-| filterName | 선택 | array (string) | 클러스터 이름 필터 목록 (선택, 복수 지정 가능: filterName=test&filterName=prod). 부분일치(OR) 검색. 클러스터 이름 필터 목록 (선택, 복수 지정 가능: filterName=test&filterName=prod). 부분일치(OR) 검색 |
-| status | 선택 | string 또는 null | 클러스터 상태 필터 (선택). 미지정/null/빈값이면 전체를 반환합니다. 가능 값: PENDING(요청 수락), PROVISIONING(프로비저닝 중), ACTIVE(정상 운영), ERROR(오류), DELETING(삭제 중), DELETED(삭제 완료).. 클러스터 상태 필터 (선택). 미지정/null/빈값이면 전체를 반환합니다. 가능 값: PENDING(요청 수락), PROVISIONING(프로비저닝 중), ACTIVE(정상 운영), ERROR(오류), DELETING(삭제 중), DELETED(삭제 완료).. 값: PENDING, PROVISIONING, ACTIVE, ERROR, DELETING, DELETED |
-| sortBy | 선택 | string | 정렬 기준 (name, k8sVersion, createdAt). 정렬 기준 (name, k8sVersion, createdAt). 값: name, k8sVersion, createdAt. 기본값 "createdAt" |
-| sortOrder | 선택 | string | 정렬 순서 (asc, desc). 정렬 순서 (asc, desc). 값: asc, desc. 기본값 "desc" |
+| page | 선택 | integer | 페이지 번호 (0이면 전체 반환, 1부터 시작). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기 (최소 1, 최대 100). 기본값 10. 범위 1~100 |
+| filterName | 선택 | array (string) | 클러스터 이름 필터 목록 (선택, 복수 지정 가능: filterName=test&filterName=prod). 부분일치(OR) 검색 |
+| status | 선택 | string 또는 null | 클러스터 상태 필터 (선택). 미지정/null/빈값이면 전체를 반환합니다. 가능 값: PENDING(요청 수락), PROVISIONING(프로비저닝 중), ACTIVE(정상 운영), ERROR(오류), DELETING(삭제 중), DELETED(삭제 완료). 값: PENDING, PROVISIONING, ACTIVE, ERROR, DELETING, DELETED |
+| sortBy | 선택 | string | 정렬 기준 (name, k8sVersion, createdAt). 값: name, k8sVersion, createdAt. 기본값 "createdAt" |
+| sortOrder | 선택 | string | 정렬 순서 (asc, desc). 값: asc, desc. 기본값 "desc" |
 
 ## 요청 헤더
 
-인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+인증 헤더와 조직 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
 
-이 API 는 다음 헤더를 추가로 받습니다.
-
-| 이름 | 필수 | 형식 | 설명 |
-|---|---|---|---|
-| X-Domain-Id | 필수 | string | Domain ID. Domain ID |
-| X-Domain-Name | 필수 | string | Domain Name. Domain Name |
+이 API 는 파티션 헤더(X-Partition-Id)를 사용하지 않습니다. 보내도 무시됩니다.
 
 ## 응답
 
@@ -54,7 +49,7 @@ GET https://<your-console-host>/api/v1/container/cluster/clusters
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -66,7 +61,7 @@ GET https://<your-console-host>/api/v1/container/cluster/clusters
 | result | 필수 | object | 데이터 목록 + 페이지네이션 |
 | result.data | 선택 | array (object) | 데이터 목록 |
 | result.data[].id | 필수 | integer | 클러스터 ID |
-| result.data[].status | 필수 | string | 목록 API 응답의 클러스터 상태. 가능 값: PENDING(요청 수락), PROVISIONING(프로비저닝 중), ACTIVE(정상 운영), ERROR(오류), DELETING(삭제 중), DELETED(삭제 완료). |
+| result.data[].status | 필수 | string | 목록 API 응답의 클러스터 상태. 가능 값: PENDING(요청 수락), PROVISIONING(프로비저닝 중), ACTIVE(정상 운영), ERROR(오류), DELETING(삭제 중), DELETED(삭제 완료) |
 | result.data[].name | 필수 | string | 클러스터 이름 |
 | result.data[].clusterType | 필수 | string | 클러스터 등록 유형 |
 | result.data[].buttonText | 필수 | string | 사이드바 클러스터 버튼 텍스트 |

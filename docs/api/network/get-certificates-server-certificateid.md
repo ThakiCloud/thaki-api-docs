@@ -1,6 +1,4 @@
-# Get Server Certificate
-
-SERVER 인증서 단건을 조회합니다.
+# SERVER 인증서 단건을 조회합니다
 
 ## HTTP 요청
 
@@ -25,7 +23,7 @@ GET https://<your-console-host>/api/v1/network/certificates/server/{certificateI
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -37,8 +35,8 @@ GET https://<your-console-host>/api/v1/network/certificates/server/{certificateI
 | result | 필수 | object | 결과 데이터 |
 | result.id | 선택 | string 또는 null |  |
 | result.name | 선택 | string 또는 null |  |
-| result.mode | 선택 | string 또는 null | 인증서 모드 Enum.. 값: SERVER, CA |
-| result.status | 선택 | string 또는 null | 인증서 상태.. 값: VALID, EXPIRING_SOON, EXPIRED |
+| result.mode | 선택 | string 또는 null | 인증서 모드 Enum. 값: SERVER, CA |
+| result.status | 선택 | string 또는 null | 인증서 상태. 값: VALID, EXPIRING_SOON, EXPIRED |
 | result.createdAt | 선택 | string (date-time) |  |
 | result.updatedAt | 선택 | string (date-time) |  |
 | result.expiresAt | 선택 | string (date-time) |  |
@@ -55,7 +53,7 @@ GET https://<your-console-host>/api/v1/network/certificates/server/{certificateI
 | result.certificateContent | 선택 | string 또는 null |  |
 | result.privateKey | 선택 | string 또는 null |  |
 | result.certificateChain | 선택 | string 또는 null |  |
-| result.certificateDetail | 선택 | object 또는 null | 인증서 세부 정보 응답. |
+| result.certificateDetail | 선택 | object 또는 null | 인증서 세부 정보 응답 |
 | result.certificateDetail.issuer | 선택 | string 또는 null |  |
 | result.certificateDetail.type | 선택 | string 또는 null |  |
 | result.certificateDetail.cn | 선택 | string 또는 null |  |

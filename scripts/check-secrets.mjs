@@ -118,12 +118,10 @@ const SPEC_WARN_ONLY = new Set(['private-ip', 'cluster-internal-dns'])
 /**
  * 생성물 판정.
  *
- * spec/ 과 docs/public/ 의 스펙, 그리고 그 스펙에서 찍어낸 docs/api/ 의 레퍼런스
- * 페이지가 여기 해당한다. 셋 다 내용의 출처가 서비스 코드라 이 리포에서 고칠 수 없다.
+ * spec/ 의 스펙과 그 스펙에서 찍어낸 docs/api/ 의 레퍼런스 페이지가 여기 해당한다. 셋 다 내용의 출처가 서비스 코드라 이 리포에서 고칠 수 없다.
  * 손으로 쓰는 docs/guide/ 는 해당하지 않는다 — 거기서는 그대로 error 다.
  */
-const isGenerated = (rel) =>
-  /^(spec\/|docs\/public\/).*\.json$/.test(rel) || /^docs\/api\//.test(rel)
+const isGenerated = (rel) => /^spec\/.*\.json$/.test(rel) || /^docs\/api\//.test(rel)
 
 function walkDir(dir, out = []) {
   let entries

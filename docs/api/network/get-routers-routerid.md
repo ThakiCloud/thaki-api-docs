@@ -1,6 +1,4 @@
-# Get Router
-
-라우터 단건을 조회합니다.
+# 라우터 단건을 조회합니다
 
 ## HTTP 요청
 
@@ -25,7 +23,7 @@ GET https://<your-console-host>/api/v1/network/routers/{routerId}
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -39,7 +37,7 @@ GET https://<your-console-host>/api/v1/network/routers/{routerId}
 | result.name | 선택 | string 또는 null |  |
 | result.description | 선택 | string 또는 null |  |
 | result.projectId | 선택 | string 또는 null |  |
-| result.status | 선택 | string 또는 null | 라우터 상태.. 값: ACTIVE, ERROR |
+| result.status | 선택 | string 또는 null | 라우터 상태. 값: ACTIVE, ERROR |
 | result.adminStateUp | 선택 | boolean 또는 null |  |
 | result.enableDefaultRouteEcmp | 선택 | boolean 또는 null |  |
 | result.enableDefaultRouteBfd | 선택 | boolean 또는 null |  |
@@ -48,7 +46,7 @@ GET https://<your-console-host>/api/v1/network/routers/{routerId}
 | result.routes | 선택 | array (object) |  |
 | result.routes[].destination | 선택 | string 또는 null |  |
 | result.routes[].nexthop | 선택 | string 또는 null |  |
-| result.externalGatewayInfo | 선택 | object 또는 null | 외부 게이트웨이 응답. |
+| result.externalGatewayInfo | 선택 | object 또는 null | 외부 게이트웨이 응답 |
 | result.externalGatewayInfo.networkId | 선택 | string 또는 null |  |
 | result.externalGatewayInfo.networkName | 선택 | string 또는 null |  |
 | result.externalGatewayInfo.enableSnat | 선택 | boolean 또는 null |  |

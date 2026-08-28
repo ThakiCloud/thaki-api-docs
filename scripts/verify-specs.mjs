@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 공개된 스펙(docs/public/*.openapi.json)이 공개 조건을 지키는지 검증한다.
+ * 공개 대상 스펙(spec/public/*.openapi.json)이 공개 조건을 지키는지 검증한다.
  *
  * 왜 필터가 아니라 검증인가: 원본 스펙(spec/raw/)에는 운영자 전용·내부 호출용 API 가
  * 그대로 들어 있어 공개 리포에 두지 않는다. 그래서 CI 는 필터를 다시 돌릴 수 없고,
@@ -18,7 +18,7 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const ROOT = process.cwd()
-const OUT_DIR = join(ROOT, 'docs/public')
+const OUT_DIR = join(ROOT, 'spec/public')
 
 const HTTP_METHODS = ['get', 'post', 'put', 'delete', 'patch', 'head', 'options']
 
@@ -29,15 +29,28 @@ const EXCLUDED_EXTRA = [
   /(^|\/)system-admin(\/|$)/,
   /(^|\/)token\/(exchange|validate)$/,
   /\/callback$/,
-  /(^|\/)health$/,
+  /^\/health$/,
+  /\/shell\/docs$/,
+  /\/api-keys\/exchange$/,
+  // 콘솔 화면 전용. CSV 내려받기·대시보드 집계는 연동 API 가 아니다.
+  /\/export\/csv$/,
+  /(^|\/)dashboard(\/|$)/,
+  // 조직 그룹 템플릿은 플랫폼 운영자용 부트스트랩 설정이다.
+  /(^|\/)group-templates(\/|$)/,
+  // 인가가 스텁이라 실제로 열려 있는 관리 EP. 고객 문서에 두지 않는다.
+  /(^|\/)revoke\/(session|user)$/,
+  // 정책 동기화·평가·검증 운영 EP. 앱 레벨 인증이 없고 오호출 시 바인딩을 대량 변경한다.
+  /(^|\/)policies\/evaluate$/,
+  /\/bindings\/sync$/,
+  /(^|\/)policies\/(bulk-sync-update|revalidate|simulate|validate)$/,
 ]
 
 const EXPECT = {
-  'iam-authn': 157,
-  'iam-authz': 87,
+  'iam-authn': 147,
+  'iam-authz': 79,
   compute: 87,
-  network: 125,
-  container: 245,
+  network: 118,
+  container: 244,
 }
 
 const PREFIX = {

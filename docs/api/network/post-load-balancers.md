@@ -34,7 +34,7 @@ POST https://<your-console-host>/api/v1/network/load-balancers
 | listeners | 선택 | array (object) | 함께 생성할 Listener 목록 |
 | listeners[].name | 선택 | string 또는 null |  |
 | listeners[].description | 선택 | string 또는 null |  |
-| listeners[].protocol | 필수 | string | 허용된 Listener 프로토콜 Enum.. 값: HTTP, HTTPS, TERMINATED_HTTPS, TCP, UDP |
+| listeners[].protocol | 필수 | string | 허용된 Listener 프로토콜 Enum. 값: HTTP, HTTPS, TERMINATED_HTTPS, TCP, UDP |
 | listeners[].protocolPort | 필수 | integer | 범위 1~65535 |
 | listeners[].adminStateUp | 선택 | boolean | 기본값 true |
 | listeners[].connectionLimit | 선택 | integer 또는 null | -1은 무제한을 의미. 범위 -1~ |
@@ -84,7 +84,7 @@ POST https://<your-console-host>/api/v1/network/load-balancers
 | 201 Created | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 409(리소스 충돌·사용 중) · 413(쿼터 초과) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 201
 
@@ -98,7 +98,7 @@ POST https://<your-console-host>/api/v1/network/load-balancers
 | result.vipNetworkName | 선택 | string 또는 null |  |
 | result.vipSubnetName | 선택 | string 또는 null |  |
 | result.name | 필수 | string |  |
-| result.status | 선택 | string 또는 null | Octavia 리소스 상태. OpenStack Octavia의 operating_status와 provisioning_status를 비즈니스 관점의 단일 상태로 통합한 Enum.. 값: ONLINE, DEGRADED, OFFLINE, NO_MONITOR, OPERATING_ERROR, DRAINING, PROVISIONING_ERROR, CREATING, UPDATING, DELETING, UNKNOWN |
+| result.status | 선택 | string 또는 null | Octavia 리소스 상태. OpenStack Octavia의 operating_status와 provisioning_status를 비즈니스 관점의 단일 상태로 통합한 Enum. 값: ONLINE, DEGRADED, OFFLINE, NO_MONITOR, OPERATING_ERROR, DRAINING, PROVISIONING_ERROR, CREATING, UPDATING, DELETING, UNKNOWN |
 | result.adminStateUp | 필수 | boolean |  |
 | result.projectId | 필수 | string |  |
 | result.vipSubnetId | 필수 | string |  |
@@ -120,7 +120,7 @@ POST https://<your-console-host>/api/v1/network/load-balancers
 | result.flavorId | 필수 | string 또는 null |  |
 | result.vipQosPolicyId | 필수 | string 또는 null |  |
 | result.availabilityZone | 필수 | string 또는 null |  |
-| result.floatingIp | 선택 | object 또는 null | FloatingIP 상세 정보 응답. |
+| result.floatingIp | 선택 | object 또는 null | FloatingIP 상세 정보 응답 |
 | result.floatingIp.id | 필수 | string |  |
 | result.floatingIp.floatingIpAddress | 선택 | string 또는 null |  |
 | result.floatingIp.status | 선택 | string 또는 null |  |

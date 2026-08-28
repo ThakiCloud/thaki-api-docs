@@ -18,16 +18,16 @@ GET https://<your-console-host>/api/v1/network/floating-ips/{floatingIpId}/insta
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| page | 선택 | integer | 조회 페이지 번호 (0=전체). 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 20. 범위 1~100 |
-| status | 선택 | array (string) | 인스턴스 상태 필터 (ACTIVE/SHUTOFF/PAUSED/SUSPENDED). 인스턴스 상태 필터 (ACTIVE/SHUTOFF/PAUSED/SUSPENDED) |
-| name | 선택 | array (string) | 인스턴스 이름 필터. 인스턴스 이름 필터 |
-| id | 선택 | array (string) | 인스턴스 ID 필터. 인스턴스 ID 필터 |
-| fixedIp | 선택 | array (string) | Fixed IP 필터. Fixed IP 필터 |
-| network | 선택 | array (string) | 네트워크 필터. 네트워크 필터 |
-| lockStatus | 선택 | array (string) | 인스턴스 잠금 상태 필터 (LOCKED/UNLOCKED). 인스턴스 잠금 상태 필터 (LOCKED/UNLOCKED) |
-| sort | 선택 | string 또는 null | 정렬 대상 컬럼. 정렬 대상 컬럼. 값: name |
-| order | 선택 | string | 정렬 방향 asc/desc. 정렬 방향 asc/desc. 값: asc, desc |
+| page | 선택 | integer | 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 20. 범위 1~100 |
+| status | 선택 | array (string) | 인스턴스 상태 필터 (ACTIVE/SHUTOFF/PAUSED/SUSPENDED) |
+| name | 선택 | array (string) | 인스턴스 이름 필터 |
+| id | 선택 | array (string) | 인스턴스 ID 필터 |
+| fixedIp | 선택 | array (string) | Fixed IP 필터 |
+| network | 선택 | array (string) | 네트워크 필터 |
+| lockStatus | 선택 | array (string) | 인스턴스 잠금 상태 필터 (LOCKED/UNLOCKED) |
+| sort | 선택 | string 또는 null | 정렬 대상 컬럼. 값: name |
+| order | 선택 | string | 정렬 방향 asc/desc. 값: asc, desc |
 
 ## 요청 헤더
 
@@ -40,7 +40,7 @@ GET https://<your-console-host>/api/v1/network/floating-ips/{floatingIpId}/insta
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -59,7 +59,7 @@ GET https://<your-console-host>/api/v1/network/floating-ips/{floatingIpId}/insta
 | result.data[].networks[].networkId | 필수 | string |  |
 | result.data[].networks[].networkName | 선택 | string 또는 null |  |
 | result.data[].floatingIpSelectable | 필수 | boolean |  |
-| result.data[].floatingIpDisabledReason | 선택 | string 또는 null | Floating IP instance 선택 불가 사유.. 값: ALREADY_CONNECTED, NETWORK_UNREACHABLE, FIXED_IP_EXTERNAL_NETWORK, INSTANCE_UNAVAILABLE |
+| result.data[].floatingIpDisabledReason | 선택 | string 또는 null | Floating IP instance 선택 불가 사유. 값: ALREADY_CONNECTED, NETWORK_UNREACHABLE, FIXED_IP_EXTERNAL_NETWORK, INSTANCE_UNAVAILABLE |
 | result.data[].totalPortCount | 필수 | integer |  |
 | result.data[].totalFixedIpCount | 필수 | integer |  |
 | result.data[].connectablePortCount | 필수 | integer |  |
@@ -74,11 +74,11 @@ GET https://<your-console-host>/api/v1/network/floating-ips/{floatingIpId}/insta
 | result.data[].fixedIps[].subnetId | 필수 | string |  |
 | result.data[].fixedIps[].subnetCidr | 선택 | string 또는 null |  |
 | result.data[].fixedIps[].subnetName | 선택 | string 또는 null |  |
-| result.data[].fixedIps[].status | 선택 | string 또는 null | 포트 상태 (Skyline 기준).. 값: ACTIVE, DOWN, BUILD, ERROR |
+| result.data[].fixedIps[].status | 선택 | string 또는 null | 포트 상태 (Skyline 기준). 값: ACTIVE, DOWN, BUILD, ERROR |
 | result.data[].fixedIps[].floatingIp | 선택 | string 또는 null |  |
 | result.data[].fixedIps[].externalNetworks | 선택 | array (string) |  |
 | result.data[].fixedIps[].connectable | 필수 | boolean |  |
-| result.data[].fixedIps[].reason | 선택 | string 또는 null | Fixed IP Floating IP 연결 불가 사유.. 값: ALREADY_CONNECTED, NETWORK_UNREACHABLE, FIXED_IP_EXTERNAL_NETWORK |
+| result.data[].fixedIps[].reason | 선택 | string 또는 null | Fixed IP Floating IP 연결 불가 사유. 값: ALREADY_CONNECTED, NETWORK_UNREACHABLE, FIXED_IP_EXTERNAL_NETWORK |
 | result.dataCount | 필수 | integer | 데이터 개수. 범위 0~ |
 | result.pagination | 필수 | object | 페이지네이션 정보 |
 | result.pagination.page | 필수 | integer | 현재 페이지 번호 (0=전체 조회). 범위 0~ |

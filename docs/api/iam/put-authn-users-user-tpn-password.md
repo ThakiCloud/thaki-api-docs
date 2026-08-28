@@ -1,10 +1,4 @@
-# Patch User Password
-
-사용자 비밀번호 변경
-
-- `user_tpn`에 해당하는 사용자의 비밀번호를 변경합니다.
-- `force_password_change` 플래그가 `True`인 경우, 비밀번호 변경 후 `False`로 업데이트합니다.
-- **권한**: 본인, 또는 대상 사용자 org의 admin(authz introspection) / 시스템 어드민
+# 사용자 비밀번호 변경
 
 ## HTTP 요청
 
@@ -20,7 +14,7 @@ PUT https://<your-console-host>/api/v1/iam/authn/users/{user_tpn}/password
 
 ## 요청 헤더
 
-인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+인증 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
 
 ## 요청 본문
 
@@ -35,7 +29,7 @@ PUT https://<your-console-host>/api/v1/iam/authn/users/{user_tpn}/password
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 409(중복·상태 충돌) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 

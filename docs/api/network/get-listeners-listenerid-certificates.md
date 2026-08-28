@@ -18,18 +18,18 @@ GET https://<your-console-host>/api/v1/network/listeners/{listenerId}/certificat
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| status | 선택 | array (string) | 인증서 상태 필터 (VALID, EXPIRING_SOON, EXPIRED). 인증서 상태 필터 (VALID, EXPIRING_SOON, EXPIRED) |
-| type | 선택 | array (string) | 인증서 타입 필터 (server, ca, sni). 인증서 타입 필터 (server, ca, sni) |
-| name | 선택 | array (string) | 인증서 이름 필터 (contains). 인증서 이름 필터 (contains) |
-| id | 선택 | array (string) | 인증서 ID 필터 (exact). 인증서 ID 필터 (exact) |
-| san | 선택 | array (string) | SAN 필터 (contains). SAN 필터 (contains) |
-| issuer | 선택 | array (string) | 발급자 필터 (contains). 발급자 필터 (contains) |
-| expiresAtGte | 선택 | string 또는 null | 만료 시작 일시 (포함), ISO8601 YYYY-MM-DD. 만료 시작 일시 (포함), ISO8601 YYYY-MM-DD |
-| expiresAtLte | 선택 | string 또는 null | 만료 종료 일시 (포함), ISO8601 YYYY-MM-DD. 만료 종료 일시 (포함), ISO8601 YYYY-MM-DD |
-| page | 선택 | integer | 조회 페이지 번호 (0=전체). 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 20. 범위 1~100 |
-| sort | 선택 | string | 정렬 대상 컬럼. 정렬 대상 컬럼. 값: name, type, issuer, expiresAt |
-| order | 선택 | string | 정렬 방향 asc/desc. 정렬 방향 asc/desc. 값: asc, desc |
+| status | 선택 | array (string) | 인증서 상태 필터 (VALID, EXPIRING_SOON, EXPIRED) |
+| type | 선택 | array (string) | 인증서 타입 필터 (server, ca, sni) |
+| name | 선택 | array (string) | 인증서 이름 필터 (contains) |
+| id | 선택 | array (string) | 인증서 ID 필터 (exact) |
+| san | 선택 | array (string) | SAN 필터 (contains) |
+| issuer | 선택 | array (string) | 발급자 필터 (contains) |
+| expiresAtGte | 선택 | string 또는 null | 만료 시작 일시 (포함), ISO8601 YYYY-MM-DD |
+| expiresAtLte | 선택 | string 또는 null | 만료 종료 일시 (포함), ISO8601 YYYY-MM-DD |
+| page | 선택 | integer | 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 20. 범위 1~100 |
+| sort | 선택 | string | 정렬 대상 컬럼. 값: name, type, issuer, expiresAt |
+| order | 선택 | string | 정렬 방향 asc/desc. 값: asc, desc |
 
 ## 요청 헤더
 
@@ -42,7 +42,7 @@ GET https://<your-console-host>/api/v1/network/listeners/{listenerId}/certificat
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -55,11 +55,11 @@ GET https://<your-console-host>/api/v1/network/listeners/{listenerId}/certificat
 | result.data | 선택 | array (object) | 데이터 목록 |
 | result.data[].id | 필수 | string |  |
 | result.data[].name | 선택 | string 또는 null |  |
-| result.data[].type | 필수 | string | Listener에 연동된 인증서 타입.. 값: SERVER, CA, SNI |
+| result.data[].type | 필수 | string | Listener에 연동된 인증서 타입. 값: SERVER, CA, SNI |
 | result.data[].san | 필수 | array (string) |  |
 | result.data[].issuer | 선택 | string 또는 null |  |
 | result.data[].expiresAt | 선택 | string (date-time) |  |
-| result.data[].status | 선택 | string 또는 null | 인증서 상태.. 값: VALID, EXPIRING_SOON, EXPIRED |
+| result.data[].status | 선택 | string 또는 null | 인증서 상태. 값: VALID, EXPIRING_SOON, EXPIRED |
 | result.dataCount | 필수 | integer | 데이터 개수. 범위 0~ |
 | result.pagination | 필수 | object | 페이지네이션 정보 |
 | result.pagination.page | 필수 | integer | 현재 페이지 번호 (0=전체 조회). 범위 0~ |

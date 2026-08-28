@@ -4250,14 +4250,14 @@
         }
       }
     },
-    "/api/v1/container/cluster/clusters/{cluster_id}/dashboard": {
+    "/api/v1/container/cluster/clusters/{cluster_id}/control-plane/health": {
       "get": {
         "tags": [
           "Cluster - Clusters"
         ],
-        "summary": "Get Cluster Dashboard",
-        "description": "클러스터 대시보드 정보를 조회합니다.\n\nBasic Information과 Capacity 정보를 반환합니다.\nmetrics-server가 설치되지 않은 경우 capacity.metricsServerAvailable=false이고,\ncpuUsed, memoryUsed의 used/percent 값이 0으로 반환됩니다.",
-        "operationId": "get_cluster_dashboard_cluster_clusters__cluster_id__dashboard_get",
+        "summary": "Get Control Plane Health",
+        "description": "컨트롤 플레인 핵심 컴포넌트(etcd, scheduler, controller-manager) 상태를 조회합니다.",
+        "operationId": "get_control_plane_health_cluster_clusters__cluster_id__control_plane_health_get",
         "security": [
           {
             "Bearer Token": []
@@ -4305,7 +4305,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponse_ClusterDashboardResponse_"
+                  "$ref": "#/components/schemas/ApiResponse_ControlPlaneHealthResponse_"
                 }
               }
             }
@@ -4392,10 +4392,10 @@
           ],
           "requirements": [
             {
-              "resourceKind": "Node",
+              "resourceKind": "ComponentStatus",
               "scope": "cluster",
               "apiGroup": "",
-              "resource": "nodes",
+              "resource": "componentstatuses",
               "verbs": [
                 "list"
               ]
@@ -4405,60 +4405,6 @@
               "scope": "namespace",
               "apiGroup": "",
               "resource": "pods",
-              "verbs": [
-                "list"
-              ]
-            },
-            {
-              "resourceKind": "NodeMetrics",
-              "scope": "cluster",
-              "apiGroup": "metrics.k8s.io",
-              "resource": "nodes",
-              "verbs": [
-                "list"
-              ]
-            },
-            {
-              "resourceKind": "Deployment",
-              "scope": "namespace",
-              "apiGroup": "apps",
-              "resource": "deployments",
-              "verbs": [
-                "list"
-              ]
-            },
-            {
-              "resourceKind": "StatefulSet",
-              "scope": "namespace",
-              "apiGroup": "apps",
-              "resource": "statefulsets",
-              "verbs": [
-                "list"
-              ]
-            },
-            {
-              "resourceKind": "DaemonSet",
-              "scope": "namespace",
-              "apiGroup": "apps",
-              "resource": "daemonsets",
-              "verbs": [
-                "list"
-              ]
-            },
-            {
-              "resourceKind": "Job",
-              "scope": "namespace",
-              "apiGroup": "batch",
-              "resource": "jobs",
-              "verbs": [
-                "list"
-              ]
-            },
-            {
-              "resourceKind": "CronJob",
-              "scope": "namespace",
-              "apiGroup": "batch",
-              "resource": "cronjobs",
               "verbs": [
                 "list"
               ]
@@ -28754,126 +28700,6 @@
         }
       }
     },
-    "/api/v1/container/workload/pods/{pod_name}/containers/{container_name}/shell/docs": {
-      "get": {
-        "tags": [
-          "Workload - Pods"
-        ],
-        "summary": "[WebSocket 문서] Pod 컨테이너 Shell 연결 API 문서",
-        "description": "## WebSocket Shell API 문서\n\n이 엔드포인트는 WebSocket shell API의 사용 방법을 설명하는 문서입니다.\n실제 shell 연결은 WebSocket 전용 prefix인 `/ws/workload` 경로를 사용하세요.\n\n### WebSocket 연결 방법\n\n```\nwss://{host}/v1/container/ws/workload/pods/{pod_name}/containers/{container_name}/shell?clusterId={cluster_id}&namespace={namespace}\n```\n\n### 메시지 형식\n\n| 방향 | 형식 | 설명 |\n|------|------|------|\n| **송신 (Client → Server)** | `string` | 터미널 입력 (예: `ls -la\\n`) |\n| **수신 (Server → Client)** | `string` | 터미널 출력 (stdout/stderr) |\n\n성공 시 별도의 JSON 이벤트(`success`, `ready`, `connected` 등)는 전송하지 않습니다.\n컨테이너 shell이 정상 실행되면 prompt 또는 명령 결과가 문자열로 내려갑니다.\n\n### Shell 실행 후보\n\n서버는 WebSocket 연결 시점에 아래 순서로 shell을 직접 실행합니다.\n\n1. `/bin/bash -i`\n2. `/bin/sh -i`\n\n### Shell 없음 에러\n\n대상 컨테이너 이미지에 `/bin/bash`, `/bin/sh`가 모두 없어 터미널을 시작할 수 없는 경우,\n서버는 아래 문자열을 WebSocket text frame으로 전송한 뒤 연결을 종료합니다.\n\n```\n__ERROR_CODE__:10000:SHELL_NOT_FOUND\n```\n\n종료 정보:\n\n| 항목 | 값 |\n|------|------|\n| close code | `1011` |\n| close reason | `SHELL_NOT_FOUND` |\n\n프론트엔드는 위 문자열을 일반 터미널 출력으로 렌더링하지 않고,\n아래 사용자 메시지로 표시해야 합니다.\n\n```\nThis container image does not include sh or bash, so the terminal cannot be started.\n```",
-        "operationId": "container_shell_docs_workload_pods__pod_name__containers__container_name__shell_docs_get",
-        "security": [
-          {
-            "Bearer Token": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "pod_name",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "pattern": "^[a-z0-9]([a-z0-9\\-]*[a-z0-9])?$",
-              "description": "Pod 이름",
-              "title": "Pod Name"
-            },
-            "description": "Pod 이름"
-          },
-          {
-            "name": "container_name",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "pattern": "^[a-z0-9]([a-z0-9\\-]*[a-z0-9])?$",
-              "description": "컨테이너 이름",
-              "title": "Container Name"
-            },
-            "description": "컨테이너 이름"
-          },
-          {
-            "name": "X-Domain-Id",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "description": "Domain ID",
-              "title": "X-Domain-Id"
-            },
-            "description": "Domain ID"
-          },
-          {
-            "name": "X-Domain-Name",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "description": "Domain Name",
-              "title": "X-Domain-Name"
-            },
-            "description": "Domain Name"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiResponse_ContainerShellDocsResponse_"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "result": {
-                      "type": "null",
-                      "description": "에러 시에는 항상 null"
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "에러 메시지",
-                      "examples": [
-                        "요청 데이터 검증 실패",
-                        "잘못된 형식의 데이터입니다."
-                      ]
-                    },
-                    "timestamp": {
-                      "type": "string",
-                      "format": "date-time",
-                      "description": "응답 생성 시간",
-                      "examples": [
-                        "2024-01-15T10:30:00Z"
-                      ]
-                    },
-                    "request_id": {
-                      "type": "string",
-                      "description": "요청 식별자",
-                      "examples": [
-                        "550e8400-e29b-41d4-a716-446655440000"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "result",
-                    "message",
-                    "timestamp",
-                    "request_id"
-                  ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/v1/container/workload/deployments/template/yaml": {
       "get": {
         "tags": [
@@ -44912,51 +44738,6 @@
         ],
         "title": "ApiResponse[ClusterAppearanceResponse]"
       },
-      "ApiResponse_ClusterDashboardResponse_": {
-        "properties": {
-          "message": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Message",
-            "description": "응답 메시지",
-            "examples": [
-              "요청이 성공적으로 처리되었습니다."
-            ]
-          },
-          "timestamp": {
-            "type": "string",
-            "title": "Timestamp",
-            "description": "응답 생성 시간",
-            "examples": [
-              "2024-01-15T10:30:00Z"
-            ]
-          },
-          "requestId": {
-            "type": "string",
-            "title": "Requestid",
-            "description": "요청 식별자",
-            "examples": [
-              "550e8400-e29b-41d4-a716-446655440000"
-            ]
-          },
-          "result": {
-            "$ref": "#/components/schemas/ClusterDashboardResponse",
-            "description": "결과 데이터"
-          }
-        },
-        "type": "object",
-        "required": [
-          "requestId",
-          "result"
-        ],
-        "title": "ApiResponse[ClusterDashboardResponse]"
-      },
       "ApiResponse_ClusterDeleteResponse_": {
         "properties": {
           "message": {
@@ -45407,7 +45188,7 @@
         ],
         "title": "ApiResponse[ContainerLogItemResponse]"
       },
-      "ApiResponse_ContainerShellDocsResponse_": {
+      "ApiResponse_ControlPlaneHealthResponse_": {
         "properties": {
           "message": {
             "anyOf": [
@@ -45441,7 +45222,7 @@
             ]
           },
           "result": {
-            "$ref": "#/components/schemas/ContainerShellDocsResponse",
+            "$ref": "#/components/schemas/ControlPlaneHealthResponse",
             "description": "결과 데이터"
           }
         },
@@ -45450,7 +45231,7 @@
           "requestId",
           "result"
         ],
-        "title": "ApiResponse[ContainerShellDocsResponse]"
+        "title": "ApiResponse[ControlPlaneHealthResponse]"
       },
       "ApiResponse_CronJobCreateResponse_": {
         "properties": {
@@ -53631,127 +53412,6 @@
         "title": "AvailabilityValueResponse",
         "description": "Availability 값 응답 DTO (minAvailable/maxUnavailable)"
       },
-      "BasicInformationResponse": {
-        "properties": {
-          "architecture": {
-            "type": "string",
-            "title": "Architecture",
-            "description": "CPU 아키텍처",
-            "examples": [
-              "amd64",
-              "arm64"
-            ]
-          },
-          "kubernetesVersion": {
-            "type": "string",
-            "title": "Kubernetesversion",
-            "description": "Kubernetes 버전",
-            "examples": [
-              "v1.33.4+k3s1"
-            ]
-          },
-          "workloadTotalCount": {
-            "type": "integer",
-            "title": "Workloadtotalcount",
-            "description": "워크로드 총 개수 (Deployment + StatefulSet + DaemonSet + Job + CronJob)"
-          },
-          "createdAt": {
-            "type": "string",
-            "title": "Createdat",
-            "description": "클러스터 생성 시간 (ISO 8601)"
-          },
-          "deploymentCount": {
-            "type": "integer",
-            "title": "Deploymentcount",
-            "description": "Deployment 개수"
-          },
-          "nodeCount": {
-            "type": "integer",
-            "title": "Nodecount",
-            "description": "노드 개수"
-          }
-        },
-        "type": "object",
-        "required": [
-          "architecture",
-          "kubernetesVersion",
-          "workloadTotalCount",
-          "createdAt",
-          "deploymentCount",
-          "nodeCount"
-        ],
-        "title": "BasicInformationResponse",
-        "description": "클러스터 기본 정보 응답 DTO"
-      },
-      "CapacityMetricResponse": {
-        "properties": {
-          "used": {
-            "anyOf": [
-              {
-                "type": "number"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Used",
-            "description": "사용량",
-            "examples": [
-              0,
-              0.26,
-              12,
-              51
-            ]
-          },
-          "total": {
-            "type": "number",
-            "title": "Total",
-            "description": "전체 용량 (allocatable 합계)",
-            "examples": [
-              8,
-              16,
-              110
-            ]
-          },
-          "unit": {
-            "type": "string",
-            "title": "Unit",
-            "description": "단위",
-            "examples": [
-              "cores",
-              "GiB",
-              "pods"
-            ]
-          },
-          "percent": {
-            "anyOf": [
-              {
-                "type": "number"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Percent",
-            "description": "사용률 (%) - total이 0이면 null",
-            "examples": [
-              0,
-              3.3,
-              75,
-              46.4
-            ]
-          }
-        },
-        "type": "object",
-        "required": [
-          "used",
-          "total",
-          "unit",
-          "percent"
-        ],
-        "title": "CapacityMetricResponse",
-        "description": "용량 메트릭 응답 DTO"
-      },
       "ClaimRefResponse": {
         "properties": {
           "namespace": {
@@ -53872,46 +53532,6 @@
         "title": "ClusterAppearanceUpdateRequest",
         "description": "클러스터 primary menu 버튼 텍스트/색상 수정 요청 DTO"
       },
-      "ClusterCapacityResponse": {
-        "properties": {
-          "metricsServerAvailable": {
-            "type": "boolean",
-            "title": "Metricsserveravailable",
-            "description": "metrics-server 설치 여부"
-          },
-          "cpuUsed": {
-            "$ref": "#/components/schemas/CapacityMetricResponse",
-            "description": "CPU 실제 사용량 (metrics unavailable 시 used/percent는 0)"
-          },
-          "cpuReserved": {
-            "$ref": "#/components/schemas/CapacityMetricResponse",
-            "description": "CPU 예약량 (Pod requests 합계)"
-          },
-          "memoryUsed": {
-            "$ref": "#/components/schemas/CapacityMetricResponse",
-            "description": "메모리 실제 사용량 (metrics unavailable 시 used/percent는 0)"
-          },
-          "memoryReserved": {
-            "$ref": "#/components/schemas/CapacityMetricResponse",
-            "description": "메모리 예약량 (Pod requests 합계)"
-          },
-          "pods": {
-            "$ref": "#/components/schemas/CapacityMetricResponse",
-            "description": "Pod 사용량"
-          }
-        },
-        "type": "object",
-        "required": [
-          "metricsServerAvailable",
-          "cpuUsed",
-          "cpuReserved",
-          "memoryUsed",
-          "memoryReserved",
-          "pods"
-        ],
-        "title": "ClusterCapacityResponse",
-        "description": "클러스터 용량 정보 응답 DTO"
-      },
       "ClusterCpSpec": {
         "properties": {
           "imageId": {
@@ -54019,25 +53639,6 @@
         ],
         "title": "ClusterCpSpec",
         "description": "Control Plane 노드 설정"
-      },
-      "ClusterDashboardResponse": {
-        "properties": {
-          "basicInformation": {
-            "$ref": "#/components/schemas/BasicInformationResponse",
-            "description": "클러스터 기본 정보"
-          },
-          "capacity": {
-            "$ref": "#/components/schemas/ClusterCapacityResponse",
-            "description": "클러스터 용량 정보"
-          }
-        },
-        "type": "object",
-        "required": [
-          "basicInformation",
-          "capacity"
-        ],
-        "title": "ClusterDashboardResponse",
-        "description": "클러스터 대시보드 응답 DTO"
       },
       "ClusterDeleteResponse": {
         "properties": {
@@ -55425,108 +55026,6 @@
         "title": "ContainerLogItemResponse",
         "description": "컨테이너 로그 아이템 응답 DTO"
       },
-      "ContainerShellDocsResponse": {
-        "properties": {
-          "message": {
-            "type": "string",
-            "title": "Message",
-            "description": "안내 메시지",
-            "examples": [
-              "이 엔드포인트는 WebSocket입니다. wss:// 프로토콜로 연결하세요."
-            ]
-          },
-          "websocketUrl": {
-            "type": "string",
-            "title": "Websocketurl",
-            "description": "WebSocket 연결 URL 템플릿",
-            "examples": [
-              "ws://{host}/v1/container/ws/workload/pods/{pod_name}/containers/{container_name}/shell?clusterId={cluster_id}&namespace={namespace}"
-            ]
-          },
-          "pathParameters": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object",
-            "title": "Pathparameters",
-            "description": "Path 파라미터 설명",
-            "examples": [
-              {
-                "container_name": "컨테이너 이름 (DNS-1123 규칙 준수)",
-                "pod_name": "Pod 이름 (DNS-1123 규칙 준수)"
-              }
-            ]
-          },
-          "queryParameters": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object",
-            "title": "Queryparameters",
-            "description": "Query 파라미터 설명",
-            "examples": [
-              {
-                "clusterId": "클러스터 ID (필수, 양수 정수)",
-                "namespace": "네임스페이스 이름 (필수)"
-              }
-            ]
-          },
-          "messageFormat": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object",
-            "title": "Messageformat",
-            "description": "메시지 형식 설명",
-            "examples": [
-              {
-                "receive": "터미널 출력을 문자열로 수신 (stdout/stderr)",
-                "send": "터미널 입력을 문자열로 전송 (예: 'ls -la\\n')"
-              }
-            ]
-          },
-          "usageExamples": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object",
-            "title": "Usageexamples",
-            "description": "사용 예시",
-            "examples": [
-              {
-                "javascript": "const ws = new WebSocket('ws://localhost:8000/...');",
-                "python": "import websockets; async with websockets.connect(uri) as ws: ..."
-              }
-            ]
-          },
-          "errorCodes": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object",
-            "title": "Errorcodes",
-            "description": "WebSocket 에러 코드",
-            "examples": [
-              {
-                "1000": "정상 종료",
-                "1011": "Kubernetes 연결 오류"
-              }
-            ]
-          }
-        },
-        "type": "object",
-        "required": [
-          "message",
-          "websocketUrl",
-          "pathParameters",
-          "queryParameters",
-          "messageFormat",
-          "usageExamples",
-          "errorCodes"
-        ],
-        "title": "ContainerShellDocsResponse",
-        "description": "컨테이너 Shell WebSocket API 문서 응답 DTO\n\nWebSocket shell API의 사용 방법을 설명하는 문서용  응답입니다."
-      },
       "ContainerShellInfoResponse": {
         "properties": {
           "containerName": {
@@ -55571,6 +55070,86 @@
         ],
         "title": "ContainerShellInfoResponse",
         "description": "컨테이너 Shell 연결 정보 응답 DTO"
+      },
+      "ControlPlaneComponentHealthResponse": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "컴포넌트 식별자",
+            "examples": [
+              "etcd",
+              "scheduler",
+              "controllerManager"
+            ]
+          },
+          "status": {
+            "$ref": "#/components/schemas/HealthStatus",
+            "description": "상태 값",
+            "examples": [
+              "healthy",
+              "unhealthy",
+              "unknown"
+            ]
+          },
+          "uptimeSeconds": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Uptimeseconds",
+            "description": "Uptime (seconds). 조회 불가 시 null",
+            "examples": [
+              1324980
+            ]
+          },
+          "uptimeDisplay": {
+            "type": "string",
+            "title": "Uptimedisplay",
+            "description": "Uptime 표시 문자열",
+            "examples": [
+              "15d 4h 23m",
+              "Unknown"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "status",
+          "uptimeSeconds",
+          "uptimeDisplay"
+        ],
+        "title": "ControlPlaneComponentHealthResponse",
+        "description": "Control plane 단일 컴포넌트 상태 응답 DTO"
+      },
+      "ControlPlaneHealthResponse": {
+        "properties": {
+          "etcd": {
+            "$ref": "#/components/schemas/ControlPlaneComponentHealthResponse",
+            "description": "etcd 상태"
+          },
+          "scheduler": {
+            "$ref": "#/components/schemas/ControlPlaneComponentHealthResponse",
+            "description": "kube-scheduler 상태"
+          },
+          "controllerManager": {
+            "$ref": "#/components/schemas/ControlPlaneComponentHealthResponse",
+            "description": "kube-controller-manager 상태"
+          }
+        },
+        "type": "object",
+        "required": [
+          "etcd",
+          "scheduler",
+          "controllerManager"
+        ],
+        "title": "ControlPlaneHealthResponse",
+        "description": "Control plane 컴포넌트 상태 응답 DTO"
       },
       "CronJobCreateRequest": {
         "properties": {
@@ -57828,6 +57407,16 @@
         ],
         "title": "EventListItemResponse",
         "description": "Event list item response DTO."
+      },
+      "HealthStatus": {
+        "type": "string",
+        "enum": [
+          "healthy",
+          "unhealthy",
+          "unknown"
+        ],
+        "title": "HealthStatus",
+        "description": "Control plane health 상태 값"
       },
       "HpaBehaviorInfoResponse": {
         "properties": {

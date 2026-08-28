@@ -41,7 +41,7 @@ POST https://<your-console-host>/api/v1/network/security-groups/{securityGroupId
 | 201 Created | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 409(리소스 충돌·사용 중) · 413(쿼터 초과) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 201
 
@@ -52,9 +52,9 @@ POST https://<your-console-host>/api/v1/network/security-groups/{securityGroupId
 | requestId | 필수 | string | 요청 식별자 |
 | result | 필수 | array (object) | 결과 데이터 |
 | result[].id | 필수 | string 또는 null |  |
-| result[].direction | 필수 | string | Security Group Rule 방향.. 값: INGRESS, EGRESS |
+| result[].direction | 필수 | string | Security Group Rule 방향. 값: INGRESS, EGRESS |
 | result[].etherType | 필수 | string |  |
-| result[].protocol | 필수 | string 또는 null | Security Group Rule 프로토콜.. 값: TCP, UDP, ICMP, ANY |
+| result[].protocol | 필수 | string 또는 null | Security Group Rule 프로토콜. 값: TCP, UDP, ICMP, ANY |
 | result[].portRange | 선택 | string 또는 null |  |
 | result[].icmpType | 선택 | integer 또는 null |  |
 | result[].icmpCode | 선택 | integer 또는 null |  |

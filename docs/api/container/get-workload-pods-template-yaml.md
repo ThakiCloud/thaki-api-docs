@@ -1,9 +1,4 @@
-# Get Pod Template
-
-Pod 템플릿 YAML 조회
-
-Pod 생성을 위한 템플릿 YAML을 조회합니다.
-응답에는 Pod 생성 시 함께 사용할 수 있는 관련 리소스 템플릿 정보(Service 등)가 포함됩니다.
+# Pod 템플릿 YAML 조회
 
 ## HTTP 요청
 
@@ -17,14 +12,9 @@ GET https://<your-console-host>/api/v1/container/workload/pods/template/yaml
 
 ## 요청 헤더
 
-인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+인증 헤더와 조직 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
 
-이 API 는 다음 헤더를 추가로 받습니다.
-
-| 이름 | 필수 | 형식 | 설명 |
-|---|---|---|---|
-| X-Domain-Id | 필수 | string | Domain ID. Domain ID |
-| X-Domain-Name | 필수 | string | Domain Name. Domain Name |
+이 API 는 파티션 헤더(X-Partition-Id)를 사용하지 않습니다. 보내도 무시됩니다.
 
 ## 응답
 
@@ -33,7 +23,7 @@ GET https://<your-console-host>/api/v1/container/workload/pods/template/yaml
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 

@@ -18,15 +18,15 @@ GET https://<your-console-host>/api/v1/network/pools/{poolId}/members
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| status | 선택 | array (string) | Member 상태 필터 (복수 선택 시 OR). Member 상태 필터 (복수 선택 시 OR) |
-| address | 선택 | array (string) | Member IP 주소 필터. Member IP 주소 필터 |
-| port | 선택 | array (integer) | Member 포트 필터. Member 포트 필터 |
-| weight | 선택 | array (integer) | Member 가중치 필터. Member 가중치 필터 |
-| adminStateUp | 선택 | array (boolean) | 관리자 상태 필터. 관리자 상태 필터 |
-| page | 선택 | integer | 조회 페이지 번호 (0=전체). 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 20. 범위 1~100 |
-| sort | 선택 | string | 정렬 대상 컬럼. 정렬 대상 컬럼. 값: ipAddress, port, weight |
-| order | 선택 | string | 정렬 방향 (asc/desc). 정렬 방향 (asc/desc). 값: asc, desc |
+| status | 선택 | array (string) | Member 상태 필터 (복수 선택 시 OR) |
+| address | 선택 | array (string) | Member IP 주소 필터 |
+| port | 선택 | array (integer) | Member 포트 필터 |
+| weight | 선택 | array (integer) | Member 가중치 필터 |
+| adminStateUp | 선택 | array (boolean) | 관리자 상태 필터 |
+| page | 선택 | integer | 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 20. 범위 1~100 |
+| sort | 선택 | string | 정렬 대상 컬럼. 값: ipAddress, port, weight |
+| order | 선택 | string | 정렬 방향 (asc/desc). 값: asc, desc |
 
 ## 요청 헤더
 
@@ -39,7 +39,7 @@ GET https://<your-console-host>/api/v1/network/pools/{poolId}/members
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -61,7 +61,7 @@ GET https://<your-console-host>/api/v1/network/pools/{poolId}/members
 | result.data[].monitorAddress | 필수 | string 또는 null |  |
 | result.data[].monitorPort | 필수 | integer 또는 null |  |
 | result.data[].backup | 필수 | boolean 또는 null |  |
-| result.data[].status | 필수 | string 또는 null | Octavia 리소스 상태. OpenStack Octavia의 operating_status와 provisioning_status를 비즈니스 관점의 단일 상태로 통합한 Enum.. 값: ONLINE, DEGRADED, OFFLINE, NO_MONITOR, OPERATING_ERROR, DRAINING, PROVISIONING_ERROR, CREATING, UPDATING, DELETING, UNKNOWN |
+| result.data[].status | 필수 | string 또는 null | Octavia 리소스 상태. OpenStack Octavia의 operating_status와 provisioning_status를 비즈니스 관점의 단일 상태로 통합한 Enum. 값: ONLINE, DEGRADED, OFFLINE, NO_MONITOR, OPERATING_ERROR, DRAINING, PROVISIONING_ERROR, CREATING, UPDATING, DELETING, UNKNOWN |
 | result.data[].createdAt | 필수 | string (date-time) |  |
 | result.data[].updatedAt | 필수 | string (date-time) |  |
 | result.dataCount | 필수 | integer | 데이터 개수. 범위 0~ |

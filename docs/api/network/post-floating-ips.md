@@ -39,7 +39,7 @@ POST https://<your-console-host>/api/v1/network/floating-ips
 | 201 Created | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 409(리소스 충돌·사용 중) · 413(쿼터 초과) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 201
 
@@ -57,7 +57,7 @@ POST https://<your-console-host>/api/v1/network/floating-ips
 | result.fixedIpAddress | 선택 | string 또는 null |  |
 | result.routerId | 선택 | string 또는 null |  |
 | result.routerName | 선택 | string 또는 null |  |
-| result.status | 필수 | string | Floating IP 상태.. 값: AVAILABLE, IN_USE, ERROR |
+| result.status | 필수 | string | Floating IP 상태. 값: AVAILABLE, IN_USE, ERROR |
 | result.description | 선택 | string 또는 null |  |
 | result.dnsDomain | 선택 | string 또는 null |  |
 | result.dnsName | 선택 | string 또는 null |  |
@@ -65,17 +65,17 @@ POST https://<your-console-host>/api/v1/network/floating-ips
 | result.qosPolicyName | 선택 | string 또는 null |  |
 | result.ingressBandwidthLimitKbps | 선택 | integer 또는 null |  |
 | result.egressBandwidthLimitKbps | 선택 | integer 또는 null |  |
-| result.portDetail | 선택 | object 또는 null | Floating IP에서 반환하는 포트 상세 정보를 감싸는 DTO. |
+| result.portDetail | 선택 | object 또는 null | Floating IP에서 반환하는 포트 상세 정보를 감싸는 DTO |
 | result.portDetail.name | 선택 | string 또는 null |  |
 | result.portDetail.networkId | 선택 | string 또는 null |  |
 | result.portDetail.networkName | 선택 | string 또는 null |  |
 | result.portDetail.macAddress | 선택 | string 또는 null |  |
 | result.portDetail.adminStateUp | 선택 | boolean 또는 null |  |
-| result.portDetail.status | 선택 | string 또는 null | 포트 상태 (Skyline 기준).. 값: ACTIVE, DOWN, BUILD, ERROR |
+| result.portDetail.status | 선택 | string 또는 null | 포트 상태 (Skyline 기준). 값: ACTIVE, DOWN, BUILD, ERROR |
 | result.portDetail.deviceId | 선택 | string 또는 null |  |
 | result.portDetail.deviceOwner | 선택 | string 또는 null |  |
 | result.portDetail.deviceName | 선택 | string 또는 null |  |
-| result.portDetail.deviceType | 선택 | string 또는 null | Floating IP 연결 리소스 타입.. 값: INSTANCE, LOAD_BALANCER, PORT, OTHERS, UNBOUNDED |
+| result.portDetail.deviceType | 선택 | string 또는 null | Floating IP 연결 리소스 타입. 값: INSTANCE, LOAD_BALANCER, PORT, OTHERS, UNBOUNDED |
 | result.projectId | 선택 | string 또는 null |  |
 | result.tenantId | 선택 | string 또는 null |  |
 | result.createdAt | 선택 | string (date-time) |  |

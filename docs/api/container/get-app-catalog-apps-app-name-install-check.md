@@ -12,26 +12,21 @@ GET https://<your-console-host>/api/v1/container/app-catalog/apps/{app_name}/ins
 
 | 이름 | 위치 | 필수 | 형식 | 설명 |
 |---|---|---|---|---|
-| app_name | path | 필수 | string | 앱 이름. 앱 이름 |
+| app_name | path | 필수 | string | 앱 이름 |
 
 ## 쿼리 매개변수
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| clusterId | 필수 | integer | 설치 여부를 확인할 k8s_clusters.id. 설치 여부를 확인할 k8s_clusters.id. 범위 1~ |
-| tab | 선택 | string | 설치 버튼이 눌린 App Catalog 탭. 설치 버튼이 눌린 App Catalog 탭. 값: applications, operators. 기본값 "applications" |
-| namespace | 선택 | string 또는 null | 현재 화면의 namespace. 의존성 설치 여부는 cluster 단위로 확인합니다.. 현재 화면의 namespace. 의존성 설치 여부는 cluster 단위로 확인합니다. |
+| clusterId | 필수 | integer | 설치 여부를 확인할 k8s_clusters.id. 범위 1~ |
+| tab | 선택 | string | 설치 버튼이 눌린 App Catalog 탭. 값: applications, operators. 기본값 "applications" |
+| namespace | 선택 | string 또는 null | 현재 화면의 namespace. 의존성 설치 여부는 cluster 단위로 확인합니다. |
 
 ## 요청 헤더
 
-인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+인증 헤더와 조직 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
 
-이 API 는 다음 헤더를 추가로 받습니다.
-
-| 이름 | 필수 | 형식 | 설명 |
-|---|---|---|---|
-| X-Domain-Id | 필수 | string | Domain ID. Domain ID |
-| X-Domain-Name | 필수 | string | Domain Name. Domain Name |
+이 API 는 파티션 헤더(X-Partition-Id)를 사용하지 않습니다. 보내도 무시됩니다.
 
 ## 응답
 
@@ -40,7 +35,7 @@ GET https://<your-console-host>/api/v1/container/app-catalog/apps/{app_name}/ins
 | 200 OK | 의존성 타입과 미설치 의존성 안내 메시지 |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 

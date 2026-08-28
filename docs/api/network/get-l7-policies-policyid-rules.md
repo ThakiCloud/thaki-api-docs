@@ -18,16 +18,16 @@ GET https://<your-console-host>/api/v1/network/l7-policies/{policyId}/rules
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| type | 선택 | array (string) | L7 Rule 타입 필터. L7 Rule 타입 필터 |
-| compareType | 선택 | array (string) | 비교 타입 필터. 비교 타입 필터 |
-| key | 선택 | array (string) | 키 필터 (HEADER, COOKIE 타입에서 사용). 키 필터 (HEADER, COOKIE 타입에서 사용) |
-| value | 선택 | array (string) | 값 필터. 값 필터 |
-| invert | 선택 | boolean 또는 null | 규칙 반전 여부 필터. 규칙 반전 여부 필터 |
-| adminStateUp | 선택 | boolean 또는 null | 관리 상태 필터. 관리 상태 필터 |
-| page | 선택 | integer | 조회 페이지 번호 (0=전체). 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 20. 범위 1~100 |
-| sort | 선택 | string | 정렬 대상 컬럼. 정렬 대상 컬럼. 값: type, compareType, key, value |
-| order | 선택 | string | 정렬 방향 asc/desc. 정렬 방향 asc/desc. 값: asc, desc |
+| type | 선택 | array (string) | L7 Rule 타입 필터 |
+| compareType | 선택 | array (string) | 비교 타입 필터 |
+| key | 선택 | array (string) | 키 필터 (HEADER, COOKIE 타입에서 사용) |
+| value | 선택 | array (string) | 값 필터 |
+| invert | 선택 | boolean 또는 null | 규칙 반전 여부 필터 |
+| adminStateUp | 선택 | boolean 또는 null | 관리 상태 필터 |
+| page | 선택 | integer | 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 20. 범위 1~100 |
+| sort | 선택 | string | 정렬 대상 컬럼. 값: type, compareType, key, value |
+| order | 선택 | string | 정렬 방향 asc/desc. 값: asc, desc |
 
 ## 요청 헤더
 
@@ -40,7 +40,7 @@ GET https://<your-console-host>/api/v1/network/l7-policies/{policyId}/rules
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 

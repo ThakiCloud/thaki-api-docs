@@ -1,17 +1,4 @@
-# Get Secret Template
-
-Secret 템플릿 YAML 조회
-
-Secret 생성을 위한 템플릿 YAML을 조회합니다.
-secretType 파라미터에 따라 YAML의 type 필드가 동적으로 변경됩니다.
-
-- null (미전송): Opaque
-- default: Opaque
-- opaque: Opaque
-- httpBasicAuth: kubernetes.io/basic-auth
-- registry: kubernetes.io/dockerconfigjson
-- sshKey: kubernetes.io/ssh-auth
-- tls: kubernetes.io/tls
+# Secret 템플릿 YAML 조회
 
 ## HTTP 요청
 
@@ -27,18 +14,13 @@ GET https://<your-console-host>/api/v1/container/storage/secrets/template/yaml
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| secretType | 선택 | string 또는 null | Secret 유형 (default, opaque, httpBasicAuth, registry, sshKey, tls). Secret 유형 (default, opaque, httpBasicAuth, registry, sshKey, tls). 값: default, opaque, httpBasicAuth, registry, sshKey, tls |
+| secretType | 선택 | string 또는 null | Secret 유형 (default, opaque, httpBasicAuth, registry, sshKey, tls). 값: default, opaque, httpBasicAuth, registry, sshKey, tls |
 
 ## 요청 헤더
 
-인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+인증 헤더와 조직 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
 
-이 API 는 다음 헤더를 추가로 받습니다.
-
-| 이름 | 필수 | 형식 | 설명 |
-|---|---|---|---|
-| X-Domain-Id | 필수 | string | Domain ID. Domain ID |
-| X-Domain-Name | 필수 | string | Domain Name. Domain Name |
+이 API 는 파티션 헤더(X-Partition-Id)를 사용하지 않습니다. 보내도 무시됩니다.
 
 ## 응답
 
@@ -47,7 +29,7 @@ GET https://<your-console-host>/api/v1/container/storage/secrets/template/yaml
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 

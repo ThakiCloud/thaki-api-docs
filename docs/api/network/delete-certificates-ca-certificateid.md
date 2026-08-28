@@ -1,6 +1,4 @@
-# Delete Ca Certificate
-
-CA 인증서를 삭제합니다.
+# CA 인증서를 삭제합니다
 
 ## HTTP 요청
 
@@ -25,5 +23,5 @@ DELETE https://<your-console-host>/api/v1/network/certificates/ca/{certificateId
 | 204 No Content | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 409(리소스 충돌·사용 중) · 413(쿼터 초과) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 

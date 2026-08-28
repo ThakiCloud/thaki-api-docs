@@ -16,12 +16,14 @@ GET https://<your-console-host>/api/v1/compute/projects
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| projectId | 선택 | string 또는 null | 프로젝트 ID 필터 (부분 일치). 프로젝트 ID 필터 (부분 일치) |
-| projectName | 선택 | string 또는 null | 프로젝트 이름 필터 (부분 일치). 프로젝트 이름 필터 (부분 일치) |
+| projectId | 선택 | string 또는 null | 프로젝트 ID 필터 (부분 일치) |
+| projectName | 선택 | string 또는 null | 프로젝트 이름 필터 (부분 일치) |
 
 ## 요청 헤더
 
-인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+인증 헤더와 조직 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+
+이 API 는 파티션 헤더(X-Partition-Id)를 사용하지 않습니다. 파티션을 선택하기 전에도 호출할 수 있습니다.
 
 ## 응답
 
@@ -30,7 +32,7 @@ GET https://<your-console-host>/api/v1/compute/projects
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 

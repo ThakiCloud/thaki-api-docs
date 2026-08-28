@@ -18,12 +18,12 @@ GET https://<your-console-host>/api/v1/network/routers/{routerId}/routes
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| page | 선택 | integer | 조회 페이지 번호 (0=전체). 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 20. 범위 1~100 |
-| sort | 선택 | string | 정렬 대상 컬럼. 정렬 대상 컬럼. 기본값 "createdAt" |
-| order | 선택 | string | 정렬 방향 asc/desc. 정렬 방향 asc/desc. 값: asc, desc |
-| destination | 선택 | array (string) | 목적지 CIDR 필터. 목적지 CIDR 필터 |
-| nexthop | 선택 | array (string) | 다음 홉 IP 필터. 다음 홉 IP 필터 |
+| page | 선택 | integer | 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 20. 범위 1~100 |
+| sort | 선택 | string | 정렬 대상 컬럼. 기본값 "createdAt" |
+| order | 선택 | string | 정렬 방향 asc/desc. 값: asc, desc |
+| destination | 선택 | array (string) | 목적지 CIDR 필터 |
+| nexthop | 선택 | array (string) | 다음 홉 IP 필터 |
 
 ## 요청 헤더
 
@@ -36,7 +36,7 @@ GET https://<your-console-host>/api/v1/network/routers/{routerId}/routes
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 

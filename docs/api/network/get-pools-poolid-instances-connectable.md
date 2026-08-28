@@ -21,8 +21,8 @@ GET https://<your-console-host>/api/v1/network/pools/{poolId}/instances/connecta
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| page | 선택 | integer | 조회 페이지 번호 (0=전체). 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 20. 범위 1~100 |
+| page | 선택 | integer | 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 20. 범위 1~100 |
 
 ## 요청 헤더
 
@@ -35,7 +35,7 @@ GET https://<your-console-host>/api/v1/network/pools/{poolId}/instances/connecta
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -54,7 +54,7 @@ GET https://<your-console-host>/api/v1/network/pools/{poolId}/instances/connecta
 | result.data[].networks[].networkId | 필수 | string |  |
 | result.data[].networks[].networkName | 선택 | string 또는 null |  |
 | result.data[].selectable | 필수 | boolean |  |
-| result.data[].disabledReason | 선택 | string 또는 null | LB pool member 후보 인스턴스 선택 불가 사유 (ACOMP-33).. 값: NOT_ROUTABLE, NO_FIXED_IP |
+| result.data[].disabledReason | 선택 | string 또는 null | LB pool member 후보 인스턴스 선택 불가 사유 (ACOMP-33). 값: NOT_ROUTABLE, NO_FIXED_IP |
 | result.data[].totalFixedIpCount | 필수 | integer |  |
 | result.data[].routableFixedIpCount | 필수 | integer |  |
 | result.data[].fixedIps | 필수 | array (object) |  |

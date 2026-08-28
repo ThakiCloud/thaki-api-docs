@@ -20,18 +20,18 @@ GET https://<your-console-host>/api/v1/network/ports/instance-sg-candidates
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| status | 선택 | array (string) | 포트 상태 필터 (복수 선택 시 OR). 포트 상태 필터 (복수 선택 시 OR) |
-| name | 선택 | array (string) | 포트 이름 필터. 포트 이름 필터 |
-| id | 선택 | array (string) | 포트 ID 필터. 포트 ID 필터 |
-| networkName | 선택 | array (string) | 포트 네트워크 이름 필터. 포트 네트워크 이름 필터 |
-| networkId | 선택 | array (string) | 포트 네트워크 ID 필터. 포트 네트워크 ID 필터 |
-| fixedIp | 선택 | array (string) | 포트 고정 IP 필터. 포트 고정 IP 필터 |
-| macAddress | 선택 | array (string) | MAC 주소 필터. MAC 주소 필터 |
-| page | 선택 | integer | 조회 페이지 번호 (0=전체). 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 20. 범위 1~100 |
-| sort | 선택 | string 또는 null | 정렬 대상 컬럼 (미지정 시 port_security_enabled 우선 정렬). 정렬 대상 컬럼 (미지정 시 port_security_enabled 우선 정렬). 값: createdAt, name, id, networkName, connectable |
-| order | 선택 | string | 정렬 방향 asc/desc. 정렬 방향 asc/desc. 값: asc, desc |
-| deviceId | 필수 | string | 인스턴스 디바이스 ID (필수). 인스턴스 디바이스 ID (필수) |
+| status | 선택 | array (string) | 포트 상태 필터 (복수 선택 시 OR) |
+| name | 선택 | array (string) | 포트 이름 필터 |
+| id | 선택 | array (string) | 포트 ID 필터 |
+| networkName | 선택 | array (string) | 포트 네트워크 이름 필터 |
+| networkId | 선택 | array (string) | 포트 네트워크 ID 필터 |
+| fixedIp | 선택 | array (string) | 포트 고정 IP 필터 |
+| macAddress | 선택 | array (string) | MAC 주소 필터 |
+| page | 선택 | integer | 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 20. 범위 1~100 |
+| sort | 선택 | string 또는 null | 정렬 대상 컬럼 (미지정 시 port_security_enabled 우선 정렬). 값: createdAt, name, id, networkName, connectable |
+| order | 선택 | string | 정렬 방향 asc/desc. 값: asc, desc |
+| deviceId | 필수 | string | 인스턴스 디바이스 ID (필수) |
 
 ## 요청 헤더
 
@@ -44,7 +44,7 @@ GET https://<your-console-host>/api/v1/network/ports/instance-sg-candidates
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -65,7 +65,7 @@ GET https://<your-console-host>/api/v1/network/ports/instance-sg-candidates
 | result.data[].deviceId | 선택 | string 또는 null |  |
 | result.data[].deviceName | 선택 | string 또는 null |  |
 | result.data[].adminStateUp | 선택 | boolean 또는 null |  |
-| result.data[].status | 선택 | string 또는 null | 포트 상태 (Skyline 기준).. 값: ACTIVE, DOWN, BUILD, ERROR |
+| result.data[].status | 선택 | string 또는 null | 포트 상태 (Skyline 기준). 값: ACTIVE, DOWN, BUILD, ERROR |
 | result.data[].macAddress | 선택 | string 또는 null |  |
 | result.data[].portSecurityEnabled | 선택 | boolean 또는 null |  |
 | result.data[].securityGroups | 선택 | array (object) |  |

@@ -16,7 +16,9 @@ POST https://<your-console-host>/api/v1/network/external-firewalls/{firewallId}/
 
 ## 요청 헤더
 
-인증 헤더와 파티션 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+인증 헤더는 모든 API 가 같습니다. [공통 규약](/guide/conventions)을 참고하십시오.
+
+이 API 는 파티션 헤더(X-Partition-Id)를 사용하지 않습니다.
 
 ## 요청 본문
 
@@ -36,7 +38,7 @@ POST https://<your-console-host>/api/v1/network/external-firewalls/{firewallId}/
 | 202 Accepted | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 409(리소스 충돌·사용 중) · 413(쿼터 초과) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 202
 
@@ -48,8 +50,8 @@ POST https://<your-console-host>/api/v1/network/external-firewalls/{firewallId}/
 | result | 필수 | object | 결과 데이터 |
 | result.id | 필수 | string |  |
 | result.firewallId | 필수 | string |  |
-| result.action | 필수 | string | 규칙 ACL action. allow-related는 사용자/서비스 허용 규칙, drop은 방화벽 기본 전체 차단(default-deny) 규칙에 쓴다. 둘 다 동일한 AWX 템플릿(ext-fw-rule-create)으로 action만 달리 보낸다.. 값: allow-related, drop |
-| result.status | 필수 | string | API 노출용 방화벽/규칙 상태 (다른 status API와 동일한 대문자 값). 내부 lifecycle(ProvisioningStatus)을 사용자 관점 상태로 축약해 노출한다. CREATING(생성 요청됨) / ACTIVE(실제 적용 완료) / DELETING(삭제 요청됨)이 확정된 기준이며, 재시도/확인을 위해 행이 남는 생성 실패(create_failed)는 ERROR로 노출한다.. 값: CREATING, ACTIVE, DELETING, ERROR |
+| result.action | 필수 | string | 규칙 ACL action. allow-related는 사용자/서비스 허용 규칙, drop은 방화벽 기본 전체 차단(default-deny) 규칙에 쓴다. 둘 다 동일한 AWX 템플릿(ext-fw-rule-create)으로 action만 달리 보낸다. 값: allow-related, drop |
+| result.status | 필수 | string | API 노출용 방화벽/규칙 상태 (다른 status API와 동일한 대문자 값). 내부 lifecycle(ProvisioningStatus)을 사용자 관점 상태로 축약해 노출한다. CREATING(생성 요청됨) / ACTIVE(실제 적용 완료) / DELETING(삭제 요청됨)이 확정된 기준이며, 재시도/확인을 위해 행이 남는 생성 실패(create_failed)는 ERROR로 노출한다. 값: CREATING, ACTIVE, DELETING, ERROR |
 | result.desiredRevision | 필수 | integer |  |
 | result.appliedRevision | 필수 | integer |  |
 | result.isDefault | 선택 | boolean | 기본값 false |

@@ -1,6 +1,6 @@
 # IAM
 
-오퍼레이션 244개. OpenAPI 스펙 내려받기 — [iam-authn.openapi.json](/iam-authn.openapi.json) · [iam-authz.openapi.json](/iam-authz.openapi.json)
+API 224개.
 
 ## API Keys
 
@@ -15,7 +15,6 @@
 | POST | [/api/v1/iam/authn/api-keys/{key_id}/activate](/api/iam/post-authn-api-keys-key-id-activate) | API Key 활성화 |
 | POST | [/api/v1/iam/authn/api-keys/{key_id}/reset](/api/iam/post-authn-api-keys-key-id-reset) | API Key 시크릿 재발급 |
 | POST | [/api/v1/iam/authn/api-keys/validate](/api/iam/post-authn-api-keys-validate) | API Key 검증 (User / SA 통합) |
-| POST | [/api/v1/iam/authn/api-keys/exchange](/api/iam/post-authn-api-keys-exchange) | API Key로 내부 토큰 발급 |
 
 ## Account Lockout Management
 
@@ -49,14 +48,8 @@
 | 메서드 | 경로 | 설명 |
 |---|---|---|
 | GET | [/api/v1/iam/authn/audit-logs](/api/iam/get-authn-audit-logs) | 감사 로그 목록 조회 |
-| GET | [/api/v1/iam/authn/audit-logs/{event_id}](/api/iam/get-authn-audit-logs-event-id) | Get Audit Log |
+| GET | [/api/v1/iam/authn/audit-logs/{event_id}](/api/iam/get-authn-audit-logs-event-id) | 감사 로그 상세 조회 (org admin / 시스템 어드민 전용) |
 | GET | [/api/v1/iam/authz/audit-logs/evaluations](/api/iam/get-authz-audit-logs-evaluations) | PDP 평가 감사 로그 조회 |
-
-## Dashboard
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| GET | [/api/v1/iam/authn/dashboard/{orgId}](/api/iam/get-authn-dashboard-orgid) | 대시보드 데이터 조회 |
 
 ## My Access Keys
 
@@ -100,7 +93,6 @@
 | GET | [/api/v1/iam/authz/policies](/api/iam/get-authz-policies) | 정책 목록 조회 |
 | DELETE | [/api/v1/iam/authz/policies](/api/iam/delete-authz-policies) | 정책 삭제 |
 | GET | [/api/v1/iam/authz/policies/me/policies](/api/iam/get-authz-policies-me-policies) | 내 연결 정책 목록 조회 (IAM1701) |
-| GET | [/api/v1/iam/authz/policies/export/csv](/api/iam/get-authz-policies-export-csv) | 정책 목록 CSV export |
 | GET | [/api/v1/iam/authz/policies/sync-summary](/api/iam/get-authz-policies-sync-summary) | 정책 동기화 요약(outdated 개수/ID) |
 | GET | [/api/v1/iam/authz/policies/{policy_id}](/api/iam/get-authz-policies-policy-id) | 정책 조회 |
 | PUT | [/api/v1/iam/authz/policies/{policy_id}](/api/iam/put-authz-policies-policy-id) | 정책 업데이트 |
@@ -115,13 +107,7 @@
 | POST | [/api/v1/iam/authz/policies/{policy_id}:duplicate](/api/iam/post-authz-policies-policy-id-duplicate) | 정책 복제 |
 | GET | [/api/v1/iam/authz/policies/{policy_id}/diff](/api/iam/get-authz-policies-policy-id-diff) | 정책 버전 비교 |
 | GET | [/api/v1/iam/authz/policies/{policy_id}/sync-diff](/api/iam/get-authz-policies-policy-id-sync-diff) | 정책 sync-diff (템플릿 대비 Field diff) |
-| POST | [/api/v1/iam/authz/policies/bulk-sync-update](/api/iam/post-authz-policies-bulk-sync-update) | 정책 일괄 동기화 (템플릿 기준 document 교체) |
-| POST | [/api/v1/iam/authz/policies/validate](/api/iam/post-authz-policies-validate) | Validate Policy Dry Run |
-| POST | [/api/v1/iam/authz/policies/revalidate](/api/iam/post-authz-policies-revalidate) | Revalidate Policies Sync |
-| POST | [/api/v1/iam/authz/policies/evaluate](/api/iam/post-authz-policies-evaluate) | 정책 평가 |
-| PUT | [/api/v1/iam/authz/policies/{policy_id}/bindings/sync](/api/iam/put-authz-policies-policy-id-bindings-sync) | 정책에 대한 role 바인딩 동기화 |
 | GET | [/api/v1/iam/authz/policies/simulate/accessible-principals](/api/iam/get-authz-policies-simulate-accessible-principals) | 시뮬레이션 대상 주체 검색 |
-| POST | [/api/v1/iam/authz/policies/simulate](/api/iam/post-authz-policies-simulate) | 정책 시뮬레이션 (Batch) |
 
 ## Policy Attached Entities
 
@@ -146,7 +132,6 @@
 | GET | [/api/v1/iam/authz/bindings/{binding_id}](/api/iam/get-authz-bindings-binding-id) | 바인딩 단건 조회 |
 | DELETE | [/api/v1/iam/authz/bindings/{binding_id}](/api/iam/delete-authz-bindings-binding-id) | 바인딩 삭제 |
 | GET | [/api/v1/iam/authz/bindings/audit](/api/iam/get-authz-bindings-audit) | 바인딩 감사 로그 조회 |
-| PUT | [/api/v1/iam/authz/bindings/sync](/api/iam/put-authz-bindings-sync) | 바인딩 동기화 |
 | GET | [/api/v1/iam/authz/bindings/roles/{role_id}/policies](/api/iam/get-authz-bindings-roles-role-id-policies) | Role에 매핑된 정책 목록 조회 |
 | GET | [/api/v1/iam/authz/bindings/tpns/{tpn}/policies](/api/iam/get-authz-bindings-tpns-tpn-policies) | TPN(서비스 계정 등)에 직접 연결된 정책 목록 조회 (IAM14 정방향) |
 | GET | [/api/v1/iam/authz/bindings/policies/{policy_id}/roles](/api/iam/get-authz-bindings-policies-policy-id-roles) | 정책에 바인딩된 Role 목록 조회 |
@@ -242,9 +227,7 @@
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
-| POST | [/api/v1/iam/authn/revoke/session](/api/iam/post-authn-revoke-session) | 세션 기반 토큰 무효화 (관리자용) |
 | POST | [/api/v1/iam/authn/revoke/token](/api/iam/post-authn-revoke-token) | 토큰 ID(jti) 기반 무효화 |
-| POST | [/api/v1/iam/authn/revoke/user](/api/iam/post-authn-revoke-user) | 사용자 전체 세션 무효화 (관리자용) |
 | GET | [/api/v1/iam/authn/revoke/denylist](/api/iam/get-authn-revoke-denylist) | Denylist 목록 조회 |
 | POST | [/api/v1/iam/authn/revoke/token/status](/api/iam/post-authn-revoke-token-status) | 토큰/세션 무효화 상태 조회 |
 
@@ -252,12 +235,12 @@
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
-| POST | [/api/v1/iam/authn/login](/api/iam/post-authn-login) | Post Login |
-| POST | [/api/v1/iam/authn/token/refresh](/api/iam/post-authn-token-refresh) | Post Refresh |
-| POST | [/api/v1/iam/authn/logout](/api/iam/post-authn-logout) | Post Logout |
-| GET | [/api/v1/iam/authn/me](/api/iam/get-authn-me) | Get Me |
+| POST | [/api/v1/iam/authn/login](/api/iam/post-authn-login) | 사용자 로그인 |
+| POST | [/api/v1/iam/authn/token/refresh](/api/iam/post-authn-token-refresh) | Access Token 갱신 — 쿠키 우선, body 폴백 |
+| POST | [/api/v1/iam/authn/logout](/api/iam/post-authn-logout) | 로그아웃 및 세션 무효화 — 쿠키 우선 → body 폴백 |
+| GET | [/api/v1/iam/authn/me](/api/iam/get-authn-me) | 현재 인증된 사용자 정보 조회 |
 | GET | [/api/v1/iam/authn/sessions](/api/iam/get-authn-sessions) | List Active Sessions |
-| GET | [/api/v1/iam/authn/sessions/{session_id}](/api/iam/get-authn-sessions-session-id) | Get Session |
+| GET | [/api/v1/iam/authn/sessions/{session_id}](/api/iam/get-authn-sessions-session-id) | 특정 세션 ID로 세션 상세 정보 조회 |
 | POST | [/api/v1/iam/authn/sessions/revoke](/api/iam/post-authn-sessions-revoke) | 세션 강제 종료 (사용자 자신의 세션) |
 | POST | [/api/v1/iam/authn/sessions/revoke-all](/api/iam/post-authn-sessions-revoke-all) | 모든 세션 강제 종료 (사용자 자신) |
 | POST | [/api/v1/iam/authn/sessions/users/{user_tpn}/revoke-all](/api/iam/post-authn-sessions-users-user-tpn-revoke-all) | 관리자: 특정 사용자의 모든 세션 강제 종료 |
@@ -276,17 +259,6 @@
 |---|---|---|
 | POST | [/api/v1/iam/authn/organizations/{org_id}/groups/{group_id}/sync](/api/iam/post-authn-organizations-org-id-groups-group-id-sync) | 단일 그룹 템플릿 동기화 |
 | POST | [/api/v1/iam/authn/organizations/{org_id}/groups/sync](/api/iam/post-authn-organizations-org-id-groups-sync) | 일괄 그룹 템플릿 동기화 |
-
-## group-templates
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| POST | [/api/v1/iam/authn/group-templates](/api/iam/post-authn-group-templates) | 그룹 템플릿 생성 |
-| GET | [/api/v1/iam/authn/group-templates](/api/iam/get-authn-group-templates) | 그룹 템플릿 목록 조회 |
-| GET | [/api/v1/iam/authn/group-templates/{template_id}](/api/iam/get-authn-group-templates-template-id) | 그룹 템플릿 상세 조회 |
-| PUT | [/api/v1/iam/authn/group-templates/{template_id}](/api/iam/put-authn-group-templates-template-id) | 그룹 템플릿 수정 |
-| DELETE | [/api/v1/iam/authn/group-templates/{template_id}](/api/iam/delete-authn-group-templates-template-id) | 그룹 템플릿 삭제 (soft-delete) |
-| GET | [/api/v1/iam/authn/group-templates/{template_id}/derived](/api/iam/get-authn-group-templates-template-id-derived) | 템플릿 파생 그룹 목록 |
 
 ## groups
 
@@ -364,13 +336,13 @@
 | POST | [/api/v1/iam/authn/service-accounts](/api/iam/post-authn-service-accounts) | Create Service Account |
 | DELETE | [/api/v1/iam/authn/service-accounts](/api/iam/delete-authn-service-accounts) | 서비스 계정 일괄 삭제 |
 | GET | [/api/v1/iam/authn/service-accounts/export](/api/iam/get-authn-service-accounts-export) | 서비스 계정 목록 Export (CSV) |
-| GET | [/api/v1/iam/authn/service-accounts/{sa_id}](/api/iam/get-authn-service-accounts-sa-id) | Get Service Account |
-| DELETE | [/api/v1/iam/authn/service-accounts/{sa_id}](/api/iam/delete-authn-service-accounts-sa-id) | Delete Service Account |
+| GET | [/api/v1/iam/authn/service-accounts/{sa_id}](/api/iam/get-authn-service-accounts-sa-id) | 서비스 어카운트 상세 조회 |
+| DELETE | [/api/v1/iam/authn/service-accounts/{sa_id}](/api/iam/delete-authn-service-accounts-sa-id) | 서비스 어카운트 삭제 (논리적 삭제) |
 | PUT | [/api/v1/iam/authn/service-accounts/{sa_id}](/api/iam/put-authn-service-accounts-sa-id) | Update Service Account |
 | POST | [/api/v1/iam/authn/service-accounts/{sa_id}/keys](/api/iam/post-authn-service-accounts-sa-id-keys) | Issue Api Key |
 | POST | [/api/v1/iam/authn/service-accounts/{sa_id}/keys/{key_id}:disable](/api/iam/post-authn-service-accounts-sa-id-keys-key-id-disable) | Disable Api Key |
 | POST | [/api/v1/iam/authn/service-accounts/{sa_id}/keys/{key_id}:enable](/api/iam/post-authn-service-accounts-sa-id-keys-key-id-enable) | Enable Api Key |
-| DELETE | [/api/v1/iam/authn/service-accounts/{sa_id}/keys/{key_id}](/api/iam/delete-authn-service-accounts-sa-id-keys-key-id) | Delete Api Key |
+| DELETE | [/api/v1/iam/authn/service-accounts/{sa_id}/keys/{key_id}](/api/iam/delete-authn-service-accounts-sa-id-keys-key-id) | API Key 삭제 |
 | PATCH | [/api/v1/iam/authn/service-accounts/{sa_id}/keys/{key_id}](/api/iam/patch-authn-service-accounts-sa-id-keys-key-id) | Update Api Key |
 | POST | [/api/v1/iam/authn/service-accounts/{sa_id}:disable](/api/iam/post-authn-service-accounts-sa-id-disable) | Disable Service Account |
 | POST | [/api/v1/iam/authn/service-accounts/{sa_id}:enable](/api/iam/post-authn-service-accounts-sa-id-enable) | Enable Service Account |
@@ -383,7 +355,7 @@
 |---|---|---|
 | POST | [/api/v1/iam/authn/organizations/{org_id}/invitations](/api/iam/post-authn-organizations-org-id-invitations) | Create Invitation |
 | GET | [/api/v1/iam/authn/organizations/{org_id}/invitations](/api/iam/get-authn-organizations-org-id-invitations) | List Invitations |
-| GET | [/api/v1/iam/authn/invitations/{invitation_id}](/api/iam/get-authn-invitations-invitation-id) | Get Invitation |
+| GET | [/api/v1/iam/authn/invitations/{invitation_id}](/api/iam/get-authn-invitations-invitation-id) | 단일 초대 조회 |
 | POST | [/api/v1/iam/authn/invitations/{invitation_id}:resend](/api/iam/post-authn-invitations-invitation-id-resend) | Resend Invitation |
 | POST | [/api/v1/iam/authn/invitations/{invitation_id}:cancel](/api/iam/post-authn-invitations-invitation-id-cancel) | Cancel Invitation |
 | POST | [/api/v1/iam/authn/users/{user_tpn}/resend-invitation](/api/iam/post-authn-users-user-tpn-resend-invitation) | Resend Invitation By User |
@@ -398,7 +370,7 @@
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
-| GET | [/api/v1/iam/authn/users/me/mfa/status](/api/iam/get-authn-users-me-mfa-status) | Get Mfa Status |
+| GET | [/api/v1/iam/authn/users/me/mfa/status](/api/iam/get-authn-users-me-mfa-status) | 사용자 MFA 상태 조회 |
 | POST | [/api/v1/iam/authn/users/me/mfa/email/enable](/api/iam/post-authn-users-me-mfa-email-enable) | Enable Email Mfa |
 | POST | [/api/v1/iam/authn/users/me/mfa/email/disable](/api/iam/post-authn-users-me-mfa-email-disable) | Disable Email Mfa |
 | POST | [/api/v1/iam/authn/users/me/mfa/totp/setup](/api/iam/post-authn-users-me-mfa-totp-setup) | Setup Totp |
@@ -410,7 +382,7 @@
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
-| PUT | [/api/v1/iam/authn/users/{user_tpn}/password](/api/iam/put-authn-users-user-tpn-password) | Patch User Password |
+| PUT | [/api/v1/iam/authn/users/{user_tpn}/password](/api/iam/put-authn-users-user-tpn-password) | 사용자 비밀번호 변경 |
 | POST | [/api/v1/iam/authn/users/{user_tpn}/password/validate](/api/iam/post-authn-users-user-tpn-password-validate) | Validate User Password |
 | POST | [/api/v1/iam/authn/users/{user_tpn}/password/reset](/api/iam/post-authn-users-user-tpn-password-reset) | 관리자 비밀번호 초기화 |
 
@@ -428,11 +400,4 @@
 | POST | [/api/v1/iam/authn/users/{tpn}/mfa/totp:disable](/api/iam/post-authn-users-tpn-mfa-totp-disable) | 사용자 TOTP MFA 비활성화 (관리자용) |
 | POST | [/api/v1/iam/authn/users/{tpn}/groups:batch-add](/api/iam/post-authn-users-tpn-groups-batch-add) | 사용자를 여러 그룹에 일괄 추가 |
 | POST | [/api/v1/iam/authn/users/{tpn}/groups:sync](/api/iam/post-authn-users-tpn-groups-sync) | 사용자가 속한 그룹 동기화 |
-
-## 기타
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| GET | [/api/v1/iam/authn/](/api/iam/get-authn) | Root |
-| GET | [/api/v1/iam/authz/](/api/iam/get-authz) | Root |
 

@@ -18,13 +18,13 @@ GET https://<your-console-host>/api/v1/network/floating-ips/{floatingIpId}/ports
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| page | 선택 | integer | 조회 페이지 번호 (0=전체). 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 20. 범위 1~100 |
-| fixedIp | 선택 | array (string) | Fixed IP 필터. Fixed IP 필터 |
-| subnetName | 선택 | array (string) | 서브넷 이름 필터. 서브넷 이름 필터 |
-| subnetId | 선택 | array (string) | 서브넷 ID 필터. 서브넷 ID 필터 |
-| sort | 선택 | string 또는 null | 정렬 대상 컬럼. 정렬 대상 컬럼. 값: name |
-| order | 선택 | string | 정렬 방향 asc/desc. 정렬 방향 asc/desc. 값: asc, desc |
+| page | 선택 | integer | 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 20. 범위 1~100 |
+| fixedIp | 선택 | array (string) | Fixed IP 필터 |
+| subnetName | 선택 | array (string) | 서브넷 이름 필터 |
+| subnetId | 선택 | array (string) | 서브넷 ID 필터 |
+| sort | 선택 | string 또는 null | 정렬 대상 컬럼. 값: name |
+| order | 선택 | string | 정렬 방향 asc/desc. 값: asc, desc |
 
 ## 요청 헤더
 
@@ -37,7 +37,7 @@ GET https://<your-console-host>/api/v1/network/floating-ips/{floatingIpId}/ports
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -58,7 +58,7 @@ GET https://<your-console-host>/api/v1/network/floating-ips/{floatingIpId}/ports
 | result.data[].deviceId | 선택 | string 또는 null |  |
 | result.data[].deviceName | 선택 | string 또는 null |  |
 | result.data[].adminStateUp | 선택 | boolean 또는 null |  |
-| result.data[].status | 선택 | string 또는 null | 포트 상태 (Skyline 기준).. 값: ACTIVE, DOWN, BUILD, ERROR |
+| result.data[].status | 선택 | string 또는 null | 포트 상태 (Skyline 기준). 값: ACTIVE, DOWN, BUILD, ERROR |
 | result.data[].macAddress | 선택 | string 또는 null |  |
 | result.data[].portSecurityEnabled | 선택 | boolean 또는 null |  |
 | result.data[].securityGroups | 선택 | array (object) |  |
@@ -71,7 +71,7 @@ GET https://<your-console-host>/api/v1/network/floating-ips/{floatingIpId}/ports
 | result.data[].fixedIps[].ipAddress | 선택 | string 또는 null |  |
 | result.data[].fixedIps[].floatingIp | 선택 | string 또는 null |  |
 | result.data[].fixedIps[].connectable | 필수 | boolean |  |
-| result.data[].fixedIps[].reason | 선택 | string 또는 null | Fixed IP Floating IP 연결 불가 사유.. 값: ALREADY_CONNECTED, NETWORK_UNREACHABLE, FIXED_IP_EXTERNAL_NETWORK |
+| result.data[].fixedIps[].reason | 선택 | string 또는 null | Fixed IP Floating IP 연결 불가 사유. 값: ALREADY_CONNECTED, NETWORK_UNREACHABLE, FIXED_IP_EXTERNAL_NETWORK |
 | result.data[].bindingVnicType | 선택 | string 또는 null |  |
 | result.data[].bindingProfile | 선택 | object |  |
 | result.data[].createdAt | 선택 | string (date-time) |  |
@@ -94,7 +94,7 @@ GET https://<your-console-host>/api/v1/network/floating-ips/{floatingIpId}/ports
 | result.data[].hostRoutes[].destination | 필수 | string |  |
 | result.data[].hostRoutes[].nexthop | 필수 | string |  |
 | result.data[].floatingIpSelectable | 필수 | boolean |  |
-| result.data[].floatingIpDisabledReason | 선택 | string 또는 null | Fixed IP Floating IP 연결 불가 사유.. 값: ALREADY_CONNECTED, NETWORK_UNREACHABLE, FIXED_IP_EXTERNAL_NETWORK |
+| result.data[].floatingIpDisabledReason | 선택 | string 또는 null | Fixed IP Floating IP 연결 불가 사유. 값: ALREADY_CONNECTED, NETWORK_UNREACHABLE, FIXED_IP_EXTERNAL_NETWORK |
 | result.data[].totalFixedIpCount | 필수 | integer |  |
 | result.data[].connectableFixedIpCount | 필수 | integer |  |
 | result.dataCount | 필수 | integer | 데이터 개수. 범위 0~ |

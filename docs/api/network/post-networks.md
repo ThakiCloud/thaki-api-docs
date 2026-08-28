@@ -26,7 +26,7 @@ POST https://<your-console-host>/api/v1/network/networks
 | mtu | 선택 | integer 또는 null | MTU. 범위 68~9000 |
 | adminStateUp | 선택 | boolean | 관리 상태 활성화 여부. 기본값 true |
 | portSecurityEnabled | 선택 | boolean | 포트 시큐리티 활성화 여부. 기본값 true |
-| createSubnet | 선택 | object 또는 null | 서브넷 생성 옵션. 비어 있으면 서브넷을 생성하지 않습니다. |
+| createSubnet | 선택 | object 또는 null | 서브넷 생성 옵션. 비어 있으면 서브넷을 생성하지 않습니다 |
 | createSubnet.name | 선택 | string 또는 null | 서브넷 이름 |
 | createSubnet.cidr | 선택 | string 또는 null | 서브넷 CIDR |
 | createSubnet.ipVersion | 선택 | integer 또는 null | IP 버전 (기본값 4) |
@@ -50,7 +50,7 @@ POST https://<your-console-host>/api/v1/network/networks
 | 207 Multi-Status | Partial success (e.g. network created but subnet failed) |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 409(리소스 충돌·사용 중) · 413(쿼터 초과) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 201
 
@@ -61,12 +61,12 @@ POST https://<your-console-host>/api/v1/network/networks
 | requestId | 필수 | string | 요청 식별자 |
 | result | 필수 | object | 결과 데이터 |
 | result.status | 필수 | string | 값: success, partial |
-| result.network | 선택 | object 또는 null | 네트워크 단건 응답 데이터 (subnets 제외). |
+| result.network | 선택 | object 또는 null | 네트워크 단건 응답 데이터 (subnets 제외) |
 | result.network.id | 선택 | string 또는 null |  |
 | result.network.name | 선택 | string 또는 null |  |
 | result.network.projectId | 선택 | string 또는 null |  |
 | result.network.description | 선택 | string 또는 null |  |
-| result.network.status | 선택 | string 또는 null | 네트워크 상태.. 값: ACTIVE, DOWN, BUILDING, ERROR |
+| result.network.status | 선택 | string 또는 null | 네트워크 상태. 값: ACTIVE, DOWN, BUILDING, ERROR |
 | result.network.adminStateUp | 선택 | boolean 또는 null |  |
 | result.network.shared | 선택 | boolean 또는 null |  |
 | result.network.routerExternal | 선택 | boolean 또는 null |  |
@@ -84,7 +84,7 @@ POST https://<your-console-host>/api/v1/network/networks
 | result.network.providerSegmentationId | 선택 | integer 또는 null |  |
 | result.network.createdAt | 선택 | string (date-time) |  |
 | result.network.updatedAt | 선택 | string (date-time) |  |
-| result.subnet | 선택 | object 또는 null | 서브넷 상세 응답. |
+| result.subnet | 선택 | object 또는 null | 서브넷 상세 응답 |
 | result.subnet.id | 선택 | string 또는 null |  |
 | result.subnet.name | 선택 | string 또는 null |  |
 | result.subnet.projectId | 선택 | string 또는 null |  |

@@ -18,18 +18,18 @@ GET https://<your-console-host>/api/v1/network/security-groups/{securityGroupId}
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| direction | 선택 | array (string) | 트래픽 방향 필터 (INGRESS/EGRESS). 트래픽 방향 필터 (INGRESS/EGRESS) |
-| protocol | 선택 | array (string) | 프로토콜 필터 (TCP/UDP/ICMP 등). 프로토콜 필터 (TCP/UDP/ICMP 등) |
-| portRange | 선택 | array (string) | 포트 범위 필터 (80, 80-443 등). 포트 범위 필터 (80, 80-443 등) |
-| remoteIp | 선택 | array (string) | 원격 IP/CIDR 필터. 원격 IP/CIDR 필터 |
-| remoteSgId | 선택 | array (string) | 원격 Security Group ID 필터. 원격 Security Group ID 필터 |
-| remoteSgName | 선택 | array (string) | 원격 Security Group Name 필터. 원격 Security Group Name 필터 |
-| icmpType | 선택 | array (integer) | ICMP type 필터 (0-255). ICMP type 필터 (0-255) |
-| icmpCode | 선택 | array (integer) | ICMP code 필터 (0-255). ICMP code 필터 (0-255) |
-| page | 선택 | integer | 조회 페이지 번호 (0=전체). 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
-| pageSize | 선택 | integer | 페이지 크기. 페이지 크기. 기본값 20. 범위 1~100 |
-| sort | 선택 | string | 정렬 대상 컬럼. 정렬 대상 컬럼. 값: protocol |
-| order | 선택 | string | 정렬 방향 asc/desc. 정렬 방향 asc/desc. 값: asc, desc |
+| direction | 선택 | array (string) | 트래픽 방향 필터 (INGRESS/EGRESS) |
+| protocol | 선택 | array (string) | 프로토콜 필터 (TCP/UDP/ICMP 등) |
+| portRange | 선택 | array (string) | 포트 범위 필터 (80, 80-443 등) |
+| remoteIp | 선택 | array (string) | 원격 IP/CIDR 필터 |
+| remoteSgId | 선택 | array (string) | 원격 Security Group ID 필터 |
+| remoteSgName | 선택 | array (string) | 원격 Security Group Name 필터 |
+| icmpType | 선택 | array (integer) | ICMP type 필터 (0-255) |
+| icmpCode | 선택 | array (integer) | ICMP code 필터 (0-255) |
+| page | 선택 | integer | 조회 페이지 번호 (0=전체). 기본값 1. 범위 0~ |
+| pageSize | 선택 | integer | 페이지 크기. 기본값 20. 범위 1~100 |
+| sort | 선택 | string | 정렬 대상 컬럼. 값: protocol |
+| order | 선택 | string | 정렬 방향 asc/desc. 값: asc, desc |
 
 ## 요청 헤더
 
@@ -42,7 +42,7 @@ GET https://<your-console-host>/api/v1/network/security-groups/{securityGroupId}
 | 200 OK | Successful Response |
 | 422 Unprocessable Entity | Validation Error |
 
-그 밖의 상태 코드는 [오류 처리](/guide/errors)를 따릅니다.
+위 표는 정상 응답과 요청 검증 실패만 나열합니다. 이 API 는 그 밖에 401(인증 실패) · 403(권한 없음) · 404(리소스 없음) · 502(인프라 오류)를 반환할 수 있습니다. 조건은 [오류 처리](/guide/errors)를 참고하십시오.
 
 ### 응답 본문 — 200
 
@@ -54,9 +54,9 @@ GET https://<your-console-host>/api/v1/network/security-groups/{securityGroupId}
 | result | 필수 | object | 데이터 목록 + 페이지네이션 |
 | result.data | 선택 | array (object) | 데이터 목록 |
 | result.data[].id | 필수 | string 또는 null |  |
-| result.data[].direction | 필수 | string | Security Group Rule 방향.. 값: INGRESS, EGRESS |
+| result.data[].direction | 필수 | string | Security Group Rule 방향. 값: INGRESS, EGRESS |
 | result.data[].etherType | 필수 | string |  |
-| result.data[].protocol | 필수 | string 또는 null | Security Group Rule 프로토콜.. 값: TCP, UDP, ICMP, ANY |
+| result.data[].protocol | 필수 | string 또는 null | Security Group Rule 프로토콜. 값: TCP, UDP, ICMP, ANY |
 | result.data[].portRange | 선택 | string 또는 null |  |
 | result.data[].icmpType | 선택 | integer 또는 null |  |
 | result.data[].icmpCode | 선택 | integer 또는 null |  |
