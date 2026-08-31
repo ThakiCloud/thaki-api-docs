@@ -8,7 +8,7 @@
  *
  * 검사하는 것:
  *  1. 오퍼레이션 수가 기대치와 같은가 (범위가 조용히 바뀌지 않았는가)
- *  2. admin·internal 경로가 섞여 들어가지 않았는가
+ *  2. admin·internal 경로, 폐기된 API 가 섞여 들어가지 않았는가
  *  3. 서버 주소가 플레이스홀더인가 (실 호스트가 박히지 않았는가)
  *  4. 참조가 끊긴 스키마가 없는가 (뷰어가 빈 화면을 그리지 않는가)
  *
@@ -29,6 +29,7 @@ const EXCLUDED_EXTRA = [
   /(^|\/)system-admin(\/|$)/,
   /(^|\/)token\/(exchange|validate)$/,
   /\/callback$/,
+  /^\/$/,
   /^\/health$/,
   /^\/(livez|readyz)$/,
   /\/shell\/docs$/,
@@ -47,11 +48,11 @@ const EXCLUDED_EXTRA = [
 ]
 
 const EXPECT = {
-  'iam-authn': 147,
-  'iam-authz': 79,
-  compute: 87,
-  network: 116,
-  container: 244,
+  'iam-authn': 145,
+  'iam-authz': 78,
+  compute: 86,
+  network: 115,
+  container: 241,
 }
 
 const PREFIX = {
@@ -102,6 +103,12 @@ for (const [id, expect] of Object.entries(EXPECT)) {
   const leakedTag = ops.filter((o) => (o.op.tags ?? []).some((t) => EXCLUDED_TAG.test(t)))
   if (leakedTag.length > 0) {
     problems.push(`운영자 전용 태그가 붙은 오퍼레이션 ${leakedTag.length}개가 남아 있습니다`)
+  }
+
+  const deprecated = ops.filter((o) => o.op.deprecated === true)
+  if (deprecated.length > 0) {
+    problems.push(`폐기 표시된 오퍼레이션 ${deprecated.length}개가 남아 있습니다`)
+    for (const o of deprecated.slice(0, 5)) problems.push(`    ${o.method.toUpperCase()} ${o.path}`)
   }
 
   const servers = spec.servers ?? []

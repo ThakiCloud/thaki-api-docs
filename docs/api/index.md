@@ -4,11 +4,11 @@
 
 | 서비스 | 범위 | API 수 |
 |---|---|---|
-| [IAM](/api/iam/) | 서비스 계정·API 키·사용자·조직·정책·권한 부여 | 224 |
+| [IAM](/api/iam/) | 서비스 계정·API 키·사용자·조직·정책·권한 부여 | 223 |
 | [컴퓨트](/api/compute/) | 인스턴스(VM)·Flavor·이미지·키 페어·볼륨·메트릭 | 86 |
 | [네트워크](/api/network/) | 네트워크·서브넷·라우터·Floating IP·보안 그룹·로드밸런서 | 115 |
-| [컨테이너](/api/container/) | 쿠버네티스 클러스터·워크로드·Namespace·Service·Ingress | 243 |
-| 합계 | | 668 |
+| [컨테이너](/api/container/) | 쿠버네티스 클러스터·워크로드·Namespace·Service·Ingress | 241 |
+| 합계 | | 665 |
 
 ## 읽기 전에
 

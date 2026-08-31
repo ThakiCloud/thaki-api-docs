@@ -1,6 +1,6 @@
 # 컨테이너
 
-API 243개.
+API 241개.
 
 ## 검색 · 리소스 타입
 
@@ -259,7 +259,6 @@ API 243개.
 | PUT | [/api/v1/container/cluster/namespaces/{namespace_name}](/api/container/put-cluster-namespaces-namespace-name) | 네임스페이스 수정 |
 | GET | [/api/v1/container/cluster/namespaces/{namespace_name}](/api/container/get-cluster-namespaces-namespace-name) | 네임스페이스 상세 조회 |
 | DELETE | [/api/v1/container/cluster/namespaces/{namespace_name}](/api/container/delete-cluster-namespaces-namespace-name) | 네임스페이스 삭제 |
-| GET | [/api/v1/container/cluster/namespaces/{namespace_name}/stats](/api/container/get-cluster-namespaces-namespace-name-stats) | 네임스페이스 워크로드 상태 통계 조회 |
 | GET | [/api/v1/container/cluster/namespaces/{namespace_name}/workloads](/api/container/get-cluster-namespaces-namespace-name-workloads) | 네임스페이스 내 Workload 리소스 목록 조회 |
 
 ## 워크로드 · 파드
@@ -277,7 +276,6 @@ API 243개.
 | GET | [/api/v1/container/workload/pods/{pod_name}/containers](/api/container/get-workload-pods-pod-name-containers) | 파드 컨테이너 목록 조회 |
 | GET | [/api/v1/container/workload/pods/{pod_name}/conditions](/api/container/get-workload-pods-pod-name-conditions) | 파드 Condition 목록 조회 |
 | GET | [/api/v1/container/workload/pods/{pod_name}/events](/api/container/get-workload-pods-pod-name-events) | 파드 이벤트 목록 조회 |
-| GET | [/api/v1/container/workload/pods/{pod_name}/logs](/api/container/get-workload-pods-pod-name-logs) | 파드 로그 조회 (모든 컨테이너) |
 | GET | [/api/v1/container/workload/pods/{pod_name}/containers/{container_name}/logs](/api/container/get-workload-pods-pod-name-containers-container-name-logs) | 파드 특정 컨테이너 로그 조회 |
 | GET | [/api/v1/container/workload/pods/{pod_name}/shell/info](/api/container/get-workload-pods-pod-name-shell-info) | 파드 셸 연결 정보 조회 |
 

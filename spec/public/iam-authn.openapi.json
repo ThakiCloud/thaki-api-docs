@@ -3,7 +3,7 @@
   "info": {
     "title": "IAM 인증 (AuthN)",
     "version": "thaki-iam-authn@98485bd8",
-    "description": "이 스펙은 thaki-iam-authn 리포의 develop 브랜치 98485bd8 커밋 코드에서 생성했습니다(생성일 2026-08-28)."
+    "description": "이 스펙은 thaki-iam-authn 리포의 develop 브랜치 98485bd8 커밋 코드에서 생성했습니다(생성일 2026-08-31)."
   },
   "paths": {
     "/api/v1/iam/authn/organizations/password-policy/default": {
@@ -5934,32 +5934,6 @@
             }
           }
         },
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ]
-      }
-    },
-    "/api/v1/iam/authn/users/me/mfa/email/request-code": {
-      "post": {
-        "tags": [
-          "user-mfa"
-        ],
-        "summary": "이메일 코드 요청 (Deprecated)",
-        "description": "이 API는 더 이상 사용되지 않습니다. Pre-Auth 플로우를 사용하세요.",
-        "operationId": "request_email_code_deprecated_users_me_mfa_email_request_code_post",
-        "responses": {
-          "410": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            }
-          }
-        },
-        "deprecated": true,
         "security": [
           {
             "HTTPBearer": []
@@ -14068,29 +14042,6 @@
         },
         "x-thaki-trn": {
           "resourceType": "AuditLog"
-        }
-      }
-    },
-    "/api/v1/iam/authn/": {
-      "get": {
-        "summary": "Root",
-        "description": "루트 엔드포인트",
-        "operationId": "root__get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": {
-                    "type": "string"
-                  },
-                  "type": "object",
-                  "title": "Response Root  Get"
-                }
-              }
-            }
-          }
         }
       }
     }

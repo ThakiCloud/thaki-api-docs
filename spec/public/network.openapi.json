@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "네트워크 (vNet·보안 그룹)",
-    "description": "OpenStack 네트워크 자원을 관리하는 내부용 API\n\n이 스펙은 thaki-suite-network 리포의 main 브랜치 90d49675 커밋 코드에서 생성했습니다(생성일 2026-08-28).",
-    "version": "thaki-suite-network@90d49675"
+    "description": "OpenStack 네트워크 자원을 관리하는 내부용 API\n\n이 스펙은 thaki-suite-network 리포의 main 브랜치 4099d679 커밋 코드에서 생성했습니다(생성일 2026-08-31).",
+    "version": "thaki-suite-network@4099d679"
   },
   "paths": {
     "/api/v1/network/networks": {
@@ -17778,29 +17778,6 @@
         },
         "x-thaki-trn": {
           "resourceType": "Quota"
-        }
-      }
-    },
-    "/api/v1/network/": {
-      "get": {
-        "summary": "Root",
-        "description": "루트 엔드포인트",
-        "operationId": "root__get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": {
-                    "type": "string"
-                  },
-                  "type": "object",
-                  "title": "Response Root  Get"
-                }
-              }
-            }
-          }
         }
       }
     }

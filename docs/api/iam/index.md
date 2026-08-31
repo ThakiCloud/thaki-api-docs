@@ -1,6 +1,6 @@
 # IAM
 
-API 224개.
+API 223개.
 
 ## API 키
 
@@ -26,7 +26,6 @@ API 224개.
 | POST | [/api/v1/iam/authn/users/me/mfa/totp/setup](/api/iam/post-authn-users-me-mfa-totp-setup) | TOTP 설정 시작 (QR 코드 발급) |
 | POST | [/api/v1/iam/authn/users/me/mfa/totp/verify-setup](/api/iam/post-authn-users-me-mfa-totp-verify-setup) | TOTP 설정 검증 (최초 등록 시) |
 | POST | [/api/v1/iam/authn/users/me/mfa/totp/disable](/api/iam/post-authn-users-me-mfa-totp-disable) | TOTP MFA 비활성화 |
-| POST | [/api/v1/iam/authn/users/me/mfa/email/request-code](/api/iam/post-authn-users-me-mfa-email-request-code) | 이 API는 더 이상 사용되지 않습니다 |
 
 ## MFA 인증 흐름
 

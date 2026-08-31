@@ -3,7 +3,7 @@
   "info": {
     "title": "IAM 인가 (AuthZ)",
     "version": "thaki-iam-policy@4499d1f",
-    "description": "이 스펙은 thaki-iam-policy 리포의 develop 브랜치 4499d1f 커밋 코드에서 생성했습니다(생성일 2026-08-28)."
+    "description": "이 스펙은 thaki-iam-policy 리포의 develop 브랜치 4499d1f 커밋 코드에서 생성했습니다(생성일 2026-08-31)."
   },
   "paths": {
     "/api/v1/iam/authz/policies": {
@@ -10481,29 +10481,6 @@
             "eventType",
             "decision"
           ]
-        }
-      }
-    },
-    "/api/v1/iam/authz/": {
-      "get": {
-        "summary": "Root",
-        "description": "루트 엔드포인트",
-        "operationId": "root__get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": {
-                    "type": "string"
-                  },
-                  "type": "object",
-                  "title": "Response Root  Get"
-                }
-              }
-            }
-          }
         }
       }
     }

@@ -11,7 +11,8 @@
     "spec:filter": "node scripts/filter-openapi.mjs",
     "check:secrets": "node scripts/check-secrets.mjs",
     "spec:verify": "node scripts/verify-specs.mjs",
-    "spec:pages": "node scripts/gen-reference.mjs"
+    "spec:pages": "node scripts/gen-reference.mjs",
+    "verify:reference": "node scripts/verify-reference.mjs"
   },
   "devDependencies": {
     "vitepress": "^1.6.4",

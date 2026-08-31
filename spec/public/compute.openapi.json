@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "컴퓨트 (VM·이미지·키 페어)",
-    "version": "thaki-suite-compute@1f069a50",
-    "description": "이 스펙은 thaki-suite-compute 리포의 develop 브랜치 1f069a50 커밋 코드에서 생성했습니다(생성일 2026-08-28)."
+    "version": "thaki-suite-compute@403adce0",
+    "description": "이 스펙은 thaki-suite-compute 리포의 main 브랜치 403adce0 커밋 코드에서 생성했습니다(생성일 2026-08-31)."
   },
   "paths": {
     "/api/v1/compute/application-credentials": {
@@ -13953,29 +13953,6 @@
         },
         "x-thaki-trn": {
           "resourceType": "StorageAvailabilityZone"
-        }
-      }
-    },
-    "/api/v1/compute/": {
-      "get": {
-        "summary": "Root",
-        "description": "루트 엔드포인트",
-        "operationId": "root__get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": {
-                    "type": "string"
-                  },
-                  "type": "object",
-                  "title": "Response Root  Get"
-                }
-              }
-            }
-          }
         }
       }
     }

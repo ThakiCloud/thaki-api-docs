@@ -33,11 +33,11 @@ const PLACEHOLDER_HOST = 'https://<your-console-host>'
  * expect: 필터 후 남아야 하는 오퍼레이션 수. 코드가 바뀌어 범위가 흔들리면 CI 가 멈춘다.
  */
 const SERVICES = [
-  { id: 'iam-authn', title: 'IAM 인증 (AuthN)', prefix: '/api/v1/iam/authn', expect: 147 },
-  { id: 'iam-authz', title: 'IAM 인가 (AuthZ)', prefix: '/api/v1/iam/authz', expect: 79 },
-  { id: 'compute', title: '컴퓨트 (VM·이미지·키 페어)', prefix: '/api/v1/compute', expect: 87 },
-  { id: 'network', title: '네트워크 (vNet·보안 그룹)', prefix: '/api/v1/network', expect: 116 },
-  { id: 'container', title: '컨테이너 (클러스터·워크로드)', prefix: '/api/v1/container', expect: 244 },
+  { id: 'iam-authn', title: 'IAM 인증 (AuthN)', prefix: '/api/v1/iam/authn', expect: 145 },
+  { id: 'iam-authz', title: 'IAM 인가 (AuthZ)', prefix: '/api/v1/iam/authz', expect: 78 },
+  { id: 'compute', title: '컴퓨트 (VM·이미지·키 페어)', prefix: '/api/v1/compute', expect: 86 },
+  { id: 'network', title: '네트워크 (vNet·보안 그룹)', prefix: '/api/v1/network', expect: 115 },
+  { id: 'container', title: '컨테이너 (클러스터·워크로드)', prefix: '/api/v1/container', expect: 241 },
 ]
 
 /** 운영자 전용·서비스 간 호출용 경로. 고객 문서에서 제외한다. */
@@ -63,6 +63,8 @@ const EXCLUDED_EXTRA = [
   /(^|\/)system-admin(\/|$)/,
   /(^|\/)token\/(exchange|validate)$/,
   /\/callback$/,
+  // 서비스 루트(GET /)는 배너를 돌려주는 인프라 엔드포인트다. 레퍼런스 페이지도 만들지 않는다.
+  /^\/$/,
   /^\/health$/,
   /^\/(livez|readyz)$/,
   /\/shell\/docs$/,
@@ -116,7 +118,9 @@ for (const svc of targets) {
       const excluded =
         EXCLUDED_PATH.test(path) ||
         EXCLUDED_EXTRA.some((re) => re.test(path)) ||
-        tags.some((t) => EXCLUDED_TAG.test(t))
+        tags.some((t) => EXCLUDED_TAG.test(t)) ||
+        // 소스에서 폐기 표시한 API. 대체 경로가 이미 있으므로 고객 문서에 두지 않는다.
+        op.deprecated === true
       if (excluded) {
         dropped++
         continue

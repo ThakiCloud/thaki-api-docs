@@ -78,10 +78,6 @@
         {
           "text": "TOTP MFA 비활성화",
           "link": "/api/iam/post-authn-users-me-mfa-totp-disable"
-        },
-        {
-          "text": "이 API는 더 이상 사용되지 않습니다",
-          "link": "/api/iam/post-authn-users-me-mfa-email-request-code"
         }
       ]
     },
@@ -2941,10 +2937,6 @@
           "link": "/api/container/delete-cluster-namespaces-namespace-name"
         },
         {
-          "text": "네임스페이스 워크로드 상태 통계 조회",
-          "link": "/api/container/get-cluster-namespaces-namespace-name-stats"
-        },
-        {
           "text": "네임스페이스 내 Workload 리소스 목록 조회",
           "link": "/api/container/get-cluster-namespaces-namespace-name-workloads"
         }
@@ -2997,10 +2989,6 @@
         {
           "text": "파드 이벤트 목록 조회",
           "link": "/api/container/get-workload-pods-pod-name-events"
-        },
-        {
-          "text": "파드 로그 조회 (모든 컨테이너)",
-          "link": "/api/container/get-workload-pods-pod-name-logs"
         },
         {
           "text": "파드 특정 컨테이너 로그 조회",

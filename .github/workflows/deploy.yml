@@ -45,11 +45,17 @@ jobs:
           git diff --exit-code --stat docs/api docs/.vitepress/sidebar.generated.json \
             || { echo "레퍼런스 페이지가 스펙과 다릅니다. npm run spec:pages 후 커밋하세요."; exit 1; }
 
-      # 게이트 3 — 공개 리포에 들어가면 안 되는 것(실 호스트·토큰·사설 IP).
+      # 게이트 3 — 페이지가 스펙과 같은 계약을 말하는지.
+      # 위 게이트가 "다시 생성해도 같은가"를 본다면, 이건 "생성된 내용이 스펙과 맞는가"를 본다.
+      # 파라미터 이름·필수 여부·응답 코드가 어긋나면 고객이 그대로 잘못 호출한다.
+      - name: Gate — reference matches spec
+        run: npm run verify:reference
+
+      # 게이트 4 — 공개 리포에 들어가면 안 되는 것(실 호스트·토큰·사설 IP).
       - name: Gate — secrets and real hosts
         run: npm run check:secrets
 
-      # 게이트 4 — 죽은 링크가 있으면 vitepress 가 빌드를 실패시킨다.
+      # 게이트 5 — 죽은 링크가 있으면 vitepress 가 빌드를 실패시킨다.
       - name: Build
         run: npm run docs:build
 
