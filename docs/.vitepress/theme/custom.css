@@ -26,25 +26,43 @@
 
 .VPDoc > .container > .content {
   max-width: none;
-  /* 기본 32px 좌우 여백을 줄인다. 표가 그만큼 더 들어간다. */
-  padding-left: 8px;
-  padding-right: 8px;
+  /* 기본 32px 좌우 여백을 없앤다. 표가 그만큼 더 들어간다. */
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* 좌측 메뉴·우측 목차와 본문 사이 여백을 줄여 화면을 넓게 쓴다. */
+/* 우측 목차는 오른쪽에 붙이고 본문과의 간격만 남긴다. */
 .VPDoc.has-aside .aside {
-  padding-left: 16px;
+  padding-left: 24px;
+  padding-right: 0;
 }
 
 .VPDoc.has-aside .aside-container {
   padding-left: 0;
+  padding-right: 0;
 }
 
-/* 좌우 여백을 줄여 화면을 넓게 쓴다. */
+/*
+ * 좌우 여백 축소.
+ *
+ * 좌측 메뉴는 화면 왼쪽에, 우측 목차는 오른쪽에 붙이고 가운데를 본문이 쓴다.
+ * 기본 테마가 미디어쿼리 안에서 .VPDoc 에 padding:48px 32px 를 걸기 때문에
+ * 같은 특이도로는 덮이지 않는다 — .has-sidebar 를 붙여 한 단계 올린다.
+ */
+:root {
+  --vp-sidebar-width: 240px;
+}
+
 @media (min-width: 960px) {
-  .VPDoc {
-    padding-left: 24px;
-    padding-right: 24px;
+  .VPDoc.has-sidebar {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  /* 메뉴 자체의 안쪽 여백도 줄여 항목이 덜 접히게 한다. */
+  .VPSidebar {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
