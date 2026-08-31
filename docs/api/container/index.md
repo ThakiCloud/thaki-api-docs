@@ -54,7 +54,7 @@ API 243개.
 | GET | [/api/v1/container/service-routing/ingress/{ingress_name}](/api/container/get-service-routing-ingress-ingress-name) | 인그레스 단건 조회 |
 | DELETE | [/api/v1/container/service-routing/ingress/{ingress_name}](/api/container/delete-service-routing-ingress-ingress-name) | 인그레스 삭제 |
 
-## 스토리지 · ConfigMap
+## 스토리지 · CM
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -92,6 +92,19 @@ API 243개.
 | GET | [/api/v1/container/storage/pvc/{pvc_name}/events](/api/container/get-storage-pvc-pvc-name-events) | PVC 이벤트 목록 조회 |
 | GET | [/api/v1/container/storage/pvc/{pvc_name}/manifest](/api/container/get-storage-pvc-pvc-name-manifest) | 기존 PVC YAML 조회 |
 
+## 스토리지 · SC
+
+| 메서드 | 경로 | 설명 |
+|---|---|---|
+| GET | [/api/v1/container/storage/storage-classes](/api/container/get-storage-storage-classes) | StorageClass 목록 조회 |
+| POST | [/api/v1/container/storage/storage-classes](/api/container/post-storage-storage-classes) | StorageClass 생성 |
+| GET | [/api/v1/container/storage/storage-classes/template/yaml](/api/container/get-storage-storage-classes-template-yaml) | StorageClass 템플릿 YAML 조회 |
+| GET | [/api/v1/container/storage/storage-classes/{storage_class_name}/manifest](/api/container/get-storage-storage-classes-storage-class-name-manifest) | 기존 StorageClass YAML 조회 |
+| GET | [/api/v1/container/storage/storage-classes/{storage_class_name}](/api/container/get-storage-storage-classes-storage-class-name) | StorageClass 상세 조회 |
+| PUT | [/api/v1/container/storage/storage-classes/{storage_class_name}](/api/container/put-storage-storage-classes-storage-class-name) | StorageClass 수정 |
+| DELETE | [/api/v1/container/storage/storage-classes/{storage_class_name}](/api/container/delete-storage-storage-classes-storage-class-name) | StorageClass 삭제 |
+| PATCH | [/api/v1/container/storage/storage-classes/{storage_class_name}/default](/api/container/patch-storage-storage-classes-storage-class-name-default) | StorageClass 기본값 설정 |
+
 ## 스토리지 · Secret
 
 | 메서드 | 경로 | 설명 |
@@ -104,19 +117,6 @@ API 243개.
 | DELETE | [/api/v1/container/storage/secrets/{secret_name}](/api/container/delete-storage-secrets-secret-name) | Secret 삭제 |
 | GET | [/api/v1/container/storage/secrets/{secret_name}/manifest](/api/container/get-storage-secrets-secret-name-manifest) | 기존 Secret YAML 조회 |
 | GET | [/api/v1/container/storage/secrets/{secret_name}/manifest/decode](/api/container/get-storage-secrets-secret-name-manifest-decode) | 기존 Secret YAML 조회 (디코딩) |
-
-## 스토리지 · StorageClass
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| GET | [/api/v1/container/storage/storage-classes](/api/container/get-storage-storage-classes) | StorageClass 목록 조회 |
-| POST | [/api/v1/container/storage/storage-classes](/api/container/post-storage-storage-classes) | StorageClass 생성 |
-| GET | [/api/v1/container/storage/storage-classes/template/yaml](/api/container/get-storage-storage-classes-template-yaml) | StorageClass 템플릿 YAML 조회 |
-| GET | [/api/v1/container/storage/storage-classes/{storage_class_name}/manifest](/api/container/get-storage-storage-classes-storage-class-name-manifest) | 기존 StorageClass YAML 조회 |
-| GET | [/api/v1/container/storage/storage-classes/{storage_class_name}](/api/container/get-storage-storage-classes-storage-class-name) | StorageClass 상세 조회 |
-| PUT | [/api/v1/container/storage/storage-classes/{storage_class_name}](/api/container/put-storage-storage-classes-storage-class-name) | StorageClass 수정 |
-| DELETE | [/api/v1/container/storage/storage-classes/{storage_class_name}](/api/container/delete-storage-storage-classes-storage-class-name) | StorageClass 삭제 |
-| PATCH | [/api/v1/container/storage/storage-classes/{storage_class_name}/default](/api/container/patch-storage-storage-classes-storage-class-name-default) | StorageClass 기본값 설정 |
 
 ## 앱 카탈로그 · YAML
 
@@ -170,7 +170,7 @@ API 243개.
 | POST | [/api/v1/container/workload/cronjobs/{cronjob_name}/suspend](/api/container/post-workload-cronjobs-cronjob-name-suspend) | CronJob 일시 중지 |
 | POST | [/api/v1/container/workload/cronjobs/{cronjob_name}/resume](/api/container/post-workload-cronjobs-cronjob-name-resume) | CronJob 재개 |
 
-## 워크로드 · DaemonSet
+## 워크로드 · DS
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -190,7 +190,7 @@ API 243개.
 | POST | [/api/v1/container/workload/daemonsets/{daemonset_name}/rollback](/api/container/post-workload-daemonsets-daemonset-name-rollback) | DaemonSet 롤백 |
 | GET | [/api/v1/container/workload/daemonsets/{daemonset_name}/shell/info](/api/container/get-workload-daemonsets-daemonset-name-shell-info) | DaemonSet 셸 연결 정보 조회 |
 
-## 워크로드 · Deployment
+## 워크로드 · Deploy
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -228,7 +228,7 @@ API 243개.
 | GET | [/api/v1/container/workload/jobs/{job_name}/conditions](/api/container/get-workload-jobs-job-name-conditions) | Job Condition 목록 조회 |
 | GET | [/api/v1/container/workload/jobs/{job_name}/manifest](/api/container/get-workload-jobs-job-name-manifest) | 기존 Job YAML 조회 |
 
-## 워크로드 · StatefulSet
+## 워크로드 · STS
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -293,7 +293,7 @@ API 243개.
 | PUT | [/api/v1/container/policy/limit-range/{limit_range_name}](/api/container/put-policy-limit-range-limit-range-name) | LimitRange 수정 |
 | DELETE | [/api/v1/container/policy/limit-range/{limit_range_name}](/api/container/delete-policy-limit-range-limit-range-name) | LimitRange 삭제 |
 
-## 정책 · NetworkPolicy
+## 정책 · NetPol
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -307,7 +307,7 @@ API 243개.
 | GET | [/api/v1/container/policy/network-policy/{network_policy_name}/manifest](/api/container/get-policy-network-policy-network-policy-name-manifest) | 기존 NetworkPolicy YAML 조회 |
 | POST | [/api/v1/container/policy/network-policy/match-pods](/api/container/post-policy-network-policy-match-pods) | 네트워크 정책 대상 파드 조회 |
 
-## 정책 · PodDisruptionBudget
+## 정책 · PDB
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -323,7 +323,7 @@ API 243개.
 | GET | [/api/v1/container/policy/pod-disruption-budget/{pdb_name}/events](/api/container/get-policy-pod-disruption-budget-pdb-name-events) | PodDisruptionBudget 이벤트 목록 조회 |
 | POST | [/api/v1/container/policy/pod-disruption-budget/match-pods](/api/container/post-policy-pod-disruption-budget-match-pods) | PDB 대상 파드 조회 |
 
-## 정책 · ResourceQuota
+## 정책 · Quota
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|

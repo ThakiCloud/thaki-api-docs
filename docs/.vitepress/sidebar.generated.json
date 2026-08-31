@@ -2315,7 +2315,7 @@
       ]
     },
     {
-      "text": "스토리지 · ConfigMap",
+      "text": "스토리지 · CM",
       "collapsed": true,
       "items": [
         {
@@ -2425,6 +2425,44 @@
       ]
     },
     {
+      "text": "스토리지 · SC",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "StorageClass 목록 조회",
+          "link": "/api/container/get-storage-storage-classes"
+        },
+        {
+          "text": "StorageClass 생성",
+          "link": "/api/container/post-storage-storage-classes"
+        },
+        {
+          "text": "StorageClass 템플릿 YAML 조회",
+          "link": "/api/container/get-storage-storage-classes-template-yaml"
+        },
+        {
+          "text": "기존 StorageClass YAML 조회",
+          "link": "/api/container/get-storage-storage-classes-storage-class-name-manifest"
+        },
+        {
+          "text": "StorageClass 상세 조회",
+          "link": "/api/container/get-storage-storage-classes-storage-class-name"
+        },
+        {
+          "text": "StorageClass 수정",
+          "link": "/api/container/put-storage-storage-classes-storage-class-name"
+        },
+        {
+          "text": "StorageClass 삭제",
+          "link": "/api/container/delete-storage-storage-classes-storage-class-name"
+        },
+        {
+          "text": "StorageClass 기본값 설정",
+          "link": "/api/container/patch-storage-storage-classes-storage-class-name-default"
+        }
+      ]
+    },
+    {
       "text": "스토리지 · Secret",
       "collapsed": true,
       "items": [
@@ -2459,44 +2497,6 @@
         {
           "text": "기존 Secret YAML 조회 (디코딩)",
           "link": "/api/container/get-storage-secrets-secret-name-manifest-decode"
-        }
-      ]
-    },
-    {
-      "text": "스토리지 · StorageClass",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "StorageClass 목록 조회",
-          "link": "/api/container/get-storage-storage-classes"
-        },
-        {
-          "text": "StorageClass 생성",
-          "link": "/api/container/post-storage-storage-classes"
-        },
-        {
-          "text": "StorageClass 템플릿 YAML 조회",
-          "link": "/api/container/get-storage-storage-classes-template-yaml"
-        },
-        {
-          "text": "기존 StorageClass YAML 조회",
-          "link": "/api/container/get-storage-storage-classes-storage-class-name-manifest"
-        },
-        {
-          "text": "StorageClass 상세 조회",
-          "link": "/api/container/get-storage-storage-classes-storage-class-name"
-        },
-        {
-          "text": "StorageClass 수정",
-          "link": "/api/container/put-storage-storage-classes-storage-class-name"
-        },
-        {
-          "text": "StorageClass 삭제",
-          "link": "/api/container/delete-storage-storage-classes-storage-class-name"
-        },
-        {
-          "text": "StorageClass 기본값 설정",
-          "link": "/api/container/patch-storage-storage-classes-storage-class-name-default"
         }
       ]
     },
@@ -2653,7 +2653,7 @@
       ]
     },
     {
-      "text": "워크로드 · DaemonSet",
+      "text": "워크로드 · DS",
       "collapsed": true,
       "items": [
         {
@@ -2719,7 +2719,7 @@
       ]
     },
     {
-      "text": "워크로드 · Deployment",
+      "text": "워크로드 · Deploy",
       "collapsed": true,
       "items": [
         {
@@ -2843,7 +2843,7 @@
       ]
     },
     {
-      "text": "워크로드 · StatefulSet",
+      "text": "워크로드 · STS",
       "collapsed": true,
       "items": [
         {
@@ -3047,7 +3047,7 @@
       ]
     },
     {
-      "text": "정책 · NetworkPolicy",
+      "text": "정책 · NetPol",
       "collapsed": true,
       "items": [
         {
@@ -3089,7 +3089,7 @@
       ]
     },
     {
-      "text": "정책 · PodDisruptionBudget",
+      "text": "정책 · PDB",
       "collapsed": true,
       "items": [
         {
@@ -3139,7 +3139,7 @@
       ]
     },
     {
-      "text": "정책 · ResourceQuota",
+      "text": "정책 · Quota",
       "collapsed": true,
       "items": [
         {
