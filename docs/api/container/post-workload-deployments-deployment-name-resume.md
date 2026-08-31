@@ -1,12 +1,4 @@
-# Resume Deployment
-
-Deployment 롤아웃 재개
-
-kubectl rollout resume deployment와 동일한 동작을 수행합니다.
-일시 중지된 Deployment의 롤아웃을 재개합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bc9eddc34e681559294c74a765d5546)
+# Deployment 롤아웃 재개
 
 ## HTTP 요청
 

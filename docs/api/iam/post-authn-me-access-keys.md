@@ -1,4 +1,4 @@
-# Access Key 발급
+# 본인의 Access Key 발급
 
 본인의 Access Key를 발급합니다. expires_at 필수.
 

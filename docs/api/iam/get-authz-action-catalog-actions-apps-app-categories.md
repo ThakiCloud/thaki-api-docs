@@ -1,4 +1,4 @@
-# Category 목록 조회 (DISTINCT)
+# 카테고리별 액션 개수 조회
 
 특정 App에 등록된 고유 Category 목록과 각 Category의 Action 개수를 조회합니다.
 

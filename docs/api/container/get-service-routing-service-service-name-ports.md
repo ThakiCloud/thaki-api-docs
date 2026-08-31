@@ -1,9 +1,4 @@
-# List Service Ports
-
-Service의 Port 목록 조회
-
-Service의 Port 목록을 페이지네이션하여 반환합니다.
-page=0이면 전체 목록을 반환합니다.
+# Service의 Port 목록 조회
 
 ## HTTP 요청
 

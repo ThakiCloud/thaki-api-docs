@@ -1,4 +1,4 @@
-# LoadBalancer 단건 조회
+# LoadBalancer를 단건 조회
 
 LoadBalancer를 단건 조회합니다.
 

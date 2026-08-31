@@ -1,4 +1,6 @@
-# 현재 사용자 유효 ServiceAccount token을 폐기합니다
+# 현재 사용자 유효 ServiceAccount token 폐기
+
+현재 사용자 유효 ServiceAccount token을 폐기합니다.
 
 ## HTTP 요청
 

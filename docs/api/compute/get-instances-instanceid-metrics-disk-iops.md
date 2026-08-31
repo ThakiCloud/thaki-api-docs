@@ -1,4 +1,4 @@
-# Get Instance Disk Iops
+# 인스턴스 디스크 IOPS 조회
 
 ## HTTP 요청
 

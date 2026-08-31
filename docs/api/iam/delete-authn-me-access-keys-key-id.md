@@ -1,4 +1,4 @@
-# Access Key 폐기
+# Access Key를 즉시 폐기
 
 Access Key를 즉시 폐기합니다. 비가역 작업입니다.
 

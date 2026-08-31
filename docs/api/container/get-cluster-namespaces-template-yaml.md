@@ -1,4 +1,8 @@
-# Namespace 템플릿 YAML 조회
+# 네임스페이스 템플릿 YAML 조회
+
+Namespace 템플릿 YAML 조회
+
+Namespace 생성을 위한 템플릿 YAML을 조회합니다.
 
 ## HTTP 요청
 

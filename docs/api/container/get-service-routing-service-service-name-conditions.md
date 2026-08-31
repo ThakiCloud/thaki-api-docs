@@ -1,9 +1,4 @@
-# List Service Conditions
-
-Service Condition 목록 조회
-
-특정 Service의 Condition 목록을 페이지네이션하여 조회합니다.
-Service의 EndpointsReady, PodsReady 등 상태 정보를 추출합니다.
+# Service Condition 목록 조회
 
 ## HTTP 요청
 

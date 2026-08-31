@@ -1,9 +1,4 @@
-# Issue Api Key
-
-API Key 발급
-
-서비스 어카운트에 새로운 API Key를 발급합니다.
-발급된 secret은 최초 1회만 반환되므로 안전하게 보관해야 합니다.
+# API Key 발급
 
 ## HTTP 요청
 

@@ -1,4 +1,4 @@
-# API Key 발급
+# 인증된 사용자의 Personal API Key 발급
 
 인증된 사용자의 Personal API Key를 발급합니다. secret은 1회만 노출됩니다.
 

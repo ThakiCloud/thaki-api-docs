@@ -1,4 +1,4 @@
-# Update Security Group
+# 보안 그룹 수정
 
 Security Group을 수정합니다.
 

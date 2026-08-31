@@ -1,9 +1,4 @@
-# Cancel Invitation
-
-초대 취소
-
-- `invitation_id`에 해당하는 초대를 취소합니다.
-- **권한**: `iam:invitation:cancel`
+# 초대 취소
 
 ## HTTP 요청
 

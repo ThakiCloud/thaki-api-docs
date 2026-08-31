@@ -1,6 +1,4 @@
-# Update Api Key
-
-API Key description/활성 상태 수정
+# API Key description/활성 상태 수정
 
 ## HTTP 요청
 

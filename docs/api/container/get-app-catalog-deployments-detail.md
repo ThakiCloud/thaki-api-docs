@@ -1,4 +1,4 @@
-# ArgoCD Application name으로 App Catalog 배포 상세 조회
+# 앱 카탈로그 배포 상세 조회
 
 DB ID가 없는 ArgoCD-only 배포도 목록 응답의 argoAppName으로 상세와 values.yaml 텍스트를 조회합니다.
 

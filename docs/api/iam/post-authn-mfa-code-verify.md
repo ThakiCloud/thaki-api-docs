@@ -1,12 +1,4 @@
-# Verify Mfa Code
-
-MFA 코드 검증
-
-사용자가 입력한 MFA 코드를 검증합니다.
-로그인 플로우에서 호출되는 경우 최종 토큰을 발급합니다.
-
-- session_id_pending이 있으면: 로그인 플로우 (토큰 없음)
-- session_id_pending이 없으면: 일반 MFA 검증 (토큰 필요)
+# MFA 코드 검증
 
 ## HTTP 요청
 

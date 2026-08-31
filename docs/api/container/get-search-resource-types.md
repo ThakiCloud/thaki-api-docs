@@ -1,4 +1,6 @@
-# Resource Type Search 모달에서 사용할 리소스별 전체 개수 조회
+# 리소스 타입별 개수 조회
+
+Resource Type Search 모달에서 사용할 리소스별 전체 개수 조회
 
 ## HTTP 요청
 

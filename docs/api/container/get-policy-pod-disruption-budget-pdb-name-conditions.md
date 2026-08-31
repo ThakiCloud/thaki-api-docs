@@ -1,9 +1,4 @@
-# List Pdb Conditions
-
-PodDisruptionBudget Condition 목록 조회
-
-특정 PodDisruptionBudget의 Condition 목록을 페이지네이션하여 조회합니다.
-Kubernetes 1.31+에서 PDB는 status.conditions 필드를 지원합니다.
+# PodDisruptionBudget Condition 목록 조회
 
 ## HTTP 요청
 

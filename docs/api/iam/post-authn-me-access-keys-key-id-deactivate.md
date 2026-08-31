@@ -1,4 +1,4 @@
-# Access Key 비활성화
+# Access Key를 비활성화
 
 Access Key를 비활성화합니다. 재활성화 가능합니다.
 

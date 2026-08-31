@@ -1,4 +1,4 @@
-# Reveal App Catalog Deployment Credential
+# 배포 자격증명 원문 조회
 
 App Catalog raw credential 값을 Reveal/Copy 목적 호출로 조회합니다.
 

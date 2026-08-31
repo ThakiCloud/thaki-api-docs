@@ -1,4 +1,4 @@
-# Create Ingress
+# 인그레스 생성
 
 ## HTTP 요청
 

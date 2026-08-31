@@ -1,4 +1,6 @@
-# Security Group을 조회합니다
+# 보안 그룹 조회
+
+Security Group을 조회합니다.
 
 ## HTTP 요청
 

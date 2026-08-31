@@ -1,4 +1,4 @@
-# App Catalog values.yaml 생성
+# values.yaml 초안 생성
 
 선택한 앱, Target version, template mode, config 입력값을 기반으로 배포 전 편집 가능한 values.yaml 본문을 생성합니다. 기존 template을 그대로 내려주는 API가 아니라, 사용자가 입력한 config 값을 template에 반영한 YAML을 반환합니다.
 

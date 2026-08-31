@@ -1,10 +1,4 @@
-# Create Invitation
-
-조직에 사용자 초대 생성
-
-- `org_id`에 해당하는 조직에 사용자를 초대합니다.
-- 초대 이메일이 발송됩니다.
-- **권한**: `iam:organization:invitation:create`
+# 조직에 사용자 초대 생성
 
 ## HTTP 요청
 

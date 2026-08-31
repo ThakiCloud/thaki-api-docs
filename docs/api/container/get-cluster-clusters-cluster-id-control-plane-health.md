@@ -1,4 +1,4 @@
-# Get Control Plane Health
+# 컨트롤 플레인 상태 조회
 
 컨트롤 플레인 핵심 컴포넌트(etcd, scheduler, controller-manager) 상태를 조회합니다.
 

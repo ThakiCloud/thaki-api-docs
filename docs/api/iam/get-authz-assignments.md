@@ -1,4 +1,4 @@
-# 전체 Role Assignment 목록 조회
+# 전체 역할 Assignment 목록 조회
 
 전체 Role Assignment 목록을 조회합니다. page=0이면 전체 데이터 반환. roleName과 assignmentType 정보를 포함하며, AuthN API를 호출하여 추가 정보를 제공합니다.
 

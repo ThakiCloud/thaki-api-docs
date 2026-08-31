@@ -1,11 +1,4 @@
-# Request Mfa Code
-
-MFA 코드 요청 (method 지정 필요)
-
-- email: 이메일로 MFA 코드 발송
-- authenticator/totp: 코드 요청 불필요 (에러 반환)
-
-로그인 플로우(session_id_pending 있음) 또는 일반 플로우(auth_context 있음) 모두 지원
+# MFA 코드 요청 (method 지정 필요)
 
 ## HTTP 요청
 

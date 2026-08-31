@@ -1,4 +1,4 @@
-# Create Security Group
+# 보안 그룹 생성
 
 Security Group을 생성합니다.
 

@@ -1,4 +1,4 @@
-# 정책 sync-diff (템플릿 대비 Field diff)
+# 정책 변경 비교 조회
 
 정책의 현재 active document와 origin 템플릿 document를 Field 단위로 비교한 결과를 반환합니다 (IAM05 Review changes 드로어용).
 

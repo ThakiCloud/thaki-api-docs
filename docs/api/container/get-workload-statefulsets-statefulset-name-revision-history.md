@@ -1,12 +1,4 @@
-# List Statefulset Revision History
-
-StatefulSet Revision History 조회
-
-kubectl rollout history statefulset와 동일한 동작을 수행합니다.
-StatefulSet과 연결된 ControllerRevision의 revision 정보를 조회합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bd9eddc34e681749645fe2d51ec1086)
+# StatefulSet Revision History 조회
 
 ## HTTP 요청
 

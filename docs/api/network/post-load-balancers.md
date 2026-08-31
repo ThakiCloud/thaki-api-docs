@@ -1,4 +1,4 @@
-# LoadBalancer 생성
+# 새로운 LoadBalancer 생성
 
 새로운 LoadBalancer를 생성합니다.
 

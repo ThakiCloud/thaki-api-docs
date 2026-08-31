@@ -1,4 +1,4 @@
-# Get Instance Action Log Detail
+# 인스턴스 액션 로그 단건 조회
 
 ## HTTP 요청
 

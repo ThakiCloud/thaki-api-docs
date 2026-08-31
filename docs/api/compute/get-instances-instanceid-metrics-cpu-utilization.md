@@ -1,4 +1,4 @@
-# Get Instance Cpu Utilization
+# 인스턴스 CPU 사용률 조회
 
 ## HTTP 요청
 

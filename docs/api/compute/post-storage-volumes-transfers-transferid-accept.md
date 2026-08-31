@@ -1,4 +1,4 @@
-# Accept Transfer
+# 볼륨 Transfer를 수락
 
 볼륨 Transfer를 수락합니다
 

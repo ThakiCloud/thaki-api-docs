@@ -1,4 +1,4 @@
-# List Node Images
+# 노드 이미지 목록 조회
 
 Node 이미지 목록 조회
 

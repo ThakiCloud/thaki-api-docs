@@ -1,9 +1,4 @@
-# Suspend Cronjob
-
-CronJob 일시 중지
-
-CronJob의 스케줄링을 일시 중지합니다.
-kubectl patch cronjob &lt;cronjob-name&gt; -p '{"spec":{"suspend":true}}' 와 동일한 동작입니다.
+# CronJob 일시 중지
 
 ## HTTP 요청
 

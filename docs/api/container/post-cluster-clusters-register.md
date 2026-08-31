@@ -1,4 +1,4 @@
-# Register Existing Cluster
+# 기존 Kubernetes 클러스터를 kubeconfig로 등록
 
 기존 Kubernetes 클러스터를 kubeconfig로 등록합니다.
 

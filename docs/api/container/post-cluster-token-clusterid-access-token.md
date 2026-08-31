@@ -1,4 +1,4 @@
-# Create Access Token
+# 현재 사용자 ServiceAccount token 생성
 
 현재 사용자 ServiceAccount token을 생성합니다.
 

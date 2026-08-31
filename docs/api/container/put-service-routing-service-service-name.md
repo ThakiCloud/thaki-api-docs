@@ -1,8 +1,4 @@
-# Update Service
-
-Service 수정
-
-YAML 스펙을 기반으로 Kubernetes 클러스터의 기존 Service를 수정합니다.
+# Service 수정
 
 ## HTTP 요청
 

@@ -1,4 +1,4 @@
-# L7 Policy 생성
+# L7 정책 생성
 
 L7 Policy를 생성합니다.
 

@@ -1,4 +1,4 @@
-# ArgoCD Application name으로 App Catalog credential 조회
+# 배포 자격증명 원문 조회
 
 DB ID가 없는 ArgoCD-only 배포도 목록 응답의 argoAppName으로 raw credential 값을 reveal/copy 목적에 맞게 조회합니다.
 

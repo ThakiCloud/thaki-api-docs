@@ -1,4 +1,4 @@
-# App Catalog YAML template 상세 조회
+# values.yaml 템플릿 조회
 
 선택한 앱, Target version, template mode에 해당하는 원본 values.yaml template을 조회합니다. 사용자가 config 값을 넣기 전의 template 내용을 확인하거나 비교할 때 사용합니다.
 

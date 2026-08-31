@@ -1,12 +1,4 @@
-# List Network Policies
-
-NetworkPolicy 목록 조회
-
-특정 클러스터의 NetworkPolicy 목록을 페이지네이션하여 조회합니다.
-namespace 파라미터를 복수로 지정하여 여러 네임스페이스를 동시에 조회할 수 있습니다.
-namespace를 지정하지 않으면 전체 네임스페이스의 NetworkPolicy를 조회합니다.
-filterName 파라미터를 복수로 지정하여 이름 기준 부분일치(OR) 필터링이 가능합니다.
-page=0이면 전체 목록을 반환합니다.
+# NetworkPolicy 목록 조회
 
 ## HTTP 요청
 

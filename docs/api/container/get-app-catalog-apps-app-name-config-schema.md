@@ -1,4 +1,4 @@
-# App Catalog config 입력 schema 조회
+# YAML template mode를 먼저 선택한 뒤 호출하는 API
 
 YAML template mode를 먼저 선택한 뒤 호출하는 API입니다. 앱 이름, chart version, mode에 맞춰 선택된 tenant-values 템플릿에 필요한 config key, value type, section, validation rule 정보만 반환합니다.
 

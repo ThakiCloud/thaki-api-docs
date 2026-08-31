@@ -1,4 +1,4 @@
-# Pod Shell 연결 정보 조회
+# 파드 셸 연결 정보 조회
 
 Pod 내 모든 컨테이너의 Shell 연결 가능 여부와 WebSocket URL을 조회합니다.
 

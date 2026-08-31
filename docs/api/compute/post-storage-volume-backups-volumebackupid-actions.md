@@ -1,6 +1,4 @@
-# Volume Backup Action
-
-단일 볼륨 백업 액션 처리
+# 단일 볼륨 백업 액션 처리
 
 ## HTTP 요청
 

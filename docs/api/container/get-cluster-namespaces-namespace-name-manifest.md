@@ -1,4 +1,8 @@
-# 기존 Namespace YAML 조회
+# 기존 네임스페이스 YAML 조회
+
+기존 Namespace YAML 조회
+
+특정 클러스터에 존재하는 Namespace의 YAML 정의를 조회합니다.
 
 ## HTTP 요청
 

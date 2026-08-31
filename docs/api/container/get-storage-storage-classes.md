@@ -1,9 +1,4 @@
-# List Storage Classes
-
-StorageClass 목록 조회
-
-특정 클러스터에 존재하는 StorageClass 목록을 페이지네이션과 함께 조회합니다.
-StorageClass는 클러스터 범위(cluster-scoped) 리소스이므로 네임스페이스가 필요하지 않습니다.
+# StorageClass 목록 조회
 
 ## HTTP 요청
 

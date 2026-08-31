@@ -1,4 +1,4 @@
-# List Catalog Apps
+# App Catalog 목록을 탭과 카테고리별로 조회
 
 App Catalog 목록을 탭과 카테고리별로 조회합니다.
 

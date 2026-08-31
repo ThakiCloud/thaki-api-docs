@@ -1,4 +1,4 @@
-# OpenAPI 스펙으로부터 Action 일괄 생성 (Admin)
+# OpenAPI 스펙으로 액션 카탈로그 생성
 
 OpenAPI 3.0 스펙을 파싱하여 Action Catalog를 자동 생성합니다. dry_run=true로 미리보기 가능.
 

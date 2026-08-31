@@ -1,8 +1,4 @@
-# Update Pvc
-
-PVC 수정
-
-YAML 스펙을 기반으로 Kubernetes 클러스터의 기존 PVC를 수정합니다.
+# PVC 수정
 
 ## HTTP 요청
 

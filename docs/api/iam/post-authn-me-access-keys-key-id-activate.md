@@ -1,4 +1,4 @@
-# Access Key 활성화
+# 비활성화된 Access Key를 재활성화
 
 비활성화된 Access Key를 재활성화합니다. 만료 전에만 가능합니다.
 

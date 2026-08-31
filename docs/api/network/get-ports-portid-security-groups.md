@@ -1,4 +1,4 @@
-# List Port Security Groups
+# 포트에 연결된 보안 그룹 목록 조회
 
 포트에 연결된 Security Group 목록을 조회합니다.
 

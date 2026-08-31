@@ -1,4 +1,4 @@
-# Update Floating Ip
+# Floating IP 수정
 
 Floating IP를 수정합니다 (associate/disassociate 포함).
 

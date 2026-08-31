@@ -1,4 +1,4 @@
-# List Instances
+# 인스턴스 목록 조회
 
 ## HTTP 요청
 

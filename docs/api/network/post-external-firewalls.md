@@ -1,4 +1,4 @@
-# Create Firewall
+# 방화벽(default-deny drop ACL) 생성 요청을 접수
 
 방화벽(default-deny drop ACL) 생성 요청을 접수합니다.
 

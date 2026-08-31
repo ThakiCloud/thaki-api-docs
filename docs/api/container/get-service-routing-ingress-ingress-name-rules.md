@@ -1,8 +1,4 @@
-# List Ingress Rules
-
-Ingress Rule 목록 조회
-
-특정 Ingress의 Rule 목록을 페이지네이션하여 조회합니다.
+# Ingress Rule 목록 조회
 
 ## HTTP 요청
 

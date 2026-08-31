@@ -1,6 +1,4 @@
-# List Server Groups
-
-ServerGroup 목록을 조회합니다 (페이지네이션, 필터링, 정렬)
+# ServerGroup 목록을 조회합니다 (페이지네이션, 필터링, 정렬)
 
 ## HTTP 요청
 

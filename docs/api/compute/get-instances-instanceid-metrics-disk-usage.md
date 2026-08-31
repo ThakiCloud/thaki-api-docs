@@ -1,4 +1,4 @@
-# Get Instance Disk Usage
+# 인스턴스 디스크 사용량 조회
 
 ## HTTP 요청
 

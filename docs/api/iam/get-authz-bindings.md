@@ -1,4 +1,4 @@
-# 전체 Policy Binding 목록 조회
+# 전체 정책 Binding 목록 조회
 
 전체 Policy Binding 목록을 조회합니다. 선택적 필터링 지원.
 

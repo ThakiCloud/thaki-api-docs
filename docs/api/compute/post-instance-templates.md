@@ -1,4 +1,4 @@
-# Create Instance Template
+# 인스턴스 템플릿 생성
 
 인스턴스 템플릿을 생성합니다
 

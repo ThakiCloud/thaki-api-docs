@@ -1,9 +1,4 @@
-# List Statefulset Services
-
-StatefulSet에 연결된 Service 목록 조회
-
-특정 StatefulSet Pod template labels에 연결된 Service 목록을 페이지네이션하여 조회합니다.
-Service의 selector가 StatefulSet의 spec.template.metadata.labels의 부분집합(subset)일 때 매칭됩니다.
+# StatefulSet에 연결된 Service 목록 조회
 
 ## HTTP 요청
 

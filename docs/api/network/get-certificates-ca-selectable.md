@@ -1,4 +1,4 @@
-# List Selectable Ca Certificates
+# Two-way(mTLS) 설정 시 선택용 CA 인증서 목록 조회
 
 Two-way(mTLS) 설정 시 선택용 CA 인증서 목록을 조회합니다.
 

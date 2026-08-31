@@ -1,4 +1,4 @@
-# List Daemonset Pods
+# DaemonSet 파드 목록 조회
 
 DaemonSet Pod 목록 조회
 

@@ -1,9 +1,4 @@
-# List Daemonset Services
-
-DaemonSet에 연결된 Service 목록 조회
-
-특정 DaemonSet Pod template labels와 일치하는 Service 목록을 페이지네이션하여 조회합니다.
-Service selector가 DaemonSet spec.template.metadata.labels의 부분집합(subset)일 때 매칭됩니다.
+# DaemonSet에 연결된 Service 목록 조회
 
 ## HTTP 요청
 

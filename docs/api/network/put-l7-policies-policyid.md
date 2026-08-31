@@ -1,4 +1,4 @@
-# L7 Policy 수정
+# L7 정책 수정
 
 L7 Policy를 수정합니다.
 

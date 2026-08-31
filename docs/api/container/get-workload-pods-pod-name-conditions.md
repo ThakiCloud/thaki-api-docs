@@ -1,4 +1,4 @@
-# List Pod Conditions
+# 파드 Condition 목록 조회
 
 Pod Condition 목록 조회
 

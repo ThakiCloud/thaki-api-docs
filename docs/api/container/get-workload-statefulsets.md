@@ -1,6 +1,4 @@
-# List Statefulsets
-
-StatefulSet 목록 조회
+# StatefulSet 목록 조회
 
 ## HTTP 요청
 

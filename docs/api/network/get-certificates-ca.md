@@ -1,6 +1,4 @@
-# List Ca Certificates
-
-CA 인증서 목록을 조회합니다 (Secret 기반).
+# CA 인증서 목록을 조회합니다 (Secret 기반)
 
 ## HTTP 요청
 

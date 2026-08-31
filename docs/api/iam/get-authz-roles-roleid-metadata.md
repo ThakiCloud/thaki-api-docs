@@ -1,4 +1,4 @@
-# Role Metadata 목록 조회
+# 역할의 모든 metadata 조회
 
 Role의 모든 metadata를 조회합니다.
 

@@ -1,4 +1,4 @@
-# List Service Pods
+# Service의 selector로 매칭되는 파드 목록 조회
 
 Service의 selector로 매칭되는 Pod 목록 조회
 

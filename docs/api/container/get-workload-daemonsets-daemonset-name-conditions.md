@@ -1,12 +1,4 @@
-# List Daemonset Conditions
-
-DaemonSet Condition 목록 조회
-
-특정 DaemonSet의 Condition 목록을 페이지네이션하여 조회합니다.
-DaemonSet status.conditions에서 상태 정보를 추출합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2be9eddc34e681818105df91ee9f55cd)
+# DaemonSet Condition 목록 조회
 
 ## HTTP 요청
 

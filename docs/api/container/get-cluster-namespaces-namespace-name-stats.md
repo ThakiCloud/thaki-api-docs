@@ -1,4 +1,10 @@
-# Namespace 내 Workload 리소스 상태 통계 조회 (삭제 예정)
+# 네임스페이스 워크로드 상태 통계 조회
+
+Namespace 내 Workload 리소스 상태 통계 조회 (삭제 예정)
+
+특정 Namespace에 포함된 워크로드 리소스들을 조회하여,
+status 값을 기준으로 상태별 개수를 집계합니다.
+삭제 예정 API이며, 신규 화면은 Namespace workload 목록의 리소스별 status를 사용합니다.
 
 ## HTTP 요청
 

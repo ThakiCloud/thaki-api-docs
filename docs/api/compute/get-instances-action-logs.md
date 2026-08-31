@@ -1,4 +1,4 @@
-# List Project Instance Action Logs
+# 전체 인스턴스 액션 로그 조회
 
 프로젝트 내 모든 인스턴스의 Action Log를 조회합니다 (상위 5개).
 

@@ -1,4 +1,6 @@
-# App Catalog 배포를 삭제합니다
+# App Catalog 배포 삭제
+
+App Catalog 배포를 삭제합니다.
 
 ## HTTP 요청
 

@@ -1,4 +1,4 @@
-# App Catalog 배포 values.yaml 다운로드
+# values.yaml 파일 다운로드
 
 App name으로 저장된 App Catalog 배포 리소스를 찾아 렌더링된 values.yaml 파일을 다운로드합니다. 응답은 JSON 래퍼가 아닌 YAML 파일 본문이며, Content-Disposition 헤더로 다운로드 파일명을 전달합니다.
 

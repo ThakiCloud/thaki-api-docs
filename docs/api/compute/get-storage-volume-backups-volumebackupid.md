@@ -1,4 +1,4 @@
-# Get Volume Backup
+# 볼륨 백업 단건 조회
 
 ## HTTP 요청
 

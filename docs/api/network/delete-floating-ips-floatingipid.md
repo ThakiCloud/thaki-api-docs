@@ -1,4 +1,6 @@
-# Floating IP를 삭제합니다
+# Floating IP 삭제
+
+Floating IP를 삭제합니다.
 
 ## HTTP 요청
 

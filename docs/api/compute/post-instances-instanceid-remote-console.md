@@ -1,4 +1,4 @@
-# Create Instance Remote Console
+# 인스턴스 원격 콘솔 생성
 
 ## HTTP 요청
 

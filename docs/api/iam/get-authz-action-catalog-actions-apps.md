@@ -1,4 +1,4 @@
-# App 목록 조회 (DISTINCT)
+# 앱별 액션 개수 조회
 
 Action Catalog에 등록된 고유 App 목록과 각 App의 Action 개수를 조회합니다.
 

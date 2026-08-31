@@ -1,10 +1,4 @@
-# List Invitations
-
-조직의 초대 목록 조회
-
-- `org_id`에 해당하는 조직의 초대 목록을 조회합니다.
-- 필터링, 정렬, 페이지네이션을 지원합니다.
-- **권한**: `iam:organization:invitation:list`
+# 조직의 초대 목록 조회
 
 ## HTTP 요청
 

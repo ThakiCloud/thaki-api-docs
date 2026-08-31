@@ -1,10 +1,4 @@
-# List Daemonset Events
-
-DaemonSet 이벤트 목록 조회
-
-특정 클러스터 및 네임스페이스에 존재하는 DaemonSet의 이벤트 목록을
-페이지네이션하여 조회합니다.
-page=0이면 전체 목록을 반환합니다.
+# DaemonSet 이벤트 목록 조회
 
 ## HTTP 요청
 

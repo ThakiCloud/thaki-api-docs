@@ -1,4 +1,4 @@
-# Create Floating Ip
+# Floating IP 생성
 
 Floating IP를 생성합니다.
 

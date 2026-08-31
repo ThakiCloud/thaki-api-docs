@@ -1,4 +1,4 @@
-# Redeploy App Catalog Deployment
+# 앱 카탈로그 배포 재동기화
 
 Git에 반영된 values.yaml 기준으로 App Catalog 배포를 재동기화합니다.
 

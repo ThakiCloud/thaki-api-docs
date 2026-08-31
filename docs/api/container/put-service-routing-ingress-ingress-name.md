@@ -1,4 +1,4 @@
-# Update Ingress
+# 인그레스 수정
 
 ## HTTP 요청
 

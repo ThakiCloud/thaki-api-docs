@@ -1,4 +1,4 @@
-# List Security Group Rules
+# 보안 그룹의 Rules 조회
 
 Security Group의 Rules를 조회합니다.
 

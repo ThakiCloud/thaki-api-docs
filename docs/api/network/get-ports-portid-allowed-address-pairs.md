@@ -1,4 +1,4 @@
-# List Port Allowed Address Pairs
+# 포트의 Allowed Address Pair 목록 조회
 
 포트의 Allowed Address Pair 목록을 조회합니다.
 

@@ -1,13 +1,4 @@
-# List Daemonsets
-
-DaemonSet 목록 조회
-
-특정 클러스터의 DaemonSet 목록을 조회합니다.
-네임스페이스를 지정하지 않으면 전체 네임스페이스에서 조회합니다.
-페이지네이션을 지원합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2be9eddc34e68158812edfba2dc82df8)
+# DaemonSet 목록 조회
 
 ## HTTP 요청
 

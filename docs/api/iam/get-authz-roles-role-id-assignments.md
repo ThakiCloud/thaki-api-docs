@@ -1,4 +1,4 @@
-# Role에 할당된 TPN 목록 조회
+# 역할에 할당된 TPN 목록 조회
 
 Role에 할당된 TPN 목록을 조회합니다. roleName과 assignmentType(direct/group) 정보를 포함합니다.
 AuthN API를 호출하여 그룹 멤버 수, 사용자 그룹, 마지막 로그인 시간 등 추가 정보를 제공합니다.

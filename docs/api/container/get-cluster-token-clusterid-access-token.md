@@ -1,4 +1,6 @@
-# 현재 사용자 최신 ServiceAccount token metadata를 조회합니다
+# 서비스 계정 토큰 정보 조회
+
+현재 사용자 최신 ServiceAccount token metadata를 조회합니다.
 
 ## HTTP 요청
 

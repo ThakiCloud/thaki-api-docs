@@ -1,4 +1,4 @@
-# List Namespaces
+# 네임스페이스 목록 조회
 
 Namespace 목록 조회
 

@@ -1,8 +1,4 @@
-# Update Cronjob
-
-CronJob 수정
-
-YAML 스펙을 기반으로 Kubernetes 클러스터의 기존 CronJob을 수정합니다.
+# CronJob 수정
 
 ## HTTP 요청
 

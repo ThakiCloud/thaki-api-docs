@@ -1,4 +1,4 @@
-# Listener 인증서 목록 조회
+# 리스너 연결 인증서 목록 조회
 
 Listener에 연동된 인증서(Server, CA, SNI) 목록을 조회합니다.
 

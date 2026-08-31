@@ -1,4 +1,4 @@
-# Get Ingress Detail
+# 인그레스 단건 조회
 
 ## HTTP 요청
 

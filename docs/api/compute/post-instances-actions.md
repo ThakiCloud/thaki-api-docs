@@ -1,9 +1,4 @@
-# Batch Instance Actions
-
-배치 인스턴스 액션 처리
-
-배치 작업은 start, stop, reboot 액션만 지원합니다.
-지원하지 않는 액션이 요청되면 FastAPI가 자동으로 422 Validation Error를 반환합니다.
+# 배치 인스턴스 액션 처리
 
 ## HTTP 요청
 

@@ -1,4 +1,4 @@
-# API Key 삭제
+# API Key 폐기
 
 API Key를 폐기합니다.
 

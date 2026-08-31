@@ -1,4 +1,4 @@
-# List Instance Interfaces
+# 인스턴스 인터페이스 목록 조회
 
 인스턴스 인터페이스 목록을 조회합니다.
 

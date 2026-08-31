@@ -1,8 +1,4 @@
-# Create Resource Quota
-
-ResourceQuota 생성
-
-제공된 YAML 스펙을 기반으로 ResourceQuota를 생성합니다.
+# ResourceQuota 생성
 
 ## HTTP 요청
 

@@ -1,4 +1,4 @@
-# TPN이 가진 Role 목록 조회
+# TPN이 가진 역할 목록 조회
 
 TPN이 가진 Role 목록을 조회합니다.
 Role에 바인딩된 Policy 정보도 함께 반환합니다.

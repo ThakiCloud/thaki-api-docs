@@ -1,13 +1,4 @@
-# List Secrets
-
-Secret 목록 조회
-
-특정 클러스터의 Secret 목록을 조회합니다.
-페이지네이션 및 필터링을 지원합니다.
-
-- namespace: 네임스페이스 필터 (복수 지정 가능, 생략 시 전체 네임스페이스 조회)
-- secretType: Secret 타입 필터 (단일)
-- secretName: Secret 이름 필터 (복수 지정 가능, OR 조건)
+# Secret 목록 조회
 
 ## HTTP 요청
 

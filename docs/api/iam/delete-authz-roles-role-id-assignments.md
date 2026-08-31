@@ -1,4 +1,4 @@
-# TPN으로 RoleAssignment 삭제
+# 역할 ID와 TPN을 사용하여 RoleAssignment 삭제
 
 Role ID와 TPN을 사용하여 RoleAssignment를 삭제합니다. AuthN 등 외부 서비스에서 assignmentId 없이 삭제할 때 사용합니다.
 

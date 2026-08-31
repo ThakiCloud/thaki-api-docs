@@ -1,4 +1,4 @@
-# Create Instances Bulk
+# 인스턴스 일괄 생성
 
 ## HTTP 요청
 

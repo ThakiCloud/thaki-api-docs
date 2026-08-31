@@ -1,8 +1,4 @@
-# Create Job
-
-Job 생성
-
-제공된 YAML 스펙을 기반으로 Job을 생성합니다.
+# Job 생성
 
 ## HTTP 요청
 

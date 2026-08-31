@@ -1,4 +1,4 @@
-# Get Table Settings
+# 테이블 설정 조회
 
 ## HTTP 요청
 

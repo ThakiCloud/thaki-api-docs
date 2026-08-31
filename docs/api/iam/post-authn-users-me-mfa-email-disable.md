@@ -1,8 +1,4 @@
-# Disable Email Mfa
-
-Email MFA 비활성화
-
-사용자의 이메일 MFA를 비활성화합니다.
+# Email MFA 비활성화
 
 ## HTTP 요청
 

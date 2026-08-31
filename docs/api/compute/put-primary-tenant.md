@@ -1,4 +1,4 @@
-# Set Primary Tenant
+# 사용자의 Primary Tenant를 설정
 
 사용자의 Primary Tenant를 설정합니다.
 

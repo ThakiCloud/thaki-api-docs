@@ -1,11 +1,4 @@
-# List Deployment Conditions
-
-Deployment Condition 목록 조회
-
-특정 클러스터 및 네임스페이스에 존재하는 Deployment의 Condition 목록을 페이지네이션하여 조회합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bc9eddc34e681d68d68cce04238d9de)
+# Deployment Condition 목록 조회
 
 ## HTTP 요청
 

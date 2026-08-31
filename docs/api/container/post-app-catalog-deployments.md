@@ -1,4 +1,4 @@
-# Create App Catalog Deployment
+# 렌더링된 App Catalog values.yaml 배포를 요청
 
 렌더링된 App Catalog values.yaml 배포를 요청합니다.
 

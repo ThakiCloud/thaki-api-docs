@@ -1,4 +1,4 @@
-# List Node Pods
+# 노드 파드 목록 조회
 
 Node Pod 목록 조회
 

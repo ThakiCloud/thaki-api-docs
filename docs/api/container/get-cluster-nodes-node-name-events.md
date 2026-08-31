@@ -1,4 +1,4 @@
-# List Node Events
+# 노드 이벤트 목록 조회
 
 Node 이벤트 목록 조회
 

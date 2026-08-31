@@ -1,13 +1,4 @@
-# List Deployments
-
-Deployment 목록 조회
-
-특정 클러스터의 Deployment 목록을 페이지네이션하여 조회합니다.
-네임스페이스를 지정하지 않으면 전체 네임스페이스를 조회하고,
-여러 네임스페이스를 지정하면 해당 네임스페이스들만 필터링합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bc9eddc34e68135a636ec3c7e13976d)
+# Deployment 목록 조회
 
 ## HTTP 요청
 

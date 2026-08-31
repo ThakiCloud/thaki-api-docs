@@ -1,4 +1,4 @@
-# List Deployment Pods
+# Deployment에 속한 파드 목록 조회
 
 Deployment에 속한 Pod 목록 조회
 

@@ -1,11 +1,4 @@
-# Update Deployment
-
-Deployment 수정
-
-YAML 스펙을 기반으로 Kubernetes 클러스터의 기존 Deployment를 수정합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bc9eddc34e681f6bd0ae51b9adba7b7)
+# Deployment 수정
 
 ## HTTP 요청
 

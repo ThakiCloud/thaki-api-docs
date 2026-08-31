@@ -1,4 +1,4 @@
-# Delete User
+# 사용자 삭제
 
 ## HTTP 요청
 

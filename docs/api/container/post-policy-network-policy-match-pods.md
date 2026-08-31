@@ -1,4 +1,4 @@
-# Match Pods
+# 네트워크 정책 대상 파드 조회
 
 Namespace/Pod Selector 기반 Matching Pods 조회
 

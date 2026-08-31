@@ -1,4 +1,4 @@
-# Role에 TPN 할당
+# 역할에 TPN(user/group)을 할당
 
 Role에 TPN(user/group)을 할당합니다.
 

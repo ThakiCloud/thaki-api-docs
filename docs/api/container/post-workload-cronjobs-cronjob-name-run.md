@@ -1,9 +1,4 @@
-# Run Cronjob
-
-CronJob 즉시 실행
-
-CronJob을 기반으로 Job을 즉시 생성합니다.
-kubectl create job &lt;job-name&gt; --from=cronjob/&lt;cronjob-name&gt; 와 동일한 동작입니다.
+# CronJob 즉시 실행
 
 ## HTTP 요청
 

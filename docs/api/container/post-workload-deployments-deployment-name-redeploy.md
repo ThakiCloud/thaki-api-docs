@@ -1,12 +1,4 @@
-# Redeploy Deployment
-
-Deployment 재배포
-
-kubectl rollout restart deployment와 동일한 동작을 수행합니다.
-Pod 템플릿에 restartedAt 어노테이션을 추가하여 새로운 롤아웃을 트리거합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bc9eddc34e68157a261e061d45d83b4)
+# Deployment 재배포
 
 ## HTTP 요청
 

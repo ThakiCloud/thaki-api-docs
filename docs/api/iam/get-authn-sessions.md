@@ -1,13 +1,4 @@
-# List Active Sessions
-
-활성 세션 목록 조회 (PG 기반 검색·필터·정렬·페이지네이션)
-
-- 검색 필터: Started/LastAccess 기간, IP Address, Device, Name(username)
-- search 파라미터: 필터 키 미선택 시 username에서 검색
-- sort/order: 정렬 지원 (createdAt, expiresAt, lastActivity, clientIp, username, status, userTpn)
-- **권한/범위**: 시스템 어드민은 전 조직(orgId 미지정 시 전체). 그 외에는 본인 org의
-  admin(authz introspection)만 허용되며 orgId는 본인 org로 강제된다(타 org 지정 시 403).
-  일반 멤버는 403 — 본인 세션은 `GET /me/sessions`를 사용한다.
+# 활성 세션 목록 조회 (PG 기반 검색·필터·정렬·페이지네이션)
 
 ## HTTP 요청
 

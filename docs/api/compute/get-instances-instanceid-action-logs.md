@@ -1,4 +1,4 @@
-# List Instance Action Logs
+# 인스턴스 액션 로그 목록 조회
 
 ## HTTP 요청
 

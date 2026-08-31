@@ -1,8 +1,4 @@
-# Create Hpa
-
-HPA 생성
-
-제공된 YAML 스펙을 기반으로 HorizontalPodAutoscaler를 생성합니다.
+# HPA 생성
 
 ## HTTP 요청
 

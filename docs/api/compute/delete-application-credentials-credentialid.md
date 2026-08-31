@@ -1,4 +1,6 @@
-# Application Credential을 삭제합니다
+# Application Credential 삭제
+
+Application Credential을 삭제합니다.
 
 ## HTTP 요청
 

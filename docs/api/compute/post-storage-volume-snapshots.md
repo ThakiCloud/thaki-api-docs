@@ -1,4 +1,4 @@
-# Create Volume Snapshot
+# 볼륨 스냅샷 생성
 
 볼륨 스냅샷을 생성합니다
 

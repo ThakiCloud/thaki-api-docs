@@ -1,4 +1,4 @@
-# Create Firewall Rule
+# 허용 규칙(allow-related ACL) 생성 요청을 접수
 
 허용 규칙(allow-related ACL) 생성 요청을 접수합니다.
 

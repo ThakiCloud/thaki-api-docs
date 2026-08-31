@@ -1,4 +1,4 @@
-# Member 수정
+# 풀 멤버 수정
 
 Pool Member를 수정합니다.
 

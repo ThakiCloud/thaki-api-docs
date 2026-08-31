@@ -1,4 +1,4 @@
-# TPN에 할당 가능한 Role 목록 조회
+# 특정 TPN에 할당 가능한 역할 목록 조회
 
 특정 TPN에 할당 가능한 Role 목록을 조회합니다. exclude_assigned=true인 경우 이미 할당된 Role은 제외됩니다.
 

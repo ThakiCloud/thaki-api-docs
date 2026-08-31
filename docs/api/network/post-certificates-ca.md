@@ -1,6 +1,4 @@
-# Create Ca Certificate
-
-CA 인증서를 생성합니다 (단일 Secret 구조).
+# CA 인증서를 생성합니다 (단일 Secret 구조)
 
 ## HTTP 요청
 

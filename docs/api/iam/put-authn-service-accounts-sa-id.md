@@ -1,10 +1,4 @@
-# Update Service Account
-
-서비스 어카운트 업데이트
-
-name/display_name/description/tags를 업데이트합니다. status(active|disabled)를
-함께 전달하면 상태도 변경됩니다(비활성화 시 활성 API Key가 cascade로 비활성화됨).
-상태만 단독 변경은 POST /{sa_id}:enable, POST /{sa_id}:disable 액션도 사용 가능합니다.
+# 서비스 어카운트 업데이트
 
 ## HTTP 요청
 

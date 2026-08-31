@@ -1,4 +1,4 @@
-# Create Security Group Rule
+# 보안 그룹 Rule 생성
 
 Security Group Rule을 생성합니다.
 

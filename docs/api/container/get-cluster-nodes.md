@@ -1,4 +1,4 @@
-# List Nodes
+# 노드 목록 조회
 
 Node 목록 조회
 

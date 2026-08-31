@@ -1,8 +1,4 @@
-# Create Network Policy
-
-NetworkPolicy 생성
-
-제공된 YAML 스펙을 기반으로 NetworkPolicy를 생성합니다.
+# NetworkPolicy 생성
 
 ## HTTP 요청
 

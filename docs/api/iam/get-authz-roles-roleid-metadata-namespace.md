@@ -1,4 +1,4 @@
-# Namespace별 Role Metadata 조회
+# 특정 Provider namespace의 모든 metadata 조회
 
 특정 Provider namespace의 모든 metadata를 조회합니다.
 

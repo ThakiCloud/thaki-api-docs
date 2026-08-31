@@ -1,4 +1,4 @@
-# List Flavors
+# Flavor 목록 조회
 
 Flavor 목록을 조회합니다
 

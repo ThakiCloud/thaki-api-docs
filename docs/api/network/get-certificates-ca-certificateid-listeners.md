@@ -1,4 +1,4 @@
-# List Ca Certificate Listeners
+# CA 인증서(Secret)에 연결된 리스너 목록 조회
 
 CA 인증서(Secret)에 연결된 Listener 목록을 조회합니다.
 

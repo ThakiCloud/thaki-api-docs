@@ -1,4 +1,4 @@
-# Pool 생성
+# 풀 생성
 
 Pool을 생성합니다. ProvisioningService가 입력을 기반으로 동기/비동기 전략을 결정합니다.
 

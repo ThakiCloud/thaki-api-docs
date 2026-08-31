@@ -1,4 +1,4 @@
-# App Catalog values.schema.json 조회
+# 앱 입력 폼 스키마 조회
 
 App Catalog 앱 이름으로 UI 입력 폼 구성을 위한 원본 values.schema.json을 조회합니다. app-catalog submodule 또는 로컬 schema 데이터를 그대로 확인해야 할 때 사용합니다.
 

@@ -1,4 +1,4 @@
-# List App Catalog Deployments
+# 앱 카탈로그 배포 목록 조회
 
 ArgoCD Application 기준으로 App Catalog 배포 목록을 조회합니다.
 

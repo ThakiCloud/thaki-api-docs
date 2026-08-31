@@ -1,4 +1,4 @@
-# Create Image
+# 이미지 생성
 
 이미지를 생성합니다 (multipart/form-data, 스트리밍 처리).
 

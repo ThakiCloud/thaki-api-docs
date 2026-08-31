@@ -1,4 +1,4 @@
-# Delete Listener
+# 리스너 삭제
 
 ## HTTP 요청
 

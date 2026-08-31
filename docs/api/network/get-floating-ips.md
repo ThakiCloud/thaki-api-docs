@@ -1,4 +1,4 @@
-# List Floating Ips
+# Floating IP 목록 조회
 
 Floating IP 목록을 조회합니다.
 

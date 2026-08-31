@@ -1,4 +1,8 @@
-# Namespace 상세 조회
+# 네임스페이스 상세 조회
+
+Namespace 상세 조회
+
+특정 클러스터에 존재하는 Namespace의 상세 정보를 조회합니다.
 
 ## HTTP 요청
 

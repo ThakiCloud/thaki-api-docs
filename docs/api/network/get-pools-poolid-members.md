@@ -1,4 +1,4 @@
-# Member 목록 조회
+# 풀 멤버 목록 조회
 
 Pool Member 목록을 조회합니다.
 

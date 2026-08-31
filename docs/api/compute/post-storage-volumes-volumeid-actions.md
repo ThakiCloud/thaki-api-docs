@@ -1,4 +1,4 @@
-# Volume Action
+# 볼륨 액션 실행
 
 단일 볼륨 액션 처리 (retype, extend, revert, uploadToImage)
 

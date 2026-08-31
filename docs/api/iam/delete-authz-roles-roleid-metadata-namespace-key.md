@@ -1,4 +1,4 @@
-# Role Metadata 삭제
+# 특정 역할 metadata 삭제
 
 특정 Role metadata를 삭제합니다.
 

@@ -1,9 +1,4 @@
-# Create Storage Class
-
-StorageClass 생성
-
-제공된 YAML 스펙을 기반으로 StorageClass를 생성합니다.
-StorageClass는 클러스터 범위(cluster-scoped) 리소스이므로 네임스페이스가 필요하지 않습니다.
+# StorageClass 생성
 
 ## HTTP 요청
 

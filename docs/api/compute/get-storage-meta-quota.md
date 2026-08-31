@@ -1,4 +1,6 @@
-# Storage Quota 정보를 조회합니다
+# Storage Quota 정보 조회
+
+Storage Quota 정보를 조회합니다
 
 ## HTTP 요청
 

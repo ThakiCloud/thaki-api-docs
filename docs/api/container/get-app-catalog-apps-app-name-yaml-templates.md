@@ -1,4 +1,4 @@
-# App Catalog YAML template mode 목록 조회
+# values.yaml 템플릿 모드 목록 조회
 
 앱과 Target version에 대해 선택 가능한 values.yaml template mode 목록을 조회합니다. 앱마다 single, cluster 등 서로 다른 mode를 가질 수 있으며, 응답은 app-catalog submodule의 template 메타데이터를 기준으로 합니다.
 

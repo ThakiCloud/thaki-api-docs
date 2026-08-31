@@ -1,4 +1,4 @@
-# Access Key 시크릿 재발급 (Rotate)
+# 본인 Access Key의 시크릿 재발급
 
 본인 Access Key의 시크릿을 재발급합니다. key_id는 유지되고 secret만 새로 생성됩니다. 새 secret은 이 응답에서만 확인 가능합니다.
 

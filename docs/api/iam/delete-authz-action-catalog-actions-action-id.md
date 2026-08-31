@@ -1,6 +1,4 @@
-# Action 삭제 (Admin)
-
-Action을 삭제합니다 (soft delete).
+# Action을 삭제합니다 (soft delete)
 
 ## HTTP 요청
 

@@ -1,9 +1,4 @@
-# Reset Api Key Secret
-
-API Key Secret 재발급
-
-기존 Secret을 즉시 무효화하고 새 Secret을 생성합니다.
-새 Secret은 이 응답에서만 일회성으로 반환됩니다.
+# API Key Secret 재발급
 
 ## HTTP 요청
 

@@ -1,9 +1,4 @@
-# Disable Api Key
-
-API Key 비활성화
-
-특정 서비스 어카운트의 API Key를 비활성화합니다.
-비활성화된 키는 인증에 사용할 수 없습니다.
+# API Key 비활성화
 
 ## HTTP 요청
 

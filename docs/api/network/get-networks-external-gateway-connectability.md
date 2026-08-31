@@ -1,4 +1,4 @@
-# List External Gateway Connectability Networks
+# 외부 게이트웨이에 연결된 내부 네트워크 조회
 
 외부 게이트웨이에 연결된 내부 네트워크를 조회합니다.
 

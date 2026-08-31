@@ -1,4 +1,4 @@
-# 사용자 TOTP MFA 비활성화 (관리자용)
+# 관리자가 특정 사용자의 TOTP MFA를 비활성화하고 Secret 삭제
 
 관리자가 특정 사용자의 TOTP MFA를 비활성화하고 Secret을 삭제합니다.
 

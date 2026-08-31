@@ -1,4 +1,4 @@
-# Get Instance Network Packets
+# 인스턴스 네트워크 패킷 조회
 
 ## HTTP 요청
 

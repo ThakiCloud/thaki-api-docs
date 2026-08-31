@@ -1,4 +1,4 @@
-# List Namespace Workloads
+# 네임스페이스 내 Workload 리소스 목록 조회
 
 Namespace 내 Workload 리소스 목록 조회
 

@@ -1,8 +1,4 @@
-# List Hpa Conditions
-
-HPA Condition 목록 조회
-
-특정 HPA의 Condition 목록을 페이지네이션하여 조회합니다.
+# HPA Condition 목록 조회
 
 ## HTTP 요청
 

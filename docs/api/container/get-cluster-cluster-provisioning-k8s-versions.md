@@ -1,6 +1,4 @@
-# List K8S Versions
-
-Kubernetes 버전 목록 조회 (옵션)
+# Kubernetes 버전 목록 조회 (옵션)
 
 ## HTTP 요청
 

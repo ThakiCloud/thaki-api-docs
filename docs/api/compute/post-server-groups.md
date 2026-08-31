@@ -1,4 +1,4 @@
-# Create Server Group
+# ServerGroup 생성
 
 ServerGroup을 생성합니다
 

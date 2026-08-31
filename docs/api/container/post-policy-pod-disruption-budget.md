@@ -1,8 +1,4 @@
-# Create Pdb
-
-PodDisruptionBudget 생성
-
-제공된 YAML 스펙을 기반으로 PodDisruptionBudget를 생성합니다.
+# PodDisruptionBudget 생성
 
 ## HTTP 요청
 

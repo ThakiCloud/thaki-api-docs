@@ -1,4 +1,4 @@
-# List Projects
+# OpenStack 프로젝트 목록 조회
 
 OpenStack 프로젝트 목록을 조회합니다.
 

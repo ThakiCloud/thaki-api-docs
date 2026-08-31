@@ -1,12 +1,4 @@
-# Rollback Deployment
-
-Deployment 롤백
-
-kubectl rollout undo deployment --to-revision과 동일한 동작을 수행합니다.
-특정 revision으로 Deployment를 롤백합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bc9eddc34e6811b936fe1b94260de41)
+# Deployment 롤백
 
 ## HTTP 요청
 

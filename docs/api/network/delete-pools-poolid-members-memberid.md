@@ -1,4 +1,6 @@
-# Pool Member를 삭제합니다
+# 풀 멤버 삭제
+
+Pool Member를 삭제합니다.
 
 ## HTTP 요청
 

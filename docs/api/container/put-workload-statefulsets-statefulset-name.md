@@ -1,11 +1,4 @@
-# Update Statefulset
-
-StatefulSet 수정
-
-YAML 스펙을 기반으로 Kubernetes 클러스터의 기존 StatefulSet을 수정합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bd9eddc34e681649844c3fd9941684d)
+# StatefulSet 수정
 
 ## HTTP 요청
 

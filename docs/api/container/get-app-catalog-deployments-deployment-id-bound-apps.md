@@ -1,4 +1,4 @@
-# Operator에 연결된 App Catalog application 배포 목록
+# 오퍼레이터 연결 앱 배포 목록 조회
 
 Operator 삭제 확인 단계에서 해당 operator에 의존하는 같은 cluster의 application 배포 목록을 조회합니다.
 

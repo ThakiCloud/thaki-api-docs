@@ -1,4 +1,4 @@
-# Update Node Manifest Preset
+# 노드 manifest preset 수정
 
 Node manifest preset 수정
 

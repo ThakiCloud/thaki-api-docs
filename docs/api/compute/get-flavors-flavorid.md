@@ -1,4 +1,6 @@
-# Flavor 상세 정보를 조회합니다
+# Flavor 상세 정보 조회
+
+Flavor 상세 정보를 조회합니다
 
 ## HTTP 요청
 

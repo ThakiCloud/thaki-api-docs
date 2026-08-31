@@ -1,9 +1,4 @@
-# Set Storage Class As Default
-
-StorageClass 기본값 설정
-
-특정 StorageClass를 기본 StorageClass로 설정합니다.
-기존에 기본값으로 설정된 다른 StorageClass가 있는 경우 자동으로 해제됩니다.
+# StorageClass 기본값 설정
 
 ## HTTP 요청
 

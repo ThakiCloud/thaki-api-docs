@@ -1,4 +1,4 @@
-# Trust Policy 설정
+# 역할에 Trust 정책를 설정
 
 Role에 Trust Policy를 설정합니다.
 

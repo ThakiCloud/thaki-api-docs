@@ -1,4 +1,4 @@
-# Delete Ingress
+# 인그레스 삭제
 
 ## HTTP 요청
 

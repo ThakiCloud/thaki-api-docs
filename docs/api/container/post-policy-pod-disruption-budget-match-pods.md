@@ -1,4 +1,4 @@
-# Match Pods
+# PDB 대상 파드 조회
 
 Namespace/Pod Selector 기반 Matching Pods 조회
 

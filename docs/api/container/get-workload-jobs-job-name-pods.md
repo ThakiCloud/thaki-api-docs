@@ -1,4 +1,4 @@
-# List Job Pods
+# Job 파드 목록 조회
 
 Job Pod 목록 조회
 

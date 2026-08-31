@@ -1,4 +1,4 @@
-# Create Application Credential
+# Application Credential 생성
 
 Application Credential을 생성합니다.
 

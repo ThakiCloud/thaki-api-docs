@@ -1,4 +1,4 @@
-# Update Image
+# 이미지 수정
 
 ## HTTP 요청
 

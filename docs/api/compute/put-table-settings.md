@@ -1,4 +1,4 @@
-# Update Table Settings
+# 테이블 설정 수정
 
 ## HTTP 요청
 

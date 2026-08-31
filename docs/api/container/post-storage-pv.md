@@ -1,8 +1,4 @@
-# Create Pv
-
-PV 생성
-
-제공된 YAML 스펙을 기반으로 PV를 생성합니다.
+# PV 생성
 
 ## HTTP 요청
 

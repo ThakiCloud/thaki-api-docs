@@ -1,8 +1,4 @@
-# List Cronjob Jobs
-
-CronJob의 Job 목록 조회
-
-특정 CronJob이 생성한 Job 목록을 페이지네이션하여 조회합니다.
+# CronJob의 Job 목록 조회
 
 ## HTTP 요청
 

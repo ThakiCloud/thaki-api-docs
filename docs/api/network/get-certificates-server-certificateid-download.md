@@ -1,4 +1,4 @@
-# Download Server Certificate
+# SERVER 인증서를 ZIP 번들로 다운로드
 
 SERVER 인증서를 ZIP 번들로 다운로드합니다.
 

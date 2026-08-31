@@ -1,4 +1,4 @@
-# List Server Certificate Listeners
+# 서버 인증서 연결 리스너 목록 조회
 
 SERVER 인증서(Container)에 연결된 Listener 목록을 조회합니다.
 

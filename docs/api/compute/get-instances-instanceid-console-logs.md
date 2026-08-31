@@ -1,4 +1,4 @@
-# Get Instance Console Logs
+# 인스턴스 콘솔 로그 조회
 
 ## HTTP 요청
 

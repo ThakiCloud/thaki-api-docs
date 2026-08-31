@@ -1,4 +1,4 @@
-# ArgoCD Application name으로 App Catalog 배포 삭제
+# 앱 카탈로그 배포 삭제
 
 DB ID가 없는 ArgoCD-only 배포도 목록 응답의 argoAppName으로 ArgoCD Application과 tenant-catalog values 파일 삭제를 요청합니다.
 

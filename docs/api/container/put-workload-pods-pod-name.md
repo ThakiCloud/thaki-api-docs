@@ -1,4 +1,4 @@
-# Update Pod
+# 파드 수정
 
 Pod 수정
 

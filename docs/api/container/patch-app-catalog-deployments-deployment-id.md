@@ -1,4 +1,4 @@
-# Update App Catalog Deployment
+# App Catalog 배포의 values.yaml 또는 상태 수정
 
 App Catalog 배포의 values.yaml 또는 상태를 수정합니다.
 

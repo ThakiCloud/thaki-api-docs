@@ -1,8 +1,4 @@
-# Create Limit Range
-
-LimitRange 생성
-
-제공된 YAML 스펙을 기반으로 LimitRange를 생성합니다.
+# LimitRange 생성
 
 ## HTTP 요청
 

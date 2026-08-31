@@ -1,12 +1,4 @@
-# Scale Deployment
-
-Deployment 스케일 조정
-
-kubectl scale deployment --replicas와 동일한 동작을 수행합니다.
-Deployment의 replica 수를 조정합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bc9eddc34e681d2bd73e3302d590239)
+# Deployment 스케일 조정
 
 ## HTTP 요청
 

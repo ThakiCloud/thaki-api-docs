@@ -1,4 +1,4 @@
-# List Pods By Selector Preview
+# Selector로 매칭되는 파드 목록 미리보기
 
 Selector로 매칭되는 Pod 목록 미리보기
 

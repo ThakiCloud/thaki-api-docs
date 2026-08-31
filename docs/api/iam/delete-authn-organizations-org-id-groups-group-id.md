@@ -1,4 +1,4 @@
-# 그룹 삭제
+# 그룹을 삭제합니다 (Soft Delete)
 
 그룹을 삭제합니다 (Soft Delete). built-in 그룹은 삭제할 수 없습니다.
 

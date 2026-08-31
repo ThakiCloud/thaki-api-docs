@@ -1,8 +1,4 @@
-# Create Pvc
-
-PVC 생성
-
-제공된 YAML 스펙을 기반으로 PVC를 생성합니다.
+# PVC 생성
 
 ## HTTP 요청
 

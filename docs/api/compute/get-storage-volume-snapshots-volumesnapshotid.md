@@ -1,4 +1,4 @@
-# Get Volume Snapshot
+# 볼륨 스냅샷 단건 조회
 
 ## HTTP 요청
 

@@ -1,4 +1,4 @@
-# List Selectable Server Certificates
+# 리스너 생성 시 선택용 SERVER 인증서 목록 조회
 
 Listener 생성 시 선택용 SERVER 인증서 목록을 조회합니다.
 

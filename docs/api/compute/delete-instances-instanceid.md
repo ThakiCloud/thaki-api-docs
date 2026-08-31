@@ -1,4 +1,4 @@
-# Delete Instance
+# 인스턴스 삭제
 
 ## HTTP 요청
 

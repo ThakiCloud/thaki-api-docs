@@ -1,4 +1,4 @@
-# List Instance Sg Candidates Ports
+# 인스턴스 SG 후보 포트 목록 조회
 
 인스턴스 SG 후보 포트 목록을 조회합니다.
 

@@ -1,14 +1,4 @@
-# Create Cluster
-
-클러스터 프로비저닝 요청 (Stage 1)
-
-K8s 클러스터 생성을 위한 최초 배포 요청 API입니다.
-유효성 검증 후 202 Accepted를 반환하고, 백그라운드에서 다음 리소스를 생성합니다:
-
-1. LoadBalancer 생성 및 Floating IP 연결
-2. Security Group 생성 (CP/WK)
-3. 외부 볼륨 생성 (IS_EXTERNAL_ETCD=True일 때)
-4. 첫 번째 CP Instance 배포
+# 클러스터 프로비저닝 요청 (Stage 1)
 
 ## HTTP 요청
 

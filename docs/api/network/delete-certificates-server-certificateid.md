@@ -1,4 +1,6 @@
-# SERVER 인증서를 삭제합니다
+# SERVER 인증서 삭제
+
+SERVER 인증서를 삭제합니다.
 
 ## HTTP 요청
 

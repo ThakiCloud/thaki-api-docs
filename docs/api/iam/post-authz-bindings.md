@@ -1,4 +1,4 @@
-# 바인딩 생성
+# 정책을 대상(TPN, Org, Project)에 연결
 
 정책을 대상(TPN, Org, Project)에 연결합니다.
 

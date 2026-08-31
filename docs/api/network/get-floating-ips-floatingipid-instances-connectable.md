@@ -1,4 +1,4 @@
-# List Floating Ip Connectable Instances
+# Floating IP 연결 후보 인스턴스 목록 조회
 
 Floating IP 연결 후보 인스턴스 목록을 조회합니다.
 

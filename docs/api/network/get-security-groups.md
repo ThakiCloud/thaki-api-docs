@@ -1,4 +1,4 @@
-# List Security Groups
+# 보안 그룹 목록 조회
 
 Security Group 목록을 조회합니다.
 

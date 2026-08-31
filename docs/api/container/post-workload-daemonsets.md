@@ -1,11 +1,4 @@
-# Create Daemonset
-
-DaemonSet 생성
-
-제공된 YAML 스펙을 기반으로 DaemonSet을 생성합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2be9eddc34e681be807deaec280f21a4)
+# DaemonSet 생성
 
 ## HTTP 요청
 

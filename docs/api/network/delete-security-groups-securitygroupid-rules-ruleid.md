@@ -1,4 +1,6 @@
-# Security Group Rule을 삭제합니다
+# 보안 그룹 Rule 삭제
+
+Security Group Rule을 삭제합니다.
 
 ## HTTP 요청
 

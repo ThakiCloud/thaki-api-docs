@@ -1,4 +1,6 @@
-# 특정 클러스터의 kubeConfig를 조회합니다
+# 특정 클러스터의 kubeConfig 조회
+
+특정 클러스터의 kubeConfig를 조회합니다.
 
 ## HTTP 요청
 

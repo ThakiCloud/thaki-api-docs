@@ -1,4 +1,4 @@
-# App Catalog 설치 의존성 확인
+# 앱 설치 가능 여부 확인
 
 리스트 화면에서 install 버튼을 눌렀을 때 호출하는 사전 점검 API입니다. 선택한 앱이 단독 설치 가능한지, 다른 application 또는 operator 의존성이 필요한지 확인하고, 미설치 의존성이 있으면 dependencyMessage로 required_operator, application_name, required_message를 반환합니다.
 

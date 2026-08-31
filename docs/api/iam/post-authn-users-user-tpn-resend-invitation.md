@@ -1,9 +1,4 @@
-# Resend Invitation By User
-
-사용자 TPN 기반 초대 재발송
-
-- 해당 사용자의 pending 초대를 찾아 재발송합니다.
-- UserDetailPage에서 invitation_id 없이 resend 가능하도록 지원.
+# 사용자 TPN 기반 초대 재발송
 
 ## HTTP 요청
 

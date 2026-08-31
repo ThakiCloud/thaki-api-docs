@@ -1,4 +1,4 @@
-# Create Pod
+# 파드 생성
 
 Pod 생성
 

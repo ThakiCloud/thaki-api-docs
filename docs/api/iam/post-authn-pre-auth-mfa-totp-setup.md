@@ -1,4 +1,4 @@
-# TOTP 설정 (Pre-Auth)
+# Pre-Auth 세션을 사용하여 TOTP를 설정
 
 Pre-Auth 세션을 사용하여 TOTP를 설정합니다.
 

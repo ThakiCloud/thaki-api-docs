@@ -1,12 +1,4 @@
-# Pause Deployment
-
-Deployment 롤아웃 일시 중지
-
-kubectl rollout pause deployment와 동일한 동작을 수행합니다.
-Deployment의 롤아웃을 일시 중지하여 업데이트를 중단합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bc9eddc34e681b3ab60cf2adc7d27d8)
+# Deployment 롤아웃 일시 중지
 
 ## HTTP 요청
 

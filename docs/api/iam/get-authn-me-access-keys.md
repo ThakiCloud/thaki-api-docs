@@ -1,4 +1,4 @@
-# Access Key 목록 조회
+# 본인의 Access Key 목록 조회
 
 본인의 Access Key 목록을 조회합니다.
 

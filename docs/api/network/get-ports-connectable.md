@@ -1,4 +1,4 @@
-# List Connectable Ports
+# 연결 가능한 포트 목록 조회
 
 connectable(Compute attachable) 기준 포트 목록을 조회합니다.
 

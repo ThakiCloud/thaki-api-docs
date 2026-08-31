@@ -1,4 +1,4 @@
-# API Key 검증 (User / SA 통합)
+# 사용자 또는 SA API Key의 유효성을 검증
 
 User 또는 SA API Key의 유효성을 검증합니다. key_id가 sak_ prefix면 SA, 없으면 User.
 

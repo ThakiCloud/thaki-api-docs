@@ -1,4 +1,4 @@
-# List External Networks
+# 방화벽 연결 대상 네트워크 목록 조회
 
 방화벽 부착 대상 external network 목록을 has_firewall과 함께 조회합니다.
 

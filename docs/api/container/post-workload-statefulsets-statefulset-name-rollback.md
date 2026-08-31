@@ -1,12 +1,4 @@
-# Rollback Statefulset
-
-StatefulSet 롤백
-
-kubectl rollout undo statefulset --to-revision과 동일한 동작을 수행합니다.
-특정 revision으로 StatefulSet을 롤백합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bd9eddc34e681d5955be6acde59fc4f)
+# StatefulSet 롤백
 
 ## HTTP 요청
 

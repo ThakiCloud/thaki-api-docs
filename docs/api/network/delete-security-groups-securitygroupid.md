@@ -1,4 +1,6 @@
-# Security Group을 삭제합니다
+# 보안 그룹 삭제
+
+Security Group을 삭제합니다.
 
 ## HTTP 요청
 

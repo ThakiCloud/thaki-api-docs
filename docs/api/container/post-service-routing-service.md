@@ -1,8 +1,4 @@
-# Create Service
-
-Service 생성
-
-YAML 스펙을 기반으로 Kubernetes 클러스터에 새로운 Service를 생성합니다.
+# Service 생성
 
 ## HTTP 요청
 

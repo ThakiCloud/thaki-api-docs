@@ -1,4 +1,4 @@
-# List Instance Templates
+# 인스턴스 템플릿 목록 조회
 
 인스턴스 템플릿 목록을 조회합니다
 

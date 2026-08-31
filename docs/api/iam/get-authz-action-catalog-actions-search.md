@@ -1,4 +1,4 @@
-# Action 검색
+# 키워드로 Action을 검색
 
 키워드로 Action을 검색합니다.
 

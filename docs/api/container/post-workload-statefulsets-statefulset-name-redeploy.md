@@ -1,12 +1,4 @@
-# Redeploy Statefulset
-
-StatefulSet 재배포
-
-kubectl rollout restart statefulset와 동일한 동작을 수행합니다.
-Pod 템플릿에 restartedAt 어노테이션을 추가하여 새로운 롤아웃을 트리거합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bd9eddc34e6819fb4fad7835d7b8805)
+# StatefulSet 재배포
 
 ## HTTP 요청
 

@@ -1,4 +1,4 @@
-# List Availability Zones
+# 가용 영역 목록 조회
 
 가용 영역 목록을 조회합니다.
 

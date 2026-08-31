@@ -1,12 +1,4 @@
-# List Daemonset Revision History
-
-DaemonSet Revision History 조회
-
-kubectl rollout history daemonset와 동일한 동작을 수행합니다.
-DaemonSet과 연결된 ControllerRevision의 revision 정보를 조회합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2be9eddc34e681119423fa36c64358a1)
+# DaemonSet Revision History 조회
 
 ## HTTP 요청
 

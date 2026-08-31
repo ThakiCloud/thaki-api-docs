@@ -1,4 +1,4 @@
-# 묶음(Group) Action 생성 (Admin)
+# 그룹 액션 생성
 
 한 번의 요청으로 묶음 action(actions 행) + 대표식(api_mapping type=group) 행을 생성합니다.
 

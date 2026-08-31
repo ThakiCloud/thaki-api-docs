@@ -1,4 +1,4 @@
-# List Floating Ip Connectable Ports
+# Floating IP 연결 후보 포트 목록 조회
 
 Floating IP 연결 후보 포트 목록을 조회합니다.
 

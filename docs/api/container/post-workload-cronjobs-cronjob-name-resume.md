@@ -1,9 +1,4 @@
-# Resume Cronjob
-
-CronJob 재개
-
-일시 중지된 CronJob의 스케줄링을 재개합니다.
-kubectl patch cronjob &lt;cronjob-name&gt; -p '{"spec":{"suspend":false}}' 와 동일한 동작입니다.
+# CronJob 재개
 
 ## HTTP 요청
 

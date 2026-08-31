@@ -1,4 +1,4 @@
-# MFA 검증 (Pre-Auth)
+# Pre-Auth 세션을 사용하여 MFA 코드를 검증
 
 Pre-Auth 세션을 사용하여 MFA 코드를 검증합니다.
 

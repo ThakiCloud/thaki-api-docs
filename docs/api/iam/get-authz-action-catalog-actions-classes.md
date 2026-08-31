@@ -1,4 +1,4 @@
-# Action Class 집계 조회 (IAM05 아코디언)
+# 액션 클래스별 개수 조회
 
 Action Class(Read/List/Write/Delete/Admin)별 Action 개수를 집계합니다. app 쿼리로 특정 App에 한정할 수 있습니다.
 

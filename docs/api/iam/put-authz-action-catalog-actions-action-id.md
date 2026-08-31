@@ -1,4 +1,4 @@
-# Action 수정 (Admin)
+# 기존 Action의 메타데이터 수정
 
 기존 Action의 메타데이터를 수정합니다.
 

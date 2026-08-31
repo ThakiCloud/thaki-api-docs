@@ -1,4 +1,4 @@
-# Role Metadata 단건 조회
+# 특정 역할 metadata 조회
 
 특정 Role metadata를 조회합니다.
 

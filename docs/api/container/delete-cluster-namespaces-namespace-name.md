@@ -1,4 +1,8 @@
-# Namespace 삭제
+# 네임스페이스 삭제
+
+Namespace 삭제
+
+특정 클러스터에서 Namespace를 삭제합니다.
 
 ## HTTP 요청
 

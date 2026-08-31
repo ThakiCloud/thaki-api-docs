@@ -1,12 +1,4 @@
-# Rollback Daemonset
-
-DaemonSet 롤백
-
-kubectl rollout undo daemonset --to-revision과 동일한 동작을 수행합니다.
-특정 revision으로 DaemonSet을 롤백합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2be9eddc34e6819881d5fd332572dce1)
+# DaemonSet 롤백
 
 ## HTTP 요청
 

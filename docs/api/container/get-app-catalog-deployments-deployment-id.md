@@ -1,4 +1,6 @@
-# App Catalog 배포 상세와 values.yaml 텍스트를 조회합니다
+# App Catalog 배포 상세와 values.yaml 텍스트 조회
+
+App Catalog 배포 상세와 values.yaml 텍스트를 조회합니다.
 
 ## HTTP 요청
 

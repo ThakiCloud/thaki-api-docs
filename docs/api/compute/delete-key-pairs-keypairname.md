@@ -1,4 +1,6 @@
-# KeyPair를 삭제합니다
+# 키 페어 삭제
+
+KeyPair를 삭제합니다
 
 ## HTTP 요청
 

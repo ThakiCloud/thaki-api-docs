@@ -1,4 +1,8 @@
-# 기존 Node manifest 기반 preset 조회
+# 기존 노드 manifest 기반 preset 조회
+
+기존 Node manifest 기반 preset 조회
+
+특정 클러스터에 존재하는 Node의 manifest에서 편집/확인에 필요한 최소 필드만 추출합니다.
 
 ## HTTP 요청
 

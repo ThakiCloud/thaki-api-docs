@@ -1,4 +1,4 @@
-# App Catalog user-app 이름 중복 확인
+# 앱 배포 이름 중복 확인
 
 App Catalog 설치 플로우에서 사용자가 입력한 user-app 이름이 선택한 application과 cluster에 이미 사용 중인지 확인하는 API입니다. 동일한 application + clusterId + userApp 조합의 배포가 이미 존재하면 available=false, 사용 가능하면 available=true를 반환합니다. 중복 확인은 namespace와 무관하게 application + cluster 단위로 수행합니다.
 

@@ -1,8 +1,4 @@
-# Enable Email Mfa
-
-Email MFA 활성화
-
-사용자의 이메일을 통한 MFA 인증을 활성화합니다.
+# Email MFA 활성화
 
 ## HTTP 요청
 

@@ -1,4 +1,4 @@
-# List Pod Events
+# 파드 이벤트 목록 조회
 
 Pod 이벤트 목록 조회
 

@@ -1,4 +1,8 @@
-# Pod 템플릿 JSON 조회
+# 파드 템플릿 JSON 조회
+
+Pod 템플릿 JSON 조회
+
+Pod 생성을 위한 템플릿 JSON 스키마를 조회합니다.
 
 ## HTTP 요청
 

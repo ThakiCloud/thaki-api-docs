@@ -1,4 +1,4 @@
-# Role Metadata 설정
+# 역할에 Provider별 권한 매핑 정보를 설정합니다 (upsert)
 
 Role에 Provider별 권한 매핑 정보를 설정합니다 (upsert).
 

@@ -1,24 +1,4 @@
-# 감사 로그 목록 조회
-
-감사 로그 목록을 조회합니다 (관리자 전용).
-
-## 검색 필드
-- `action` (Event): 선택형 필터 (Sign-in, Sign-out 등 정확 일치)
-- `eventId`: 이벤트 ID 부분 일치 검색 (ILIKE)
-- `result`: 선택형 (success, failure)
-- `actorTpn` (User): 사용자 TPN 부분 일치 검색 (ILIKE)
-- `targetType`, `targetId` (Target): 대상 타입/ID 필터
-- `ipAddress`: IP 주소 부분 일치 검색 (ILIKE)
-- `search`: 기본 검색 (필터 키 미선택 시 eventId에서 검색)
-- `timestampGte/Lte` (Time): 기간 범위 필터 (ISO8601)
-
-## 정렬
-- `sort`: 정렬 필드 (timestamp, action, actorTpn, targetType, result)
-- `order`: asc | desc (기본 timestamp desc)
-
-## 페이지네이션
-- `page`: 페이지 번호 (0=전체 조회, 기본 1)
-- `pageSize`: 페이지 크기 (기본 10, 최대 100)
+# 감사 로그 목록을 조회합니다 (관리자 전용)
 
 ## HTTP 요청
 

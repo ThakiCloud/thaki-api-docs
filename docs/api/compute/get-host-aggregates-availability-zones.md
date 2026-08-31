@@ -1,4 +1,4 @@
-# List Availability Zones
+# Compute availability zone(기본) 목록 조회
 
 Compute availability zone(기본) 목록을 조회합니다.
 

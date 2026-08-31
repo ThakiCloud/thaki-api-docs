@@ -1,6 +1,4 @@
-# List Server Certificates
-
-SERVER 인증서 목록을 조회합니다 (Container 기반).
+# SERVER 인증서 목록을 조회합니다 (Container 기반)
 
 ## HTTP 요청
 

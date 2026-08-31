@@ -1,6 +1,4 @@
-# Create Server Certificate
-
-SERVER 인증서를 생성합니다 (Container 구조).
+# SERVER 인증서를 생성합니다 (Container 구조)
 
 ## HTTP 요청
 

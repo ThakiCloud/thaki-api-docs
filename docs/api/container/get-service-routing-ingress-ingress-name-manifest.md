@@ -1,4 +1,4 @@
-# Get Existing Ingress Yaml
+# 인그레스 매니페스트 조회
 
 ## HTTP 요청
 

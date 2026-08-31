@@ -1,4 +1,4 @@
-# Get Instance Network Traffic
+# 인스턴스 네트워크 트래픽 조회
 
 ## HTTP 요청
 

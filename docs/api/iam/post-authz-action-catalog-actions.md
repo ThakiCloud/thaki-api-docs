@@ -1,4 +1,4 @@
-# Action 생성 (Admin)
+# Action 생성
 
 Action을 생성합니다. 단일/다중 모두 지원합니다.
 

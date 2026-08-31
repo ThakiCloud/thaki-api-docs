@@ -1,9 +1,4 @@
-# Enable Api Key
-
-API Key 활성화
-
-비활성화된 API Key를 다시 활성화합니다.
-활성화된 키는 인증에 사용할 수 있습니다.
+# API Key 활성화
 
 ## HTTP 요청
 

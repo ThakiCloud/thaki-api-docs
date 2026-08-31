@@ -1,4 +1,8 @@
-# Node 상세 조회
+# 노드 상세 조회
+
+Node 상세 조회
+
+PRD(`docs/prd/cluster/prd_node_detail.md`)에 정의된 Node 상세 필드를 조회합니다.
 
 ## HTTP 요청
 

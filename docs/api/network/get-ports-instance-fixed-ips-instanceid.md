@@ -1,4 +1,4 @@
-# List Instance Fixed Ips
+# 인스턴스에 연결된 Fixed IP 목록 조회
 
 인스턴스에 연결된 Fixed IP 목록을 조회합니다.
 

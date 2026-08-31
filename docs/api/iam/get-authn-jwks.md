@@ -1,4 +1,4 @@
-# Thaki Token JWKS
+# 토큰 검증 공개키(JWKS) 조회
 
 ## HTTP 요청
 

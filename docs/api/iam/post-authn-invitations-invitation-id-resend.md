@@ -1,9 +1,4 @@
-# Resend Invitation
-
-초대 재발송
-
-- `invitation_id`에 해당하는 초대를 재발송합니다.
-- **권한**: `iam:invitation:resend`
+# 초대 재발송
 
 ## HTTP 요청
 

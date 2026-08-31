@@ -1,4 +1,4 @@
-# Resource Type 목록 조회 (DISTINCT)
+# 리소스 타입별 액션 개수 조회
 
 특정 App에 등록된 고유 Resource Type 목록과 각 Resource Type의 Action 개수를 조회합니다. page=0이면 전체 조회, page &gt; 0이면 페이지네이션 적용.
 

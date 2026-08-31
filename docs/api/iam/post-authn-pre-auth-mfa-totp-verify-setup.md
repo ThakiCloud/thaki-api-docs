@@ -1,4 +1,4 @@
-# TOTP 설정 검증 (Pre-Auth)
+# Pre-Auth 세션을 사용하여 TOTP 설정을 검증
 
 Pre-Auth 세션을 사용하여 TOTP 설정을 검증합니다.
 

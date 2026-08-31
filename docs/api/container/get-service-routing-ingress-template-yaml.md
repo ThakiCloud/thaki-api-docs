@@ -1,4 +1,4 @@
-# Ingress 생성 YAML template 조회
+# 인그레스 매니페스트 템플릿 조회
 
 새 Ingress를 YAML 편집 방식으로 생성할 때 사용할 기본 manifest template을 조회합니다. 응답의 yamlContent를 편집한 뒤 Ingress 생성 API에 전달합니다.
 

@@ -1,11 +1,4 @@
-# Update Daemonset
-
-DaemonSet 수정
-
-YAML 스펙을 기반으로 Kubernetes 클러스터의 기존 DaemonSet을 수정합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2be9eddc34e681aa9804f21fa50c7da7)
+# DaemonSet 수정
 
 ## HTTP 요청
 

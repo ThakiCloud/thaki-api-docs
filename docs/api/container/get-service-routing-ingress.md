@@ -1,10 +1,4 @@
-# List All Ingress
-
-클러스터의 모든 네임스페이스에서 Ingress 목록 조회
-
-- namespace 파라미터가 없으면 전체 네임스페이스 조회
-- namespace 파라미터가 있으면 해당 네임스페이스들로 필터링
-- 복수 지정 가능: namespace=default&namespace=kube-system
+# 클러스터의 모든 네임스페이스에서 Ingress 목록 조회
 
 ## HTTP 요청
 

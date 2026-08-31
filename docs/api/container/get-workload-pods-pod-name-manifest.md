@@ -1,4 +1,8 @@
-# 기존 Pod YAML 조회
+# 기존 파드 YAML 조회
+
+기존 Pod YAML 조회
+
+특정 클러스터 및 네임스페이스에 존재하는 Pod의 YAML 정의를 조회합니다.
 
 ## HTTP 요청
 

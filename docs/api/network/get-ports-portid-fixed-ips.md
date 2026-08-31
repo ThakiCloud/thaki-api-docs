@@ -1,4 +1,4 @@
-# List Port Fixed Ips
+# 포트의 Fixed IP 목록 조회
 
 포트의 Fixed IP 목록을 조회합니다.
 

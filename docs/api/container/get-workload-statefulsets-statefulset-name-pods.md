@@ -1,4 +1,4 @@
-# List Statefulset Pods
+# StatefulSet에 속한 파드 목록 조회
 
 StatefulSet에 속한 Pod 목록 조회
 

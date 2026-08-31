@@ -1,6 +1,4 @@
-# List Ingress Class Options
-
-IngressClass 옵션 목록 조회
+# IngressClass 옵션 목록 조회
 
 ## HTTP 요청
 

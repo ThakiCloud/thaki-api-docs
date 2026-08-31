@@ -1,4 +1,4 @@
-# Kubectl Shell 연결 URL 생성
+# 클러스터 셸 접속 URL 생성
 
 클러스터 내 전용 namespace에서 kubectl shell Pod을 재사용 우선으로 준비하고 Pod 준비를 최대 10초 대기한 뒤,
 Pod 컨테이너 Shell WebSocket 연결 URL을 반환합니다.

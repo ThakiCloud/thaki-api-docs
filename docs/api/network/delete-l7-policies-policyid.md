@@ -1,4 +1,4 @@
-# L7 Policy 삭제
+# L7 정책 삭제
 
 L7 Policy를 삭제합니다.
 

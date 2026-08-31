@@ -1,4 +1,6 @@
-# ServerGroup을 삭제합니다
+# ServerGroup 삭제
+
+ServerGroup을 삭제합니다
 
 ## HTTP 요청
 

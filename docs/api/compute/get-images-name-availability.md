@@ -1,4 +1,4 @@
-# Check Image Name Availability
+# 이미지 이름 중복 여부를 검사
 
 이미지 이름 중복 여부를 검사합니다.
 

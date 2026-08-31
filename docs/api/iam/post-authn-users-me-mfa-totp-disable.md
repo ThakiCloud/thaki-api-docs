@@ -1,10 +1,4 @@
-# Disable Totp Mfa
-
-TOTP MFA 비활성화
-
-사용자의 TOTP MFA를 비활성화하고 Secret을 완전히 삭제합니다.
-비활성화 전 TOTP 코드 검증이 필요합니다.
-재활성화하려면 Setup부터 다시 시작해야 합니다.
+# TOTP MFA 비활성화
 
 ## HTTP 요청
 

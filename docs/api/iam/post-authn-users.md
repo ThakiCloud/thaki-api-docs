@@ -1,4 +1,4 @@
-# 사용자 생성 (레거시)
+# org_id를 body에 포함하여 사용자 생성
 
 org_id를 body에 포함하여 사용자를 생성합니다. 신규 API는 POST /organizations/{org_id}/users 사용을 권장합니다.
 

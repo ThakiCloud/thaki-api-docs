@@ -1,4 +1,4 @@
-# Create Keypair
+# 키 페어 생성
 
 KeyPair를 생성합니다.
 

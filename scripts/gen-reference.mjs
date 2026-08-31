@@ -21,6 +21,16 @@ const SPEC_DIR = join(ROOT, 'spec/public')
 const OUT_DIR = join(ROOT, 'docs/api')
 
 /**
+ * 코드에 한국어 설명이 없는 오퍼레이션의 한국어 라벨.
+ *
+ * 근본 해결은 서비스 코드의 docstring 을 채우는 것이다. 그전까지는 이 표로 덮는다.
+ * 키는 "METHOD 전체경로".
+ */
+const LABELS = existsSync(join(ROOT, 'spec/labels.ko.json'))
+  ? JSON.parse(readFileSync(join(ROOT, 'spec/labels.ko.json'), 'utf8'))
+  : {}
+
+/**
  * 문서에 노출하는 서비스 단위.
  *
  * IAM 은 인증(authn)·인가(authz) 두 서비스로 구현돼 있지만 읽는 쪽에는 하나의 IAM 이다.
@@ -442,23 +452,79 @@ function fieldTable(rows) {
 }
 
 /**
- * 페이지 제목.
+ * 문장을 라벨로 다듬는다.
  *
- * FastAPI 는 summary 를 함수 이름에서 만든다(post_login → "Post Login"). 그건 제목이
- * 아니라 함수명이라 읽는 사람에게 아무 정보가 없다. 설명 첫 줄이 한국어면 그쪽이 제목이다.
+ * docstring 첫 줄은 "…을 조회합니다" 같은 완전한 문장이라 그대로 쓰면 목록 표에서
+ * 길어진다. 첫 문장만 남기고 서술형 어미를 떼면 뜻은 그대로 두고 라벨이 된다.
+ */
+/**
+ * 라벨 안의 리소스 이름을 한국어로 바꾼다.
+ *
+ * docstring 이 "Node Pod 목록 조회" 처럼 영어 명사를 섞어 쓰는데, 한국어 라벨에
+ * 영어가 끼면 무엇을 하는 API 인지 눈에 안 들어온다. 다만 Deployment·StatefulSet
+ * 처럼 쿠버네티스에서 고유명사로 굳은 것은 그대로 둔다 — 번역하면 오히려 못 알아본다.
+ */
+const NOUN_KO = [
+  [/\bNode\b/g, '노드'],
+  [/\bPod\b/g, '파드'],
+  [/\bNamespace\b/g, '네임스페이스'],
+  [/\bEvent\b/g, '이벤트'],
+  [/\bCluster\b/g, '클러스터'],
+  [/\bListener\b/g, '리스너'],
+  [/\bPool\b/g, '풀'],
+  [/\bMember\b/g, '멤버'],
+  [/\bHealth Monitor\b/g, '헬스 모니터'],
+  [/\bSecurity Group\b/g, '보안 그룹'],
+  [/\bInstance\b/g, '인스턴스'],
+  [/\bImage\b/g, '이미지'],
+  [/\bVolume\b/g, '볼륨'],
+  [/\bSnapshot\b/g, '스냅샷'],
+  [/\bKey ?Pair\b/gi, '키 페어'],
+  [/\bUser\b/g, '사용자'],
+  [/\bOrganization\b/g, '조직'],
+  [/\bPolicy\b/g, '정책'],
+  [/\bRole\b/g, '역할'],
+]
+
+const localizeNouns = (t) => NOUN_KO.reduce((acc, [re, ko]) => acc.replace(re, ko), t)
+
+function labelize(text) {
+  let t = String(text).trim()
+  // 첫 문장만. "…초기화합니다. 저장된 설정을 삭제하고…" 처럼 이어지는 설명은 본문에 있다.
+  const stop = t.search(/[.。](\s|$)/)
+  if (stop > 8) t = t.slice(0, stop)
+  t = t
+    .replace(/(합니다|됩니다|입니다|하십시오|한다|이다)\s*$/, '')
+    .replace(/[을를이가]\s*$/, '')
+    .replace(/[\s.·,]+$/, '')
+    .trim()
+  // "…합니다" 를 떼고 나면 "목록을 조회" 처럼 목적격 조사가 남아 어색하다.
+  // 라벨은 명사구이므로 끝 동사 앞의 을/를 을 없앤다.
+  t = t.replace(
+    /([^\s])(?:을|를)\s+(조회|생성|수정|삭제|시작|정지|초기화|변경|등록|해제|연결|발급|재발급|폐기|저장|다운로드|추가|제거)$/,
+    '$1 $2',
+  )
+  return localizeNouns(t).replace(/\s{2,}/g, ' ')
+}
+
+/**
+ * 페이지 제목이자 목록의 설명 문구.
+ *
+ * summary 는 두 종류가 섞여 있다. FastAPI 가 함수 이름에서 만든 것("Post Login")과
+ * 사람이 쓴 영문("List Node Images"). 둘 다 한국어 독자에게는 무엇을 하는 API 인지
+ * 알려 주지 못한다. 코드의 docstring 첫 줄이 한국어면 그것이 가장 정확한 설명이므로
+ * 우선한다.
  */
 function operationTitle(op, path, method) {
   const firstLine = String(op.description ?? '')
     .split(/\r?\n/)
     .map((l) => l.trim())
     .find(Boolean)
-  // FastAPI 가 함수 이름에서 만든 summary 는 HTTP 메서드로 시작한다(post_login → "Post Login").
-  // "Create Security Group Rule" 처럼 사람이 쓴 요약은 그대로 제목으로 쓴다.
-  const summaryLooksGenerated =
-    op.summary && /^(Get|Post|Put|Patch|Delete)\b/.test(op.summary.trim()) &&
-    /^[A-Z][A-Za-z0-9]*( [A-Z][A-Za-z0-9]*)*$/.test(op.summary.trim())
-  if (summaryLooksGenerated && firstLine && /[가-힣]/.test(firstLine) && firstLine.length <= 60) {
-    return stripInternal(firstLine).replace(/[.\s]+$/, '')
+  // 사람이 손본 라벨이 가장 우선한다. 코드의 설명이 길거나 영문일 때 여기서 덮는다.
+  const override = LABELS[`${method.toUpperCase()} ${path}`]
+  if (override) return override
+  if (firstLine && /[가-힣]/.test(firstLine)) {
+    return labelize(stripInternal(firstLine))
   }
   if (op.summary) return stripInternal(op.summary)
   const tail = path.split('/').filter((s) => s && !s.startsWith('{')).pop() ?? path

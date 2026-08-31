@@ -1,8 +1,4 @@
-# Create Configmap
-
-ConfigMap 생성
-
-제공된 YAML 스펙을 기반으로 ConfigMap을 생성합니다.
+# ConfigMap 생성
 
 ## HTTP 요청
 

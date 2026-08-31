@@ -1,11 +1,4 @@
-# Setup Totp
-
-TOTP 설정 시작 (QR 코드 발급)
-
-RFC 6238 표준 TOTP를 사용하여 Authenticator 앱 연동을 시작합니다.
-QR 코드를 스캔하여 앱에 등록한 후, verify-setup 엔드포인트로 코드를 검증하세요.
-
-지원 앱: Google Authenticator, Microsoft Authenticator, Authy 등 모든 TOTP 호환 앱
+# TOTP 설정 시작 (QR 코드 발급)
 
 ## HTTP 요청
 

@@ -1,4 +1,4 @@
-# Create Security Group Rules Batch
+# 보안 그룹 Rule을 배치 생성
 
 Security Group Rule을 배치 생성합니다.
 

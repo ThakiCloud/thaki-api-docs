@@ -1,4 +1,4 @@
-# DaemonSet Shell 연결 정보 조회
+# DaemonSet 셸 연결 정보 조회
 
 DaemonSet에 속한 가장 최신의 Running Pod를 기준으로 Shell 연결 정보를 조회합니다.
 

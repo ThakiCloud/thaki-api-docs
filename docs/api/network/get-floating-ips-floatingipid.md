@@ -1,4 +1,6 @@
-# Floating IP 단건을 조회합니다
+# Floating IP 단건 조회
+
+Floating IP 단건을 조회합니다.
 
 ## HTTP 요청
 

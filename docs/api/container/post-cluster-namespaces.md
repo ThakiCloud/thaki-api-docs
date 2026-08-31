@@ -1,4 +1,4 @@
-# Create Namespace
+# 네임스페이스 생성
 
 Namespace 생성
 

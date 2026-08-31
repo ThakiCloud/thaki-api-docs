@@ -1,12 +1,4 @@
-# List Deployment Revision History
-
-Deployment Revision History 조회
-
-kubectl rollout history deployment와 동일한 동작을 수행합니다.
-Deployment와 연결된 ReplicaSet의 revision 정보를 조회합니다.
-
-See Also:
-    [API 문서](https://www.notion.so/2bc9eddc34e6810c9336c1f6f3b23acd)
+# Deployment Revision History 조회
 
 ## HTTP 요청
 
