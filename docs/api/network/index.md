@@ -1,6 +1,6 @@
 # 네트워크
 
-API 117개.
+API 115개.
 
 ## Floating IP
 
@@ -34,13 +34,6 @@ API 117개.
 | 메서드 | 경로 | 설명 |
 |---|---|---|
 | GET | [/api/v1/network/availability-zones](/api/network/get-availability-zones) | 가용 영역 목록 조회 |
-
-## 기타
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| GET | [/api/v1/network/livez](/api/network/get-livez) | 프로세스 생존 여부를 확인 |
-| GET | [/api/v1/network/readyz](/api/network/get-readyz) | 애플리케이션 초기화 완료 여부를 확인 |
 
 ## 네트워크
 

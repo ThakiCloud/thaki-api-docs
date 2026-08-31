@@ -1674,20 +1674,6 @@
       ]
     },
     {
-      "text": "기타",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "프로세스 생존 여부를 확인",
-          "link": "/api/network/get-livez"
-        },
-        {
-          "text": "애플리케이션 초기화 완료 여부를 확인",
-          "link": "/api/network/get-readyz"
-        }
-      ]
-    },
-    {
       "text": "네트워크",
       "collapsed": true,
       "items": [

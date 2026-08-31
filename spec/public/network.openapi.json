@@ -17803,52 +17803,6 @@
           }
         }
       }
-    },
-    "/api/v1/network/livez": {
-      "get": {
-        "summary": "Liveness Check",
-        "description": "프로세스 생존 여부를 확인합니다.",
-        "operationId": "liveness_check_livez_get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": {
-                    "type": "string"
-                  },
-                  "type": "object",
-                  "title": "Response Liveness Check Livez Get"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/network/readyz": {
-      "get": {
-        "summary": "Readiness Check",
-        "description": "애플리케이션 초기화 완료 여부를 확인합니다.",
-        "operationId": "readiness_check_readyz_get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": {
-                    "type": "string"
-                  },
-                  "type": "object",
-                  "title": "Response Readiness Check Readyz Get"
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {

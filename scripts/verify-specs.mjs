@@ -30,6 +30,7 @@ const EXCLUDED_EXTRA = [
   /(^|\/)token\/(exchange|validate)$/,
   /\/callback$/,
   /^\/health$/,
+  /^\/(livez|readyz)$/,
   /\/shell\/docs$/,
   /\/api-keys\/exchange$/,
   // 콘솔 화면 전용. CSV 내려받기·대시보드 집계는 연동 API 가 아니다.
@@ -49,7 +50,7 @@ const EXPECT = {
   'iam-authn': 147,
   'iam-authz': 79,
   compute: 87,
-  network: 118,
+  network: 116,
   container: 244,
 }
 

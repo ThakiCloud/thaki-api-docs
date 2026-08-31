@@ -36,7 +36,7 @@ const SERVICES = [
   { id: 'iam-authn', title: 'IAM 인증 (AuthN)', prefix: '/api/v1/iam/authn', expect: 147 },
   { id: 'iam-authz', title: 'IAM 인가 (AuthZ)', prefix: '/api/v1/iam/authz', expect: 79 },
   { id: 'compute', title: '컴퓨트 (VM·이미지·키 페어)', prefix: '/api/v1/compute', expect: 87 },
-  { id: 'network', title: '네트워크 (vNet·보안 그룹)', prefix: '/api/v1/network', expect: 118 },
+  { id: 'network', title: '네트워크 (vNet·보안 그룹)', prefix: '/api/v1/network', expect: 116 },
   { id: 'container', title: '컨테이너 (클러스터·워크로드)', prefix: '/api/v1/container', expect: 244 },
 ]
 
@@ -52,8 +52,9 @@ const EXCLUDED_TAG = /^admin[-_ ]|^admin$|internal/i
  * - system-admin: 플랫폼 운영자가 조직(도메인)을 만드는 API. 테넌트는 호출할 수 없다.
  * - token/exchange·token/validate: 스펙 설명에 "내부용"이라고 적힌 서비스 간 호출.
  * - callback: 프로비저너가 되부르는 자리. 고객이 호출하는 API 가 아니다.
- * - /health: 컨테이너 헬스 프로브. 서비스 루트의 것만 제외한다 — 경로 끝이 health 라는
- *   이유로 뭉뚱그리면 클러스터 컨트롤 플레인 상태 조회처럼 고객이 쓰는 API 까지 사라진다.
+ * - /health, /livez, /readyz: 컨테이너 프로브. 서비스 루트의 것만 제외한다 — 경로 끝이
+ *   health 라는 이유로 뭉뚱그리면 클러스터 컨트롤 플레인 상태 조회처럼 고객이 쓰는 API 까지
+ *   사라진다.
  * - shell/docs: 문서를 돌려주는 엔드포인트. API 가 아니다.
  * - api-keys/exchange: 게이트웨이가 API 키를 내부 토큰으로 바꿀 때 스스로 호출한다.
  *   고객은 API 키 헤더만 보내면 되고 이 API 를 직접 부르지 않는다.
@@ -63,6 +64,7 @@ const EXCLUDED_EXTRA = [
   /(^|\/)token\/(exchange|validate)$/,
   /\/callback$/,
   /^\/health$/,
+  /^\/(livez|readyz)$/,
   /\/shell\/docs$/,
   /\/api-keys\/exchange$/,
   // 콘솔 화면 전용. CSV 내려받기·대시보드 집계는 연동 API 가 아니다.
