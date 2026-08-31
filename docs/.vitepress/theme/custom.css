@@ -33,8 +33,25 @@
 
 /* 우측 목차는 오른쪽에 붙이고 본문과의 간격만 남긴다. */
 .VPDoc.has-aside .aside {
-  padding-left: 24px;
+  padding-left: 12px;
   padding-right: 0;
+}
+
+/*
+ * 목차 글자와 화면 오른쪽 끝 사이 여백.
+ *
+ * 목차 본체는 position:fixed 에 width:224px 로 고정돼 있어, 바깥 .aside 가 256px 여도
+ * 오른쪽에 20px 가 남는다. .aside 의 콘텐츠 폭(256 - 왼쪽 여백 12)에 맞춰 채운다.
+ */
+.VPDoc.has-aside .aside-content {
+  padding-right: 0;
+}
+
+@media (min-width: 960px) {
+  .VPDoc.has-aside .aside-container,
+  .VPDoc.has-aside .aside-curtain {
+    width: 244px;
+  }
 }
 
 .VPDoc.has-aside .aside-container {
@@ -55,14 +72,19 @@
 
 @media (min-width: 960px) {
   .VPDoc.has-sidebar {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 
-  /* 메뉴 자체의 안쪽 여백도 줄여 항목이 덜 접히게 한다. */
-  .VPSidebar {
-    padding-left: 20px;
-    padding-right: 20px;
+  /*
+   * 메뉴 자체의 안쪽 여백.
+   *
+   * 기본 테마도 같은 미디어쿼리에서 .VPSidebar 에 padding:32px 32px 96px 를 건다.
+   * 같은 특이도로는 빌드된 CSS 순서에 따라 지므로 .Layout 을 앞에 붙여 한 단계 올린다.
+   */
+  .Layout .VPSidebar {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
