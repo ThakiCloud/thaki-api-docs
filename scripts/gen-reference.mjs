@@ -31,6 +31,19 @@ const LABELS = existsSync(join(ROOT, 'spec/labels.ko.json'))
   : {}
 
 /**
+ * 사이드바 그룹(태그) 이름의 한국어 표기.
+ *
+ * 태그 표기가 서비스마다 다르다 — authz 는 "API Keys", authn 은 "api-keys" 처럼
+ * 같은 대상을 다르게 부른다. 그대로 두면 한 서비스 안에서 목록이 두 덩어리로 갈라져
+ * 중복처럼 보인다. 같은 한국어 이름을 주면 하나로 합쳐진다.
+ */
+const GROUPS = existsSync(join(ROOT, 'spec/groups.ko.json'))
+  ? JSON.parse(readFileSync(join(ROOT, 'spec/groups.ko.json'), 'utf8'))
+  : {}
+
+const groupName = (svcId, tag) => GROUPS[svcId]?.[tag] ?? tag
+
+/**
  * 문서에 노출하는 서비스 단위.
  *
  * IAM 은 인증(authn)·인가(authz) 두 서비스로 구현돼 있지만 읽는 쪽에는 하나의 IAM 이다.
@@ -667,7 +680,7 @@ for (const svc of SERVICES) {
           continue
         }
 
-        const tag = (op.tags ?? ['기타'])[0]
+        const tag = groupName(svc.id, (op.tags ?? ['기타'])[0])
         // 서비스 접두를 정확히 걷어낸다. 정규식으로 뭉뚱그리면 경로 중간까지 잘려
         // delete-certificateid 같은 구분 안 되는 이름이 나온다.
         const bare = path.startsWith(specRef.prefix) ? path.slice(specRef.prefix.length) : path

@@ -2,33 +2,75 @@
 
 API 86개.
 
-## application-credentials
+## 기본 테넌트
+
+| 메서드 | 경로 | 설명 |
+|---|---|---|
+| PUT | [/api/v1/compute/primary-tenant](/api/compute/put-primary-tenant) | 사용자의 Primary Tenant를 설정 |
+
+## 볼륨 백업
+
+| 메서드 | 경로 | 설명 |
+|---|---|---|
+| POST | [/api/v1/compute/storage/volume-backups](/api/compute/post-storage-volume-backups) | 볼륨 백업 생성 |
+| GET | [/api/v1/compute/storage/volume-backups](/api/compute/get-storage-volume-backups) | 볼륨 백업 목록 조회 |
+| DELETE | [/api/v1/compute/storage/volume-backups](/api/compute/delete-storage-volume-backups) | 볼륨 백업을 다중 삭제 |
+| GET | [/api/v1/compute/storage/volume-backups/{volumeBackupId}](/api/compute/get-storage-volume-backups-volumebackupid) | 볼륨 백업 단건 조회 |
+| PATCH | [/api/v1/compute/storage/volume-backups/{volumeBackupId}](/api/compute/patch-storage-volume-backups-volumebackupid) | 볼륨 백업 정보 수정 |
+| DELETE | [/api/v1/compute/storage/volume-backups/{volumeBackupId}](/api/compute/delete-storage-volume-backups-volumebackupid) | 볼륨 백업 삭제 |
+| POST | [/api/v1/compute/storage/volume-backups/{volumeBackupId}/actions](/api/compute/post-storage-volume-backups-volumebackupid-actions) | 단일 볼륨 백업 액션 처리 |
+
+## 볼륨 스냅샷
+
+| 메서드 | 경로 | 설명 |
+|---|---|---|
+| POST | [/api/v1/compute/storage/volume-snapshots](/api/compute/post-storage-volume-snapshots) | 볼륨 스냅샷 생성 |
+| GET | [/api/v1/compute/storage/volume-snapshots](/api/compute/get-storage-volume-snapshots) | 볼륨 스냅샷 목록 조회 |
+| DELETE | [/api/v1/compute/storage/volume-snapshots](/api/compute/delete-storage-volume-snapshots) | 볼륨 스냅샷을 다중 삭제 |
+| GET | [/api/v1/compute/storage/volume-snapshots/{volumeSnapshotId}](/api/compute/get-storage-volume-snapshots-volumesnapshotid) | 볼륨 스냅샷 단건 조회 |
+| DELETE | [/api/v1/compute/storage/volume-snapshots/{volumeSnapshotId}](/api/compute/delete-storage-volume-snapshots-volumesnapshotid) | 볼륨 스냅샷 삭제 |
+| PATCH | [/api/v1/compute/storage/volume-snapshots/{volumeSnapshotId}](/api/compute/patch-storage-volume-snapshots-volumesnapshotid) | 볼륨 스냅샷 정보 수정 |
+
+## 볼륨
+
+| 메서드 | 경로 | 설명 |
+|---|---|---|
+| GET | [/api/v1/compute/storage/volumes](/api/compute/get-storage-volumes) | 볼륨 목록 조회 |
+| POST | [/api/v1/compute/storage/volumes](/api/compute/post-storage-volumes) | 볼륨 생성 |
+| DELETE | [/api/v1/compute/storage/volumes](/api/compute/delete-storage-volumes) | 볼륨 일괄 삭제 |
+| GET | [/api/v1/compute/storage/volumes/types](/api/compute/get-storage-volumes-types) | 볼륨 타입 목록 조회 |
+| GET | [/api/v1/compute/storage/volumes/{volumeId}](/api/compute/get-storage-volumes-volumeid) | 볼륨 단건 조회 |
+| DELETE | [/api/v1/compute/storage/volumes/{volumeId}](/api/compute/delete-storage-volumes-volumeid) | 볼륨 삭제 |
+| PATCH | [/api/v1/compute/storage/volumes/{volumeId}](/api/compute/patch-storage-volumes-volumeid) | 볼륨 정보 수정 |
+| POST | [/api/v1/compute/storage/volumes/{volumeId}/actions](/api/compute/post-storage-volumes-volumeid-actions) | 볼륨 액션 실행 |
+| POST | [/api/v1/compute/storage/volumes/{volumeId}/transfers](/api/compute/post-storage-volumes-volumeid-transfers) | 볼륨 Transfer 생성 |
+| DELETE | [/api/v1/compute/storage/volumes/{volumeId}/transfers](/api/compute/delete-storage-volumes-volumeid-transfers) | 볼륨 Transfer를 취소/삭제 |
+| POST | [/api/v1/compute/storage/volumes/transfers/{transferId}/accept](/api/compute/post-storage-volumes-transfers-transferid-accept) | 볼륨 Transfer를 수락 |
+
+## 서버 그룹
+
+| 메서드 | 경로 | 설명 |
+|---|---|---|
+| POST | [/api/v1/compute/server-groups](/api/compute/post-server-groups) | ServerGroup 생성 |
+| GET | [/api/v1/compute/server-groups](/api/compute/get-server-groups) | ServerGroup 목록을 조회합니다 (페이지네이션, 필터링, 정렬) |
+| DELETE | [/api/v1/compute/server-groups](/api/compute/delete-server-groups) | ServerGroup을 다중 삭제 |
+| DELETE | [/api/v1/compute/server-groups/{serverGroupId}](/api/compute/delete-server-groups-servergroupid) | ServerGroup 삭제 |
+
+## 스토리지 메타정보
+
+| 메서드 | 경로 | 설명 |
+|---|---|---|
+| GET | [/api/v1/compute/storage/meta/quota](/api/compute/get-storage-meta-quota) | Storage Quota 정보 조회 |
+| GET | [/api/v1/compute/storage/meta/availability-zones](/api/compute/get-storage-meta-availability-zones) | 가용 영역 목록 조회 |
+
+## 애플리케이션 자격증명
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
 | POST | [/api/v1/compute/application-credentials](/api/compute/post-application-credentials) | Application Credential 생성 |
 | DELETE | [/api/v1/compute/application-credentials/{credentialId}](/api/compute/delete-application-credentials-credentialid) | Application Credential 삭제 |
 
-## compute-meta
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| GET | [/api/v1/compute/meta/quota](/api/compute/get-meta-quota) | Compute Quota 정보 조회 |
-
-## flavors
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| GET | [/api/v1/compute/flavors](/api/compute/get-flavors) | Flavor 목록 조회 |
-| GET | [/api/v1/compute/flavors/{flavorId}](/api/compute/get-flavors-flavorid) | Flavor 상세 정보 조회 |
-
-## host-aggregates
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| GET | [/api/v1/compute/host-aggregates/availability-zones](/api/compute/get-host-aggregates-availability-zones) | Compute availability zone(기본) 목록 조회 |
-
-## images
+## 이미지
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -40,7 +82,7 @@ API 86개.
 | PATCH | [/api/v1/compute/images/{imageId}](/api/compute/patch-images-imageid) | 이미지 수정 |
 | DELETE | [/api/v1/compute/images/{imageId}](/api/compute/delete-images-imageid) | 이미지 삭제 |
 
-## instance-snapshots
+## 인스턴스 스냅샷
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -51,7 +93,7 @@ API 86개.
 | PATCH | [/api/v1/compute/instance-snapshots/{instanceSnapshotId}](/api/compute/patch-instance-snapshots-instancesnapshotid) | 인스턴스 스냅샷 정보 수정 |
 | DELETE | [/api/v1/compute/instance-snapshots/{instanceSnapshotId}](/api/compute/delete-instance-snapshots-instancesnapshotid) | 인스턴스 스냅샷 삭제 |
 
-## instance-templates
+## 인스턴스 템플릿
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -62,7 +104,7 @@ API 86개.
 | PATCH | [/api/v1/compute/instance-templates/{templateId}](/api/compute/patch-instance-templates-templateid) | 인스턴스 템플릿 수정 |
 | DELETE | [/api/v1/compute/instance-templates/{templateId}](/api/compute/delete-instance-templates-templateid) | 인스턴스 템플릿 삭제 |
 
-## instances
+## 인스턴스
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -88,7 +130,13 @@ API 86개.
 | GET | [/api/v1/compute/instances/{instanceId}/metrics/disk-usage](/api/compute/get-instances-instanceid-metrics-disk-usage) | 인스턴스 디스크 사용량 조회 |
 | GET | [/api/v1/compute/instances/{instanceId}/metrics/disk-iops](/api/compute/get-instances-instanceid-metrics-disk-iops) | 인스턴스 디스크 IOPS 조회 |
 
-## key-pairs
+## 컴퓨트 메타정보
+
+| 메서드 | 경로 | 설명 |
+|---|---|---|
+| GET | [/api/v1/compute/meta/quota](/api/compute/get-meta-quota) | Compute Quota 정보 조회 |
+
+## 키 페어
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
@@ -99,77 +147,29 @@ API 86개.
 | GET | [/api/v1/compute/key-pairs/{keyPairName}](/api/compute/get-key-pairs-keypairname) | 키 페어 상세 정보 조회 |
 | DELETE | [/api/v1/compute/key-pairs/{keyPairName}](/api/compute/delete-key-pairs-keypairname) | 키 페어 삭제 |
 
-## primary-tenant
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| PUT | [/api/v1/compute/primary-tenant](/api/compute/put-primary-tenant) | 사용자의 Primary Tenant를 설정 |
-
-## projects
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| GET | [/api/v1/compute/projects](/api/compute/get-projects) | OpenStack 프로젝트 목록 조회 |
-
-## server-groups
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| POST | [/api/v1/compute/server-groups](/api/compute/post-server-groups) | ServerGroup 생성 |
-| GET | [/api/v1/compute/server-groups](/api/compute/get-server-groups) | ServerGroup 목록을 조회합니다 (페이지네이션, 필터링, 정렬) |
-| DELETE | [/api/v1/compute/server-groups](/api/compute/delete-server-groups) | ServerGroup을 다중 삭제 |
-| DELETE | [/api/v1/compute/server-groups/{serverGroupId}](/api/compute/delete-server-groups-servergroupid) | ServerGroup 삭제 |
-
-## storage-meta
-
-| 메서드 | 경로 | 설명 |
-|---|---|---|
-| GET | [/api/v1/compute/storage/meta/quota](/api/compute/get-storage-meta-quota) | Storage Quota 정보 조회 |
-| GET | [/api/v1/compute/storage/meta/availability-zones](/api/compute/get-storage-meta-availability-zones) | 가용 영역 목록 조회 |
-
-## table-settings
+## 테이블 설정
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
 | GET | [/api/v1/compute/table-settings](/api/compute/get-table-settings) | 테이블 설정 조회 |
 | PUT | [/api/v1/compute/table-settings](/api/compute/put-table-settings) | 테이블 설정 수정 |
 
-## volume-backups
+## 프로젝트
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
-| POST | [/api/v1/compute/storage/volume-backups](/api/compute/post-storage-volume-backups) | 볼륨 백업 생성 |
-| GET | [/api/v1/compute/storage/volume-backups](/api/compute/get-storage-volume-backups) | 볼륨 백업 목록 조회 |
-| DELETE | [/api/v1/compute/storage/volume-backups](/api/compute/delete-storage-volume-backups) | 볼륨 백업을 다중 삭제 |
-| GET | [/api/v1/compute/storage/volume-backups/{volumeBackupId}](/api/compute/get-storage-volume-backups-volumebackupid) | 볼륨 백업 단건 조회 |
-| PATCH | [/api/v1/compute/storage/volume-backups/{volumeBackupId}](/api/compute/patch-storage-volume-backups-volumebackupid) | 볼륨 백업 정보 수정 |
-| DELETE | [/api/v1/compute/storage/volume-backups/{volumeBackupId}](/api/compute/delete-storage-volume-backups-volumebackupid) | 볼륨 백업 삭제 |
-| POST | [/api/v1/compute/storage/volume-backups/{volumeBackupId}/actions](/api/compute/post-storage-volume-backups-volumebackupid-actions) | 단일 볼륨 백업 액션 처리 |
+| GET | [/api/v1/compute/projects](/api/compute/get-projects) | OpenStack 프로젝트 목록 조회 |
 
-## volume-snapshots
+## 플레이버
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
-| POST | [/api/v1/compute/storage/volume-snapshots](/api/compute/post-storage-volume-snapshots) | 볼륨 스냅샷 생성 |
-| GET | [/api/v1/compute/storage/volume-snapshots](/api/compute/get-storage-volume-snapshots) | 볼륨 스냅샷 목록 조회 |
-| DELETE | [/api/v1/compute/storage/volume-snapshots](/api/compute/delete-storage-volume-snapshots) | 볼륨 스냅샷을 다중 삭제 |
-| GET | [/api/v1/compute/storage/volume-snapshots/{volumeSnapshotId}](/api/compute/get-storage-volume-snapshots-volumesnapshotid) | 볼륨 스냅샷 단건 조회 |
-| DELETE | [/api/v1/compute/storage/volume-snapshots/{volumeSnapshotId}](/api/compute/delete-storage-volume-snapshots-volumesnapshotid) | 볼륨 스냅샷 삭제 |
-| PATCH | [/api/v1/compute/storage/volume-snapshots/{volumeSnapshotId}](/api/compute/patch-storage-volume-snapshots-volumesnapshotid) | 볼륨 스냅샷 정보 수정 |
+| GET | [/api/v1/compute/flavors](/api/compute/get-flavors) | Flavor 목록 조회 |
+| GET | [/api/v1/compute/flavors/{flavorId}](/api/compute/get-flavors-flavorid) | Flavor 상세 정보 조회 |
 
-## volumes
+## 호스트 집계
 
 | 메서드 | 경로 | 설명 |
 |---|---|---|
-| GET | [/api/v1/compute/storage/volumes](/api/compute/get-storage-volumes) | 볼륨 목록 조회 |
-| POST | [/api/v1/compute/storage/volumes](/api/compute/post-storage-volumes) | 볼륨 생성 |
-| DELETE | [/api/v1/compute/storage/volumes](/api/compute/delete-storage-volumes) | 볼륨 일괄 삭제 |
-| GET | [/api/v1/compute/storage/volumes/types](/api/compute/get-storage-volumes-types) | 볼륨 타입 목록 조회 |
-| GET | [/api/v1/compute/storage/volumes/{volumeId}](/api/compute/get-storage-volumes-volumeid) | 볼륨 단건 조회 |
-| DELETE | [/api/v1/compute/storage/volumes/{volumeId}](/api/compute/delete-storage-volumes-volumeid) | 볼륨 삭제 |
-| PATCH | [/api/v1/compute/storage/volumes/{volumeId}](/api/compute/patch-storage-volumes-volumeid) | 볼륨 정보 수정 |
-| POST | [/api/v1/compute/storage/volumes/{volumeId}/actions](/api/compute/post-storage-volumes-volumeid-actions) | 볼륨 액션 실행 |
-| POST | [/api/v1/compute/storage/volumes/{volumeId}/transfers](/api/compute/post-storage-volumes-volumeid-transfers) | 볼륨 Transfer 생성 |
-| DELETE | [/api/v1/compute/storage/volumes/{volumeId}/transfers](/api/compute/delete-storage-volumes-volumeid-transfers) | 볼륨 Transfer를 취소/삭제 |
-| POST | [/api/v1/compute/storage/volumes/transfers/{transferId}/accept](/api/compute/post-storage-volumes-transfers-transferid-accept) | 볼륨 Transfer를 수락 |
+| GET | [/api/v1/compute/host-aggregates/availability-zones](/api/compute/get-host-aggregates-availability-zones) | Compute availability zone(기본) 목록 조회 |
 

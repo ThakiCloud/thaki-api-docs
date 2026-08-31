@@ -10,7 +10,7 @@
       ]
     },
     {
-      "text": "API Keys",
+      "text": "API 키",
       "collapsed": true,
       "items": [
         {
@@ -52,7 +52,73 @@
       ]
     },
     {
-      "text": "Account Lockout Management",
+      "text": "MFA 설정",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "사용자 MFA 상태 조회",
+          "link": "/api/iam/get-authn-users-me-mfa-status"
+        },
+        {
+          "text": "Email MFA 활성화",
+          "link": "/api/iam/post-authn-users-me-mfa-email-enable"
+        },
+        {
+          "text": "Email MFA 비활성화",
+          "link": "/api/iam/post-authn-users-me-mfa-email-disable"
+        },
+        {
+          "text": "TOTP 설정 시작 (QR 코드 발급)",
+          "link": "/api/iam/post-authn-users-me-mfa-totp-setup"
+        },
+        {
+          "text": "TOTP 설정 검증 (최초 등록 시)",
+          "link": "/api/iam/post-authn-users-me-mfa-totp-verify-setup"
+        },
+        {
+          "text": "TOTP MFA 비활성화",
+          "link": "/api/iam/post-authn-users-me-mfa-totp-disable"
+        },
+        {
+          "text": "이 API는 더 이상 사용되지 않습니다",
+          "link": "/api/iam/post-authn-users-me-mfa-email-request-code"
+        }
+      ]
+    },
+    {
+      "text": "MFA 인증 흐름",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "MFA 코드 요청 (method 지정 필요)",
+          "link": "/api/iam/post-authn-mfa-code-request"
+        },
+        {
+          "text": "MFA 코드 검증",
+          "link": "/api/iam/post-authn-mfa-code-verify"
+        }
+      ]
+    },
+    {
+      "text": "감사 로그",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "감사 로그 목록을 조회합니다 (관리자 전용)",
+          "link": "/api/iam/get-authn-audit-logs"
+        },
+        {
+          "text": "감사 로그 상세 조회 (org admin / 시스템 어드민 전용)",
+          "link": "/api/iam/get-authn-audit-logs-event-id"
+        },
+        {
+          "text": "관리자 전용: 모든 PDP 평가 및 시뮬레이션 감사 로그 조회",
+          "link": "/api/iam/get-authz-audit-logs-evaluations"
+        }
+      ]
+    },
+    {
+      "text": "계정 잠금 관리",
       "collapsed": true,
       "items": [
         {
@@ -78,7 +144,395 @@
       ]
     },
     {
-      "text": "Action Catalog",
+      "text": "그룹 동기화",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "단일 그룹 템플릿 동기화",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-sync"
+        },
+        {
+          "text": "일괄 그룹 템플릿 동기화",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-sync"
+        }
+      ]
+    },
+    {
+      "text": "그룹 정책",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "그룹에 정책 연결",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-policies"
+        },
+        {
+          "text": "그룹의 정책 바인딩 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-groups-group-id-policies"
+        },
+        {
+          "text": "그룹에서 정책 연결 해제",
+          "link": "/api/iam/delete-authn-organizations-org-id-groups-group-id-policies-policy-id"
+        }
+      ]
+    },
+    {
+      "text": "그룹",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "조직 내에 새 그룹 생성",
+          "link": "/api/iam/post-authn-organizations-org-id-groups"
+        },
+        {
+          "text": "조직 내 그룹 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-groups"
+        },
+        {
+          "text": "기존 그룹을 복제하여 새 그룹 생성",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-duplicate"
+        },
+        {
+          "text": "그룹 상세 정보 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-groups-group-id"
+        },
+        {
+          "text": "그룹 정보 수정",
+          "link": "/api/iam/put-authn-organizations-org-id-groups-group-id"
+        },
+        {
+          "text": "그룹을 삭제합니다 (Soft Delete)",
+          "link": "/api/iam/delete-authn-organizations-org-id-groups-group-id"
+        },
+        {
+          "text": "그룹에 속한 멤버 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-groups-group-id-members"
+        },
+        {
+          "text": "그룹의 전체 멤버 목록을 동기화",
+          "link": "/api/iam/put-authn-organizations-org-id-groups-group-id-members"
+        },
+        {
+          "text": "그룹에 멤버를 일괄 추",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-members-batch-add"
+        },
+        {
+          "text": "그룹에서 멤버를 일괄 제거",
+          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-members-batch-remove"
+        }
+      ]
+    },
+    {
+      "text": "내 보안 정보",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "내 보안 정보 조회",
+          "link": "/api/iam/get-authn-me-security-info"
+        }
+      ]
+    },
+    {
+      "text": "내 비밀번호",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "본인의 비밀번호 변경",
+          "link": "/api/iam/put-authn-me-password"
+        },
+        {
+          "text": "비밀번호 변경 전에 조직 정책 위배 여부를 미리 확인",
+          "link": "/api/iam/post-authn-me-password-validate"
+        }
+      ]
+    },
+    {
+      "text": "내 세션",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "본인의 모든 세션을 즉시 종료",
+          "link": "/api/iam/delete-authn-me-sessions"
+        },
+        {
+          "text": "본인의 활성 세션 목록 조회",
+          "link": "/api/iam/get-authn-me-sessions"
+        },
+        {
+          "text": "본인의 특정 세션을 즉시 종료",
+          "link": "/api/iam/delete-authn-me-sessions-session-id"
+        }
+      ]
+    },
+    {
+      "text": "내 액세스 키",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "본인의 Access Key 발급",
+          "link": "/api/iam/post-authn-me-access-keys"
+        },
+        {
+          "text": "본인의 Access Key 목록 조회",
+          "link": "/api/iam/get-authn-me-access-keys"
+        },
+        {
+          "text": "Access Key 상세 조회",
+          "link": "/api/iam/get-authn-me-access-keys-key-id"
+        },
+        {
+          "text": "Access Key를 즉시 폐기",
+          "link": "/api/iam/delete-authn-me-access-keys-key-id"
+        },
+        {
+          "text": "Access Key 이름(Description)/상태 수정",
+          "link": "/api/iam/patch-authn-me-access-keys-key-id"
+        },
+        {
+          "text": "Access Key를 비활성화",
+          "link": "/api/iam/post-authn-me-access-keys-key-id-deactivate"
+        },
+        {
+          "text": "비활성화된 Access Key를 재활성화",
+          "link": "/api/iam/post-authn-me-access-keys-key-id-activate"
+        },
+        {
+          "text": "본인 Access Key의 시크릿 재발급",
+          "link": "/api/iam/post-authn-me-access-keys-key-id-rotate"
+        }
+      ]
+    },
+    {
+      "text": "비밀번호 찾기",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "비밀번호를 잊어버린 사용자가 이메일로 비밀번호 초기화 링크를 요청",
+          "link": "/api/iam/post-authn-password-forgot"
+        },
+        {
+          "text": "이메일로 받은 비밀번호 초기화 토큰의 유효성을 검증",
+          "link": "/api/iam/post-authn-password-reset-verify"
+        },
+        {
+          "text": "비밀번호 초기화 토큰을 사용하여 새 비밀번호를 설정",
+          "link": "/api/iam/put-authn-password-reset"
+        }
+      ]
+    },
+    {
+      "text": "사용자 비밀번호",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "사용자 비밀번호 변경",
+          "link": "/api/iam/put-authn-users-user-tpn-password"
+        },
+        {
+          "text": "비밀번호 정책 검증",
+          "link": "/api/iam/post-authn-users-user-tpn-password-validate"
+        },
+        {
+          "text": "관리자가 특정 사용자의 비밀번호 초기화",
+          "link": "/api/iam/post-authn-users-user-tpn-password-reset"
+        }
+      ]
+    },
+    {
+      "text": "사용자 초대",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "조직에 사용자 초대 생성",
+          "link": "/api/iam/post-authn-organizations-org-id-invitations"
+        },
+        {
+          "text": "조직의 초대 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-invitations"
+        },
+        {
+          "text": "단일 초대 조회",
+          "link": "/api/iam/get-authn-invitations-invitation-id"
+        },
+        {
+          "text": "초대 재발송",
+          "link": "/api/iam/post-authn-invitations-invitation-id-resend"
+        },
+        {
+          "text": "초대 취소",
+          "link": "/api/iam/post-authn-invitations-invitation-id-cancel"
+        },
+        {
+          "text": "사용자 TPN 기반 초대 재발송",
+          "link": "/api/iam/post-authn-users-user-tpn-resend-invitation"
+        }
+      ]
+    },
+    {
+      "text": "사용자",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "org_id를 body에 포함하여 사용자 생성",
+          "link": "/api/iam/post-authn-users"
+        },
+        {
+          "text": "사용자 수정",
+          "link": "/api/iam/put-authn-users-tpn"
+        },
+        {
+          "text": "사용자 삭제",
+          "link": "/api/iam/delete-authn-users-tpn"
+        },
+        {
+          "text": "TPN으로 사용자의 상세 정보 조회",
+          "link": "/api/iam/get-authn-users-tpn"
+        },
+        {
+          "text": "지정된 조직 내에 새로운 사용자 생성",
+          "link": "/api/iam/post-authn-organizations-org-id-users"
+        },
+        {
+          "text": "지정된 조직의 사용자 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-users"
+        },
+        {
+          "text": "사용자의 보안 관련 정보 조회",
+          "link": "/api/iam/get-authn-users-tpn-security-info"
+        },
+        {
+          "text": "관리자가 특정 사용자의 TOTP MFA를 비활성화하고 Secret 삭제",
+          "link": "/api/iam/post-authn-users-tpn-mfa-totp-disable"
+        },
+        {
+          "text": "한 명의 사용자를 여러 그룹에 동시에 추",
+          "link": "/api/iam/post-authn-users-tpn-groups-batch-add"
+        },
+        {
+          "text": "사용자가 속한 그룹 목록을 지정한 목록으로 동기화",
+          "link": "/api/iam/post-authn-users-tpn-groups-sync"
+        }
+      ]
+    },
+    {
+      "text": "사전 인증",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "비밀번호 정책 조회",
+          "link": "/api/iam/get-authn-pre-auth-password-policy"
+        },
+        {
+          "text": "Pre-Auth 세션을 사용하여 TOTP를 설정",
+          "link": "/api/iam/post-authn-pre-auth-mfa-totp-setup"
+        },
+        {
+          "text": "Pre-Auth 세션을 사용하여 TOTP 설정을 검증",
+          "link": "/api/iam/post-authn-pre-auth-mfa-totp-verify-setup"
+        },
+        {
+          "text": "Pre-Auth 세션을 사용하여 이메일로 MFA 코드를 요청",
+          "link": "/api/iam/post-authn-pre-auth-mfa-email-request-code"
+        },
+        {
+          "text": "Pre-Auth 세션을 사용하여 MFA 코드를 검증",
+          "link": "/api/iam/post-authn-pre-auth-mfa-verify"
+        },
+        {
+          "text": "비밀번호 변경",
+          "link": "/api/iam/put-authn-pre-auth-password-change"
+        }
+      ]
+    },
+    {
+      "text": "서비스 계정",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "서비스 어카운트 목록 조회",
+          "link": "/api/iam/get-authn-service-accounts"
+        },
+        {
+          "text": "서비스 어카운트 생성",
+          "link": "/api/iam/post-authn-service-accounts"
+        },
+        {
+          "text": "체크박스 액션용 SA 다건 논리 삭제",
+          "link": "/api/iam/delete-authn-service-accounts"
+        },
+        {
+          "text": "필터 조건에 맞는 SA 목록을 CSV 형식으로 반환",
+          "link": "/api/iam/get-authn-service-accounts-export"
+        },
+        {
+          "text": "서비스 어카운트 상세 조회",
+          "link": "/api/iam/get-authn-service-accounts-sa-id"
+        },
+        {
+          "text": "서비스 어카운트 삭제 (논리적 삭제)",
+          "link": "/api/iam/delete-authn-service-accounts-sa-id"
+        },
+        {
+          "text": "서비스 어카운트 업데이트",
+          "link": "/api/iam/put-authn-service-accounts-sa-id"
+        },
+        {
+          "text": "API Key 발급",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-keys"
+        },
+        {
+          "text": "API Key 비활성화",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-keys-key-id-disable"
+        },
+        {
+          "text": "API Key 활성화",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-keys-key-id-enable"
+        },
+        {
+          "text": "API Key 삭제",
+          "link": "/api/iam/delete-authn-service-accounts-sa-id-keys-key-id"
+        },
+        {
+          "text": "API Key description/활성 상태 수정",
+          "link": "/api/iam/patch-authn-service-accounts-sa-id-keys-key-id"
+        },
+        {
+          "text": "서비스 어카운트 비활성화",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-disable"
+        },
+        {
+          "text": "서비스 어카운트 활성화",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-enable"
+        },
+        {
+          "text": "Client Secret 재발급",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-regenerate-secret"
+        },
+        {
+          "text": "API Key Secret 재발급",
+          "link": "/api/iam/post-authn-service-accounts-sa-id-keys-key-id-reset"
+        }
+      ]
+    },
+    {
+      "text": "세션 정책",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "조직의 세션 정책 조회",
+          "link": "/api/iam/get-authn-session-policies-org-id"
+        },
+        {
+          "text": "조직의 세션 정책을 생성하거나 수정",
+          "link": "/api/iam/put-authn-session-policies-org-id"
+        },
+        {
+          "text": "조직의 세션 정책을 삭제하여 기본값으로 초기화",
+          "link": "/api/iam/post-authn-session-policies-org-id-reset"
+        }
+      ]
+    },
+    {
+      "text": "액션 카탈로그",
       "collapsed": true,
       "items": [
         {
@@ -132,105 +586,269 @@
       ]
     },
     {
-      "text": "Audit Logs",
+      "text": "역할 메타데이터",
       "collapsed": true,
       "items": [
         {
-          "text": "감사 로그 목록을 조회합니다 (관리자 전용)",
-          "link": "/api/iam/get-authn-audit-logs"
+          "text": "역할에 Provider별 권한 매핑 정보를 설정합니다 (upsert)",
+          "link": "/api/iam/put-authz-roles-roleid-metadata-namespace-key"
         },
         {
-          "text": "감사 로그 상세 조회 (org admin / 시스템 어드민 전용)",
-          "link": "/api/iam/get-authn-audit-logs-event-id"
+          "text": "특정 역할 metadata 조회",
+          "link": "/api/iam/get-authz-roles-roleid-metadata-namespace-key"
         },
         {
-          "text": "관리자 전용: 모든 PDP 평가 및 시뮬레이션 감사 로그 조회",
-          "link": "/api/iam/get-authz-audit-logs-evaluations"
+          "text": "특정 역할 metadata 삭제",
+          "link": "/api/iam/delete-authz-roles-roleid-metadata-namespace-key"
+        },
+        {
+          "text": "역할의 모든 metadata 조회",
+          "link": "/api/iam/get-authz-roles-roleid-metadata"
+        },
+        {
+          "text": "특정 Provider namespace의 모든 metadata 조회",
+          "link": "/api/iam/get-authz-roles-roleid-metadata-namespace"
         }
       ]
     },
     {
-      "text": "My Access Keys",
+      "text": "역할 할당",
       "collapsed": true,
       "items": [
         {
-          "text": "본인의 Access Key 발급",
-          "link": "/api/iam/post-authn-me-access-keys"
+          "text": "역할에 TPN(user/group)을 할당",
+          "link": "/api/iam/post-authz-roles-role-id-assignments"
         },
         {
-          "text": "본인의 Access Key 목록 조회",
-          "link": "/api/iam/get-authn-me-access-keys"
+          "text": "역할에 할당된 TPN 목록 조회",
+          "link": "/api/iam/get-authz-roles-role-id-assignments"
         },
         {
-          "text": "Access Key 상세 조회",
-          "link": "/api/iam/get-authn-me-access-keys-key-id"
+          "text": "역할 ID와 TPN을 사용하여 RoleAssignment 삭제",
+          "link": "/api/iam/delete-authz-roles-role-id-assignments"
         },
         {
-          "text": "Access Key를 즉시 폐기",
-          "link": "/api/iam/delete-authn-me-access-keys-key-id"
+          "text": "RoleAssignment 조회",
+          "link": "/api/iam/get-authz-roles-role-id-assignments-assignment-id"
         },
         {
-          "text": "Access Key 이름(Description)/상태 수정",
-          "link": "/api/iam/patch-authn-me-access-keys-key-id"
+          "text": "RoleAssignment 삭제",
+          "link": "/api/iam/delete-authz-roles-role-id-assignments-assignment-id"
         },
         {
-          "text": "Access Key를 비활성화",
-          "link": "/api/iam/post-authn-me-access-keys-key-id-deactivate"
+          "text": "TPN이 가진 역할 목록 조회",
+          "link": "/api/iam/get-authz-tpns-assignments"
         },
         {
-          "text": "비활성화된 Access Key를 재활성화",
-          "link": "/api/iam/post-authn-me-access-keys-key-id-activate"
+          "text": "TPN에 할당된 모든 역할을 일괄 해제",
+          "link": "/api/iam/delete-authz-tpns-assignments"
         },
         {
-          "text": "본인 Access Key의 시크릿 재발급",
-          "link": "/api/iam/post-authn-me-access-keys-key-id-rotate"
+          "text": "호출자(본인) TPN이 가진 역할 목록 조회",
+          "link": "/api/iam/get-authz-role-assignments-me"
+        },
+        {
+          "text": "특정 TPN에 할당 가능한 역할 목록 조회",
+          "link": "/api/iam/get-authz-roles-assignments-available"
+        },
+        {
+          "text": "전체 역할 Assignment 목록 조회",
+          "link": "/api/iam/get-authz-assignments"
+        },
+        {
+          "text": "TPN(사용자/그룹)에 할당된 역할 목록을 동기화",
+          "link": "/api/iam/put-authz-roles-assignments-sync"
         }
       ]
     },
     {
-      "text": "My Password",
+      "text": "역할",
       "collapsed": true,
       "items": [
         {
-          "text": "본인의 비밀번호 변경",
-          "link": "/api/iam/put-authn-me-password"
+          "text": "새로운 역할 생성",
+          "link": "/api/iam/post-authz-roles"
         },
         {
-          "text": "비밀번호 변경 전에 조직 정책 위배 여부를 미리 확인",
-          "link": "/api/iam/post-authn-me-password-validate"
+          "text": "조직/프로젝트별 역할 목록 조회",
+          "link": "/api/iam/get-authz-roles"
+        },
+        {
+          "text": "역할 ID로 단건 조회",
+          "link": "/api/iam/get-authz-roles-role-id"
+        },
+        {
+          "text": "역할 정보 수정",
+          "link": "/api/iam/patch-authz-roles-role-id"
+        },
+        {
+          "text": "역할을 소프트 삭제",
+          "link": "/api/iam/delete-authz-roles-role-id"
+        },
+        {
+          "text": "역할에 Trust 정책를 설정",
+          "link": "/api/iam/put-authz-roles-role-id-trust-policy"
         }
       ]
     },
     {
-      "text": "My Security Info",
+      "text": "인증",
       "collapsed": true,
       "items": [
         {
-          "text": "내 보안 정보 조회",
-          "link": "/api/iam/get-authn-me-security-info"
+          "text": "사용자 로그인",
+          "link": "/api/iam/post-authn-login"
+        },
+        {
+          "text": "Access Token 갱신 — 쿠키 우선, body 폴백",
+          "link": "/api/iam/post-authn-token-refresh"
+        },
+        {
+          "text": "로그아웃 및 세션 무효화 — 쿠키 우선 → body 폴백",
+          "link": "/api/iam/post-authn-logout"
+        },
+        {
+          "text": "현재 인증된 사용자 정보 조회",
+          "link": "/api/iam/get-authn-me"
+        },
+        {
+          "text": "활성 세션 목록 조회 (PG 기반 검색·필터·정렬·페이지네이션)",
+          "link": "/api/iam/get-authn-sessions"
+        },
+        {
+          "text": "특정 세션 ID로 세션 상세 정보 조회",
+          "link": "/api/iam/get-authn-sessions-session-id"
+        },
+        {
+          "text": "사용자가 자신의 특정 세션을 강제로 종료",
+          "link": "/api/iam/post-authn-sessions-revoke"
+        },
+        {
+          "text": "사용자가 자신의 모든 활성 세션을 강제로 종료",
+          "link": "/api/iam/post-authn-sessions-revoke-all"
+        },
+        {
+          "text": "관리자가 특정 사용자의 모든 활성 세션을 강제로 종료",
+          "link": "/api/iam/post-authn-sessions-users-user-tpn-revoke-all"
         }
       ]
     },
     {
-      "text": "My Sessions",
+      "text": "임시 역할 부여",
       "collapsed": true,
       "items": [
         {
-          "text": "본인의 모든 세션을 즉시 종료",
-          "link": "/api/iam/delete-authn-me-sessions"
+          "text": "대상 주체에게 역할을 한시적으로 부여",
+          "link": "/api/iam/post-authz-temporary-grants"
         },
         {
-          "text": "본인의 활성 세션 목록 조회",
-          "link": "/api/iam/get-authn-me-sessions"
+          "text": "임시 역할 부여 목록 조회",
+          "link": "/api/iam/get-authz-temporary-grants"
         },
         {
-          "text": "본인의 특정 세션을 즉시 종료",
-          "link": "/api/iam/delete-authn-me-sessions-session-id"
+          "text": "호출자(본인)에게 부여된 임시 역할 목록 조회",
+          "link": "/api/iam/get-authz-temporary-grants-me"
+        },
+        {
+          "text": "임시 역할 부여 단건 조회",
+          "link": "/api/iam/get-authz-temporary-grants-grant-id"
+        },
+        {
+          "text": "종료 시각만 변경",
+          "link": "/api/iam/post-authz-temporary-grants-grant-id-extend"
+        },
+        {
+          "text": "즉시 효력을 중단",
+          "link": "/api/iam/post-authz-temporary-grants-grant-id-revoke"
+        },
+        {
+          "text": "특정 주체의 활성 임시 grant 조회",
+          "link": "/api/iam/get-authz-tpns-tpn-active-grants"
         }
       ]
     },
     {
-      "text": "Policies",
+      "text": "정책 바인딩",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "정책을 대상(TPN, Org, Project)에 연결",
+          "link": "/api/iam/post-authz-bindings"
+        },
+        {
+          "text": "전체 정책 Binding 목록 조회",
+          "link": "/api/iam/get-authz-bindings"
+        },
+        {
+          "text": "특정 정책에 연결된 모든 대상 조회",
+          "link": "/api/iam/get-authz-bindings-by-policy-policy-id"
+        },
+        {
+          "text": "호출자(본인) TPN에 직접 바인딩된 정책 목록 조회",
+          "link": "/api/iam/get-authz-bindings-me"
+        },
+        {
+          "text": "특정 대상에 연결된 모든 정책 조회",
+          "link": "/api/iam/get-authz-bindings-by-target"
+        },
+        {
+          "text": "대상 기준 정책 바인딩 삭제",
+          "link": "/api/iam/delete-authz-bindings-by-target"
+        },
+        {
+          "text": "TPN에 연결된 모든 정책 바인딩을 일괄 해제",
+          "link": "/api/iam/delete-authz-bindings-by-tpn"
+        },
+        {
+          "text": "바인딩 ID로 단건 조회",
+          "link": "/api/iam/get-authz-bindings-binding-id"
+        },
+        {
+          "text": "정책과 대상 간의 연결 제거",
+          "link": "/api/iam/delete-authz-bindings-binding-id"
+        },
+        {
+          "text": "바인딩 생성/삭제 이력 조회",
+          "link": "/api/iam/get-authz-bindings-audit"
+        },
+        {
+          "text": "역할에 연결된 정책 목록을 상세 정보와 함께 조회",
+          "link": "/api/iam/get-authz-bindings-roles-role-id-policies"
+        },
+        {
+          "text": "TPN 직접 바인딩 정책 조회",
+          "link": "/api/iam/get-authz-bindings-tpns-tpn-policies"
+        },
+        {
+          "text": "특정 정책에 바인딩된 역할 목록을 상세 정보와 함께 조회",
+          "link": "/api/iam/get-authz-bindings-policies-policy-id-roles"
+        }
+      ]
+    },
+    {
+      "text": "정책 연결 대상",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "정책이 실효 적용되는 사용자 목록 조회",
+          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-users"
+        },
+        {
+          "text": "정책이 연결된 사용자 그룹 목록 조회",
+          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-user-groups"
+        },
+        {
+          "text": "정책에 바인딩된 역할 목록을 조회합니다 (활성 부여 수 포함)",
+          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-roles"
+        },
+        {
+          "text": "정책이 직접 바인딩된 서비스 어카운트 목록 조회",
+          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-service-accounts"
+        }
+      ]
+    },
+    {
+      "text": "정책",
       "collapsed": true,
       "items": [
         {
@@ -312,485 +930,7 @@
       ]
     },
     {
-      "text": "Policy Attached Entities",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "정책이 실효 적용되는 사용자 목록 조회",
-          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-users"
-        },
-        {
-          "text": "정책이 연결된 사용자 그룹 목록 조회",
-          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-user-groups"
-        },
-        {
-          "text": "정책에 바인딩된 역할 목록을 조회합니다 (활성 부여 수 포함)",
-          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-roles"
-        },
-        {
-          "text": "정책이 직접 바인딩된 서비스 어카운트 목록 조회",
-          "link": "/api/iam/get-authz-policies-policy-id-attached-entities-service-accounts"
-        }
-      ]
-    },
-    {
-      "text": "Policy Bindings",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "정책을 대상(TPN, Org, Project)에 연결",
-          "link": "/api/iam/post-authz-bindings"
-        },
-        {
-          "text": "전체 정책 Binding 목록 조회",
-          "link": "/api/iam/get-authz-bindings"
-        },
-        {
-          "text": "특정 정책에 연결된 모든 대상 조회",
-          "link": "/api/iam/get-authz-bindings-by-policy-policy-id"
-        },
-        {
-          "text": "호출자(본인) TPN에 직접 바인딩된 정책 목록 조회",
-          "link": "/api/iam/get-authz-bindings-me"
-        },
-        {
-          "text": "특정 대상에 연결된 모든 정책 조회",
-          "link": "/api/iam/get-authz-bindings-by-target"
-        },
-        {
-          "text": "대상 기준 정책 바인딩 삭제",
-          "link": "/api/iam/delete-authz-bindings-by-target"
-        },
-        {
-          "text": "TPN에 연결된 모든 정책 바인딩을 일괄 해제",
-          "link": "/api/iam/delete-authz-bindings-by-tpn"
-        },
-        {
-          "text": "바인딩 ID로 단건 조회",
-          "link": "/api/iam/get-authz-bindings-binding-id"
-        },
-        {
-          "text": "정책과 대상 간의 연결 제거",
-          "link": "/api/iam/delete-authz-bindings-binding-id"
-        },
-        {
-          "text": "바인딩 생성/삭제 이력 조회",
-          "link": "/api/iam/get-authz-bindings-audit"
-        },
-        {
-          "text": "역할에 연결된 정책 목록을 상세 정보와 함께 조회",
-          "link": "/api/iam/get-authz-bindings-roles-role-id-policies"
-        },
-        {
-          "text": "TPN 직접 바인딩 정책 조회",
-          "link": "/api/iam/get-authz-bindings-tpns-tpn-policies"
-        },
-        {
-          "text": "특정 정책에 바인딩된 역할 목록을 상세 정보와 함께 조회",
-          "link": "/api/iam/get-authz-bindings-policies-policy-id-roles"
-        }
-      ]
-    },
-    {
-      "text": "Profile",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "인증된 사용자의 프로필 정보 조회",
-          "link": "/api/iam/get-authn-profile"
-        },
-        {
-          "text": "인증된 사용자가 자신의 프로필 정보 수정",
-          "link": "/api/iam/patch-authn-profile"
-        },
-        {
-          "text": "인증된 사용자의 로그인 이력 조회",
-          "link": "/api/iam/get-authn-profile-activity"
-        },
-        {
-          "text": "인증된 사용자가 접근 가능한 조직 목록 조회",
-          "link": "/api/iam/get-authn-profile-organizations"
-        },
-        {
-          "text": "인증된 사용자 본인이 소속된 파티션(프로젝트) 목록 조회",
-          "link": "/api/iam/get-authn-profile-partitions"
-        },
-        {
-          "text": "인증된 사용자의 TOTP MFA 설정 시작",
-          "link": "/api/iam/post-authn-profile-mfa-totp-setup"
-        },
-        {
-          "text": "TOTP 앱에서 생성된 6자리 코드를 입력하여 설정을 완료",
-          "link": "/api/iam/post-authn-profile-mfa-totp-verify-setup"
-        }
-      ]
-    },
-    {
-      "text": "Project",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "조직 내에 새로운 프로젝트 생성",
-          "link": "/api/iam/post-authn-organizations-org-id-projects"
-        },
-        {
-          "text": "특정 조직의 프로젝트 목록 조회",
-          "link": "/api/iam/get-authn-organizations-org-id-projects"
-        },
-        {
-          "text": "특정 프로젝트의 상세 정보 조회",
-          "link": "/api/iam/get-authn-projects-project-id"
-        },
-        {
-          "text": "프로젝트의 이름, 표시명, 메타데이터 또는 상태를 업데이트",
-          "link": "/api/iam/put-authn-projects-project-id"
-        },
-        {
-          "text": "프로젝트를 소프트 삭제",
-          "link": "/api/iam/delete-authn-projects-project-id"
-        }
-      ]
-    },
-    {
-      "text": "Role Assignments",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "역할에 TPN(user/group)을 할당",
-          "link": "/api/iam/post-authz-roles-role-id-assignments"
-        },
-        {
-          "text": "역할에 할당된 TPN 목록 조회",
-          "link": "/api/iam/get-authz-roles-role-id-assignments"
-        },
-        {
-          "text": "역할 ID와 TPN을 사용하여 RoleAssignment 삭제",
-          "link": "/api/iam/delete-authz-roles-role-id-assignments"
-        },
-        {
-          "text": "RoleAssignment 조회",
-          "link": "/api/iam/get-authz-roles-role-id-assignments-assignment-id"
-        },
-        {
-          "text": "RoleAssignment 삭제",
-          "link": "/api/iam/delete-authz-roles-role-id-assignments-assignment-id"
-        },
-        {
-          "text": "TPN이 가진 역할 목록 조회",
-          "link": "/api/iam/get-authz-tpns-assignments"
-        },
-        {
-          "text": "TPN에 할당된 모든 역할을 일괄 해제",
-          "link": "/api/iam/delete-authz-tpns-assignments"
-        },
-        {
-          "text": "호출자(본인) TPN이 가진 역할 목록 조회",
-          "link": "/api/iam/get-authz-role-assignments-me"
-        },
-        {
-          "text": "특정 TPN에 할당 가능한 역할 목록 조회",
-          "link": "/api/iam/get-authz-roles-assignments-available"
-        },
-        {
-          "text": "전체 역할 Assignment 목록 조회",
-          "link": "/api/iam/get-authz-assignments"
-        },
-        {
-          "text": "TPN(사용자/그룹)에 할당된 역할 목록을 동기화",
-          "link": "/api/iam/put-authz-roles-assignments-sync"
-        }
-      ]
-    },
-    {
-      "text": "Role Metadata",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "역할에 Provider별 권한 매핑 정보를 설정합니다 (upsert)",
-          "link": "/api/iam/put-authz-roles-roleid-metadata-namespace-key"
-        },
-        {
-          "text": "특정 역할 metadata 조회",
-          "link": "/api/iam/get-authz-roles-roleid-metadata-namespace-key"
-        },
-        {
-          "text": "특정 역할 metadata 삭제",
-          "link": "/api/iam/delete-authz-roles-roleid-metadata-namespace-key"
-        },
-        {
-          "text": "역할의 모든 metadata 조회",
-          "link": "/api/iam/get-authz-roles-roleid-metadata"
-        },
-        {
-          "text": "특정 Provider namespace의 모든 metadata 조회",
-          "link": "/api/iam/get-authz-roles-roleid-metadata-namespace"
-        }
-      ]
-    },
-    {
-      "text": "Roles",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "새로운 역할 생성",
-          "link": "/api/iam/post-authz-roles"
-        },
-        {
-          "text": "조직/프로젝트별 역할 목록 조회",
-          "link": "/api/iam/get-authz-roles"
-        },
-        {
-          "text": "역할 ID로 단건 조회",
-          "link": "/api/iam/get-authz-roles-role-id"
-        },
-        {
-          "text": "역할 정보 수정",
-          "link": "/api/iam/patch-authz-roles-role-id"
-        },
-        {
-          "text": "역할을 소프트 삭제",
-          "link": "/api/iam/delete-authz-roles-role-id"
-        },
-        {
-          "text": "역할에 Trust 정책를 설정",
-          "link": "/api/iam/put-authz-roles-role-id-trust-policy"
-        }
-      ]
-    },
-    {
-      "text": "Session Policies",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "조직의 세션 정책 조회",
-          "link": "/api/iam/get-authn-session-policies-org-id"
-        },
-        {
-          "text": "조직의 세션 정책을 생성하거나 수정",
-          "link": "/api/iam/put-authn-session-policies-org-id"
-        },
-        {
-          "text": "조직의 세션 정책을 삭제하여 기본값으로 초기화",
-          "link": "/api/iam/post-authn-session-policies-org-id-reset"
-        }
-      ]
-    },
-    {
-      "text": "Temporary Role Grants",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "대상 주체에게 역할을 한시적으로 부여",
-          "link": "/api/iam/post-authz-temporary-grants"
-        },
-        {
-          "text": "임시 역할 부여 목록 조회",
-          "link": "/api/iam/get-authz-temporary-grants"
-        },
-        {
-          "text": "호출자(본인)에게 부여된 임시 역할 목록 조회",
-          "link": "/api/iam/get-authz-temporary-grants-me"
-        },
-        {
-          "text": "임시 역할 부여 단건 조회",
-          "link": "/api/iam/get-authz-temporary-grants-grant-id"
-        },
-        {
-          "text": "종료 시각만 변경",
-          "link": "/api/iam/post-authz-temporary-grants-grant-id-extend"
-        },
-        {
-          "text": "즉시 효력을 중단",
-          "link": "/api/iam/post-authz-temporary-grants-grant-id-revoke"
-        },
-        {
-          "text": "특정 주체의 활성 임시 grant 조회",
-          "link": "/api/iam/get-authz-tpns-tpn-active-grants"
-        }
-      ]
-    },
-    {
-      "text": "Token Policies",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "조직의 토큰 정책 조회",
-          "link": "/api/iam/get-authn-token-policies-org-id"
-        },
-        {
-          "text": "조직의 토큰 정책을 생성하거나 수정",
-          "link": "/api/iam/put-authn-token-policies-org-id"
-        },
-        {
-          "text": "조직의 토큰 정책을 삭제하여 기본값으로 초기화",
-          "link": "/api/iam/post-authn-token-policies-org-id-reset"
-        }
-      ]
-    },
-    {
-      "text": "Token Revocation",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "특정 JWT ID(jti)를 가진 토큰만 무효화",
-          "link": "/api/iam/post-authn-revoke-token"
-        },
-        {
-          "text": "무효화된 토큰/세션 목록 조회",
-          "link": "/api/iam/get-authn-revoke-denylist"
-        },
-        {
-          "text": "특정 토큰 또는 세션이 무효화되었는지 확인",
-          "link": "/api/iam/post-authn-revoke-token-status"
-        }
-      ]
-    },
-    {
-      "text": "auth",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "사용자 로그인",
-          "link": "/api/iam/post-authn-login"
-        },
-        {
-          "text": "Access Token 갱신 — 쿠키 우선, body 폴백",
-          "link": "/api/iam/post-authn-token-refresh"
-        },
-        {
-          "text": "로그아웃 및 세션 무효화 — 쿠키 우선 → body 폴백",
-          "link": "/api/iam/post-authn-logout"
-        },
-        {
-          "text": "현재 인증된 사용자 정보 조회",
-          "link": "/api/iam/get-authn-me"
-        },
-        {
-          "text": "활성 세션 목록 조회 (PG 기반 검색·필터·정렬·페이지네이션)",
-          "link": "/api/iam/get-authn-sessions"
-        },
-        {
-          "text": "특정 세션 ID로 세션 상세 정보 조회",
-          "link": "/api/iam/get-authn-sessions-session-id"
-        },
-        {
-          "text": "사용자가 자신의 특정 세션을 강제로 종료",
-          "link": "/api/iam/post-authn-sessions-revoke"
-        },
-        {
-          "text": "사용자가 자신의 모든 활성 세션을 강제로 종료",
-          "link": "/api/iam/post-authn-sessions-revoke-all"
-        },
-        {
-          "text": "관리자가 특정 사용자의 모든 활성 세션을 강제로 종료",
-          "link": "/api/iam/post-authn-sessions-users-user-tpn-revoke-all"
-        }
-      ]
-    },
-    {
-      "text": "group-policies",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "그룹에 정책 연결",
-          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-policies"
-        },
-        {
-          "text": "그룹의 정책 바인딩 목록 조회",
-          "link": "/api/iam/get-authn-organizations-org-id-groups-group-id-policies"
-        },
-        {
-          "text": "그룹에서 정책 연결 해제",
-          "link": "/api/iam/delete-authn-organizations-org-id-groups-group-id-policies-policy-id"
-        }
-      ]
-    },
-    {
-      "text": "group-sync",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "단일 그룹 템플릿 동기화",
-          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-sync"
-        },
-        {
-          "text": "일괄 그룹 템플릿 동기화",
-          "link": "/api/iam/post-authn-organizations-org-id-groups-sync"
-        }
-      ]
-    },
-    {
-      "text": "groups",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "조직 내에 새 그룹 생성",
-          "link": "/api/iam/post-authn-organizations-org-id-groups"
-        },
-        {
-          "text": "조직 내 그룹 목록 조회",
-          "link": "/api/iam/get-authn-organizations-org-id-groups"
-        },
-        {
-          "text": "기존 그룹을 복제하여 새 그룹 생성",
-          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-duplicate"
-        },
-        {
-          "text": "그룹 상세 정보 조회",
-          "link": "/api/iam/get-authn-organizations-org-id-groups-group-id"
-        },
-        {
-          "text": "그룹 정보 수정",
-          "link": "/api/iam/put-authn-organizations-org-id-groups-group-id"
-        },
-        {
-          "text": "그룹을 삭제합니다 (Soft Delete)",
-          "link": "/api/iam/delete-authn-organizations-org-id-groups-group-id"
-        },
-        {
-          "text": "그룹에 속한 멤버 목록 조회",
-          "link": "/api/iam/get-authn-organizations-org-id-groups-group-id-members"
-        },
-        {
-          "text": "그룹의 전체 멤버 목록을 동기화",
-          "link": "/api/iam/put-authn-organizations-org-id-groups-group-id-members"
-        },
-        {
-          "text": "그룹에 멤버를 일괄 추",
-          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-members-batch-add"
-        },
-        {
-          "text": "그룹에서 멤버를 일괄 제거",
-          "link": "/api/iam/post-authn-organizations-org-id-groups-group-id-members-batch-remove"
-        }
-      ]
-    },
-    {
-      "text": "jwks",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "토큰 검증 공개키(JWKS) 조회",
-          "link": "/api/iam/get-authn-jwks"
-        }
-      ]
-    },
-    {
-      "text": "mfa-auth-flow",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "MFA 코드 요청 (method 지정 필요)",
-          "link": "/api/iam/post-authn-mfa-code-request"
-        },
-        {
-          "text": "MFA 코드 검증",
-          "link": "/api/iam/post-authn-mfa-code-verify"
-        }
-      ]
-    },
-    {
-      "text": "organizations",
+      "text": "조직",
       "collapsed": true,
       "items": [
         {
@@ -860,155 +1000,7 @@
       ]
     },
     {
-      "text": "password-reset",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "비밀번호를 잊어버린 사용자가 이메일로 비밀번호 초기화 링크를 요청",
-          "link": "/api/iam/post-authn-password-forgot"
-        },
-        {
-          "text": "이메일로 받은 비밀번호 초기화 토큰의 유효성을 검증",
-          "link": "/api/iam/post-authn-password-reset-verify"
-        },
-        {
-          "text": "비밀번호 초기화 토큰을 사용하여 새 비밀번호를 설정",
-          "link": "/api/iam/put-authn-password-reset"
-        }
-      ]
-    },
-    {
-      "text": "pre-auth",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "비밀번호 정책 조회",
-          "link": "/api/iam/get-authn-pre-auth-password-policy"
-        },
-        {
-          "text": "Pre-Auth 세션을 사용하여 TOTP를 설정",
-          "link": "/api/iam/post-authn-pre-auth-mfa-totp-setup"
-        },
-        {
-          "text": "Pre-Auth 세션을 사용하여 TOTP 설정을 검증",
-          "link": "/api/iam/post-authn-pre-auth-mfa-totp-verify-setup"
-        },
-        {
-          "text": "Pre-Auth 세션을 사용하여 이메일로 MFA 코드를 요청",
-          "link": "/api/iam/post-authn-pre-auth-mfa-email-request-code"
-        },
-        {
-          "text": "Pre-Auth 세션을 사용하여 MFA 코드를 검증",
-          "link": "/api/iam/post-authn-pre-auth-mfa-verify"
-        },
-        {
-          "text": "비밀번호 변경",
-          "link": "/api/iam/put-authn-pre-auth-password-change"
-        }
-      ]
-    },
-    {
-      "text": "service-accounts",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "서비스 어카운트 목록 조회",
-          "link": "/api/iam/get-authn-service-accounts"
-        },
-        {
-          "text": "서비스 어카운트 생성",
-          "link": "/api/iam/post-authn-service-accounts"
-        },
-        {
-          "text": "체크박스 액션용 SA 다건 논리 삭제",
-          "link": "/api/iam/delete-authn-service-accounts"
-        },
-        {
-          "text": "필터 조건에 맞는 SA 목록을 CSV 형식으로 반환",
-          "link": "/api/iam/get-authn-service-accounts-export"
-        },
-        {
-          "text": "서비스 어카운트 상세 조회",
-          "link": "/api/iam/get-authn-service-accounts-sa-id"
-        },
-        {
-          "text": "서비스 어카운트 삭제 (논리적 삭제)",
-          "link": "/api/iam/delete-authn-service-accounts-sa-id"
-        },
-        {
-          "text": "서비스 어카운트 업데이트",
-          "link": "/api/iam/put-authn-service-accounts-sa-id"
-        },
-        {
-          "text": "API Key 발급",
-          "link": "/api/iam/post-authn-service-accounts-sa-id-keys"
-        },
-        {
-          "text": "API Key 비활성화",
-          "link": "/api/iam/post-authn-service-accounts-sa-id-keys-key-id-disable"
-        },
-        {
-          "text": "API Key 활성화",
-          "link": "/api/iam/post-authn-service-accounts-sa-id-keys-key-id-enable"
-        },
-        {
-          "text": "API Key 삭제",
-          "link": "/api/iam/delete-authn-service-accounts-sa-id-keys-key-id"
-        },
-        {
-          "text": "API Key description/활성 상태 수정",
-          "link": "/api/iam/patch-authn-service-accounts-sa-id-keys-key-id"
-        },
-        {
-          "text": "서비스 어카운트 비활성화",
-          "link": "/api/iam/post-authn-service-accounts-sa-id-disable"
-        },
-        {
-          "text": "서비스 어카운트 활성화",
-          "link": "/api/iam/post-authn-service-accounts-sa-id-enable"
-        },
-        {
-          "text": "Client Secret 재발급",
-          "link": "/api/iam/post-authn-service-accounts-sa-id-regenerate-secret"
-        },
-        {
-          "text": "API Key Secret 재발급",
-          "link": "/api/iam/post-authn-service-accounts-sa-id-keys-key-id-reset"
-        }
-      ]
-    },
-    {
-      "text": "user-invitation",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "조직에 사용자 초대 생성",
-          "link": "/api/iam/post-authn-organizations-org-id-invitations"
-        },
-        {
-          "text": "조직의 초대 목록 조회",
-          "link": "/api/iam/get-authn-organizations-org-id-invitations"
-        },
-        {
-          "text": "단일 초대 조회",
-          "link": "/api/iam/get-authn-invitations-invitation-id"
-        },
-        {
-          "text": "초대 재발송",
-          "link": "/api/iam/post-authn-invitations-invitation-id-resend"
-        },
-        {
-          "text": "초대 취소",
-          "link": "/api/iam/post-authn-invitations-invitation-id-cancel"
-        },
-        {
-          "text": "사용자 TPN 기반 초대 재발송",
-          "link": "/api/iam/post-authn-users-user-tpn-resend-invitation"
-        }
-      ]
-    },
-    {
-      "text": "user-invitation-public",
+      "text": "초대 수락",
       "collapsed": true,
       "items": [
         {
@@ -1018,100 +1010,108 @@
       ]
     },
     {
-      "text": "user-mfa",
+      "text": "토큰 검증 공개키",
       "collapsed": true,
       "items": [
         {
-          "text": "사용자 MFA 상태 조회",
-          "link": "/api/iam/get-authn-users-me-mfa-status"
-        },
-        {
-          "text": "Email MFA 활성화",
-          "link": "/api/iam/post-authn-users-me-mfa-email-enable"
-        },
-        {
-          "text": "Email MFA 비활성화",
-          "link": "/api/iam/post-authn-users-me-mfa-email-disable"
-        },
-        {
-          "text": "TOTP 설정 시작 (QR 코드 발급)",
-          "link": "/api/iam/post-authn-users-me-mfa-totp-setup"
-        },
-        {
-          "text": "TOTP 설정 검증 (최초 등록 시)",
-          "link": "/api/iam/post-authn-users-me-mfa-totp-verify-setup"
-        },
-        {
-          "text": "TOTP MFA 비활성화",
-          "link": "/api/iam/post-authn-users-me-mfa-totp-disable"
-        },
-        {
-          "text": "이 API는 더 이상 사용되지 않습니다",
-          "link": "/api/iam/post-authn-users-me-mfa-email-request-code"
+          "text": "토큰 검증 공개키(JWKS) 조회",
+          "link": "/api/iam/get-authn-jwks"
         }
       ]
     },
     {
-      "text": "user-password",
+      "text": "토큰 정책",
       "collapsed": true,
       "items": [
         {
-          "text": "사용자 비밀번호 변경",
-          "link": "/api/iam/put-authn-users-user-tpn-password"
+          "text": "조직의 토큰 정책 조회",
+          "link": "/api/iam/get-authn-token-policies-org-id"
         },
         {
-          "text": "비밀번호 정책 검증",
-          "link": "/api/iam/post-authn-users-user-tpn-password-validate"
+          "text": "조직의 토큰 정책을 생성하거나 수정",
+          "link": "/api/iam/put-authn-token-policies-org-id"
         },
         {
-          "text": "관리자가 특정 사용자의 비밀번호 초기화",
-          "link": "/api/iam/post-authn-users-user-tpn-password-reset"
+          "text": "조직의 토큰 정책을 삭제하여 기본값으로 초기화",
+          "link": "/api/iam/post-authn-token-policies-org-id-reset"
         }
       ]
     },
     {
-      "text": "users",
+      "text": "토큰 폐기",
       "collapsed": true,
       "items": [
         {
-          "text": "org_id를 body에 포함하여 사용자 생성",
-          "link": "/api/iam/post-authn-users"
+          "text": "특정 JWT ID(jti)를 가진 토큰만 무효화",
+          "link": "/api/iam/post-authn-revoke-token"
         },
         {
-          "text": "사용자 수정",
-          "link": "/api/iam/put-authn-users-tpn"
+          "text": "무효화된 토큰/세션 목록 조회",
+          "link": "/api/iam/get-authn-revoke-denylist"
         },
         {
-          "text": "사용자 삭제",
-          "link": "/api/iam/delete-authn-users-tpn"
+          "text": "특정 토큰 또는 세션이 무효화되었는지 확인",
+          "link": "/api/iam/post-authn-revoke-token-status"
+        }
+      ]
+    },
+    {
+      "text": "프로젝트",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "조직 내에 새로운 프로젝트 생성",
+          "link": "/api/iam/post-authn-organizations-org-id-projects"
         },
         {
-          "text": "TPN으로 사용자의 상세 정보 조회",
-          "link": "/api/iam/get-authn-users-tpn"
+          "text": "특정 조직의 프로젝트 목록 조회",
+          "link": "/api/iam/get-authn-organizations-org-id-projects"
         },
         {
-          "text": "지정된 조직 내에 새로운 사용자 생성",
-          "link": "/api/iam/post-authn-organizations-org-id-users"
+          "text": "특정 프로젝트의 상세 정보 조회",
+          "link": "/api/iam/get-authn-projects-project-id"
         },
         {
-          "text": "지정된 조직의 사용자 목록 조회",
-          "link": "/api/iam/get-authn-organizations-org-id-users"
+          "text": "프로젝트의 이름, 표시명, 메타데이터 또는 상태를 업데이트",
+          "link": "/api/iam/put-authn-projects-project-id"
         },
         {
-          "text": "사용자의 보안 관련 정보 조회",
-          "link": "/api/iam/get-authn-users-tpn-security-info"
+          "text": "프로젝트를 소프트 삭제",
+          "link": "/api/iam/delete-authn-projects-project-id"
+        }
+      ]
+    },
+    {
+      "text": "프로필",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "인증된 사용자의 프로필 정보 조회",
+          "link": "/api/iam/get-authn-profile"
         },
         {
-          "text": "관리자가 특정 사용자의 TOTP MFA를 비활성화하고 Secret 삭제",
-          "link": "/api/iam/post-authn-users-tpn-mfa-totp-disable"
+          "text": "인증된 사용자가 자신의 프로필 정보 수정",
+          "link": "/api/iam/patch-authn-profile"
         },
         {
-          "text": "한 명의 사용자를 여러 그룹에 동시에 추",
-          "link": "/api/iam/post-authn-users-tpn-groups-batch-add"
+          "text": "인증된 사용자의 로그인 이력 조회",
+          "link": "/api/iam/get-authn-profile-activity"
         },
         {
-          "text": "사용자가 속한 그룹 목록을 지정한 목록으로 동기화",
-          "link": "/api/iam/post-authn-users-tpn-groups-sync"
+          "text": "인증된 사용자가 접근 가능한 조직 목록 조회",
+          "link": "/api/iam/get-authn-profile-organizations"
+        },
+        {
+          "text": "인증된 사용자 본인이 소속된 파티션(프로젝트) 목록 조회",
+          "link": "/api/iam/get-authn-profile-partitions"
+        },
+        {
+          "text": "인증된 사용자의 TOTP MFA 설정 시작",
+          "link": "/api/iam/post-authn-profile-mfa-totp-setup"
+        },
+        {
+          "text": "TOTP 앱에서 생성된 6자리 코드를 입력하여 설정을 완료",
+          "link": "/api/iam/post-authn-profile-mfa-totp-verify-setup"
         }
       ]
     }
@@ -1127,7 +1127,167 @@
       ]
     },
     {
-      "text": "application-credentials",
+      "text": "기본 테넌트",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "사용자의 Primary Tenant를 설정",
+          "link": "/api/compute/put-primary-tenant"
+        }
+      ]
+    },
+    {
+      "text": "볼륨 백업",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "볼륨 백업 생성",
+          "link": "/api/compute/post-storage-volume-backups"
+        },
+        {
+          "text": "볼륨 백업 목록 조회",
+          "link": "/api/compute/get-storage-volume-backups"
+        },
+        {
+          "text": "볼륨 백업을 다중 삭제",
+          "link": "/api/compute/delete-storage-volume-backups"
+        },
+        {
+          "text": "볼륨 백업 단건 조회",
+          "link": "/api/compute/get-storage-volume-backups-volumebackupid"
+        },
+        {
+          "text": "볼륨 백업 정보 수정",
+          "link": "/api/compute/patch-storage-volume-backups-volumebackupid"
+        },
+        {
+          "text": "볼륨 백업 삭제",
+          "link": "/api/compute/delete-storage-volume-backups-volumebackupid"
+        },
+        {
+          "text": "단일 볼륨 백업 액션 처리",
+          "link": "/api/compute/post-storage-volume-backups-volumebackupid-actions"
+        }
+      ]
+    },
+    {
+      "text": "볼륨 스냅샷",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "볼륨 스냅샷 생성",
+          "link": "/api/compute/post-storage-volume-snapshots"
+        },
+        {
+          "text": "볼륨 스냅샷 목록 조회",
+          "link": "/api/compute/get-storage-volume-snapshots"
+        },
+        {
+          "text": "볼륨 스냅샷을 다중 삭제",
+          "link": "/api/compute/delete-storage-volume-snapshots"
+        },
+        {
+          "text": "볼륨 스냅샷 단건 조회",
+          "link": "/api/compute/get-storage-volume-snapshots-volumesnapshotid"
+        },
+        {
+          "text": "볼륨 스냅샷 삭제",
+          "link": "/api/compute/delete-storage-volume-snapshots-volumesnapshotid"
+        },
+        {
+          "text": "볼륨 스냅샷 정보 수정",
+          "link": "/api/compute/patch-storage-volume-snapshots-volumesnapshotid"
+        }
+      ]
+    },
+    {
+      "text": "볼륨",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "볼륨 목록 조회",
+          "link": "/api/compute/get-storage-volumes"
+        },
+        {
+          "text": "볼륨 생성",
+          "link": "/api/compute/post-storage-volumes"
+        },
+        {
+          "text": "볼륨 일괄 삭제",
+          "link": "/api/compute/delete-storage-volumes"
+        },
+        {
+          "text": "볼륨 타입 목록 조회",
+          "link": "/api/compute/get-storage-volumes-types"
+        },
+        {
+          "text": "볼륨 단건 조회",
+          "link": "/api/compute/get-storage-volumes-volumeid"
+        },
+        {
+          "text": "볼륨 삭제",
+          "link": "/api/compute/delete-storage-volumes-volumeid"
+        },
+        {
+          "text": "볼륨 정보 수정",
+          "link": "/api/compute/patch-storage-volumes-volumeid"
+        },
+        {
+          "text": "볼륨 액션 실행",
+          "link": "/api/compute/post-storage-volumes-volumeid-actions"
+        },
+        {
+          "text": "볼륨 Transfer 생성",
+          "link": "/api/compute/post-storage-volumes-volumeid-transfers"
+        },
+        {
+          "text": "볼륨 Transfer를 취소/삭제",
+          "link": "/api/compute/delete-storage-volumes-volumeid-transfers"
+        },
+        {
+          "text": "볼륨 Transfer를 수락",
+          "link": "/api/compute/post-storage-volumes-transfers-transferid-accept"
+        }
+      ]
+    },
+    {
+      "text": "서버 그룹",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "ServerGroup 생성",
+          "link": "/api/compute/post-server-groups"
+        },
+        {
+          "text": "ServerGroup 목록을 조회합니다 (페이지네이션, 필터링, 정렬)",
+          "link": "/api/compute/get-server-groups"
+        },
+        {
+          "text": "ServerGroup을 다중 삭제",
+          "link": "/api/compute/delete-server-groups"
+        },
+        {
+          "text": "ServerGroup 삭제",
+          "link": "/api/compute/delete-server-groups-servergroupid"
+        }
+      ]
+    },
+    {
+      "text": "스토리지 메타정보",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Storage Quota 정보 조회",
+          "link": "/api/compute/get-storage-meta-quota"
+        },
+        {
+          "text": "가용 영역 목록 조회",
+          "link": "/api/compute/get-storage-meta-availability-zones"
+        }
+      ]
+    },
+    {
+      "text": "애플리케이션 자격증명",
       "collapsed": true,
       "items": [
         {
@@ -1141,41 +1301,7 @@
       ]
     },
     {
-      "text": "compute-meta",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "Compute Quota 정보 조회",
-          "link": "/api/compute/get-meta-quota"
-        }
-      ]
-    },
-    {
-      "text": "flavors",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "Flavor 목록 조회",
-          "link": "/api/compute/get-flavors"
-        },
-        {
-          "text": "Flavor 상세 정보 조회",
-          "link": "/api/compute/get-flavors-flavorid"
-        }
-      ]
-    },
-    {
-      "text": "host-aggregates",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "Compute availability zone(기본) 목록 조회",
-          "link": "/api/compute/get-host-aggregates-availability-zones"
-        }
-      ]
-    },
-    {
-      "text": "images",
+      "text": "이미지",
       "collapsed": true,
       "items": [
         {
@@ -1209,7 +1335,7 @@
       ]
     },
     {
-      "text": "instance-snapshots",
+      "text": "인스턴스 스냅샷",
       "collapsed": true,
       "items": [
         {
@@ -1239,7 +1365,7 @@
       ]
     },
     {
-      "text": "instance-templates",
+      "text": "인스턴스 템플릿",
       "collapsed": true,
       "items": [
         {
@@ -1269,7 +1395,7 @@
       ]
     },
     {
-      "text": "instances",
+      "text": "인스턴스",
       "collapsed": true,
       "items": [
         {
@@ -1359,7 +1485,17 @@
       ]
     },
     {
-      "text": "key-pairs",
+      "text": "컴퓨트 메타정보",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Compute Quota 정보 조회",
+          "link": "/api/compute/get-meta-quota"
+        }
+      ]
+    },
+    {
+      "text": "키 페어",
       "collapsed": true,
       "items": [
         {
@@ -1389,63 +1525,7 @@
       ]
     },
     {
-      "text": "primary-tenant",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "사용자의 Primary Tenant를 설정",
-          "link": "/api/compute/put-primary-tenant"
-        }
-      ]
-    },
-    {
-      "text": "projects",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "OpenStack 프로젝트 목록 조회",
-          "link": "/api/compute/get-projects"
-        }
-      ]
-    },
-    {
-      "text": "server-groups",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "ServerGroup 생성",
-          "link": "/api/compute/post-server-groups"
-        },
-        {
-          "text": "ServerGroup 목록을 조회합니다 (페이지네이션, 필터링, 정렬)",
-          "link": "/api/compute/get-server-groups"
-        },
-        {
-          "text": "ServerGroup을 다중 삭제",
-          "link": "/api/compute/delete-server-groups"
-        },
-        {
-          "text": "ServerGroup 삭제",
-          "link": "/api/compute/delete-server-groups-servergroupid"
-        }
-      ]
-    },
-    {
-      "text": "storage-meta",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "Storage Quota 정보 조회",
-          "link": "/api/compute/get-storage-meta-quota"
-        },
-        {
-          "text": "가용 영역 목록 조회",
-          "link": "/api/compute/get-storage-meta-availability-zones"
-        }
-      ]
-    },
-    {
-      "text": "table-settings",
+      "text": "테이블 설정",
       "collapsed": true,
       "items": [
         {
@@ -1459,116 +1539,36 @@
       ]
     },
     {
-      "text": "volume-backups",
+      "text": "프로젝트",
       "collapsed": true,
       "items": [
         {
-          "text": "볼륨 백업 생성",
-          "link": "/api/compute/post-storage-volume-backups"
-        },
-        {
-          "text": "볼륨 백업 목록 조회",
-          "link": "/api/compute/get-storage-volume-backups"
-        },
-        {
-          "text": "볼륨 백업을 다중 삭제",
-          "link": "/api/compute/delete-storage-volume-backups"
-        },
-        {
-          "text": "볼륨 백업 단건 조회",
-          "link": "/api/compute/get-storage-volume-backups-volumebackupid"
-        },
-        {
-          "text": "볼륨 백업 정보 수정",
-          "link": "/api/compute/patch-storage-volume-backups-volumebackupid"
-        },
-        {
-          "text": "볼륨 백업 삭제",
-          "link": "/api/compute/delete-storage-volume-backups-volumebackupid"
-        },
-        {
-          "text": "단일 볼륨 백업 액션 처리",
-          "link": "/api/compute/post-storage-volume-backups-volumebackupid-actions"
+          "text": "OpenStack 프로젝트 목록 조회",
+          "link": "/api/compute/get-projects"
         }
       ]
     },
     {
-      "text": "volume-snapshots",
+      "text": "플레이버",
       "collapsed": true,
       "items": [
         {
-          "text": "볼륨 스냅샷 생성",
-          "link": "/api/compute/post-storage-volume-snapshots"
+          "text": "Flavor 목록 조회",
+          "link": "/api/compute/get-flavors"
         },
         {
-          "text": "볼륨 스냅샷 목록 조회",
-          "link": "/api/compute/get-storage-volume-snapshots"
-        },
-        {
-          "text": "볼륨 스냅샷을 다중 삭제",
-          "link": "/api/compute/delete-storage-volume-snapshots"
-        },
-        {
-          "text": "볼륨 스냅샷 단건 조회",
-          "link": "/api/compute/get-storage-volume-snapshots-volumesnapshotid"
-        },
-        {
-          "text": "볼륨 스냅샷 삭제",
-          "link": "/api/compute/delete-storage-volume-snapshots-volumesnapshotid"
-        },
-        {
-          "text": "볼륨 스냅샷 정보 수정",
-          "link": "/api/compute/patch-storage-volume-snapshots-volumesnapshotid"
+          "text": "Flavor 상세 정보 조회",
+          "link": "/api/compute/get-flavors-flavorid"
         }
       ]
     },
     {
-      "text": "volumes",
+      "text": "호스트 집계",
       "collapsed": true,
       "items": [
         {
-          "text": "볼륨 목록 조회",
-          "link": "/api/compute/get-storage-volumes"
-        },
-        {
-          "text": "볼륨 생성",
-          "link": "/api/compute/post-storage-volumes"
-        },
-        {
-          "text": "볼륨 일괄 삭제",
-          "link": "/api/compute/delete-storage-volumes"
-        },
-        {
-          "text": "볼륨 타입 목록 조회",
-          "link": "/api/compute/get-storage-volumes-types"
-        },
-        {
-          "text": "볼륨 단건 조회",
-          "link": "/api/compute/get-storage-volumes-volumeid"
-        },
-        {
-          "text": "볼륨 삭제",
-          "link": "/api/compute/delete-storage-volumes-volumeid"
-        },
-        {
-          "text": "볼륨 정보 수정",
-          "link": "/api/compute/patch-storage-volumes-volumeid"
-        },
-        {
-          "text": "볼륨 액션 실행",
-          "link": "/api/compute/post-storage-volumes-volumeid-actions"
-        },
-        {
-          "text": "볼륨 Transfer 생성",
-          "link": "/api/compute/post-storage-volumes-volumeid-transfers"
-        },
-        {
-          "text": "볼륨 Transfer를 취소/삭제",
-          "link": "/api/compute/delete-storage-volumes-volumeid-transfers"
-        },
-        {
-          "text": "볼륨 Transfer를 수락",
-          "link": "/api/compute/post-storage-volumes-transfers-transferid-accept"
+          "text": "Compute availability zone(기본) 목록 조회",
+          "link": "/api/compute/get-host-aggregates-availability-zones"
         }
       ]
     }
@@ -1584,7 +1584,87 @@
       ]
     },
     {
-      "text": "availability-zones",
+      "text": "Floating IP",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Floating IP 목록 조회",
+          "link": "/api/network/get-floating-ips"
+        },
+        {
+          "text": "Floating IP 생성",
+          "link": "/api/network/post-floating-ips"
+        },
+        {
+          "text": "Floating IP 연결 후보 인스턴스 목록 조회",
+          "link": "/api/network/get-floating-ips-floatingipid-instances-connectable"
+        },
+        {
+          "text": "Floating IP 연결 후보 LoadBalancer 목록 조회",
+          "link": "/api/network/get-floating-ips-floatingipid-load-balancers-connectable"
+        },
+        {
+          "text": "Floating IP 연결 후보 포트 목록 조회",
+          "link": "/api/network/get-floating-ips-floatingipid-ports-connectable"
+        },
+        {
+          "text": "Floating IP 단건 조회",
+          "link": "/api/network/get-floating-ips-floatingipid"
+        },
+        {
+          "text": "Floating IP 수정",
+          "link": "/api/network/put-floating-ips-floatingipid"
+        },
+        {
+          "text": "Floating IP 삭제",
+          "link": "/api/network/delete-floating-ips-floatingipid"
+        }
+      ]
+    },
+    {
+      "text": "L7 정책",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "L7 정책 생성",
+          "link": "/api/network/post-l7-policies"
+        },
+        {
+          "text": "L7 정책 목록 조회",
+          "link": "/api/network/get-l7-policies"
+        },
+        {
+          "text": "L7 정책를 단건 조회",
+          "link": "/api/network/get-l7-policies-policyid"
+        },
+        {
+          "text": "L7 정책 수정",
+          "link": "/api/network/put-l7-policies-policyid"
+        },
+        {
+          "text": "L7 정책 삭제",
+          "link": "/api/network/delete-l7-policies-policyid"
+        },
+        {
+          "text": "L7 Rule 생성",
+          "link": "/api/network/post-l7-policies-policyid-rules"
+        },
+        {
+          "text": "L7 Rule 목록 조회",
+          "link": "/api/network/get-l7-policies-policyid-rules"
+        },
+        {
+          "text": "L7 Rule 수정",
+          "link": "/api/network/put-l7-policies-policyid-rules-ruleid"
+        },
+        {
+          "text": "L7 Rule 삭제",
+          "link": "/api/network/delete-l7-policies-policyid-rules-ruleid"
+        }
+      ]
+    },
+    {
+      "text": "가용 영역",
       "collapsed": true,
       "items": [
         {
@@ -1594,7 +1674,303 @@
       ]
     },
     {
-      "text": "certificates",
+      "text": "기타",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "프로세스 생존 여부를 확인",
+          "link": "/api/network/get-livez"
+        },
+        {
+          "text": "애플리케이션 초기화 완료 여부를 확인",
+          "link": "/api/network/get-readyz"
+        }
+      ]
+    },
+    {
+      "text": "네트워크",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "네트워크 목록 조회",
+          "link": "/api/network/get-networks"
+        },
+        {
+          "text": "네트워크 생성",
+          "link": "/api/network/post-networks"
+        },
+        {
+          "text": "서브넷 기반 connectable 계산을 포함한 네트워크 목록 조회",
+          "link": "/api/network/get-networks-subnet-connectability"
+        },
+        {
+          "text": "외부 게이트웨이에 연결된 내부 네트워크 조회",
+          "link": "/api/network/get-networks-external-gateway-connectability"
+        },
+        {
+          "text": "네트워크 단건 조회",
+          "link": "/api/network/get-networks-networkid"
+        },
+        {
+          "text": "네트워크 수정",
+          "link": "/api/network/put-networks-networkid"
+        },
+        {
+          "text": "네트워크 삭제",
+          "link": "/api/network/delete-networks-networkid"
+        }
+      ]
+    },
+    {
+      "text": "라우터",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "라우터 목록 조회",
+          "link": "/api/network/get-routers"
+        },
+        {
+          "text": "라우터 생성",
+          "link": "/api/network/post-routers"
+        },
+        {
+          "text": "라우터 단건 조회",
+          "link": "/api/network/get-routers-routerid"
+        },
+        {
+          "text": "라우터 수정",
+          "link": "/api/network/put-routers-routerid"
+        },
+        {
+          "text": "라우터 삭제",
+          "link": "/api/network/delete-routers-routerid"
+        },
+        {
+          "text": "라우터에 연결된 인터페이스 목록을 상세 조회",
+          "link": "/api/network/get-routers-routerid-interfaces"
+        },
+        {
+          "text": "라우터에 인터페이스를 추가합니다 (서브넷 연결)",
+          "link": "/api/network/post-routers-routerid-interfaces"
+        },
+        {
+          "text": "라우터에서 인터페이스를 제거합니다 (서브넷 연결 해제)",
+          "link": "/api/network/delete-routers-routerid-interfaces-subnetid"
+        },
+        {
+          "text": "라우터에 정적 라우트를 추",
+          "link": "/api/network/post-routers-routerid-routes"
+        },
+        {
+          "text": "라우터에서 정적 라우트 삭제",
+          "link": "/api/network/delete-routers-routerid-routes"
+        },
+        {
+          "text": "라우터 정적 라우트 목록 조회",
+          "link": "/api/network/get-routers-routerid-routes"
+        }
+      ]
+    },
+    {
+      "text": "로드밸런서",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "새로운 LoadBalancer 생성",
+          "link": "/api/network/post-load-balancers"
+        },
+        {
+          "text": "LoadBalancer 목록 조회",
+          "link": "/api/network/get-load-balancers"
+        },
+        {
+          "text": "LoadBalancer를 단건 조회",
+          "link": "/api/network/get-load-balancers-loadbalancerid"
+        },
+        {
+          "text": "LoadBalancer 수정",
+          "link": "/api/network/put-load-balancers-loadbalancerid"
+        },
+        {
+          "text": "LoadBalancer 삭제",
+          "link": "/api/network/delete-load-balancers-loadbalancerid"
+        }
+      ]
+    },
+    {
+      "text": "리스너",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "리스너 생성",
+          "link": "/api/network/post-listeners"
+        },
+        {
+          "text": "Listener 목록 조회",
+          "link": "/api/network/get-listeners"
+        },
+        {
+          "text": "Listener 단건 조회",
+          "link": "/api/network/get-listeners-listenerid"
+        },
+        {
+          "text": "Listener 수정",
+          "link": "/api/network/put-listeners-listenerid"
+        },
+        {
+          "text": "리스너 삭제",
+          "link": "/api/network/delete-listeners-listenerid"
+        },
+        {
+          "text": "리스너 연결 인증서 목록 조회",
+          "link": "/api/network/get-listeners-listenerid-certificates"
+        }
+      ]
+    },
+    {
+      "text": "멤버",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "풀 멤버를 일괄 생성합니다 (비동기 처리)",
+          "link": "/api/network/put-pools-poolid-members"
+        },
+        {
+          "text": "풀 멤버 목록 조회",
+          "link": "/api/network/get-pools-poolid-members"
+        },
+        {
+          "text": "풀 멤버 수정",
+          "link": "/api/network/put-pools-poolid-members-memberid"
+        },
+        {
+          "text": "풀 멤버 삭제",
+          "link": "/api/network/delete-pools-poolid-members-memberid"
+        }
+      ]
+    },
+    {
+      "text": "보안 그룹",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "보안 그룹 생성",
+          "link": "/api/network/post-security-groups"
+        },
+        {
+          "text": "보안 그룹 목록 조회",
+          "link": "/api/network/get-security-groups"
+        },
+        {
+          "text": "보안 그룹 조회",
+          "link": "/api/network/get-security-groups-securitygroupid"
+        },
+        {
+          "text": "보안 그룹 수정",
+          "link": "/api/network/put-security-groups-securitygroupid"
+        },
+        {
+          "text": "보안 그룹 삭제",
+          "link": "/api/network/delete-security-groups-securitygroupid"
+        },
+        {
+          "text": "보안 그룹의 Rules 조회",
+          "link": "/api/network/get-security-groups-securitygroupid-rules"
+        },
+        {
+          "text": "보안 그룹 Rule 생성",
+          "link": "/api/network/post-security-groups-securitygroupid-rules"
+        },
+        {
+          "text": "보안 그룹 Rule을 배치 생성",
+          "link": "/api/network/post-security-groups-securitygroupid-rules-batch"
+        },
+        {
+          "text": "보안 그룹 Rule 삭제",
+          "link": "/api/network/delete-security-groups-securitygroupid-rules-ruleid"
+        }
+      ]
+    },
+    {
+      "text": "서브넷",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "서브넷 목록 조회",
+          "link": "/api/network/get-subnets"
+        },
+        {
+          "text": "서브넷 생성",
+          "link": "/api/network/post-subnets"
+        },
+        {
+          "text": "서브넷 단건 조회",
+          "link": "/api/network/get-subnets-subnetid"
+        },
+        {
+          "text": "서브넷 수정",
+          "link": "/api/network/put-subnets-subnetid"
+        },
+        {
+          "text": "서브넷 삭제",
+          "link": "/api/network/delete-subnets-subnetid"
+        }
+      ]
+    },
+    {
+      "text": "외부 방화벽 규칙",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "방화벽에 속한 허용 규칙 목록 조회",
+          "link": "/api/network/get-external-firewalls-firewallid-rules"
+        },
+        {
+          "text": "허용 규칙(allow-related ACL) 생성 요청을 접수",
+          "link": "/api/network/post-external-firewalls-firewallid-rules"
+        },
+        {
+          "text": "허용 규칙 단건 조회",
+          "link": "/api/network/get-external-firewalls-firewallid-rules-ruleid"
+        },
+        {
+          "text": "허용 규칙 1개 삭제 요청을 접수",
+          "link": "/api/network/delete-external-firewalls-firewallid-rules-ruleid"
+        }
+      ]
+    },
+    {
+      "text": "외부 방화벽",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "방화벽 목록을 DB에서 조회",
+          "link": "/api/network/get-external-firewalls"
+        },
+        {
+          "text": "방화벽(default-deny drop ACL) 생성 요청을 접수",
+          "link": "/api/network/post-external-firewalls"
+        },
+        {
+          "text": "방화벽 연결 대상 네트워크 목록 조회",
+          "link": "/api/network/get-external-firewalls-networks"
+        },
+        {
+          "text": "방화벽 단건을 DB에서 조회",
+          "link": "/api/network/get-external-firewalls-firewallid"
+        },
+        {
+          "text": "방화벽 표시용 메타데이터(이름/설명) 수정",
+          "link": "/api/network/put-external-firewalls-firewallid"
+        },
+        {
+          "text": "방화벽 전체(drop + allow) 삭제 요청을 접수",
+          "link": "/api/network/delete-external-firewalls-firewallid"
+        }
+      ]
+    },
+    {
+      "text": "인증서",
       "collapsed": true,
       "items": [
         {
@@ -1656,7 +2032,7 @@
       ]
     },
     {
-      "text": "columns-config",
+      "text": "테이블 컬럼 설정",
       "collapsed": true,
       "items": [
         {
@@ -1674,303 +2050,7 @@
       ]
     },
     {
-      "text": "external-firewall-rules",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "방화벽에 속한 허용 규칙 목록 조회",
-          "link": "/api/network/get-external-firewalls-firewallid-rules"
-        },
-        {
-          "text": "허용 규칙(allow-related ACL) 생성 요청을 접수",
-          "link": "/api/network/post-external-firewalls-firewallid-rules"
-        },
-        {
-          "text": "허용 규칙 단건 조회",
-          "link": "/api/network/get-external-firewalls-firewallid-rules-ruleid"
-        },
-        {
-          "text": "허용 규칙 1개 삭제 요청을 접수",
-          "link": "/api/network/delete-external-firewalls-firewallid-rules-ruleid"
-        }
-      ]
-    },
-    {
-      "text": "external-firewalls",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "방화벽 목록을 DB에서 조회",
-          "link": "/api/network/get-external-firewalls"
-        },
-        {
-          "text": "방화벽(default-deny drop ACL) 생성 요청을 접수",
-          "link": "/api/network/post-external-firewalls"
-        },
-        {
-          "text": "방화벽 연결 대상 네트워크 목록 조회",
-          "link": "/api/network/get-external-firewalls-networks"
-        },
-        {
-          "text": "방화벽 단건을 DB에서 조회",
-          "link": "/api/network/get-external-firewalls-firewallid"
-        },
-        {
-          "text": "방화벽 표시용 메타데이터(이름/설명) 수정",
-          "link": "/api/network/put-external-firewalls-firewallid"
-        },
-        {
-          "text": "방화벽 전체(drop + allow) 삭제 요청을 접수",
-          "link": "/api/network/delete-external-firewalls-firewallid"
-        }
-      ]
-    },
-    {
-      "text": "floating-ips",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "Floating IP 목록 조회",
-          "link": "/api/network/get-floating-ips"
-        },
-        {
-          "text": "Floating IP 생성",
-          "link": "/api/network/post-floating-ips"
-        },
-        {
-          "text": "Floating IP 연결 후보 인스턴스 목록 조회",
-          "link": "/api/network/get-floating-ips-floatingipid-instances-connectable"
-        },
-        {
-          "text": "Floating IP 연결 후보 LoadBalancer 목록 조회",
-          "link": "/api/network/get-floating-ips-floatingipid-load-balancers-connectable"
-        },
-        {
-          "text": "Floating IP 연결 후보 포트 목록 조회",
-          "link": "/api/network/get-floating-ips-floatingipid-ports-connectable"
-        },
-        {
-          "text": "Floating IP 단건 조회",
-          "link": "/api/network/get-floating-ips-floatingipid"
-        },
-        {
-          "text": "Floating IP 수정",
-          "link": "/api/network/put-floating-ips-floatingipid"
-        },
-        {
-          "text": "Floating IP 삭제",
-          "link": "/api/network/delete-floating-ips-floatingipid"
-        }
-      ]
-    },
-    {
-      "text": "health-monitors",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "Health Monitor 생성",
-          "link": "/api/network/post-health-monitors"
-        },
-        {
-          "text": "Health Monitor 조회",
-          "link": "/api/network/get-health-monitors-healthmonitorid"
-        },
-        {
-          "text": "Health Monitor 수정",
-          "link": "/api/network/put-health-monitors-healthmonitorid"
-        },
-        {
-          "text": "Health Monitor 삭제",
-          "link": "/api/network/delete-health-monitors-healthmonitorid"
-        }
-      ]
-    },
-    {
-      "text": "l7-policies",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "L7 정책 생성",
-          "link": "/api/network/post-l7-policies"
-        },
-        {
-          "text": "L7 정책 목록 조회",
-          "link": "/api/network/get-l7-policies"
-        },
-        {
-          "text": "L7 정책를 단건 조회",
-          "link": "/api/network/get-l7-policies-policyid"
-        },
-        {
-          "text": "L7 정책 수정",
-          "link": "/api/network/put-l7-policies-policyid"
-        },
-        {
-          "text": "L7 정책 삭제",
-          "link": "/api/network/delete-l7-policies-policyid"
-        },
-        {
-          "text": "L7 Rule 생성",
-          "link": "/api/network/post-l7-policies-policyid-rules"
-        },
-        {
-          "text": "L7 Rule 목록 조회",
-          "link": "/api/network/get-l7-policies-policyid-rules"
-        },
-        {
-          "text": "L7 Rule 수정",
-          "link": "/api/network/put-l7-policies-policyid-rules-ruleid"
-        },
-        {
-          "text": "L7 Rule 삭제",
-          "link": "/api/network/delete-l7-policies-policyid-rules-ruleid"
-        }
-      ]
-    },
-    {
-      "text": "listeners",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "리스너 생성",
-          "link": "/api/network/post-listeners"
-        },
-        {
-          "text": "Listener 목록 조회",
-          "link": "/api/network/get-listeners"
-        },
-        {
-          "text": "Listener 단건 조회",
-          "link": "/api/network/get-listeners-listenerid"
-        },
-        {
-          "text": "Listener 수정",
-          "link": "/api/network/put-listeners-listenerid"
-        },
-        {
-          "text": "리스너 삭제",
-          "link": "/api/network/delete-listeners-listenerid"
-        },
-        {
-          "text": "리스너 연결 인증서 목록 조회",
-          "link": "/api/network/get-listeners-listenerid-certificates"
-        }
-      ]
-    },
-    {
-      "text": "load-balancers",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "새로운 LoadBalancer 생성",
-          "link": "/api/network/post-load-balancers"
-        },
-        {
-          "text": "LoadBalancer 목록 조회",
-          "link": "/api/network/get-load-balancers"
-        },
-        {
-          "text": "LoadBalancer를 단건 조회",
-          "link": "/api/network/get-load-balancers-loadbalancerid"
-        },
-        {
-          "text": "LoadBalancer 수정",
-          "link": "/api/network/put-load-balancers-loadbalancerid"
-        },
-        {
-          "text": "LoadBalancer 삭제",
-          "link": "/api/network/delete-load-balancers-loadbalancerid"
-        }
-      ]
-    },
-    {
-      "text": "members",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "풀 멤버를 일괄 생성합니다 (비동기 처리)",
-          "link": "/api/network/put-pools-poolid-members"
-        },
-        {
-          "text": "풀 멤버 목록 조회",
-          "link": "/api/network/get-pools-poolid-members"
-        },
-        {
-          "text": "풀 멤버 수정",
-          "link": "/api/network/put-pools-poolid-members-memberid"
-        },
-        {
-          "text": "풀 멤버 삭제",
-          "link": "/api/network/delete-pools-poolid-members-memberid"
-        }
-      ]
-    },
-    {
-      "text": "networks",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "네트워크 목록 조회",
-          "link": "/api/network/get-networks"
-        },
-        {
-          "text": "네트워크 생성",
-          "link": "/api/network/post-networks"
-        },
-        {
-          "text": "서브넷 기반 connectable 계산을 포함한 네트워크 목록 조회",
-          "link": "/api/network/get-networks-subnet-connectability"
-        },
-        {
-          "text": "외부 게이트웨이에 연결된 내부 네트워크 조회",
-          "link": "/api/network/get-networks-external-gateway-connectability"
-        },
-        {
-          "text": "네트워크 단건 조회",
-          "link": "/api/network/get-networks-networkid"
-        },
-        {
-          "text": "네트워크 수정",
-          "link": "/api/network/put-networks-networkid"
-        },
-        {
-          "text": "네트워크 삭제",
-          "link": "/api/network/delete-networks-networkid"
-        }
-      ]
-    },
-    {
-      "text": "pools",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "풀 생성",
-          "link": "/api/network/post-pools"
-        },
-        {
-          "text": "풀 목록 조회",
-          "link": "/api/network/get-pools"
-        },
-        {
-          "text": "Pool 단건 조회",
-          "link": "/api/network/get-pools-poolid"
-        },
-        {
-          "text": "Pool 수정",
-          "link": "/api/network/put-pools-poolid"
-        },
-        {
-          "text": "Pool 삭제",
-          "link": "/api/network/delete-pools-poolid"
-        },
-        {
-          "text": "풀에 멤버로 추가 가능한 인스턴스 후보 목록 조회",
-          "link": "/api/network/get-pools-poolid-instances-connectable"
-        }
-      ]
-    },
-    {
-      "text": "ports",
+      "text": "포트",
       "collapsed": true,
       "items": [
         {
@@ -2024,7 +2104,37 @@
       ]
     },
     {
-      "text": "quotas",
+      "text": "풀",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "풀 생성",
+          "link": "/api/network/post-pools"
+        },
+        {
+          "text": "풀 목록 조회",
+          "link": "/api/network/get-pools"
+        },
+        {
+          "text": "Pool 단건 조회",
+          "link": "/api/network/get-pools-poolid"
+        },
+        {
+          "text": "Pool 수정",
+          "link": "/api/network/put-pools-poolid"
+        },
+        {
+          "text": "Pool 삭제",
+          "link": "/api/network/delete-pools-poolid"
+        },
+        {
+          "text": "풀에 멤버로 추가 가능한 인스턴스 후보 목록 조회",
+          "link": "/api/network/get-pools-poolid-instances-connectable"
+        }
+      ]
+    },
+    {
+      "text": "할당량",
       "collapsed": true,
       "items": [
         {
@@ -2034,134 +2144,24 @@
       ]
     },
     {
-      "text": "routers",
+      "text": "헬스 모니터",
       "collapsed": true,
       "items": [
         {
-          "text": "라우터 목록 조회",
-          "link": "/api/network/get-routers"
+          "text": "Health Monitor 생성",
+          "link": "/api/network/post-health-monitors"
         },
         {
-          "text": "라우터 생성",
-          "link": "/api/network/post-routers"
+          "text": "Health Monitor 조회",
+          "link": "/api/network/get-health-monitors-healthmonitorid"
         },
         {
-          "text": "라우터 단건 조회",
-          "link": "/api/network/get-routers-routerid"
+          "text": "Health Monitor 수정",
+          "link": "/api/network/put-health-monitors-healthmonitorid"
         },
         {
-          "text": "라우터 수정",
-          "link": "/api/network/put-routers-routerid"
-        },
-        {
-          "text": "라우터 삭제",
-          "link": "/api/network/delete-routers-routerid"
-        },
-        {
-          "text": "라우터에 연결된 인터페이스 목록을 상세 조회",
-          "link": "/api/network/get-routers-routerid-interfaces"
-        },
-        {
-          "text": "라우터에 인터페이스를 추가합니다 (서브넷 연결)",
-          "link": "/api/network/post-routers-routerid-interfaces"
-        },
-        {
-          "text": "라우터에서 인터페이스를 제거합니다 (서브넷 연결 해제)",
-          "link": "/api/network/delete-routers-routerid-interfaces-subnetid"
-        },
-        {
-          "text": "라우터에 정적 라우트를 추",
-          "link": "/api/network/post-routers-routerid-routes"
-        },
-        {
-          "text": "라우터에서 정적 라우트 삭제",
-          "link": "/api/network/delete-routers-routerid-routes"
-        },
-        {
-          "text": "라우터 정적 라우트 목록 조회",
-          "link": "/api/network/get-routers-routerid-routes"
-        }
-      ]
-    },
-    {
-      "text": "security-groups",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "보안 그룹 생성",
-          "link": "/api/network/post-security-groups"
-        },
-        {
-          "text": "보안 그룹 목록 조회",
-          "link": "/api/network/get-security-groups"
-        },
-        {
-          "text": "보안 그룹 조회",
-          "link": "/api/network/get-security-groups-securitygroupid"
-        },
-        {
-          "text": "보안 그룹 수정",
-          "link": "/api/network/put-security-groups-securitygroupid"
-        },
-        {
-          "text": "보안 그룹 삭제",
-          "link": "/api/network/delete-security-groups-securitygroupid"
-        },
-        {
-          "text": "보안 그룹의 Rules 조회",
-          "link": "/api/network/get-security-groups-securitygroupid-rules"
-        },
-        {
-          "text": "보안 그룹 Rule 생성",
-          "link": "/api/network/post-security-groups-securitygroupid-rules"
-        },
-        {
-          "text": "보안 그룹 Rule을 배치 생성",
-          "link": "/api/network/post-security-groups-securitygroupid-rules-batch"
-        },
-        {
-          "text": "보안 그룹 Rule 삭제",
-          "link": "/api/network/delete-security-groups-securitygroupid-rules-ruleid"
-        }
-      ]
-    },
-    {
-      "text": "subnets",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "서브넷 목록 조회",
-          "link": "/api/network/get-subnets"
-        },
-        {
-          "text": "서브넷 생성",
-          "link": "/api/network/post-subnets"
-        },
-        {
-          "text": "서브넷 단건 조회",
-          "link": "/api/network/get-subnets-subnetid"
-        },
-        {
-          "text": "서브넷 수정",
-          "link": "/api/network/put-subnets-subnetid"
-        },
-        {
-          "text": "서브넷 삭제",
-          "link": "/api/network/delete-subnets-subnetid"
-        }
-      ]
-    },
-    {
-      "text": "기타",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "프로세스 생존 여부를 확인",
-          "link": "/api/network/get-livez"
-        },
-        {
-          "text": "애플리케이션 초기화 완료 여부를 확인",
-          "link": "/api/network/get-readyz"
+          "text": "Health Monitor 삭제",
+          "link": "/api/network/delete-health-monitors-healthmonitorid"
         }
       ]
     }
@@ -2177,395 +2177,7 @@
       ]
     },
     {
-      "text": "App Catalog - Apps",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "App Catalog 목록을 탭과 카테고리별로 조회",
-          "link": "/api/container/get-app-catalog-apps"
-        },
-        {
-          "text": "앱 입력 폼 스키마 조회",
-          "link": "/api/container/get-app-catalog-apps-app-name-values-schema"
-        },
-        {
-          "text": "앱 설치 가능 여부 확인",
-          "link": "/api/container/get-app-catalog-apps-app-name-install-check"
-        },
-        {
-          "text": "YAML template mode를 먼저 선택한 뒤 호출하는 API",
-          "link": "/api/container/get-app-catalog-apps-app-name-config-schema"
-        },
-        {
-          "text": "values.yaml 초안 생성",
-          "link": "/api/container/post-app-catalog-apps-app-name-values-yaml"
-        },
-        {
-          "text": "values.yaml 템플릿 모드 목록 조회",
-          "link": "/api/container/get-app-catalog-apps-app-name-yaml-templates"
-        },
-        {
-          "text": "values.yaml 템플릿 조회",
-          "link": "/api/container/get-app-catalog-apps-app-name-yaml-templates-mode"
-        }
-      ]
-    },
-    {
-      "text": "App Catalog - Deployments",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "렌더링된 App Catalog values.yaml 배포를 요청",
-          "link": "/api/container/post-app-catalog-deployments"
-        },
-        {
-          "text": "앱 카탈로그 배포 목록 조회",
-          "link": "/api/container/get-app-catalog-deployments"
-        },
-        {
-          "text": "앱 배포 이름 중복 확인",
-          "link": "/api/container/get-app-catalog-deployments-name-check"
-        },
-        {
-          "text": "앱 카탈로그 배포 상세 조회",
-          "link": "/api/container/get-app-catalog-deployments-detail"
-        },
-        {
-          "text": "앱 카탈로그 배포 삭제",
-          "link": "/api/container/delete-app-catalog-deployments-detail"
-        },
-        {
-          "text": "배포 자격증명 원문 조회",
-          "link": "/api/container/post-app-catalog-deployments-detail-credentials-credential-id-reveal"
-        },
-        {
-          "text": "오퍼레이터 연결 앱 배포 목록 조회",
-          "link": "/api/container/get-app-catalog-deployments-deployment-id-bound-apps"
-        },
-        {
-          "text": "App Catalog 배포 상세와 values.yaml 텍스트 조회",
-          "link": "/api/container/get-app-catalog-deployments-deployment-id"
-        },
-        {
-          "text": "App Catalog 배포의 values.yaml 또는 상태 수정",
-          "link": "/api/container/patch-app-catalog-deployments-deployment-id"
-        },
-        {
-          "text": "App Catalog 배포 삭제",
-          "link": "/api/container/delete-app-catalog-deployments-deployment-id"
-        },
-        {
-          "text": "배포 자격증명 원문 조회",
-          "link": "/api/container/post-app-catalog-deployments-deployment-id-credentials-credential-id-reveal"
-        },
-        {
-          "text": "앱 카탈로그 배포 재동기화",
-          "link": "/api/container/post-app-catalog-deployments-deployment-id-redeploy"
-        }
-      ]
-    },
-    {
-      "text": "App Catalog - Values YAML",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "values.yaml 파일 다운로드",
-          "link": "/api/container/get-app-catalog-deployments-app-name-values-yaml"
-        }
-      ]
-    },
-    {
-      "text": "Cluster - Clusters",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "클러스터 목록 조회",
-          "link": "/api/container/get-cluster-clusters"
-        },
-        {
-          "text": "기존 Kubernetes 클러스터를 kubeconfig로 등록",
-          "link": "/api/container/post-cluster-clusters-register"
-        },
-        {
-          "text": "특정 클러스터의 상세 정보 조회",
-          "link": "/api/container/get-cluster-clusters-cluster-id"
-        },
-        {
-          "text": "클러스터 삭제를 비동기로 요청",
-          "link": "/api/container/delete-cluster-clusters-cluster-id"
-        },
-        {
-          "text": "클러스터 사이드바 버튼 텍스트/색상 수정",
-          "link": "/api/container/patch-cluster-clusters-cluster-id-appearance"
-        },
-        {
-          "text": "특정 클러스터의 kubeConfig 조회",
-          "link": "/api/container/get-cluster-clusters-cluster-id-kubeconfig"
-        },
-        {
-          "text": "클러스터 셸 접속 URL 생성",
-          "link": "/api/container/post-cluster-clusters-cluster-id-shell"
-        },
-        {
-          "text": "컨트롤 플레인 상태 조회",
-          "link": "/api/container/get-cluster-clusters-cluster-id-control-plane-health"
-        }
-      ]
-    },
-    {
-      "text": "Cluster - Events",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "클러스터 이벤트 목록 조회",
-          "link": "/api/container/get-cluster-events"
-        },
-        {
-          "text": "기존 이벤트 YAML 조회",
-          "link": "/api/container/get-cluster-events-event-name-manifest"
-        }
-      ]
-    },
-    {
-      "text": "Cluster - Nodes",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "노드 목록 조회",
-          "link": "/api/container/get-cluster-nodes"
-        },
-        {
-          "text": "노드 상세 조회",
-          "link": "/api/container/get-cluster-nodes-node-name"
-        },
-        {
-          "text": "노드 이미지 목록 조회",
-          "link": "/api/container/get-cluster-nodes-node-name-images"
-        },
-        {
-          "text": "노드 파드 목록 조회",
-          "link": "/api/container/get-cluster-nodes-node-name-pods"
-        },
-        {
-          "text": "노드 Condition 목록 조회",
-          "link": "/api/container/get-cluster-nodes-node-name-conditions"
-        },
-        {
-          "text": "노드 이벤트 목록 조회",
-          "link": "/api/container/get-cluster-nodes-node-name-events"
-        },
-        {
-          "text": "기존 노드 YAML 조회",
-          "link": "/api/container/get-cluster-nodes-node-name-manifest"
-        },
-        {
-          "text": "기존 노드 manifest 기반 preset 조회",
-          "link": "/api/container/get-cluster-nodes-node-name-manifest-preset"
-        },
-        {
-          "text": "노드 manifest preset 수정",
-          "link": "/api/container/put-cluster-nodes-node-name-manifest-preset"
-        }
-      ]
-    },
-    {
-      "text": "Cluster - Provisioning",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "Kubernetes 버전 목록 조회 (옵션)",
-          "link": "/api/container/get-cluster-cluster-provisioning-k8s-versions"
-        },
-        {
-          "text": "클러스터 프로비저닝 요청 (Stage 1)",
-          "link": "/api/container/post-cluster-cluster-provisioning"
-        }
-      ]
-    },
-    {
-      "text": "Cluster - ServiceAccount Token",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "서비스 계정 토큰 정보 조회",
-          "link": "/api/container/get-cluster-token-clusterid-access-token"
-        },
-        {
-          "text": "현재 사용자 ServiceAccount token 생성",
-          "link": "/api/container/post-cluster-token-clusterid-access-token"
-        },
-        {
-          "text": "현재 사용자 유효 ServiceAccount token 폐기",
-          "link": "/api/container/delete-cluster-token-clusterid-access-token"
-        },
-        {
-          "text": "현재 사용자 ServiceAccount 기반 kubeconfig 생성",
-          "link": "/api/container/get-cluster-token-clusterid-kubeconfig"
-        }
-      ]
-    },
-    {
-      "text": "Policy - LimitRange",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "LimitRange 목록 조회",
-          "link": "/api/container/get-policy-limit-range"
-        },
-        {
-          "text": "LimitRange 생성",
-          "link": "/api/container/post-policy-limit-range"
-        },
-        {
-          "text": "LimitRange 템플릿 YAML 조회",
-          "link": "/api/container/get-policy-limit-range-template-yaml"
-        },
-        {
-          "text": "LimitRange Bulk Manifest 조회",
-          "link": "/api/container/post-policy-limit-range-manifest-bulk"
-        },
-        {
-          "text": "기존 LimitRange YAML 조회",
-          "link": "/api/container/get-policy-limit-range-limit-range-name-manifest"
-        },
-        {
-          "text": "LimitRange 수정",
-          "link": "/api/container/put-policy-limit-range-limit-range-name"
-        },
-        {
-          "text": "LimitRange 삭제",
-          "link": "/api/container/delete-policy-limit-range-limit-range-name"
-        }
-      ]
-    },
-    {
-      "text": "Policy - NetworkPolicy",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "NetworkPolicy 목록 조회",
-          "link": "/api/container/get-policy-network-policy"
-        },
-        {
-          "text": "NetworkPolicy 생성",
-          "link": "/api/container/post-policy-network-policy"
-        },
-        {
-          "text": "NetworkPolicy 템플릿 YAML 조회",
-          "link": "/api/container/get-policy-network-policy-template-yaml"
-        },
-        {
-          "text": "NetworkPolicy Bulk Manifest 조회",
-          "link": "/api/container/post-policy-network-policy-manifest-bulk"
-        },
-        {
-          "text": "NetworkPolicy 상세 정보 조회",
-          "link": "/api/container/get-policy-network-policy-network-policy-name"
-        },
-        {
-          "text": "NetworkPolicy 삭제",
-          "link": "/api/container/delete-policy-network-policy-network-policy-name"
-        },
-        {
-          "text": "NetworkPolicy 수정",
-          "link": "/api/container/put-policy-network-policy-network-policy-name"
-        },
-        {
-          "text": "기존 NetworkPolicy YAML 조회",
-          "link": "/api/container/get-policy-network-policy-network-policy-name-manifest"
-        },
-        {
-          "text": "네트워크 정책 대상 파드 조회",
-          "link": "/api/container/post-policy-network-policy-match-pods"
-        }
-      ]
-    },
-    {
-      "text": "Policy - PodDisruptionBudget",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "PodDisruptionBudget 목록 조회",
-          "link": "/api/container/get-policy-pod-disruption-budget"
-        },
-        {
-          "text": "PodDisruptionBudget 생성",
-          "link": "/api/container/post-policy-pod-disruption-budget"
-        },
-        {
-          "text": "PodDisruptionBudget 템플릿 YAML 조회",
-          "link": "/api/container/get-policy-pod-disruption-budget-template-yaml"
-        },
-        {
-          "text": "PodDisruptionBudget Bulk Manifest 조회",
-          "link": "/api/container/post-policy-pod-disruption-budget-manifest-bulk"
-        },
-        {
-          "text": "PodDisruptionBudget 상세 정보 조회",
-          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name"
-        },
-        {
-          "text": "PodDisruptionBudget 수정",
-          "link": "/api/container/put-policy-pod-disruption-budget-pdb-name"
-        },
-        {
-          "text": "PodDisruptionBudget 삭제",
-          "link": "/api/container/delete-policy-pod-disruption-budget-pdb-name"
-        },
-        {
-          "text": "기존 PodDisruptionBudget YAML 조회",
-          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name-manifest"
-        },
-        {
-          "text": "PodDisruptionBudget Condition 목록 조회",
-          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name-conditions"
-        },
-        {
-          "text": "PodDisruptionBudget 이벤트 목록 조회",
-          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name-events"
-        },
-        {
-          "text": "PDB 대상 파드 조회",
-          "link": "/api/container/post-policy-pod-disruption-budget-match-pods"
-        }
-      ]
-    },
-    {
-      "text": "Policy - ResourceQuota",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "ResourceQuota 템플릿 YAML 조회",
-          "link": "/api/container/get-policy-resource-quota-template-yaml"
-        },
-        {
-          "text": "ResourceQuota 목록 조회",
-          "link": "/api/container/get-policy-resource-quota"
-        },
-        {
-          "text": "ResourceQuota 생성",
-          "link": "/api/container/post-policy-resource-quota"
-        },
-        {
-          "text": "ResourceQuota Bulk Manifest 조회",
-          "link": "/api/container/post-policy-resource-quota-manifest-bulk"
-        },
-        {
-          "text": "기존 ResourceQuota YAML 조회",
-          "link": "/api/container/get-policy-resource-quota-resource-quota-name-manifest"
-        },
-        {
-          "text": "ResourceQuota 수정",
-          "link": "/api/container/put-policy-resource-quota-resource-quota-name"
-        },
-        {
-          "text": "ResourceQuota 삭제",
-          "link": "/api/container/delete-policy-resource-quota-resource-quota-name"
-        }
-      ]
-    },
-    {
-      "text": "Search - Resource Types",
+      "text": "검색 · 리소스 타입",
       "collapsed": true,
       "items": [
         {
@@ -2575,7 +2187,7 @@
       ]
     },
     {
-      "text": "Service - hpa",
+      "text": "서비스 · HPA",
       "collapsed": true,
       "items": [
         {
@@ -2617,53 +2229,7 @@
       ]
     },
     {
-      "text": "Service - ingress",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "클러스터의 모든 네임스페이스에서 Ingress 목록 조회",
-          "link": "/api/container/get-service-routing-ingress"
-        },
-        {
-          "text": "인그레스 생성",
-          "link": "/api/container/post-service-routing-ingress"
-        },
-        {
-          "text": "IngressClass 옵션 목록 조회",
-          "link": "/api/container/get-service-routing-ingress-classes-options"
-        },
-        {
-          "text": "인그레스 매니페스트 템플릿 조회",
-          "link": "/api/container/get-service-routing-ingress-template-yaml"
-        },
-        {
-          "text": "인그레스 매니페스트 조회",
-          "link": "/api/container/get-service-routing-ingress-ingress-name-manifest"
-        },
-        {
-          "text": "Ingress Rule 목록 조회",
-          "link": "/api/container/get-service-routing-ingress-ingress-name-rules"
-        },
-        {
-          "text": "Ingress Bulk Manifest 조회",
-          "link": "/api/container/post-service-routing-ingress-manifest-bulk"
-        },
-        {
-          "text": "인그레스 수정",
-          "link": "/api/container/put-service-routing-ingress-ingress-name"
-        },
-        {
-          "text": "인그레스 단건 조회",
-          "link": "/api/container/get-service-routing-ingress-ingress-name"
-        },
-        {
-          "text": "인그레스 삭제",
-          "link": "/api/container/delete-service-routing-ingress-ingress-name"
-        }
-      ]
-    },
-    {
-      "text": "Service - service",
+      "text": "서비스 · 서비스",
       "collapsed": true,
       "items": [
         {
@@ -2717,7 +2283,53 @@
       ]
     },
     {
-      "text": "Storage - ConfigMaps",
+      "text": "서비스 · 인그레스",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "클러스터의 모든 네임스페이스에서 Ingress 목록 조회",
+          "link": "/api/container/get-service-routing-ingress"
+        },
+        {
+          "text": "인그레스 생성",
+          "link": "/api/container/post-service-routing-ingress"
+        },
+        {
+          "text": "IngressClass 옵션 목록 조회",
+          "link": "/api/container/get-service-routing-ingress-classes-options"
+        },
+        {
+          "text": "인그레스 매니페스트 템플릿 조회",
+          "link": "/api/container/get-service-routing-ingress-template-yaml"
+        },
+        {
+          "text": "인그레스 매니페스트 조회",
+          "link": "/api/container/get-service-routing-ingress-ingress-name-manifest"
+        },
+        {
+          "text": "Ingress Rule 목록 조회",
+          "link": "/api/container/get-service-routing-ingress-ingress-name-rules"
+        },
+        {
+          "text": "Ingress Bulk Manifest 조회",
+          "link": "/api/container/post-service-routing-ingress-manifest-bulk"
+        },
+        {
+          "text": "인그레스 수정",
+          "link": "/api/container/put-service-routing-ingress-ingress-name"
+        },
+        {
+          "text": "인그레스 단건 조회",
+          "link": "/api/container/get-service-routing-ingress-ingress-name"
+        },
+        {
+          "text": "인그레스 삭제",
+          "link": "/api/container/delete-service-routing-ingress-ingress-name"
+        }
+      ]
+    },
+    {
+      "text": "스토리지 · ConfigMap",
       "collapsed": true,
       "items": [
         {
@@ -2751,7 +2363,41 @@
       ]
     },
     {
-      "text": "Storage - PersistentVolumeClaims",
+      "text": "스토리지 · PV",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "PV 목록 조회",
+          "link": "/api/container/get-storage-pv"
+        },
+        {
+          "text": "PV 생성",
+          "link": "/api/container/post-storage-pv"
+        },
+        {
+          "text": "PV 템플릿 YAML 조회",
+          "link": "/api/container/get-storage-pv-template-yaml"
+        },
+        {
+          "text": "PV 상세 조회",
+          "link": "/api/container/get-storage-pv-pv-name"
+        },
+        {
+          "text": "PV 삭제",
+          "link": "/api/container/delete-storage-pv-pv-name"
+        },
+        {
+          "text": "PV 수정",
+          "link": "/api/container/put-storage-pv-pv-name"
+        },
+        {
+          "text": "기존 PV YAML 조회",
+          "link": "/api/container/get-storage-pv-pv-name-manifest"
+        }
+      ]
+    },
+    {
+      "text": "스토리지 · PVC",
       "collapsed": true,
       "items": [
         {
@@ -2793,41 +2439,7 @@
       ]
     },
     {
-      "text": "Storage - PersistentVolumes",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "PV 목록 조회",
-          "link": "/api/container/get-storage-pv"
-        },
-        {
-          "text": "PV 생성",
-          "link": "/api/container/post-storage-pv"
-        },
-        {
-          "text": "PV 템플릿 YAML 조회",
-          "link": "/api/container/get-storage-pv-template-yaml"
-        },
-        {
-          "text": "PV 상세 조회",
-          "link": "/api/container/get-storage-pv-pv-name"
-        },
-        {
-          "text": "PV 삭제",
-          "link": "/api/container/delete-storage-pv-pv-name"
-        },
-        {
-          "text": "PV 수정",
-          "link": "/api/container/put-storage-pv-pv-name"
-        },
-        {
-          "text": "기존 PV YAML 조회",
-          "link": "/api/container/get-storage-pv-pv-name-manifest"
-        }
-      ]
-    },
-    {
-      "text": "Storage - Secrets",
+      "text": "스토리지 · Secret",
       "collapsed": true,
       "items": [
         {
@@ -2865,7 +2477,7 @@
       ]
     },
     {
-      "text": "Storage - StorageClasses",
+      "text": "스토리지 · StorageClass",
       "collapsed": true,
       "items": [
         {
@@ -2903,7 +2515,105 @@
       ]
     },
     {
-      "text": "Workload - CronJobs",
+      "text": "앱 카탈로그 · YAML",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "values.yaml 파일 다운로드",
+          "link": "/api/container/get-app-catalog-deployments-app-name-values-yaml"
+        }
+      ]
+    },
+    {
+      "text": "앱 카탈로그 · 배포",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "렌더링된 App Catalog values.yaml 배포를 요청",
+          "link": "/api/container/post-app-catalog-deployments"
+        },
+        {
+          "text": "앱 카탈로그 배포 목록 조회",
+          "link": "/api/container/get-app-catalog-deployments"
+        },
+        {
+          "text": "앱 배포 이름 중복 확인",
+          "link": "/api/container/get-app-catalog-deployments-name-check"
+        },
+        {
+          "text": "앱 카탈로그 배포 상세 조회",
+          "link": "/api/container/get-app-catalog-deployments-detail"
+        },
+        {
+          "text": "앱 카탈로그 배포 삭제",
+          "link": "/api/container/delete-app-catalog-deployments-detail"
+        },
+        {
+          "text": "배포 자격증명 원문 조회",
+          "link": "/api/container/post-app-catalog-deployments-detail-credentials-credential-id-reveal"
+        },
+        {
+          "text": "오퍼레이터 연결 앱 배포 목록 조회",
+          "link": "/api/container/get-app-catalog-deployments-deployment-id-bound-apps"
+        },
+        {
+          "text": "App Catalog 배포 상세와 values.yaml 텍스트 조회",
+          "link": "/api/container/get-app-catalog-deployments-deployment-id"
+        },
+        {
+          "text": "App Catalog 배포의 values.yaml 또는 상태 수정",
+          "link": "/api/container/patch-app-catalog-deployments-deployment-id"
+        },
+        {
+          "text": "App Catalog 배포 삭제",
+          "link": "/api/container/delete-app-catalog-deployments-deployment-id"
+        },
+        {
+          "text": "배포 자격증명 원문 조회",
+          "link": "/api/container/post-app-catalog-deployments-deployment-id-credentials-credential-id-reveal"
+        },
+        {
+          "text": "앱 카탈로그 배포 재동기화",
+          "link": "/api/container/post-app-catalog-deployments-deployment-id-redeploy"
+        }
+      ]
+    },
+    {
+      "text": "앱 카탈로그 · 앱",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "App Catalog 목록을 탭과 카테고리별로 조회",
+          "link": "/api/container/get-app-catalog-apps"
+        },
+        {
+          "text": "앱 입력 폼 스키마 조회",
+          "link": "/api/container/get-app-catalog-apps-app-name-values-schema"
+        },
+        {
+          "text": "앱 설치 가능 여부 확인",
+          "link": "/api/container/get-app-catalog-apps-app-name-install-check"
+        },
+        {
+          "text": "YAML template mode를 먼저 선택한 뒤 호출하는 API",
+          "link": "/api/container/get-app-catalog-apps-app-name-config-schema"
+        },
+        {
+          "text": "values.yaml 초안 생성",
+          "link": "/api/container/post-app-catalog-apps-app-name-values-yaml"
+        },
+        {
+          "text": "values.yaml 템플릿 모드 목록 조회",
+          "link": "/api/container/get-app-catalog-apps-app-name-yaml-templates"
+        },
+        {
+          "text": "values.yaml 템플릿 조회",
+          "link": "/api/container/get-app-catalog-apps-app-name-yaml-templates-mode"
+        }
+      ]
+    },
+    {
+      "text": "워크로드 · CronJob",
       "collapsed": true,
       "items": [
         {
@@ -2957,7 +2667,7 @@
       ]
     },
     {
-      "text": "Workload - DaemonSets",
+      "text": "워크로드 · DaemonSet",
       "collapsed": true,
       "items": [
         {
@@ -3023,7 +2733,7 @@
       ]
     },
     {
-      "text": "Workload - Deployments",
+      "text": "워크로드 · Deployment",
       "collapsed": true,
       "items": [
         {
@@ -3101,7 +2811,7 @@
       ]
     },
     {
-      "text": "Workload - Jobs",
+      "text": "워크로드 · Job",
       "collapsed": true,
       "items": [
         {
@@ -3147,111 +2857,7 @@
       ]
     },
     {
-      "text": "Workload - Namespaces",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "네임스페이스 목록 조회",
-          "link": "/api/container/get-cluster-namespaces"
-        },
-        {
-          "text": "네임스페이스 생성",
-          "link": "/api/container/post-cluster-namespaces"
-        },
-        {
-          "text": "네임스페이스 템플릿 YAML 조회",
-          "link": "/api/container/get-cluster-namespaces-template-yaml"
-        },
-        {
-          "text": "기존 네임스페이스 YAML 조회",
-          "link": "/api/container/get-cluster-namespaces-namespace-name-manifest"
-        },
-        {
-          "text": "네임스페이스 수정",
-          "link": "/api/container/put-cluster-namespaces-namespace-name"
-        },
-        {
-          "text": "네임스페이스 상세 조회",
-          "link": "/api/container/get-cluster-namespaces-namespace-name"
-        },
-        {
-          "text": "네임스페이스 삭제",
-          "link": "/api/container/delete-cluster-namespaces-namespace-name"
-        },
-        {
-          "text": "네임스페이스 워크로드 상태 통계 조회",
-          "link": "/api/container/get-cluster-namespaces-namespace-name-stats"
-        },
-        {
-          "text": "네임스페이스 내 Workload 리소스 목록 조회",
-          "link": "/api/container/get-cluster-namespaces-namespace-name-workloads"
-        }
-      ]
-    },
-    {
-      "text": "Workload - Pods",
-      "collapsed": true,
-      "items": [
-        {
-          "text": "파드 목록 조회",
-          "link": "/api/container/get-workload-pods"
-        },
-        {
-          "text": "파드 생성",
-          "link": "/api/container/post-workload-pods"
-        },
-        {
-          "text": "파드 템플릿 YAML 조회",
-          "link": "/api/container/get-workload-pods-template-yaml"
-        },
-        {
-          "text": "파드 템플릿 JSON 조회",
-          "link": "/api/container/get-workload-pods-template-json"
-        },
-        {
-          "text": "파드 상세 정보 조회",
-          "link": "/api/container/get-workload-pods-pod-name"
-        },
-        {
-          "text": "파드 수정",
-          "link": "/api/container/put-workload-pods-pod-name"
-        },
-        {
-          "text": "파드 삭제",
-          "link": "/api/container/delete-workload-pods-pod-name"
-        },
-        {
-          "text": "기존 파드 YAML 조회",
-          "link": "/api/container/get-workload-pods-pod-name-manifest"
-        },
-        {
-          "text": "파드 컨테이너 목록 조회",
-          "link": "/api/container/get-workload-pods-pod-name-containers"
-        },
-        {
-          "text": "파드 Condition 목록 조회",
-          "link": "/api/container/get-workload-pods-pod-name-conditions"
-        },
-        {
-          "text": "파드 이벤트 목록 조회",
-          "link": "/api/container/get-workload-pods-pod-name-events"
-        },
-        {
-          "text": "파드 로그 조회 (모든 컨테이너)",
-          "link": "/api/container/get-workload-pods-pod-name-logs"
-        },
-        {
-          "text": "파드 특정 컨테이너 로그 조회",
-          "link": "/api/container/get-workload-pods-pod-name-containers-container-name-logs"
-        },
-        {
-          "text": "파드 셸 연결 정보 조회",
-          "link": "/api/container/get-workload-pods-pod-name-shell-info"
-        }
-      ]
-    },
-    {
-      "text": "Workload - StatefulSets",
+      "text": "워크로드 · StatefulSet",
       "collapsed": true,
       "items": [
         {
@@ -3313,6 +2919,400 @@
         {
           "text": "StatefulSet 셸 연결 정보 조회",
           "link": "/api/container/get-workload-statefulsets-statefulset-name-shell-info"
+        }
+      ]
+    },
+    {
+      "text": "워크로드 · 네임스페이스",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "네임스페이스 목록 조회",
+          "link": "/api/container/get-cluster-namespaces"
+        },
+        {
+          "text": "네임스페이스 생성",
+          "link": "/api/container/post-cluster-namespaces"
+        },
+        {
+          "text": "네임스페이스 템플릿 YAML 조회",
+          "link": "/api/container/get-cluster-namespaces-template-yaml"
+        },
+        {
+          "text": "기존 네임스페이스 YAML 조회",
+          "link": "/api/container/get-cluster-namespaces-namespace-name-manifest"
+        },
+        {
+          "text": "네임스페이스 수정",
+          "link": "/api/container/put-cluster-namespaces-namespace-name"
+        },
+        {
+          "text": "네임스페이스 상세 조회",
+          "link": "/api/container/get-cluster-namespaces-namespace-name"
+        },
+        {
+          "text": "네임스페이스 삭제",
+          "link": "/api/container/delete-cluster-namespaces-namespace-name"
+        },
+        {
+          "text": "네임스페이스 워크로드 상태 통계 조회",
+          "link": "/api/container/get-cluster-namespaces-namespace-name-stats"
+        },
+        {
+          "text": "네임스페이스 내 Workload 리소스 목록 조회",
+          "link": "/api/container/get-cluster-namespaces-namespace-name-workloads"
+        }
+      ]
+    },
+    {
+      "text": "워크로드 · 파드",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "파드 목록 조회",
+          "link": "/api/container/get-workload-pods"
+        },
+        {
+          "text": "파드 생성",
+          "link": "/api/container/post-workload-pods"
+        },
+        {
+          "text": "파드 템플릿 YAML 조회",
+          "link": "/api/container/get-workload-pods-template-yaml"
+        },
+        {
+          "text": "파드 템플릿 JSON 조회",
+          "link": "/api/container/get-workload-pods-template-json"
+        },
+        {
+          "text": "파드 상세 정보 조회",
+          "link": "/api/container/get-workload-pods-pod-name"
+        },
+        {
+          "text": "파드 수정",
+          "link": "/api/container/put-workload-pods-pod-name"
+        },
+        {
+          "text": "파드 삭제",
+          "link": "/api/container/delete-workload-pods-pod-name"
+        },
+        {
+          "text": "기존 파드 YAML 조회",
+          "link": "/api/container/get-workload-pods-pod-name-manifest"
+        },
+        {
+          "text": "파드 컨테이너 목록 조회",
+          "link": "/api/container/get-workload-pods-pod-name-containers"
+        },
+        {
+          "text": "파드 Condition 목록 조회",
+          "link": "/api/container/get-workload-pods-pod-name-conditions"
+        },
+        {
+          "text": "파드 이벤트 목록 조회",
+          "link": "/api/container/get-workload-pods-pod-name-events"
+        },
+        {
+          "text": "파드 로그 조회 (모든 컨테이너)",
+          "link": "/api/container/get-workload-pods-pod-name-logs"
+        },
+        {
+          "text": "파드 특정 컨테이너 로그 조회",
+          "link": "/api/container/get-workload-pods-pod-name-containers-container-name-logs"
+        },
+        {
+          "text": "파드 셸 연결 정보 조회",
+          "link": "/api/container/get-workload-pods-pod-name-shell-info"
+        }
+      ]
+    },
+    {
+      "text": "정책 · LimitRange",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "LimitRange 목록 조회",
+          "link": "/api/container/get-policy-limit-range"
+        },
+        {
+          "text": "LimitRange 생성",
+          "link": "/api/container/post-policy-limit-range"
+        },
+        {
+          "text": "LimitRange 템플릿 YAML 조회",
+          "link": "/api/container/get-policy-limit-range-template-yaml"
+        },
+        {
+          "text": "LimitRange Bulk Manifest 조회",
+          "link": "/api/container/post-policy-limit-range-manifest-bulk"
+        },
+        {
+          "text": "기존 LimitRange YAML 조회",
+          "link": "/api/container/get-policy-limit-range-limit-range-name-manifest"
+        },
+        {
+          "text": "LimitRange 수정",
+          "link": "/api/container/put-policy-limit-range-limit-range-name"
+        },
+        {
+          "text": "LimitRange 삭제",
+          "link": "/api/container/delete-policy-limit-range-limit-range-name"
+        }
+      ]
+    },
+    {
+      "text": "정책 · NetworkPolicy",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "NetworkPolicy 목록 조회",
+          "link": "/api/container/get-policy-network-policy"
+        },
+        {
+          "text": "NetworkPolicy 생성",
+          "link": "/api/container/post-policy-network-policy"
+        },
+        {
+          "text": "NetworkPolicy 템플릿 YAML 조회",
+          "link": "/api/container/get-policy-network-policy-template-yaml"
+        },
+        {
+          "text": "NetworkPolicy Bulk Manifest 조회",
+          "link": "/api/container/post-policy-network-policy-manifest-bulk"
+        },
+        {
+          "text": "NetworkPolicy 상세 정보 조회",
+          "link": "/api/container/get-policy-network-policy-network-policy-name"
+        },
+        {
+          "text": "NetworkPolicy 삭제",
+          "link": "/api/container/delete-policy-network-policy-network-policy-name"
+        },
+        {
+          "text": "NetworkPolicy 수정",
+          "link": "/api/container/put-policy-network-policy-network-policy-name"
+        },
+        {
+          "text": "기존 NetworkPolicy YAML 조회",
+          "link": "/api/container/get-policy-network-policy-network-policy-name-manifest"
+        },
+        {
+          "text": "네트워크 정책 대상 파드 조회",
+          "link": "/api/container/post-policy-network-policy-match-pods"
+        }
+      ]
+    },
+    {
+      "text": "정책 · PodDisruptionBudget",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "PodDisruptionBudget 목록 조회",
+          "link": "/api/container/get-policy-pod-disruption-budget"
+        },
+        {
+          "text": "PodDisruptionBudget 생성",
+          "link": "/api/container/post-policy-pod-disruption-budget"
+        },
+        {
+          "text": "PodDisruptionBudget 템플릿 YAML 조회",
+          "link": "/api/container/get-policy-pod-disruption-budget-template-yaml"
+        },
+        {
+          "text": "PodDisruptionBudget Bulk Manifest 조회",
+          "link": "/api/container/post-policy-pod-disruption-budget-manifest-bulk"
+        },
+        {
+          "text": "PodDisruptionBudget 상세 정보 조회",
+          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name"
+        },
+        {
+          "text": "PodDisruptionBudget 수정",
+          "link": "/api/container/put-policy-pod-disruption-budget-pdb-name"
+        },
+        {
+          "text": "PodDisruptionBudget 삭제",
+          "link": "/api/container/delete-policy-pod-disruption-budget-pdb-name"
+        },
+        {
+          "text": "기존 PodDisruptionBudget YAML 조회",
+          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name-manifest"
+        },
+        {
+          "text": "PodDisruptionBudget Condition 목록 조회",
+          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name-conditions"
+        },
+        {
+          "text": "PodDisruptionBudget 이벤트 목록 조회",
+          "link": "/api/container/get-policy-pod-disruption-budget-pdb-name-events"
+        },
+        {
+          "text": "PDB 대상 파드 조회",
+          "link": "/api/container/post-policy-pod-disruption-budget-match-pods"
+        }
+      ]
+    },
+    {
+      "text": "정책 · ResourceQuota",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "ResourceQuota 템플릿 YAML 조회",
+          "link": "/api/container/get-policy-resource-quota-template-yaml"
+        },
+        {
+          "text": "ResourceQuota 목록 조회",
+          "link": "/api/container/get-policy-resource-quota"
+        },
+        {
+          "text": "ResourceQuota 생성",
+          "link": "/api/container/post-policy-resource-quota"
+        },
+        {
+          "text": "ResourceQuota Bulk Manifest 조회",
+          "link": "/api/container/post-policy-resource-quota-manifest-bulk"
+        },
+        {
+          "text": "기존 ResourceQuota YAML 조회",
+          "link": "/api/container/get-policy-resource-quota-resource-quota-name-manifest"
+        },
+        {
+          "text": "ResourceQuota 수정",
+          "link": "/api/container/put-policy-resource-quota-resource-quota-name"
+        },
+        {
+          "text": "ResourceQuota 삭제",
+          "link": "/api/container/delete-policy-resource-quota-resource-quota-name"
+        }
+      ]
+    },
+    {
+      "text": "클러스터 · SA 토큰",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "서비스 계정 토큰 정보 조회",
+          "link": "/api/container/get-cluster-token-clusterid-access-token"
+        },
+        {
+          "text": "현재 사용자 ServiceAccount token 생성",
+          "link": "/api/container/post-cluster-token-clusterid-access-token"
+        },
+        {
+          "text": "현재 사용자 유효 ServiceAccount token 폐기",
+          "link": "/api/container/delete-cluster-token-clusterid-access-token"
+        },
+        {
+          "text": "현재 사용자 ServiceAccount 기반 kubeconfig 생성",
+          "link": "/api/container/get-cluster-token-clusterid-kubeconfig"
+        }
+      ]
+    },
+    {
+      "text": "클러스터 · 노드",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "노드 목록 조회",
+          "link": "/api/container/get-cluster-nodes"
+        },
+        {
+          "text": "노드 상세 조회",
+          "link": "/api/container/get-cluster-nodes-node-name"
+        },
+        {
+          "text": "노드 이미지 목록 조회",
+          "link": "/api/container/get-cluster-nodes-node-name-images"
+        },
+        {
+          "text": "노드 파드 목록 조회",
+          "link": "/api/container/get-cluster-nodes-node-name-pods"
+        },
+        {
+          "text": "노드 Condition 목록 조회",
+          "link": "/api/container/get-cluster-nodes-node-name-conditions"
+        },
+        {
+          "text": "노드 이벤트 목록 조회",
+          "link": "/api/container/get-cluster-nodes-node-name-events"
+        },
+        {
+          "text": "기존 노드 YAML 조회",
+          "link": "/api/container/get-cluster-nodes-node-name-manifest"
+        },
+        {
+          "text": "기존 노드 manifest 기반 preset 조회",
+          "link": "/api/container/get-cluster-nodes-node-name-manifest-preset"
+        },
+        {
+          "text": "노드 manifest preset 수정",
+          "link": "/api/container/put-cluster-nodes-node-name-manifest-preset"
+        }
+      ]
+    },
+    {
+      "text": "클러스터 · 이벤트",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "클러스터 이벤트 목록 조회",
+          "link": "/api/container/get-cluster-events"
+        },
+        {
+          "text": "기존 이벤트 YAML 조회",
+          "link": "/api/container/get-cluster-events-event-name-manifest"
+        }
+      ]
+    },
+    {
+      "text": "클러스터 · 클러스터",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "클러스터 목록 조회",
+          "link": "/api/container/get-cluster-clusters"
+        },
+        {
+          "text": "기존 Kubernetes 클러스터를 kubeconfig로 등록",
+          "link": "/api/container/post-cluster-clusters-register"
+        },
+        {
+          "text": "특정 클러스터의 상세 정보 조회",
+          "link": "/api/container/get-cluster-clusters-cluster-id"
+        },
+        {
+          "text": "클러스터 삭제를 비동기로 요청",
+          "link": "/api/container/delete-cluster-clusters-cluster-id"
+        },
+        {
+          "text": "클러스터 사이드바 버튼 텍스트/색상 수정",
+          "link": "/api/container/patch-cluster-clusters-cluster-id-appearance"
+        },
+        {
+          "text": "특정 클러스터의 kubeConfig 조회",
+          "link": "/api/container/get-cluster-clusters-cluster-id-kubeconfig"
+        },
+        {
+          "text": "클러스터 셸 접속 URL 생성",
+          "link": "/api/container/post-cluster-clusters-cluster-id-shell"
+        },
+        {
+          "text": "컨트롤 플레인 상태 조회",
+          "link": "/api/container/get-cluster-clusters-cluster-id-control-plane-health"
+        }
+      ]
+    },
+    {
+      "text": "클러스터 · 프로비저닝",
+      "collapsed": true,
+      "items": [
+        {
+          "text": "Kubernetes 버전 목록 조회 (옵션)",
+          "link": "/api/container/get-cluster-cluster-provisioning-k8s-versions"
+        },
+        {
+          "text": "클러스터 프로비저닝 요청 (Stage 1)",
+          "link": "/api/container/post-cluster-cluster-provisioning"
         }
       ]
     }
