@@ -53,7 +53,7 @@ GET https://<your-console-host>/api/v1/iam/authz/tpns/assignments
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| tpn | 필수 | string | TPN 목록 (쉼표 구분). 예: tpn:kr:org::user/john,tpn:kr:org::group/admin |
+| tpn | 필수 | string | TPN 목록 (쉼표 구분). 예: `tpn:kr:org::user/john`,`tpn:kr:org::group/admin` |
 | orgId | 선택 | string 또는 null | 조직 ID (시스템 어드민 TPN 조회 시 생략 가능) |
 | projectId | 선택 | string 또는 null | 프로젝트 ID |
 | page | 선택 | integer | 페이지 번호 (0: 전체 조회, 1+: 페이징 조회). 기본값 1. 범위 0~ |

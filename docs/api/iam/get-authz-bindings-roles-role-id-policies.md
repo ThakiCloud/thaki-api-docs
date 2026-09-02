@@ -64,7 +64,7 @@ GET https://<your-console-host>/api/v1/iam/authz/bindings/roles/{role_id}/polici
 | result[].roles[].roleId | 필수 | string | Role ID |
 | result[].roles[].roleName | 필수 | string | Role 이름 |
 | result[].actions | 선택 | array (string) | 정책에 포함된 Action 목록 |
-| result[].resources | 선택 | array (string) | 정책에 포함된 리소스 목록 (예: trn:*:*::storage/*) |
+| result[].resources | 선택 | array (string) | 정책에 포함된 리소스 목록 (예: `trn:*:*::storage/*`) |
 | result[].actionCategories | 선택 | array (string) | 액션 카테고리 목록 (예: Storage, Compute.Vm) |
 | result[].permissions | 선택 | array (object) | 권한 목록 (UI 확장 행 표시용: App/Partition/Resource/ActionClass) |
 | result[].permissions[].app | 필수 | string | App 이름 (예: Compute, Storage) |

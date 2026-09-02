@@ -87,16 +87,32 @@ const STATUS_TEXT = {
   503: 'Service Unavailable',
 }
 
+// ── TPN / TRN 식별자 보호 ──────────────────────────────────────────────
+// tpn:kr:org::user/john 같은 식별자는 콜론으로 구분된 세그먼트를 가진다. 마크다운
+// 이모지 플러그인이 :kr: 같은 세그먼트를 이모지 단축코드로 읽어 국기로 바꿔 버린다.
+// 식별자는 항상 인라인 코드로 감싸 원문 그대로 보이게 한다.
+const ID_TOKEN = /\b(tpn|trn):[^\s`|(),]*[^\s`|(),.]/g
+const wrapIds = (t) => t.replace(ID_TOKEN, (m) => `\`${m}\``)
+/** 이미 코드(펜스·인라인)인 구간은 건드리지 않고, 평문 구간의 식별자만 감싼다. */
+const codeIds = (text) =>
+  String(text ?? '')
+    .split(/(```[\s\S]*?```|`[^`\n]*`)/)
+    .map((seg, i) => (i % 2 === 1 ? seg : wrapIds(seg)))
+    .join('')
+
 // ── 표 셀 정리 ────────────────────────────────────────────────────────────
-// 파이프는 표를 깨고, 줄바꿈은 행을 끊는다. 백틱은 표 안에서 쓰지 않기로 했다.
+// 파이프는 표를 깨고, 줄바꿈은 행을 끊는다. 표 안의 백틱은 docstring 에서 온 것을
+// 걷어내고, TPN/TRN 식별자만 인라인 코드로 다시 감싼다(위 codeIds 참고).
 const cell = (v) =>
-  String(v ?? '')
-    .replace(/\|/g, '\\|')
-    .replace(/`/g, '')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/\r?\n+/g, ' ')
-    .trim()
+  wrapIds(
+    String(v ?? '')
+      .replace(/\|/g, '\\|')
+      .replace(/`/g, '')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\r?\n+/g, ' ')
+      .trim(),
+  )
 
 /**
  * 설명문을 문서에 실을 수 있는 형태로 다듬는다.
@@ -124,11 +140,12 @@ const prose = (text) => {
     /^\s*(Args|Arguments|Returns|Raises|Yields|Note|Notes|Example|Examples|Attributes)\s*:\s*$/.test(l),
   )
   const kept = cut === -1 ? lines : lines.slice(0, cut)
-  return stripInternal(kept.join('\n'))
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim()
+  return codeIds(
+    stripInternal(kept.join('\n'))
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\n{3,}/g, '\n\n'),
+  ).trim()
 }
 
 const slug = (s) =>
