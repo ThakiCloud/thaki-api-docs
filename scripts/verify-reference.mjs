@@ -13,6 +13,7 @@
  *  3. 요청 본문 최상위 필드의 이름과 필수 여부가 같은가
  *  4. 응답 상태 코드가 같은가
  *  5. 형식 칸이 빈 채로 나가지 않는가
+ *  6. TPN/TRN 식별자가 코드 밖에 맨몸으로 나가지 않는가
  *
  *   node scripts/verify-reference.mjs
  */
@@ -188,6 +189,15 @@ for (const [pageKey, specKey] of matched) {
       if ((row[typeIdx] ?? '') === '') add(file, `${heading} ${name}: 형식 칸이 비었습니다`)
     }
   }
+}
+
+// ── 6. TPN/TRN 식별자가 코드 밖에 맨몸으로 나가지 않는가 ────────────────
+// :kr: 같은 세그먼트를 마크다운 이모지 플러그인이 국기로 바꾼다. 식별자는 반드시
+// 인라인 코드나 펜스 안에 있어야 한다.
+for (const { file, text } of pages.values()) {
+  const plain = text.replace(/```[\s\S]*?```|`[^`\n]*`/g, '')
+  const bare = plain.match(/\b(tpn|trn):[^\s`|(),]+/g)
+  if (bare) add(file, `코드 밖 TPN/TRN 식별자: ${[...new Set(bare)].join(', ')}`)
 }
 
 // ── 결과 ────────────────────────────────────────────────────────────

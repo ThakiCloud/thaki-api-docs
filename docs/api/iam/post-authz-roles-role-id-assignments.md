@@ -22,7 +22,7 @@ POST https://<your-console-host>/api/v1/iam/authz/roles/{role_id}/assignments
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| tpn | 필수 | string | TPN (예: trn:aws:iam::user/john). 길이 1~256 |
+| tpn | 필수 | string | TPN (예: `trn:aws:iam::user/john`). 길이 1~256 |
 | orgId | 선택 | string | 조직 ID (생략 시 '*' = 플랫폼 전역). 기본값 "*". 길이 0~64 |
 | projectId | 선택 | string 또는 null | 프로젝트 ID (선택 사항). 길이 1~64 |
 

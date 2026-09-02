@@ -12,7 +12,7 @@ GET https://<your-console-host>/api/v1/iam/authz/bindings/tpns/{tpn}/policies
 
 | 이름 | 위치 | 필수 | 형식 | 설명 |
 |---|---|---|---|---|
-| tpn | path | 필수 | string | 대상 TPN (예: tpn:kr:org-1:proj-a:sa/my-sa) |
+| tpn | path | 필수 | string | 대상 TPN (예: `tpn:kr:org-1:proj-a:sa/my-sa`) |
 
 ## 쿼리 매개변수
 

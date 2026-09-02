@@ -20,7 +20,7 @@ POST https://<your-console-host>/api/v1/iam/authn/account-lockout/unlock
 
 | 이름 | 필수 | 형식 | 설명 |
 |---|---|---|---|
-| userTpn | 필수 | string | 사용자 TPN (예: tpn:kr:orgId::user/username). 길이 10~255 |
+| userTpn | 필수 | string | 사용자 TPN (예: `tpn:kr:orgId::user/username`). 길이 10~255 |
 | reason | 선택 | string 또는 null | 해제 사유. 길이 0~512 |
 
 ## 응답
